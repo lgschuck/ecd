@@ -1,5 +1,6 @@
 # Ambientes
 
+## Criando Ambientes
 
 ```{r}
 amb1 <- new.env()
@@ -13,5 +14,6 @@ amb1$x <- 10
 x <- 15
 
 x
+amb1$x
 
 ```
