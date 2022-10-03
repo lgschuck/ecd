@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "eRando em Ci3nc1a de D4do$"
@@ -19,6 +20,7 @@ format:
     theme: cosmo
   # pdf:
   #   documentclass: scrreprt
+
 
 
 

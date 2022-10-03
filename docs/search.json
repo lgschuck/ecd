@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "eRando em Ci3nc1a de D4do$",
+    "section": "",
+    "text": "Este é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é usado como fonte de consulta e aprendizado, sem comprometimento com uma esrutura específica."
+  },
+  {
+    "objectID": "intro.html#ciência-de-dados",
+    "href": "intro.html#ciência-de-dados",
+    "title": "1  Introdução",
+    "section": "1.2 Ciência de Dados",
+    "text": "1.2 Ciência de Dados"
+  },
+  {
+    "objectID": "funcoes.html",
+    "href": "funcoes.html",
+    "title": "2  Funções",
+    "section": "",
+    "text": "funcao_hello <- function(){\n  print('Hello')\n}\n\nfuncao_hello()\n\n[1] \"Hello\"\n\nfuncao_hello  \n\nfunction(){\n  print('Hello')\n}"
+  },
+  {
+    "objectID": "ambientes.html",
+    "href": "ambientes.html",
+    "title": "3  Ambientes",
+    "section": "",
+    "text": "amb1 <- new.env()\n\namb1\n\n<environment: 0x000001ba22552bd8>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15"
+  }
+]
