@@ -1,0 +1,17 @@
+---
+title: "Funções"
+---
+
+```{r}
+
+funcao_hello <- function(){
+  print('Hello')
+}
+
+funcao_hello()
+
+
+funcao_hello  
+
+```
+

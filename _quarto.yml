@@ -1,0 +1,24 @@
+project:
+  type: book
+
+book:
+  title: "eRando em Ci3nc1a de D4do$"
+  author: "Luís Gustavo Schuck"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - funcoes.qmd
+    - ambientes.qmd
+    - referencias.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  # pdf:
+  #   documentclass: scrreprt
+
+
+
