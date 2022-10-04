@@ -1,5 +1,42 @@
 # Ambientes
 
+## Global Env
+
+```{r}
+globalenv()
+
+parent.env(.GlobalEnv)
+parent.env(as.environment("package:stats"))
+parent.env(as.environment("package:graphics"))
+parent.env(as.environment("package:grDevices"))
+parent.env(as.environment("package:utils"))
+parent.env(as.environment("package:datasets"))
+parent.env(as.environment("package:methods"))
+parent.env(as.environment("Autoloads"))
+parent.env(as.environment("package:base"))
+
+
+```
+
+### Buscar Ambientes Pai (Recursivamente)
+```{r}
+
+envs <- function(ambiente){
+ 
+  if(environmentName(ambiente)=="R_EmptyEnv"){
+    return ('Ambiente informado é R_EmptyEnv.')
+    }
+    
+    print(parent.env(ambiente))
+    
+    envs(parent.env(ambiente))
+
+}
+envs(globalenv())
+
+```
+
+
 ## Criando Ambientes
 
 ```{r}
