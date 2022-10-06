@@ -2,4 +2,4 @@
 
 Este é um livro sobre a utilização da linguagem R em Ciência de Dados.
 
-Este material é usado como fonte de consulta e aprendizado, sem comprometimento com uma esrutura específica.
+Este material é um projeto pessoal usado como fonte de consulta e aprendizado, sem comprometimento com uma esrutura específica.

@@ -2,4 +2,18 @@
 
 ## Linguagem R
 
+Conforme o site r-project.org o R 'é um ambiente de software livre para computação estatística e gráficos'¹.
+
 ## Ciência de Dados
+
+Uma definição da IBM para Ciência de Dados:
+
+'A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização'².
+
+------------------------------------------------------------------------
+
+Traduções feitas com auxílio do [Google Tradutor](https://translate.google.com.br/)
+
+¹ https://www.r-project.org/
+
+² https://www.ibm.com/cloud/learn/data-science-introduction
