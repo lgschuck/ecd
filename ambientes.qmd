@@ -54,3 +54,6 @@ x
 amb1$x
 
 ```
+
+---------------------
+https://rstudio-education.github.io/hopr/, especialmente capítulo 8 - Environments
