@@ -9,8 +9,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - funcoes.qmd
     - ambientes.qmd
+    - funcoes.qmd
     - referencias.qmd
 
 bibliography: references.bib

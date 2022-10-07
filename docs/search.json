@@ -21,24 +21,45 @@
     "text": "1.2 Ciência de Dados\nUma definição da IBM para Ciência de Dados:\n’A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização’².\n\nTraduções feitas com auxílio do Google Tradutor\n¹ https://www.r-project.org/\n² https://www.ibm.com/cloud/learn/data-science-introduction"
   },
   {
-    "objectID": "funcoes.html",
-    "href": "funcoes.html",
-    "title": "2  Funções",
-    "section": "",
-    "text": "funcao_hello <- function(){\n  print('Hello')\n}\n\nfuncao_hello()\n\n[1] \"Hello\"\n\nfuncao_hello  \n\nfunction(){\n  print('Hello')\n}"
-  },
-  {
     "objectID": "ambientes.html",
     "href": "ambientes.html",
-    "title": "3  Ambientes",
+    "title": "2  Ambientes",
     "section": "",
-    "text": "globalenv()\n\n<environment: R_GlobalEnv>\n\nparent.env(.GlobalEnv)\n\n<environment: 0x00000228cc8a89a0>\nattr(,\"name\")\n[1] \"tools:quarto\"\n\nparent.env(as.environment(\"package:stats\"))\n\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n\nparent.env(as.environment(\"package:graphics\"))\n\n<environment: package:grDevices>\nattr(,\"name\")\n[1] \"package:grDevices\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/grDevices\"\n\nparent.env(as.environment(\"package:grDevices\"))\n\n<environment: package:utils>\nattr(,\"name\")\n[1] \"package:utils\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/utils\"\n\nparent.env(as.environment(\"package:utils\"))\n\n<environment: package:datasets>\nattr(,\"name\")\n[1] \"package:datasets\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/datasets\"\n\nparent.env(as.environment(\"package:datasets\"))\n\n<environment: package:methods>\nattr(,\"name\")\n[1] \"package:methods\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/methods\"\n\nparent.env(as.environment(\"package:methods\"))\n\n<environment: 0x00000228cc26ac98>\nattr(,\"name\")\n[1] \"Autoloads\"\n\nparent.env(as.environment(\"Autoloads\"))\n\n<environment: base>\n\nparent.env(as.environment(\"package:base\"))\n\n<environment: R_EmptyEnv>\n\n\n\n\n\nenvs <- function(ambiente){\n \n  if(environmentName(ambiente)==\"R_EmptyEnv\"){\n    return ('Ambiente informado é R_EmptyEnv.')\n    }\n    \n    print(parent.env(ambiente))\n    \n    envs(parent.env(ambiente))\n\n}\nenvs(globalenv())\n\n<environment: 0x00000228cc8a89a0>\nattr(,\"name\")\n[1] \"tools:quarto\"\n<environment: package:stats>\nattr(,\"name\")\n[1] \"package:stats\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/stats\"\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n<environment: package:grDevices>\nattr(,\"name\")\n[1] \"package:grDevices\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/grDevices\"\n<environment: package:utils>\nattr(,\"name\")\n[1] \"package:utils\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/utils\"\n<environment: package:datasets>\nattr(,\"name\")\n[1] \"package:datasets\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/datasets\"\n<environment: package:methods>\nattr(,\"name\")\n[1] \"package:methods\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/methods\"\n<environment: 0x00000228cc26ac98>\nattr(,\"name\")\n[1] \"Autoloads\"\n<environment: base>\n<environment: R_EmptyEnv>\n\n\n[1] \"Ambiente informado é R_EmptyEnv.\""
+    "text": "O Global Env é o ambiente “atual” do usuário; É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:\n\nglobalenv()\n\n<environment: R_GlobalEnv>\n\n.GlobalEnv\n\n<environment: R_GlobalEnv>\n\n\nPodemos visualizar os objetos presentes no ambiente desejado com a função ls.\n\nvariavel <- 5\nls(globalenv())\n\n[1] \"variavel\"\n\nls()\n\n[1] \"variavel\""
+  },
+  {
+    "objectID": "ambientes.html#ambiente-de-pacotes",
+    "href": "ambientes.html#ambiente-de-pacotes",
+    "title": "2  Ambientes",
+    "section": "2.2 Ambiente de Pacotes",
+    "text": "2.2 Ambiente de Pacotes\nOs pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.\n\nlibrary(data.table)\nas.environment(\"package:data.table\")\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nls(as.environment('package:data.table'))[1:10]\n\n [1] \"%between%\"     \"%chin%\"        \"%flike%\"       \"%ilike%\"      \n [5] \"%inrange%\"     \"%like%\"        \":=\"            \"address\"      \n [9] \"alloc.col\"     \"as.data.table\""
+  },
+  {
+    "objectID": "ambientes.html#ambientes-pai",
+    "href": "ambientes.html#ambientes-pai",
+    "title": "2  Ambientes",
+    "section": "2.3 Ambientes “Pai”",
+    "text": "2.3 Ambientes “Pai”\n\nparent.env(.GlobalEnv)\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nparent.env(as.environment(\"package:stats\"))\n\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n\nparent.env(as.environment(\"package:graphics\"))\n\n<environment: package:grDevices>\nattr(,\"name\")\n[1] \"package:grDevices\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/grDevices\"\n\nparent.env(as.environment(\"package:grDevices\"))\n\n<environment: package:utils>\nattr(,\"name\")\n[1] \"package:utils\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/utils\"\n\nparent.env(as.environment(\"package:base\"))\n\n<environment: R_EmptyEnv>\n\n\n\n2.3.1 Buscar Ambiente Pai (Recursivamente)\n\nenvs <- function(ambiente){\n \n  if(environmentName(ambiente)==\"R_EmptyEnv\"){\n    return ('Ambiente informado é R_EmptyEnv. Fim da busca.')\n    }\n    \n    print(parent.env(ambiente))\n    \n    envs(parent.env(ambiente))\n\n}\nenvs(globalenv())\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n<environment: 0x0000027ccd7667d8>\nattr(,\"name\")\n[1] \"tools:quarto\"\n<environment: package:stats>\nattr(,\"name\")\n[1] \"package:stats\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/stats\"\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n<environment: package:grDevices>\nattr(,\"name\")\n[1] \"package:grDevices\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/grDevices\"\n<environment: package:utils>\nattr(,\"name\")\n[1] \"package:utils\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/utils\"\n<environment: package:datasets>\nattr(,\"name\")\n[1] \"package:datasets\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/datasets\"\n<environment: package:methods>\nattr(,\"name\")\n[1] \"package:methods\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/methods\"\n<environment: 0x0000027ccd128908>\nattr(,\"name\")\n[1] \"Autoloads\"\n<environment: base>\n<environment: R_EmptyEnv>\n\n\n[1] \"Ambiente informado é R_EmptyEnv. Fim da busca.\""
   },
   {
     "objectID": "ambientes.html#criando-ambientes",
     "href": "ambientes.html#criando-ambientes",
-    "title": "3  Ambientes",
-    "section": "3.2 Criando Ambientes",
-    "text": "3.2 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x00000228cf434bd0>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nhttps://rstudio-education.github.io/hopr/, especialmente capítulo 8 - Environments"
+    "title": "2  Ambientes",
+    "section": "2.4 Criando Ambientes",
+    "text": "2.4 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000027cd3c963e0>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table"
+  },
+  {
+    "objectID": "funcoes.html",
+    "href": "funcoes.html",
+    "title": "3  Funções",
+    "section": "",
+    "text": "funcao_hello <- function(){\n  print('Hello')\n}\n\nfuncao_hello()\n\n[1] \"Hello\"\n\nfuncao_hello  \n\nfunction(){\n  print('Hello')\n}"
+  },
+  {
+    "objectID": "referencias.html",
+    "href": "referencias.html",
+    "title": "Referências",
+    "section": "",
+    "text": "Em criação."
   }
 ]

@@ -2,29 +2,55 @@
 
 ## Global Env
 
+O Global Env é o ambiente "atual" do usuário; É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser "visualizado" com os comandos abaixo:
+
 ```{r}
 globalenv()
+.GlobalEnv
+```
 
+Podemos visualizar os objetos presentes no ambiente desejado com a função ls.
+
+```{r}
+
+variavel <- 5
+ls(globalenv())
+
+ls()
+
+```
+
+## Ambiente de Pacotes
+
+Os pacotes também possuem ambientes e podemos listar seu "conteúdo" com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.
+
+```{r}
+library(data.table)
+as.environment("package:data.table")
+ls(as.environment('package:data.table'))[1:10]
+
+```
+
+## Ambientes "Pai"
+
+
+```{r}
 parent.env(.GlobalEnv)
 parent.env(as.environment("package:stats"))
 parent.env(as.environment("package:graphics"))
 parent.env(as.environment("package:grDevices"))
-parent.env(as.environment("package:utils"))
-parent.env(as.environment("package:datasets"))
-parent.env(as.environment("package:methods"))
-parent.env(as.environment("Autoloads"))
 parent.env(as.environment("package:base"))
-
 
 ```
 
-### Buscar Ambientes Pai (Recursivamente)
+### Buscar Ambiente Pai (Recursivamente)
+
 ```{r}
 
 envs <- function(ambiente){
  
   if(environmentName(ambiente)=="R_EmptyEnv"){
-    return ('Ambiente informado é R_EmptyEnv.')
+    return ('Ambiente informado é R_EmptyEnv. Fim da busca.')
     }
     
     print(parent.env(ambiente))
@@ -35,7 +61,6 @@ envs <- function(ambiente){
 envs(globalenv())
 
 ```
-
 
 ## Criando Ambientes
 
@@ -56,4 +81,7 @@ amb1$x
 ```
 
 ---------------------
-https://rstudio-education.github.io/hopr/, especialmente capítulo 8 - Environments
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), especialmente capítulo 8 - Environments
+
+[data.table](https://rdatatable.gitlab.io/data.table/)
+
