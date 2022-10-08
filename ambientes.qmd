@@ -2,7 +2,7 @@
 
 ## Global Env
 
-O Global Env é o ambiente "atual" do usuário; É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser "visualizado" com os comandos abaixo:
+O Global Env é o ambiente "atual" do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser "visualizado" com os comandos abaixo:
 
 ```{r}
 globalenv()
@@ -37,8 +37,6 @@ ls(as.environment('package:data.table'))[1:10]
 ```{r}
 parent.env(.GlobalEnv)
 parent.env(as.environment("package:stats"))
-parent.env(as.environment("package:graphics"))
-parent.env(as.environment("package:grDevices"))
 parent.env(as.environment("package:base"))
 
 ```
@@ -47,18 +45,26 @@ parent.env(as.environment("package:base"))
 
 ```{r}
 
-envs <- function(ambiente){
+buscar_envs_pai <- function(ambiente, nivel = 1){
  
-  if(environmentName(ambiente)=="R_EmptyEnv"){
+    if(environmentName(ambiente)=="R_EmptyEnv"){
     return ('Ambiente informado é R_EmptyEnv. Fim da busca.')
     }
     
-    print(parent.env(ambiente))
+    marcacao <- ''
+    for (i in 1:nivel){
+      
+      marcacao <- paste0(' ', marcacao)
+    }
     
-    envs(parent.env(ambiente))
+    writeLines(paste0(marcacao, '|-- ', environmentName(parent.env(ambiente))))
+
+    nivel <- nivel + 1
+    buscar_envs_pai(parent.env(ambiente), nivel = nivel)
 
 }
-envs(globalenv())
+buscar_envs_pai(globalenv())
+
 
 ```
 
@@ -85,3 +91,4 @@ amb1$x
 
 [data.table](https://rdatatable.gitlab.io/data.table/)
 
+[R-Bloggers - Environments Name](https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package/)

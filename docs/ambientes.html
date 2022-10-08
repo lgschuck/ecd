@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="global-env" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="global-env"><span class="header-section-number">2.1</span> Global Env</h2>
-<p>O Global Env é o ambiente “atual” do usuário; É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:</p>
+<p>O Global Env é o ambiente “atual” do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">globalenv</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -288,23 +288,7 @@ attr(,"name")
 attr(,"path")
 [1] "C:/Program Files/R/R-4.2.1/library/graphics"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:graphics"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: package:grDevices&gt;
-attr(,"name")
-[1] "package:grDevices"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/grDevices"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:grDevices"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: package:utils&gt;
-attr(,"name")
-[1] "package:utils"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/utils"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:base"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:base"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;environment: R_EmptyEnv&gt;</code></pre>
 </div>
@@ -312,62 +296,37 @@ attr(,"path")
 <section id="buscar-ambiente-pai-recursivamente" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">2.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>envs <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente){</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">environmentName</span>(ambiente)<span class="sc">==</span><span class="st">"R_EmptyEnv"</span>){</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (<span class="st">'Ambiente informado é R_EmptyEnv. Fim da busca.'</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">parent.env</span>(ambiente))</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">envs</span>(<span class="fu">parent.env</span>(ambiente))</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">envs</span>(<span class="fu">globalenv</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>buscar_envs_pai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">environmentName</span>(ambiente)<span class="sc">==</span><span class="st">"R_EmptyEnv"</span>){</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (<span class="st">'Ambiente informado é R_EmptyEnv. Fim da busca.'</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    marcacao <span class="ot">&lt;-</span> <span class="st">''</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nivel){</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>      marcacao <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">' '</span>, marcacao)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">writeLines</span>(<span class="fu">paste0</span>(marcacao, <span class="st">'|-- '</span>, <span class="fu">environmentName</span>(<span class="fu">parent.env</span>(ambiente))))</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    nivel <span class="ot">&lt;-</span> nivel <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">buscar_envs_pai</span>(<span class="fu">parent.env</span>(ambiente), <span class="at">nivel =</span> nivel)</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">buscar_envs_pai</span>(<span class="fu">globalenv</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: package:data.table&gt;
-attr(,"name")
-[1] "package:data.table"
-attr(,"path")
-[1] "C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table"
-&lt;environment: 0x000001ab7dd8b8a8&gt;
-attr(,"name")
-[1] "tools:quarto"
-&lt;environment: package:stats&gt;
-attr(,"name")
-[1] "package:stats"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/stats"
-&lt;environment: package:graphics&gt;
-attr(,"name")
-[1] "package:graphics"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/graphics"
-&lt;environment: package:grDevices&gt;
-attr(,"name")
-[1] "package:grDevices"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/grDevices"
-&lt;environment: package:utils&gt;
-attr(,"name")
-[1] "package:utils"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/utils"
-&lt;environment: package:datasets&gt;
-attr(,"name")
-[1] "package:datasets"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/datasets"
-&lt;environment: package:methods&gt;
-attr(,"name")
-[1] "package:methods"
-attr(,"path")
-[1] "C:/Program Files/R/R-4.2.1/library/methods"
-&lt;environment: 0x000001ab7d736c78&gt;
-attr(,"name")
-[1] "Autoloads"
-&lt;environment: base&gt;
-&lt;environment: R_EmptyEnv&gt;</code></pre>
+<pre><code> |-- package:data.table
+  |-- tools:quarto
+   |-- package:stats
+    |-- package:graphics
+     |-- package:grDevices
+      |-- package:utils
+       |-- package:datasets
+        |-- package:methods
+         |-- Autoloads
+          |-- base
+           |-- R_EmptyEnv</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ambiente informado é R_EmptyEnv. Fim da busca."</code></pre>
@@ -378,25 +337,25 @@ attr(,"name")
 <section id="criando-ambientes" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="criando-ambientes"><span class="header-section-number">2.4</span> Criando Ambientes</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>amb1 <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>amb1 <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x000001ab04a624a0&gt;</code></pre>
+<pre><code>&lt;environment: 0x00000262e9cd1170&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
@@ -404,6 +363,7 @@ attr(,"name")
 <hr>
 <p><a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>, especialmente capítulo 8 - Environments</p>
 <p><a href="https://rdatatable.gitlab.io/data.table/">data.table</a></p>
+<p><a href="https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package/">R-Bloggers - Environments Name</a></p>
 
 
 </section>
