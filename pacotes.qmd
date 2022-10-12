@@ -1,0 +1,23 @@
+# Pacotes
+
+## Pacotes Instalados
+
+```{r}
+# Exibindo 5 primeiros
+as.data.frame(installed.packages())$Package[1:5]
+
+```
+
+## Pacotes Disponíveis
+
+Função available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de
+getOption("repos").
+```{r}
+options(repos = 'https://cran.rstudio.com/')
+
+# Exibindo 5 primeiros
+available.packages()[1:5]
+
+
+```
+

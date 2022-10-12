@@ -1,17 +1,23 @@
----
-title: "Funções"
----
+# Funções
+
+## Função x Ambiente
 
 ```{r}
 
-funcao_hello <- function(){
-  print('Hello')
+funcao_exibir_envs <- function(){
+  print('Ambiente atual:')
+  print(environment()) 
+  
+  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))
 }
 
-funcao_hello()
+funcao_exibir_envs()
 
 
-funcao_hello  
+funcao_exibir_envs  
 
 ```
 
+---------------------
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), 
+especialmente capítulo 8 - Environments

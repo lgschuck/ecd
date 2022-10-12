@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ci3nc1a de D4do$ - 2&nbsp; Ambientes</title>
+<title>eRando em Ci3nc1a de D4do$ - 3&nbsp; Ambientes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./funcoes.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./pacotes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ambientes</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -171,12 +171,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ambientes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./pacotes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pacotes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./ambientes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,13 +198,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#global-env" id="toc-global-env" class="nav-link active" data-scroll-target="#global-env"><span class="toc-section-number">2.1</span>  Global Env</a></li>
-  <li><a href="#ambiente-de-pacotes" id="toc-ambiente-de-pacotes" class="nav-link" data-scroll-target="#ambiente-de-pacotes"><span class="toc-section-number">2.2</span>  Ambiente de Pacotes</a></li>
-  <li><a href="#ambientes-pai" id="toc-ambientes-pai" class="nav-link" data-scroll-target="#ambientes-pai"><span class="toc-section-number">2.3</span>  Ambientes “Pai”</a>
+  <li><a href="#global-env" id="toc-global-env" class="nav-link active" data-scroll-target="#global-env"><span class="toc-section-number">3.1</span>  Global Env</a></li>
+  <li><a href="#ambiente-de-pacotes" id="toc-ambiente-de-pacotes" class="nav-link" data-scroll-target="#ambiente-de-pacotes"><span class="toc-section-number">3.2</span>  Ambiente de Pacotes</a></li>
+  <li><a href="#ambientes-pai" id="toc-ambientes-pai" class="nav-link" data-scroll-target="#ambientes-pai"><span class="toc-section-number">3.3</span>  Ambientes “Pai”</a>
   <ul class="collapse">
-  <li><a href="#buscar-ambiente-pai-recursivamente" id="toc-buscar-ambiente-pai-recursivamente" class="nav-link" data-scroll-target="#buscar-ambiente-pai-recursivamente"><span class="toc-section-number">2.3.1</span>  Buscar Ambiente Pai (Recursivamente)</a></li>
+  <li><a href="#buscar-ambiente-pai-recursivamente" id="toc-buscar-ambiente-pai-recursivamente" class="nav-link" data-scroll-target="#buscar-ambiente-pai-recursivamente"><span class="toc-section-number">3.3.1</span>  Buscar Ambiente Pai (Recursivamente)</a></li>
   </ul></li>
-  <li><a href="#criando-ambientes" id="toc-criando-ambientes" class="nav-link" data-scroll-target="#criando-ambientes"><span class="toc-section-number">2.4</span>  Criando Ambientes</a></li>
+  <li><a href="#criando-ambientes" id="toc-criando-ambientes" class="nav-link" data-scroll-target="#criando-ambientes"><span class="toc-section-number">3.4</span>  Criando Ambientes</a></li>
   </ul>
 </nav>
     </div>
@@ -208,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ambientes</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></h1>
 </div>
 
 
@@ -222,8 +227,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="global-env" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="global-env"><span class="header-section-number">2.1</span> Global Env</h2>
+<section id="global-env" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="global-env"><span class="header-section-number">3.1</span> Global Env</h2>
 <p>O Global Env é o ambiente “atual” do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">globalenv</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -248,8 +253,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="ambiente-de-pacotes" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="ambiente-de-pacotes"><span class="header-section-number">2.2</span> Ambiente de Pacotes</h2>
+<section id="ambiente-de-pacotes" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ambiente-de-pacotes"><span class="header-section-number">3.2</span> Ambiente de Pacotes</h2>
 <p>Os pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
@@ -269,8 +274,8 @@ attr(,"path")
 </div>
 </div>
 </section>
-<section id="ambientes-pai" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="ambientes-pai"><span class="header-section-number">2.3</span> Ambientes “Pai”</h2>
+<section id="ambientes-pai" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="ambientes-pai"><span class="header-section-number">3.3</span> Ambientes “Pai”</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(.GlobalEnv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -293,8 +298,8 @@ attr(,"path")
 <pre><code>&lt;environment: R_EmptyEnv&gt;</code></pre>
 </div>
 </div>
-<section id="buscar-ambiente-pai-recursivamente" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">2.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
+<section id="buscar-ambiente-pai-recursivamente" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">3.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>buscar_envs_pai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> </span>
@@ -334,14 +339,14 @@ attr(,"path")
 </div>
 </section>
 </section>
-<section id="criando-ambientes" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="criando-ambientes"><span class="header-section-number">2.4</span> Criando Ambientes</h2>
+<section id="criando-ambientes" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="criando-ambientes"><span class="header-section-number">3.4</span> Criando Ambientes</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>amb1 <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x00000262e9cd1170&gt;</code></pre>
+<pre><code>&lt;environment: 0x0000025ba82e65a0&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -469,13 +474,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span>
+      <a href="./pacotes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pacotes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./funcoes.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funções</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Funções</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
