@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "eRando em Ci3nc1a de D4do$",
+    "title": "eRand0 em Ci3nc1a de D4do$",
     "section": "",
-    "text": "Atualizado: 2022-out-12 - 19:59\nEste é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é um projeto pessoal usado como fonte de consulta e aprendizado, sem compromisso com uma estrutura específica.\nMuitas vezes o exposto aqui é a prática (para fixação e exploração) de conceitos apresentados em outros materiais. Assim todas as fontes utilizadas, mesmo que de forma subjetiva, são citadas.\n\nDates and Times in R"
+    "text": "Prefácio\nAtualizado: 2022-nov-05 - 22:29\nEste é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é um projeto pessoal usado como fonte de consulta e aprendizado, sem compromisso com uma estrutura específica.\nMuitas vezes o exposto aqui é a prática (para fixação e exploração) de conceitos apresentados em outros materiais. Assim todas as fontes utilizadas, mesmo que de forma subjetiva, são citadas.\n\nDates and Times in R"
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "intro.html#linguagem-r",
+    "href": "intro.html#linguagem-r",
     "title": "1  Introdução",
-    "section": "",
-    "text": "Conforme o site r-project.org o R ’é um ambiente de software livre para computação estatística e gráficos’¹."
+    "section": "1.1 Linguagem R",
+    "text": "1.1 Linguagem R\nConforme o site r-project.org o R ’é um ambiente de software livre para computação estatística e gráficos’¹."
   },
   {
     "objectID": "intro.html#ciência-de-dados",
@@ -21,53 +21,81 @@
     "text": "1.2 Ciência de Dados\nUma definição da IBM para Ciência de Dados:\n’A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização’².\n\nTraduções feitas com auxílio do Google Tradutor\n¹ https://www.r-project.org/\n² https://www.ibm.com/cloud/learn/data-science-introduction"
   },
   {
-    "objectID": "pacotes.html",
-    "href": "pacotes.html",
-    "title": "2  Pacotes",
-    "section": "",
-    "text": "# Exibindo 5 primeiros\nas.data.frame(installed.packages())$Package[1:5]\n\n[1] \"arrow\"      \"askpass\"    \"assertthat\" \"available\"  \"backports\""
+    "objectID": "nomes.html#nomes",
+    "href": "nomes.html#nomes",
+    "title": "2  Nomeando Objetos",
+    "section": "2.1 Nomes",
+    "text": "2.1 Nomes\nA linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (backticks).\n\nx <- 10\n\n.x <- 10\n\n`nome com espaco` <- 55\n\n\n2.1.1 Caracteres ‘Proibidos’\nAlguns caracteres não podem ser usados em nomes de objetos e nomes de objetos não podem começar por números. Números podem ser usados após primeiro caractere.\n\nx@ <- 10 #Error: unexpected assignment in ...\nx! <- 10 #Error: unexpected assignment in ...\nx& <- 10 #Error: unexpected assignment in ...\n55x <- 10 #Error: unexpected assignment in ...\n\n\nx55x <- 888\n\nx55x\n\n[1] 888\n\n\nEntretanto utilizando os nomes com crases, é possível ‘burlar’ estas limitações.\n\n`55 teste $@-#-$` <- 123456\n\n`55 teste $@-#-$`\n\n[1] 123456"
+  },
+  {
+    "objectID": "nomes.html#case-sensitive",
+    "href": "nomes.html#case-sensitive",
+    "title": "2  Nomeando Objetos",
+    "section": "2.2 Case Sensitive",
+    "text": "2.2 Case Sensitive\nR é uma linguagemn case sensitive, ou seja, ela diferencia maíusculas de minúsculas. Assim um objeto com nome de Teste é difrente de teste ou tesTe ou TESTE…\n\nteste <- 10\nTeste <- 15\ntesTe <- 20\nTESTE <- 25\n\nls()\n\n[1] \"55 teste $@-#-$\" \"nome com espaco\" \"teste\"           \"tesTe\"          \n[5] \"Teste\"           \"TESTE\"           \"x\"               \"x55x\""
+  },
+  {
+    "objectID": "nomes.html#convenções",
+    "href": "nomes.html#convenções",
+    "title": "2  Nomeando Objetos",
+    "section": "2.3 Convenções",
+    "text": "2.3 Convenções\nConforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, etc.\nUm bom guia é o The tidyverse style guide. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.\n\n# camelCase\nobjetoTeste <- 'Teste Camel Case'\n\n# snake_case\nobjeto_teste <- 'Teste snake_case'\n\n\nHands-On Programming with R, especialmente capítulo 2 - The Very Basics\nR Manuals :: An Introduction to R - Capítulo 1\nNaming_convention_(programming)\nThe tidyverse style guide"
+  },
+  {
+    "objectID": "data_frames.html#o-que-são-data-frames",
+    "href": "data_frames.html#o-que-são-data-frames",
+    "title": "3  Data Frames",
+    "section": "3.1 O que são data frames ?",
+    "text": "3.1 O que são data frames ?\nConforme o próprio manual do R data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. Deforma resumida um data.frame é uma estrutura com n colunas (variáveis) e n registros (casos, observações, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados em cada coluna.\n\nclass(mtcars)\n\n[1] \"data.frame\"\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\nR Manuals :: R Language Definition - Capítulo 2"
+  },
+  {
+    "objectID": "pacotes.html#pacotes-instalados",
+    "href": "pacotes.html#pacotes-instalados",
+    "title": "4  Pacotes",
+    "section": "4.1 Pacotes Instalados",
+    "text": "4.1 Pacotes Instalados\n\n# Exibindo 5 primeiros\nas.data.frame(installed.packages())$Package[1:5]\n\n[1] \"arrow\"      \"askpass\"    \"assertthat\" \"available\"  \"backports\""
   },
   {
     "objectID": "pacotes.html#pacotes-disponíveis",
     "href": "pacotes.html#pacotes-disponíveis",
-    "title": "2  Pacotes",
-    "section": "2.2 Pacotes Disponíveis",
-    "text": "2.2 Pacotes Disponíveis\nFunção available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).\n\noptions(repos = 'https://cran.rstudio.com/')\n\n# Exibindo 5 primeiros\navailable.packages()[1:5]\n\n[1] \"A3\"         \"AATtools\"   \"ABACUS\"     \"abbreviate\" \"abbyyR\""
+    "title": "4  Pacotes",
+    "section": "4.2 Pacotes Disponíveis",
+    "text": "4.2 Pacotes Disponíveis\nFunção available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).\n\noptions(repos = 'https://cran.rstudio.com/')\n\n# Exibindo 5 primeiros\navailable.packages()[1:5]\n\n[1] \"A3\"         \"AATtools\"   \"ABACUS\"     \"abbreviate\" \"abbyyR\""
   },
   {
-    "objectID": "ambientes.html",
-    "href": "ambientes.html",
-    "title": "3  Ambientes",
-    "section": "",
-    "text": "O Global Env é o ambiente “atual” do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:\n\nglobalenv()\n\n<environment: R_GlobalEnv>\n\n.GlobalEnv\n\n<environment: R_GlobalEnv>\n\n\nPodemos visualizar os objetos presentes no ambiente desejado com a função ls.\n\nvariavel <- 5\nls(globalenv())\n\n[1] \"variavel\"\n\nls()\n\n[1] \"variavel\""
+    "objectID": "ambientes.html#global-env",
+    "href": "ambientes.html#global-env",
+    "title": "5  Ambientes",
+    "section": "5.1 Global Env",
+    "text": "5.1 Global Env\nO Global Env é o ambiente “atual” do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser “visualizado” com os comandos abaixo:\n\nglobalenv()\n\n<environment: R_GlobalEnv>\n\n.GlobalEnv\n\n<environment: R_GlobalEnv>\n\n\nPodemos visualizar os objetos presentes no ambiente desejado com a função ls.\n\nvariavel <- 5\nls(globalenv())\n\n[1] \"variavel\"\n\nls()\n\n[1] \"variavel\""
   },
   {
     "objectID": "ambientes.html#ambiente-de-pacotes",
     "href": "ambientes.html#ambiente-de-pacotes",
-    "title": "3  Ambientes",
-    "section": "3.2 Ambiente de Pacotes",
-    "text": "3.2 Ambiente de Pacotes\nOs pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.\n\nlibrary(data.table)\nas.environment(\"package:data.table\")\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nls(as.environment('package:data.table'))[1:10]\n\n [1] \"%between%\"     \"%chin%\"        \"%flike%\"       \"%ilike%\"      \n [5] \"%inrange%\"     \"%like%\"        \":=\"            \"address\"      \n [9] \"alloc.col\"     \"as.data.table\""
+    "title": "5  Ambientes",
+    "section": "5.2 Ambiente de Pacotes",
+    "text": "5.2 Ambiente de Pacotes\nOs pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.\n\nlibrary(data.table)\nas.environment(\"package:data.table\")\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nls(as.environment('package:data.table'))[1:10]\n\n [1] \"%between%\"     \"%chin%\"        \"%flike%\"       \"%ilike%\"      \n [5] \"%inrange%\"     \"%like%\"        \":=\"            \"address\"      \n [9] \"alloc.col\"     \"as.data.table\""
   },
   {
     "objectID": "ambientes.html#ambientes-pai",
     "href": "ambientes.html#ambientes-pai",
-    "title": "3  Ambientes",
-    "section": "3.3 Ambientes “Pai”",
-    "text": "3.3 Ambientes “Pai”\n\nparent.env(.GlobalEnv)\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nparent.env(as.environment(\"package:stats\"))\n\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n\nparent.env(as.environment(\"package:base\"))\n\n<environment: R_EmptyEnv>\n\n\n\n3.3.1 Buscar Ambiente Pai (Recursivamente)\n\nbuscar_envs_pai <- function(ambiente, nivel = 1){\n \n    if(environmentName(ambiente)==\"R_EmptyEnv\"){\n    return ('Ambiente informado é R_EmptyEnv. Fim da busca.')\n    }\n    \n    marcacao <- ''\n    for (i in 1:nivel){\n      \n      marcacao <- paste0(' ', marcacao)\n    }\n    \n    writeLines(paste0(marcacao, '|-- ', environmentName(parent.env(ambiente))))\n\n    nivel <- nivel + 1\n    buscar_envs_pai(parent.env(ambiente), nivel = nivel)\n\n}\nbuscar_envs_pai(globalenv())\n\n |-- package:data.table\n  |-- tools:quarto\n   |-- package:stats\n    |-- package:graphics\n     |-- package:grDevices\n      |-- package:utils\n       |-- package:datasets\n        |-- package:methods\n         |-- Autoloads\n          |-- base\n           |-- R_EmptyEnv\n\n\n[1] \"Ambiente informado é R_EmptyEnv. Fim da busca.\""
+    "title": "5  Ambientes",
+    "section": "5.3 Ambientes “Pai”",
+    "text": "5.3 Ambientes “Pai”\n\nparent.env(.GlobalEnv)\n\n<environment: package:data.table>\nattr(,\"name\")\n[1] \"package:data.table\"\nattr(,\"path\")\n[1] \"C:/Users/luisg/AppData/Local/R/win-library/4.2/data.table\"\n\nparent.env(as.environment(\"package:stats\"))\n\n<environment: package:graphics>\nattr(,\"name\")\n[1] \"package:graphics\"\nattr(,\"path\")\n[1] \"C:/Program Files/R/R-4.2.1/library/graphics\"\n\nparent.env(as.environment(\"package:base\"))\n\n<environment: R_EmptyEnv>\n\n\n\n5.3.1 Buscar Ambiente Pai (Recursivamente)\n\nbuscar_envs_pai <- function(ambiente, nivel = 1){\n \n    if(environmentName(ambiente)==\"R_EmptyEnv\"){\n    return ('Ambiente informado é R_EmptyEnv. Fim da busca.')\n    }\n    \n    marcacao <- ''\n    for (i in 1:nivel){\n      \n      marcacao <- paste0(' ', marcacao)\n    }\n    \n    writeLines(paste0(marcacao, '|-- ', environmentName(parent.env(ambiente))))\n\n    nivel <- nivel + 1\n    buscar_envs_pai(parent.env(ambiente), nivel = nivel)\n\n}\nbuscar_envs_pai(globalenv())\n\n |-- package:data.table\n  |-- tools:quarto\n   |-- tools:quarto\n    |-- package:stats\n     |-- package:graphics\n      |-- package:grDevices\n       |-- package:utils\n        |-- package:datasets\n         |-- package:methods\n          |-- Autoloads\n           |-- base\n            |-- R_EmptyEnv\n\n\n[1] \"Ambiente informado é R_EmptyEnv. Fim da busca.\""
   },
   {
     "objectID": "ambientes.html#criando-ambientes",
     "href": "ambientes.html#criando-ambientes",
-    "title": "3  Ambientes",
-    "section": "3.4 Criando Ambientes",
-    "text": "3.4 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000025ba82e65a0>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name"
+    "title": "5  Ambientes",
+    "section": "5.4 Criando Ambientes",
+    "text": "5.4 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x000001ce22330190>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name"
   },
   {
-    "objectID": "funcoes.html",
-    "href": "funcoes.html",
-    "title": "4  Funções",
-    "section": "",
-    "text": "funcao_exibir_envs <- function(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x000002717cdca618>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments"
+    "objectID": "funcoes.html#função-x-ambiente",
+    "href": "funcoes.html#função-x-ambiente",
+    "title": "6  Funções",
+    "section": "6.1 Função x Ambiente",
+    "text": "6.1 Função x Ambiente\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x000001294df12eb0>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments"
   },
   {
     "objectID": "referencias.html",

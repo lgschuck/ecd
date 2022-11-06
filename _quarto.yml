@@ -3,12 +3,14 @@ project:
   output-dir: docs
 
 book:
-  title: "eRando em Ci3nc1a de D4do$"
+  title: "eRand0 em Ci3nc1a de D4do$"
   author: "Luís Gustavo Schuck"
   date: today
   chapters:
     - index.qmd
     - intro.qmd
+    - nomes.qmd
+    - data_frames.qmd
     - pacotes.qmd
     - ambientes.qmd
     - funcoes.qmd

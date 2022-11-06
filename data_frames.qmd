@@ -1,0 +1,15 @@
+# Data Frames
+
+## O que são data frames ? 
+
+Conforme o próprio manual do R data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. Deforma resumida um data.frame é uma estrutura com n colunas (variáveis) e n registros (casos, observações, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados em cada coluna.
+
+```{r}
+
+class(mtcars)
+head(mtcars)
+
+```
+
+---------------------
+[R Manuals :: R Language Definition - Capítulo 2](https://rstudio.github.io/r-manuals/r-lang/Objects.html#data-frame-objects)
