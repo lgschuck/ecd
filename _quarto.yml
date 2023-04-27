@@ -9,6 +9,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - rstudio.qmd
     - nomes.qmd
     - data_frames.qmd
     - pacotes.qmd
@@ -21,9 +22,3 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-  # pdf:
-  #   documentclass: scrreprt
-
-
-
-
