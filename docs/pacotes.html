@@ -215,6 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#pacotes-instalados" id="toc-pacotes-instalados" class="nav-link active" data-scroll-target="#pacotes-instalados"><span class="toc-section-number">5.1</span>  Pacotes Instalados</a></li>
   <li><a href="#pacotes-disponíveis" id="toc-pacotes-disponíveis" class="nav-link" data-scroll-target="#pacotes-disponíveis"><span class="toc-section-number">5.2</span>  Pacotes Disponíveis</a></li>
+  <li><a href="#dependências-de-pacotes" id="toc-dependências-de-pacotes" class="nav-link" data-scroll-target="#dependências-de-pacotes"><span class="toc-section-number">5.3</span>  Dependências de Pacotes</a></li>
   </ul>
 </nav>
     </div>
@@ -259,6 +260,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "A3"            "AalenJohansen" "AATtools"      "ABACUS"       
 [5] "abbreviate"   </code></pre>
+</div>
+</div>
+</section>
+<section id="dependências-de-pacotes" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="dependências-de-pacotes"><span class="header-section-number">5.3</span> Dependências de Pacotes</h2>
+<p>O pacote tools oferece função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tools<span class="sc">::</span><span class="fu">package_dependencies</span>(<span class="st">'dplyr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$dplyr
+ [1] "cli"        "generics"   "glue"       "lifecycle"  "magrittr"  
+ [6] "methods"    "pillar"     "R6"         "rlang"      "tibble"    
+[11] "tidyselect" "utils"      "vctrs"     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tools<span class="sc">::</span><span class="fu">package_dependencies</span>(<span class="st">'dplyr'</span>, <span class="at">recursive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$dplyr
+ [1] "cli"        "generics"   "glue"       "lifecycle"  "magrittr"  
+ [6] "methods"    "pillar"     "R6"         "rlang"      "tibble"    
+[11] "tidyselect" "utils"      "vctrs"      "fansi"      "utf8"      
+[16] "pkgconfig"  "withr"      "grDevices"  "graphics"   "stats"     </code></pre>
 </div>
 </div>
 

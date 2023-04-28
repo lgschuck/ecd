@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "eRand0 em Ci3nc1a de D4do$",
     "section": "",
-    "text": "Prefácio\nAtualizado: 2023-abr-27 - 21:33\nEste é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é um projeto pessoal usado como fonte de consulta e aprendizado, sem compromisso com uma estrutura específica.\nMuitas vezes o exposto aqui é a prática (para fixação e exploração) de conceitos apresentados em outros materiais. Assim todas as fontes utilizadas, mesmo que de forma subjetiva, são citadas.\n\nDates and Times in R"
+    "text": "Prefácio\nAtualizado: 2023-abr-27 - 21:53\nEste é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é um projeto pessoal usado como fonte de consulta e aprendizado, sem compromisso com uma estrutura específica.\nMuitas vezes o exposto aqui é a prática (para fixação e exploração) de conceitos apresentados em outros materiais. Assim todas as fontes utilizadas, mesmo que de forma subjetiva, são citadas.\n\nDates and Times in R"
   },
   {
     "objectID": "intro.html#linguagem-r",
@@ -25,7 +25,7 @@
     "href": "rstudio.html#o-que-é-o-rstudio",
     "title": "2  RStudio",
     "section": "2.1 O que é o RStudio",
-    "text": "2.1 O que é o RStudio\nO RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. O RStudio fornece muitas funcionalidades para programação em R. Neste capítulo serão apresentadas algumas das principais funcionalidades.\n\n\n\n\n\n\n\n\n\n\n\n2.1.1 Layout\nO RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma séria de abas.\n\nConsole: neste painel está embutido o R propriamente dito.\n\n\n\n\n\n\n\nFiles: estrutura de pastas do sistema.\n\n\n\n\n\n\n\nEnvironment: apresenta os objetos criados no ambiente do R.\n\n\n\n\n\n\n\nSource: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\n\n\nRStudio\nIDE"
+    "text": "2.1 O que é o RStudio\nO RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. O RStudio fornece muitas funcionalidades para programação em R. Neste capítulo serão apresentadas algumas das principais funcionalidades.\n\n\n\n\n\n\n\n\n\n\n\n2.1.1 Layout\nO RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.\n\nConsole: neste painel está embutido o R propriamente dito.\n\n\n\n\n\n\n\nFiles: estrutura de pastas do sistema.\n\n\n\n\n\n\n\nEnvironment: apresenta os objetos criados no ambiente do R.\n\n\n\n\n\n\n\nSource: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\n\n\nRStudio\nIDE"
   },
   {
     "objectID": "nomes.html#nomes",
@@ -70,6 +70,13 @@
     "text": "5.2 Pacotes Disponíveis\nFunção available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).\n\noptions(repos = 'https://cran.rstudio.com/')\n\n# Exibindo 5 primeiros\navailable.packages()[1:5]\n\n[1] \"A3\"            \"AalenJohansen\" \"AATtools\"      \"ABACUS\"       \n[5] \"abbreviate\""
   },
   {
+    "objectID": "pacotes.html#dependências-de-pacotes",
+    "href": "pacotes.html#dependências-de-pacotes",
+    "title": "5  Pacotes",
+    "section": "5.3 Dependências de Pacotes",
+    "text": "5.3 Dependências de Pacotes\nO pacote tools oferece função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade.\n\ntools::package_dependencies('dplyr')\n\n$dplyr\n [1] \"cli\"        \"generics\"   \"glue\"       \"lifecycle\"  \"magrittr\"  \n [6] \"methods\"    \"pillar\"     \"R6\"         \"rlang\"      \"tibble\"    \n[11] \"tidyselect\" \"utils\"      \"vctrs\"     \n\ntools::package_dependencies('dplyr', recursive = T)\n\n$dplyr\n [1] \"cli\"        \"generics\"   \"glue\"       \"lifecycle\"  \"magrittr\"  \n [6] \"methods\"    \"pillar\"     \"R6\"         \"rlang\"      \"tibble\"    \n[11] \"tidyselect\" \"utils\"      \"vctrs\"      \"fansi\"      \"utf8\"      \n[16] \"pkgconfig\"  \"withr\"      \"grDevices\"  \"graphics\"   \"stats\""
+  },
+  {
     "objectID": "ambientes.html#global-env",
     "href": "ambientes.html#global-env",
     "title": "6  Ambientes",
@@ -95,14 +102,14 @@
     "href": "ambientes.html#criando-ambientes",
     "title": "6  Ambientes",
     "section": "6.4 Criando Ambientes",
-    "text": "6.4 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x00000288f3e9e5e0>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name"
+    "text": "6.4 Criando Ambientes\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x000002db0306e308>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\namb1$x <- 10\n\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name"
   },
   {
     "objectID": "funcoes.html#função-x-ambiente",
     "href": "funcoes.html#função-x-ambiente",
     "title": "7  Funções",
     "section": "7.1 Função x Ambiente",
-    "text": "7.1 Função x Ambiente\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x000001dc38d57410>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments"
+    "text": "7.1 Função x Ambiente\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x000001aedd63b6f0>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:')\n  print(environment()) \n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments"
   },
   {
     "objectID": "referencias.html",

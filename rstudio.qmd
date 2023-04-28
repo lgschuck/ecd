@@ -10,7 +10,7 @@ O RStudio é um IDE (Integrated Development Environment) criado pela Posit para 
 
 ### Layout
 
-O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma séria de abas.
+O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.
 
 -   Console: neste painel está embutido o R propriamente dito.
 

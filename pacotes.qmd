@@ -21,3 +21,13 @@ available.packages()[1:5]
 
 ```
 
+## Dependências de Pacotes
+
+O pacote tools oferece função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade.
+```{r}
+tools::package_dependencies('dplyr')
+
+tools::package_dependencies('dplyr', recursive = T)
+
+```
+
