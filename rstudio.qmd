@@ -2,7 +2,7 @@
 
 ## O que é o RStudio
 
-O RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. O RStudio fornece muitas funcionalidades para progeamação em R. Neste capítulo serão apresentadas algumas das principais funcionalidades.
+O RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. O RStudio fornece muitas funcionalidades para programação em R. Neste capítulo serão apresentadas algumas das principais funcionalidades.
 
 ![](images/rstudio/img1.PNG){fig-align="center"}
 
@@ -12,13 +12,21 @@ O RStudio é um IDE (Integrated Development Environment) criado pela Posit para 
 
 O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma séria de abas.
 
--   Source: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
-
 -   Console: neste painel está embutido o R propriamente dito.
+
+![](images/rstudio/console.PNG){fig-align="center"}
 
 -   Files: estrutura de pastas do sistema.
 
+![](images/rstudio/files.PNG){fig-align="center"}
+
 -   Environment: apresenta os objetos criados no ambiente do R.
+
+![](images/rstudio/environment.PNG){fig-align="center"}
+
+-   Source: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
+
+![](images/rstudio/source.PNG){fig-align="center"}
 
 ------------------------------------------------------------------------
 
