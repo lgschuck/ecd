@@ -33,3 +33,5 @@ O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis
 [RStudio](https://posit.co/products/open-source/rstudio/)
 
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
+
+Última atualização: \`r format(file.info('rstudio.qmd')\$mtime, '%d/%m/%Y - %H:%M:%S')

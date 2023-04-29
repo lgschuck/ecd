@@ -17,3 +17,5 @@ Traduções feitas com auxílio do [Google Tradutor](https://translate.google.co
 ¹ https://www.r-project.org/
 
 ² https://www.ibm.com/cloud/learn/data-science-introduction
+
+Última atualização: `r format(file.info('intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

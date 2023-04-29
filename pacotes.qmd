@@ -31,3 +31,6 @@ tools::package_dependencies('dplyr', recursive = T)
 
 ```
 
+----------------------------------
+
+Última atualização: `r format(file.info('pacotes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

@@ -13,3 +13,5 @@ head(mtcars)
 
 ---------------------
 [R Manuals :: R Language Definition - Capítulo 2](https://rstudio.github.io/r-manuals/r-lang/Objects.html#data-frame-objects)
+
+Última atualização: `r format(file.info('data_frames.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

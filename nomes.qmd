@@ -78,3 +78,5 @@ objeto_teste <- 'Teste snake_case'
 [Naming_convention_(programming)](https://en.wikipedia.org/wiki/Naming_convention_(programming))
 
 [The tidyverse style guide](https://style.tidyverse.org/syntax.html)
+
+Última atualização: `r format(file.info('nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
