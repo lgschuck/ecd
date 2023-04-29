@@ -1,17 +1,82 @@
 # Data Frames
 
-## O que são data frames ? 
+## O que são data frames ?
 
-Conforme o próprio manual do R data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. Deforma resumida um data.frame é uma estrutura com n colunas (variáveis) e n registros (casos, observações, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados em cada coluna.
+Conforme o próprio manual do R, data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. De forma resumida um data.frame é uma estrutura tabular com colunas (variáveis, atributos, etc) e registros (casos, observações, instâncias, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados.
+
+Um data.frame possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto data.frame possui o mesmo nome 'data.frame'. Abaixo pode ser visualizada a classe do data.frame [Iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando head.
 
 ```{r}
-
-class(mtcars)
-head(mtcars)
+class(iris)
+head(iris)
 
 ```
 
----------------------
+### Atributos
+
+Os atributos "padrão" de um data.frame são: names, class e row.names. É possível acessá-los com a função attributes. O atributo names também pode ser obtido com a função names.
+
+```{r}
+attributes(iris)
+names(iris)
+```
+
+### Dimensões
+
+A função dim retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções nrow e ncol.
+
+```{r}
+dim(iris)
+nrow(iris)
+ncol(iris)
+```
+
+### Acessando Dados
+
+#### Índices
+
+Como a estrutura de um data.frame é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes (\[ \]): nome\[linha, coluna\]. Podem ser usados intervalos de índices com o operador ':'.
+
+```{r}
+# Acessar primeira linha e segunda coluna (Sepal.Width)
+iris[1,2]
+# Acessar linhas 1 até 3 e a segunda coluna
+iris[1:3, 2]
+```
+
+Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o data.frame seja editado. Por exemplo, caso em algum momento anterior a variável Sepal.Length tenha sido excluída, uma nova variável assumirá o índice 1. Além disto ao se ler o código não fica claro que variável está sendo acessada.
+
+#### Nomes
+
+Existem diversas outras formas para acessar dados de um data.frame, inclusive utilizando o nome da coluna de forma explícita.
+
+```{r}
+# Acessar primeira linha e segunda coluna (pelo nome)
+iris[1:3,'Sepal.Width']
+
+```
+
+Uma forma mais comum é utilizando o operador \$ para acessar a coluna pelo seu nome.
+
+```{r}
+# Acessar primeira linha e segunda coluna (pelo nome)
+iris[1,]$Sepal.Width
+# Acessar linhas 1 até 3 e a segunda coluna (pelo nome)
+iris[1:3,]$Sepal.Width
+```
+
+#### Filtrando Linhas
+
+Para acessar linhas que atendam condições específicas pode ser usada a forma abaixo:
+
+```{r}
+# Retorna valores de Speal.Width onde Petal.Length for maior do que 6
+iris[iris$Petal.Length > 6,'Sepal.Width']
+iris[iris$Petal.Length > 6,]$Sepal.Width
+```
+
+------------------------------------------------------------------------
+
 [R Manuals :: R Language Definition - Capítulo 2](https://rstudio.github.io/r-manuals/r-lang/Objects.html#data-frame-objects)
 
 Última atualização: `r format(file.info('data_frames.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
