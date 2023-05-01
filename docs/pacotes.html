@@ -216,6 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#pacotes-instalados" id="toc-pacotes-instalados" class="nav-link active" data-scroll-target="#pacotes-instalados"><span class="toc-section-number">5.1</span>  Pacotes Instalados</a></li>
   <li><a href="#pacotes-disponíveis" id="toc-pacotes-disponíveis" class="nav-link" data-scroll-target="#pacotes-disponíveis"><span class="toc-section-number">5.2</span>  Pacotes Disponíveis</a></li>
   <li><a href="#dependências-de-pacotes" id="toc-dependências-de-pacotes" class="nav-link" data-scroll-target="#dependências-de-pacotes"><span class="toc-section-number">5.3</span>  Dependências de Pacotes</a></li>
+  <li><a href="#pasta-de-instalação" id="toc-pasta-de-instalação" class="nav-link" data-scroll-target="#pasta-de-instalação"><span class="toc-section-number">5.4</span>  Pasta de Instalação</a></li>
   </ul>
 </nav>
     </div>
@@ -283,8 +284,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [16] "pkgconfig"  "withr"      "grDevices"  "graphics"   "stats"     </code></pre>
 </div>
 </div>
+</section>
+<section id="pasta-de-instalação" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="pasta-de-instalação"><span class="header-section-number">5.4</span> Pasta de Instalação</h2>
+<p>O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3"
+[2] "C:/Program Files/R/R-4.3.0/library"            </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "base64enc"   "bslib"       "cachem"      "cli"         "data.table" 
+ [6] "digest"      "ellipsis"    "evaluate"    "fastmap"     "fontawesome"
+[11] "fs"          "ftools"      "glue"        "highr"       "htmltools"  
+[16] "jquerylib"   "jsonlite"    "knitr"       "lifecycle"   "magrittr"   
+[21] "memoise"     "mime"        "R6"          "rappdirs"    "rlang"      
+[26] "rmarkdown"   "sass"        "stringi"     "stringr"     "tinytex"    
+[31] "vctrs"       "xfun"        "yaml"       </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "base"         "boot"         "class"        "cluster"      "codetools"   
+ [6] "compiler"     "datasets"     "foreign"      "graphics"     "grDevices"   
+[11] "grid"         "KernSmooth"   "lattice"      "MASS"         "Matrix"      
+[16] "methods"      "mgcv"         "nlme"         "nnet"         "parallel"    
+[21] "rpart"        "spatial"      "splines"      "stats"        "stats4"      
+[26] "survival"     "tcltk"        "tools"        "translations" "utils"       </code></pre>
+</div>
+</div>
+<p>A pasta padrão de instalação já possui diversos pacotes que foram instalados junto com o R, estes fazem parte dos pacotes “básicos” e os recomendados. Com o comando installed.packages é possível buscar estas informações. Abaixo, a função head exibe as primeiras linhas, no caso n = 1, e a função t transpõe o o data.frame de colunas para linhas. Foram usadas para simplificar a visualização.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote base</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">head</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span><span class="st">'base'</span>,], <span class="at">n =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      base                                
+Package               "base"                              
+LibPath               "C:/Program Files/R/R-4.3.0/library"
+Version               "4.3.0"                             
+Priority              "base"                              
+Depends               NA                                  
+Imports               NA                                  
+LinkingTo             NA                                  
+Suggests              "methods"                           
+Enhances              NA                                  
+License               "Part of R 4.3.0"                   
+License_is_FOSS       NA                                  
+License_restricts_use NA                                  
+OS_type               NA                                  
+MD5sum                NA                                  
+NeedsCompilation      NA                                  
+Built                 "4.3.0"                             </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote MASS</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">head</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span><span class="st">'MASS'</span>,], <span class="at">n =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      MASS                                             
+Package               "MASS"                                           
+LibPath               "C:/Program Files/R/R-4.3.0/library"             
+Version               "7.3-58.4"                                       
+Priority              "recommended"                                    
+Depends               "R (&gt;= 4.3.0), grDevices, graphics, stats, utils"
+Imports               "methods"                                        
+LinkingTo             NA                                               
+Suggests              "lattice, nlme, nnet, survival"                  
+Enhances              NA                                               
+License               "GPL-2 | GPL-3"                                  
+License_is_FOSS       NA                                               
+License_restricts_use NA                                               
+OS_type               NA                                               
+MD5sum                NA                                               
+NeedsCompilation      "yes"                                            
+Built                 "4.3.0"                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote data.table</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">head</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span><span class="st">'data.table'</span>,], <span class="at">n =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      data.table                                                                                               
+Package               "data.table"                                                                                             
+LibPath               "C:/Users/luisg/AppData/Local/R/win-library/4.3"                                                         
+Version               "1.14.8"                                                                                                 
+Priority              NA                                                                                                       
+Depends               "R (&gt;= 3.1.0)"                                                                                           
+Imports               "methods"                                                                                                
+LinkingTo             NA                                                                                                       
+Suggests              "bit64 (&gt;= 4.0.0), bit (&gt;= 4.0.4), curl, R.utils, xts,\nnanotime, zoo (&gt;= 1.8-1), yaml, knitr, rmarkdown"
+Enhances              NA                                                                                                       
+License               "MPL-2.0 | file LICENSE"                                                                                 
+License_is_FOSS       NA                                                                                                       
+License_restricts_use NA                                                                                                       
+OS_type               NA                                                                                                       
+MD5sum                NA                                                                                                       
+NeedsCompilation      "yes"                                                                                                    
+Built                 "4.3.0"                                                                                                  </code></pre>
+</div>
+</div>
+<p>Pode ser visto no campo Priority que o pacote base é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado, enquanto que o pacote data.table, um pacote “normal”, não possui informação no campo Priority.</p>
 <hr>
-<p>Última atualização: 28/04/2023 - 21:10:48</p>
+<p>Última atualização: 01/05/2023 - 12:06:57</p>
 
 
 </section>

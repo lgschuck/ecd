@@ -10,8 +10,8 @@ as.data.frame(installed.packages())$Package[1:5]
 
 ## Pacotes Disponíveis
 
-Função available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de
-getOption("repos").
+Função available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
+
 ```{r}
 options(repos = 'https://cran.rstudio.com/')
 
@@ -24,6 +24,7 @@ available.packages()[1:5]
 ## Dependências de Pacotes
 
 O pacote tools oferece função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade.
+
 ```{r}
 tools::package_dependencies('dplyr')
 
@@ -31,6 +32,37 @@ tools::package_dependencies('dplyr', recursive = T)
 
 ```
 
-----------------------------------
+## Pasta de Instalação
+
+O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths.
+
+```{r}
+.libPaths()
+
+list.files(.libPaths()[1])
+list.files(.libPaths()[2])
+
+```
+
+A pasta padrão de instalação já possui diversos pacotes que foram instalados junto com o R, estes fazem parte dos pacotes "básicos" e os recomendados. Com o comando installed.packages é possível buscar estas informações. Abaixo, a função head exibe as primeiras linhas, no caso n = 1, e a função t transpõe o o data.frame de colunas para linhas. Foram usadas para simplificar a visualização.
+
+```{r}
+pacotes <- as.data.frame(installed.packages())
+
+# pacote base
+t(head(pacotes[pacotes$Package =='base',], n = 1))
+
+# pacote MASS
+t(head(pacotes[pacotes$Package =='MASS',], n = 1))
+
+# pacote data.table
+t(head(pacotes[pacotes$Package =='data.table',], n = 1))
+
+
+```
+
+Pode ser visto no campo Priority que o pacote base é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote data.table, um pacote "normal", não possui informação no campo Priority.
+
+------------------------------------------------------------------------
 
 Última atualização: `r format(file.info('pacotes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
