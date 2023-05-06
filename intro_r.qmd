@@ -1,6 +1,4 @@
-# Introdução
-
-## Linguagem R
+# Linguagem R
 
 Conforme o site r-project.org o [R](https://www.r-project.org/about.html) 'é um ambiente de software livre para computação estatística e gráficos'¹. R é distribuída sob a licença [GPLv2](https://www.r-project.org/COPYING) e é mantida pela R Foundation. Atualmente, 2023, é uma das linguagens mais buscadas no Google como pode ser visto pelo [PYPL](https://pypl.github.io/PYPL.html).
 
@@ -23,24 +21,8 @@ Você pode encontrar uma infinidade de sites com conteúdo sobre R, abaixo algun
 
 -   https://www.bigbookofr.com/
 
-## Ciência de Dados
-
-Uma definição da IBM para Ciência de Dados:
-
-'A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização'².
-
-Uma definição mais sucinta da AWS:
-
-'A ciência de dados é o estudo dos dados para extrair insights significativos para os negócios'³.
-
 ------------------------------------------------------------------------
-
-Traduções feitas com auxílio do [Google Tradutor](https://translate.google.com.br/)
 
 ¹ https://www.r-project.org/
 
-² https://www.ibm.com/cloud/learn/data-science-introduction
-
-³ https://aws.amazon.com/pt/what-is/data-science/
-
-Última atualização: `r format(file.info('intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('intro_r.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

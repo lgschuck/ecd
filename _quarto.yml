@@ -6,17 +6,29 @@ book:
   title: "eRando em Ciênc1a de D4do$"
   author: "Luís Gustavo Schuck"
   date: today
+
+  page-footer:
+    left: |
+      eRando em Ciênc1a de D4do$
+    right: |
+      Material criado com software livre: R, RStudio e Quarto.
+
   chapters:
     - index.qmd
-    - intro.qmd
-    - rstudio.qmd
-    - nomes.qmd
-    - data_frames.qmd
-    - pacotes.qmd
-    - ambientes.qmd
-    - funcoes.qmd
-    - referencias.qmd
+    - part: intro_r.qmd
+      chapters:
+        - rstudio.qmd
+        - nomes.qmd
+        - data_frames.qmd
+        - pacotes.qmd
+        - ambientes.qmd
+        - funcoes.qmd
 
+    - part: intro_cd.qmd
+      chapters:
+        - vies_var.qmd
+
+    - referencias.qmd
 bibliography: references.bib
 
 format:

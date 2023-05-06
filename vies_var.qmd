@@ -1,0 +1,6 @@
+# Trade-Off Viés x Variância
+
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('vies_var.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
