@@ -264,36 +264,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="nomes" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="nomes"><span class="header-section-number">2.1</span> Nomes</h2>
-<p>A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (<em>backticks</em>).</p>
+<p>A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (<em>backticks</em>) ou com aspas (simples ou duplas).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>.x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">nome com espaco</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">55</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">nome com espaco</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">55</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span> <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Entretanto, caso sejam usadas aspas, para acessar o conteúdo do objeto se faz necessário o uso das crases, pois as aspas são entendidas como sinalização para strings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "teste 1"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste 1</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Objetos ciados com “.” no início são objetos ocultos e portanto não aparecem em um comando ls “puro” por exemplo. Tampouco é mostrado a aba Environment do RStudio.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "nome com espaco" "teste 1"         "x"              </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">all.names =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] ".main"           ".x"              "nome com espaco" "teste 1"        
+[5] "x"              </code></pre>
+</div>
 </div>
 <section id="caracteres-proibidos" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="caracteres-proibidos"><span class="header-section-number">2.1.1</span> Caracteres ‘Proibidos’</h3>
 <p>Alguns caracteres não podem ser usados em nomes de objetos e nomes de objetos não podem começar por números. <strong>Números podem ser usados após primeiro caractere.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">@</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x<span class="sc">&amp;</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>55x <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># Error: unexpected assignment in ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">@</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x<span class="sc">&amp;</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span>  <span class="co"># Error: unexpected assignment in ...</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>55x <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># Error: unexpected assignment in ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x55x <span class="ot">&lt;-</span> <span class="dv">888</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x55x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x55x <span class="ot">&lt;-</span> <span class="dv">888</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x55x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 888</code></pre>
 </div>
 </div>
 <p>Entretanto utilizando os nomes com aspas ou crases é possível ‘burlar’ estas limitações.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">55 teste $@-#-$</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">123456</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">55 teste $@-#-$</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">.55 teste @!&amp;</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">123456</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">.55 teste @!&amp;</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 123456</code></pre>
 </div>
@@ -304,35 +329,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="2.2" class="anchored" data-anchor-id="case-sensitive"><span class="header-section-number">2.2</span> Case Sensitive</h2>
 <p>R é uma linguagemn <em>case sensitive</em>, ou seja, ela diferencia maíusculas de minúsculas. Assim um objeto com nome de Teste é difrente de teste ou tesTe ou TESTE…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Teste <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tesTe <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>TESTE <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Teste <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>tesTe <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>TESTE <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "55 teste $@-#-$" "nome com espaco" "teste"           "tesTe"          
-[5] "Teste"           "TESTE"           "x"               "x55x"           </code></pre>
+<pre><code>[1] "nome com espaco" "teste"           "tesTe"           "Teste"          
+[5] "TESTE"           "teste 1"         "x"               "x55x"           </code></pre>
 </div>
 </div>
 </section>
 <section id="convenções" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="convenções"><span class="header-section-number">2.3</span> Convenções</h2>
-<p>Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, etc.</p>
+<p>Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.</p>
 <p>Um bom guia é o <strong>The tidyverse style guide</strong>. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># camelCase</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>objetoTeste <span class="ot">&lt;-</span> <span class="st">'Teste Camel Case'</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># snake_case</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>objeto_teste <span class="ot">&lt;-</span> <span class="st">'Teste snake_case'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># camelCase</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>objetoTeste <span class="ot">&lt;-</span> <span class="st">'Teste camelCase'</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># snake_case</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>objeto_teste <span class="ot">&lt;-</span> <span class="st">'Teste snake_case'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p><a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>, especialmente capítulo 2 - The Very Basics</p>
 <p><a href="https://rstudio.github.io/r-manuals/r-intro/Introduction-and-preliminaries.html">R Manuals :: An Introduction to R - Capítulo 1</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">Naming_convention_(programming)</a></p>
 <p><a href="https://style.tidyverse.org/syntax.html">The tidyverse style guide</a></p>
-<p>Última atualização: 28/04/2023 - 21:10:22</p>
+<p>Última atualização: 08/05/2023 - 20:51:36</p>
 
 
 </section>

@@ -2,9 +2,9 @@
 
 ## O que são pacotes?
 
-Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que "expandem" o poder da linguagem R. A principal opção para isntalação de pacotes é através do [CRAN](https://cran.r-project.org/web/packages/index.html). O CRAN é um repositório que contém milhares de pacotes (19466 em maio de 2023). No CRAN também podem ser encontrados pacotes em versões "antigas". Caso algum pacote não esteja hospedado no CRAN, ele pode ser isntalado diretamente do arquivo fornecido pelo desenvolvedor do pacote.
+Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que "expandem" o poder da linguagem R. A principal opção para instalação de pacotes é através do [CRAN](https://cran.r-project.org/web/packages/index.html). O CRAN é um repositório que contém milhares de pacotes (19.466 em maio de 2023). No CRAN também podem ser encontrados pacotes em suas versões "antigas". Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo.
 
-Existem em R alguns pacotes "especiais" em R que compõem o próprio R. Este pacotes possuem sua versão idêntica a do R, este pacotes são "classificados" com prioridade "base".
+Existem alguns pacotes "especiais" em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são "classificados" com prioridade "base".
 
 ## Pacotes Instalados
 
@@ -15,22 +15,21 @@ Podemos ver os pacotes instalados com o comando installed.packages:
 as.data.frame(installed.packages())$Package[1:5]
 
 ```
-Com o comando installed.packages é possível buscar estas informações. Abaixo, a função head exibe as primeiras linhas, no caso n = 1, e a função t transpõe o o data.frame de colunas para linhas. Foram usadas para simplificar a visualização.
+Com o comando installed.packages é possível buscar estas informações. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.
 
 ```{r}
 
 pacotes <- as.data.frame(installed.packages())
 # pacote base
-t(head(pacotes[pacotes$Package =='base',], n = 1))
+t(pacotes[pacotes$Package == 'base',])
 # pacote MASS
-t(head(pacotes[pacotes$Package =='MASS',], n = 1))
+t(pacotes[pacotes$Package == 'MASS',])
 # pacote data.table
-t(head(pacotes[pacotes$Package =='data.table',], n = 1))
-
+t(pacotes[pacotes$Package == 'data.table',])
 
 ```
 
-Pode ser visto no campo Priority que o pacote base é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote data.table, um pacote "normal", não possui informação no campo Priority.
+Pode ser visto no campo Priority que para o pacote  base o conteúdo é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote "normal", não possui informação no campo Priority.
 
 Também podemos visualizar dados do pacote (arquivo DESCRIPTION do próprio pacote) com o comando packageDescription:
 
@@ -41,7 +40,7 @@ packageDescription('base')
 
 ## Pasta de Instalação
 
-O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação já possui diversos pacotes que foram instalados junto com o R (os pacotes "básicos" e os recomendados). 
+O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação possui diversos pacotes que foram instalados junto com o R (os pacotes "básicos" e os recomendados). 
 
 ```{r}
 .libPaths()
@@ -51,7 +50,7 @@ list.files(.libPaths()[2])
 
 ## Pacotes Disponíveis
 
-Função available.packages procura pacotes diosponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
+Função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
 
 ```{r}
 options(repos = 'https://cran.rstudio.com/')
@@ -63,7 +62,7 @@ available.packages()[1:5]
 
 ## Dependências de Pacotes
 
-O pacote tools oferece uma função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade, ou seja, as dependências das dependências.
+O pacote tools oferece uma função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade, ou seja, busca também as dependências das dependências.
 
 ```{r}
 tools::package_dependencies('dplyr')

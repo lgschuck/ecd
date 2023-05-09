@@ -2,7 +2,7 @@
 
 ## Nomes
 
-A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (*backticks*).
+A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (*backticks*) ou com aspas (simples ou duplas).
 
 ```{r}
 x <- 10
@@ -11,6 +11,21 @@ x <- 10
 
 `nome com espaco` <- 55
 
+'teste 1' <- 2
+
+```
+
+Entretanto, caso sejam usadas aspas, para acessar o conteúdo do objeto se faz necessário o uso das crases, pois as aspas são entendidas como sinalização para strings.
+
+```{r}
+'teste 1'
+`teste 1`
+```
+Objetos ciados com "." no início são objetos ocultos e portanto não aparecem em um comando ls "puro" por exemplo. Tampouco é mostrado a aba Environment do RStudio.
+
+```{r}
+ls()
+ls(all.names = T)
 ```
 
 ### Caracteres 'Proibidos'
@@ -33,9 +48,9 @@ x55x
 Entretanto utilizando os nomes com aspas ou crases é possível 'burlar' estas limitações.
 
 ```{r}
-`55 teste $@-#-$` <- 123456
+`.55 teste @!&` <- 123456
 
-`55 teste $@-#-$`
+`.55 teste @!&`
 
 ```
 
@@ -54,18 +69,17 @@ ls()
 
 ## Convenções
 
-Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, etc.
+Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.
 
 Um bom guia é o **The tidyverse style guide**. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
 
 ```{r}
 
 # camelCase
-objetoTeste <- 'Teste Camel Case'
+objetoTeste <- 'Teste camelCase'
 
 # snake_case
 objeto_teste <- 'Teste snake_case'
-
 
 ```
 

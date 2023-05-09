@@ -2,18 +2,22 @@
 
 ## Função x Ambiente
 
-```{r}
+As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são cessados dentro dela. 
 
+```{r}
 funcao_exibir_envs <- function(){
-  print('Ambiente atual:')
-  print(environment()) 
+  print('Ambiente atual:') 
+  print(environment())
   
   print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))
 }
 
 funcao_exibir_envs()
+```
 
+Para visualizar o código de uma função podemos usar seu ome sem os parênteses.
 
+```{r}
 funcao_exibir_envs  
 
 ```
