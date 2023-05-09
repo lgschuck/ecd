@@ -2,7 +2,7 @@
 
 ## Função x Ambiente
 
-As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são cessados dentro dela. 
+As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. 
 
 ```{r}
 funcao_exibir_envs <- function(){
@@ -15,7 +15,7 @@ funcao_exibir_envs <- function(){
 funcao_exibir_envs()
 ```
 
-Para visualizar o código de uma função podemos usar seu ome sem os parênteses.
+Para visualizar o código de uma função podemos usar seu nome sem os parênteses.
 
 ```{r}
 funcao_exibir_envs  

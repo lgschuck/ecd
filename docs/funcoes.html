@@ -259,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="função-x-ambiente" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="função-x-ambiente"><span class="header-section-number">6.1</span> Função x Ambiente</h2>
-<p>As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são cessados dentro dela.</p>
+<p>As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>funcao_exibir_envs <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'Ambiente atual:'</span>) </span>
@@ -271,11 +271,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">funcao_exibir_envs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ambiente atual:"
-&lt;environment: 0x000001eaf0109e98&gt;
+&lt;environment: 0x0000020e05a11e58&gt;
 [1] "Ambiente Pai: R_GlobalEnv"</code></pre>
 </div>
 </div>
-<p>Para visualizar o código de uma função podemos usar seu ome sem os parênteses.</p>
+<p>Para visualizar o código de uma função podemos usar seu nome sem os parênteses.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>funcao_exibir_envs  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -289,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <hr>
 <p><a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>, especialmente capítulo 8 - Environments</p>
-<p>Última atualização: 08/05/2023 - 21:13:56</p>
+<p>Última atualização: 08/05/2023 - 21:18:59</p>
 
 
 </section>
