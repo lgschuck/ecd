@@ -1,5 +1,5 @@
 
-# eRand0 em Ci3nc1a de D4do$
+# eRando em Ciênc1a de D4do$
 
 <!-- badges: start -->
 <!-- badges: end -->

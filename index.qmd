@@ -11,6 +11,5 @@ Muitas vezes o exposto aqui é a prática (para fixação e exploração) de con
 A versão do R utilizada é a `r getRversion()`.
 
 -----------------------
-[Dates and Times in R](https://www.stat.berkeley.edu/~s133/dates.html)
 
 Última atualização: `r format(file.info('index.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
