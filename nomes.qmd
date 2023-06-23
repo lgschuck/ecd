@@ -21,7 +21,7 @@ Entretanto, caso sejam usadas aspas, para acessar o conteúdo do objeto se faz n
 'teste 1'
 `teste 1`
 ```
-Objetos ciados com "." no início são objetos ocultos e portanto não aparecem em um comando ls "puro" por exemplo. Tampouco é mostrado a aba Environment do RStudio.
+Objetos ciados com "." no início são objetos ocultos e portanto não aparecem em um comando ls "puro" por exemplo. Tampouco é mostrado na aba Environment do RStudio. Para visualizálos através da função ls, podemos usar o parâmetro all.names = T.
 
 ```{r}
 ls()
@@ -30,15 +30,17 @@ ls(all.names = T)
 
 ### Caracteres 'Proibidos'
 
-Alguns caracteres não podem ser usados em nomes de objetos e nomes de objetos não podem começar por números. **Números podem ser usados após primeiro caractere.**
+Alguns caracteres não podem ser usados em nomes de objetos e nomes de objetos não podem começar por números. 
 
-```{r, eval=F}
-x@ <- 10  # Error: unexpected assignment in ...
-x! <- 10  # Error: unexpected assignment in ...
-x& <- 10  # Error: unexpected assignment in ...
-55x <- 10 # Error: unexpected assignment in ...
+```{r, error = T}
+x@ <- 10  
 ```
 
+```{r, error = T}
+55x <- 10 
+```
+
+Perceba que **números podem ser usados após primeiro caractere.**
 ```{r}
 x55x <- 888
 
@@ -52,6 +54,9 @@ Entretanto utilizando os nomes com aspas ou crases é possível 'burlar' estas l
 
 `.55 teste @!&`
 
+'55 teste @!&' <- 10
+
+`55 teste @!&`
 ```
 
 ## Case Sensitive
@@ -71,7 +76,7 @@ ls()
 
 Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.
 
-Um bom guia é o **The tidyverse style guide**. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
+Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
 
 ```{r}
 
@@ -90,7 +95,5 @@ objeto_teste <- 'Teste snake_case'
 [R Manuals :: An Introduction to R - Capítulo 1](https://rstudio.github.io/r-manuals/r-intro/Introduction-and-preliminaries.html)
 
 [Naming_convention_(programming)](https://en.wikipedia.org/wiki/Naming_convention_(programming))
-
-[The tidyverse style guide](https://style.tidyverse.org/syntax.html)
 
 Última atualização: `r format(file.info('nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

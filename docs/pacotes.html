@@ -273,10 +273,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())<span class="sc">$</span>Package[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "base64enc"  "bslib"      "cachem"     "cli"        "data.table"</code></pre>
+<pre><code>[1] "askpass"   "backports" "base64enc" "bit"       "bit64"    </code></pre>
 </div>
 </div>
-<p>Com o comando installed.packages é possível buscar estas informações. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.</p>
+<p>A função installed.packages retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote base</span></span>
@@ -343,8 +343,8 @@ NeedsCompilation      "yes"
 Built                 "4.3.0"                                                                                                  </code></pre>
 </div>
 </div>
-<p>Pode ser visto no campo Priority que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote “normal”, não possui informação no campo Priority.</p>
-<p>Também podemos visualizar dados do pacote (arquivo DESCRIPTION do próprio pacote) com o comando packageDescription:</p>
+<p>Pode ser visto no campo <em>Priority</em> que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote “normal”, não possui informação no campo <em>Priority</em>.</p>
+<p>Também podemos visualizar dados do pacote (arquivo <em>DESCRIPTION</em> do próprio pacote) com o comando packageDescription:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageDescription</span>(<span class="st">'base'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -375,13 +375,32 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "base64enc"   "bslib"       "cachem"      "cli"         "data.table" 
- [6] "digest"      "ellipsis"    "evaluate"    "fastmap"     "fontawesome"
-[11] "fs"          "ftools"      "glue"        "highr"       "htmltools"  
-[16] "jquerylib"   "jsonlite"    "knitr"       "lifecycle"   "magrittr"   
-[21] "memoise"     "mime"        "R6"          "rappdirs"    "rlang"      
-[26] "rmarkdown"   "sass"        "stringi"     "stringr"     "tinytex"    
-[31] "vctrs"       "xfun"        "yaml"       </code></pre>
+<pre><code>  [1] "askpass"       "backports"     "base64enc"     "bit"          
+  [5] "bit64"         "blob"          "broom"         "bslib"        
+  [9] "cachem"        "callr"         "cellranger"    "cli"          
+ [13] "clipr"         "colorspace"    "conflicted"    "cpp11"        
+ [17] "crayon"        "curl"          "data.table"    "DBI"          
+ [21] "dbplyr"        "digest"        "dplyr"         "dtplyr"       
+ [25] "ellipsis"      "evaluate"      "fansi"         "farver"       
+ [29] "fastmap"       "fontawesome"   "forcats"       "fs"           
+ [33] "ftools"        "gargle"        "generics"      "ggplot2"      
+ [37] "glue"          "googledrive"   "googlesheets4" "gtable"       
+ [41] "haven"         "highr"         "hms"           "htmltools"    
+ [45] "httr"          "ids"           "isoband"       "jquerylib"    
+ [49] "jsonlite"      "knitr"         "labeling"      "lifecycle"    
+ [53] "lubridate"     "magrittr"      "memoise"       "mime"         
+ [57] "modelr"        "munsell"       "openssl"       "pillar"       
+ [61] "pkgconfig"     "prettyunits"   "processx"      "progress"     
+ [65] "ps"            "purrr"         "R6"            "ragg"         
+ [69] "rappdirs"      "RColorBrewer"  "readr"         "readxl"       
+ [73] "rematch"       "rematch2"      "reprex"        "rlang"        
+ [77] "rmarkdown"     "rstudioapi"    "rvest"         "sass"         
+ [81] "scales"        "selectr"       "stringi"       "stringr"      
+ [85] "sys"           "systemfonts"   "textshaping"   "tibble"       
+ [89] "tidyr"         "tidyselect"    "tidyverse"     "timechange"   
+ [93] "tinytex"       "tzdb"          "utf8"          "uuid"         
+ [97] "vctrs"         "viridisLite"   "vroom"         "withr"        
+[101] "xfun"          "xml2"          "yaml"         </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -396,7 +415,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="pacotes-disponíveis" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="pacotes-disponíveis"><span class="header-section-number">4.4</span> Pacotes Disponíveis</h2>
-<p>Função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
+<p>A função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="st">'https://cran.rstudio.com/'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -410,7 +429,8 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="dependências-de-pacotes" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="dependências-de-pacotes"><span class="header-section-number">4.5</span> Dependências de Pacotes</h2>
-<p>O pacote tools oferece uma função para busca de dependências de pacotes. Inclusive oferecendo a opção de recursividade, ou seja, busca também as dependências das dependências.</p>
+<p>Os pacotes podem, e em sua maioria, utilizam funções de outros pacotes. Estes “outrous pacotes” são denominadas de dependências. As informações de dependências também constam no <em>DESCRIPTION</em> do pacote.</p>
+<p>O pacote tools, que faz parte da base do R, oferece uma função para busca de dependências de pacotes. Inclusive existe a opção de recursividade, ou seja, busca também as dependências das dependências do pacote desejado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tools<span class="sc">::</span><span class="fu">package_dependencies</span>(<span class="st">'dplyr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -429,7 +449,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </div>
 </div>
 <hr>
-<p>Última atualização: 08/05/2023 - 21:03:55</p>
+<p>Última atualização: 22/06/2023 - 20:50:05</p>
 
 
 </section>

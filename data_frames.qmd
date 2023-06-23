@@ -65,14 +65,51 @@ iris[1,]$Sepal.Width
 iris[1:3,]$Sepal.Width
 ```
 
-#### Filtrando Linhas
+#### Filtrando Dados
 
 Para acessar linhas que atendam condições específicas pode ser usada a forma abaixo:
 
 ```{r}
 # Retorna valores de Speal.Width onde Petal.Length for maior do que 6
-iris[iris$Petal.Length > 6,'Sepal.Width']
-iris[iris$Petal.Length > 6,]$Sepal.Width
+iris[iris$Petal.Length > 1.4,'Sepal.Width']
+iris[iris$Petal.Length > 1.4,]$Sepal.Width
+```
+
+O retorno é dado pelas linha em que a variável Petal.Length é maior do que 1,4. Este teste retorna um vetor de valores lógicos, e os valores TRUE são os que "permanecem".
+
+```{r}
+head(iris$Petal.Length) > 1.4
+```
+
+Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a TRUE devem ser mantidas. No exemplo abaixo, as posições(linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão filtradas. É um comando equivalente
+
+```{r}
+iris2 <- head(iris)
+filtro <- head(iris2$Petal.Length) > 1.4
+
+iris2[filtro,'Sepal.Width']
+```
+
+Equivalente ao comando abaixo:
+
+```{r}
+iris2[c(4,6), 'Sepal.Width']
+```
+
+##### Função Subset
+
+A função subset permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Esta função tmabém permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
+
+```{r}
+subset(mtcars, mpg > 12, c(mpg, cyl, hp))
+```
+
+Usando um filtro um pouco mais complexo:
+
+```{r}
+subset(x = mtcars, 
+       subset = mpg > 12 & cyl == 6 & hp > 100, 
+       select = c(mpg, cyl, hp))
 ```
 
 ------------------------------------------------------------------------
