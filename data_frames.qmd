@@ -71,11 +71,16 @@ Para acessar linhas que atendam condições específicas pode ser usada a forma 
 
 ```{r}
 # Retorna valores de Speal.Width onde Petal.Length for maior do que 6
-iris[iris$Petal.Length > 1.4,'Sepal.Width']
-iris[iris$Petal.Length > 1.4,]$Sepal.Width
+x <- iris[iris$Petal.Length > 6,'Sepal.Width']
+y <- iris[iris$Petal.Length > 6,]$Sepal.Width
+
+x
+y
+# Função que compara os objetos
+identical(x, y)
 ```
 
-O retorno é dado pelas linha em que a variável Petal.Length é maior do que 1,4. Este teste retorna um vetor de valores lógicos, e os valores TRUE são os que "permanecem".
+O retorno é dado pelas linha em que a variável Petal.Length atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores TRUE são os que "permanecem". Abaixo outro exemplo:
 
 ```{r}
 head(iris$Petal.Length) > 1.4
