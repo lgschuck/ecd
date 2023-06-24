@@ -2,7 +2,7 @@
 
 ## Nomes
 
-A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes, entretanto devem ser referenciados usando sinal de crase (*backticks*) ou com aspas (simples ou duplas).
+A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).
 
 ```{r}
 x <- 10
@@ -15,53 +15,59 @@ x <- 10
 
 ```
 
-Entretanto, caso sejam usadas aspas, para acessar o conteúdo do objeto se faz necessário o uso das crases, pois as aspas são entendidas como sinalização para strings.
+Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases. Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada. 
 
 ```{r}
-'teste 1'
+'teste 1' #retorna como string
+# Exibe conteúdo do objeto
 `teste 1`
 ```
-Objetos ciados com "." no início são objetos ocultos e portanto não aparecem em um comando ls "puro" por exemplo. Tampouco é mostrado na aba Environment do RStudio. Para visualizálos através da função ls, podemos usar o parâmetro all.names = T.
+Objetos podem ser criados com "." no início de seus nomes. Estes são objetos ocultos e portanto não aparecem em um comando ls "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função ls pode ser usado o parâmetro all.names = T.
 
 ```{r}
 ls()
 ls(all.names = T)
 ```
 
-### Caracteres 'Proibidos'
+### Primeiro Caractere
 
-Alguns caracteres não podem ser usados em nomes de objetos e nomes de objetos não podem começar por números. 
+Existem algumas regras para iniciar o nome dos objetos. Alguns caracteres "especiais" não podem ser usados, bem como os números.
 
 ```{r, error = T}
-x@ <- 10  
+$x <- 10  
 ```
 
 ```{r, error = T}
 55x <- 10 
 ```
 
-Perceba que **números podem ser usados após primeiro caractere.**
+Perceba que números podem ser usados desde que o primeiro caractere seja 'válido'. Mas o mesmo não ocorre com caracteres "especiais".
+
 ```{r}
 x55x <- 888
 
 x55x
 ```
+```{r error = T}
+x$ <- 10
+```
 
-Entretanto utilizando os nomes com aspas ou crases é possível 'burlar' estas limitações.
+Uma alternativa se dá mais uma vez com o uso de aspas ou crases. Com elas é possível 'burlar' estas limitações.
 
 ```{r}
-`.55 teste @!&` <- 123456
+`teste @!&` <- 123456
 
-`.55 teste @!&`
+`teste @!&`
 
 '55 teste @!&' <- 10
 
 `55 teste @!&`
 ```
+Apesar de possível, objetos com nomes mais complicados como os exemplificados acabam tornando a vida do programador um pouco mais difícil.
 
 ## Case Sensitive
 
-R é uma linguagemn *case sensitive*, ou seja, ela diferencia maíusculas de minúsculas. Assim um objeto com nome de Teste é difrente de teste ou tesTe ou TESTE...
+R é uma linguagem *case sensitive*, ou seja, ela diferencia maiúsculas de minúsculas. Assim um objeto com nome de Teste é diferente teste, tesTe, TESTE...
 
 ```{r}
 teste <- 10
@@ -74,9 +80,7 @@ ls()
 
 ## Convenções
 
-Conforme o seu código em R (e outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma facilitada os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.
-
-Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
+Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc. Uma "regra" importante seria não usar "." em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.
 
 ```{r}
 
@@ -87,6 +91,8 @@ objetoTeste <- 'Teste camelCase'
 objeto_teste <- 'Teste snake_case'
 
 ```
+
+Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
 
 ------------------------------------------------------------------------
 

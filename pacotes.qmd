@@ -2,9 +2,9 @@
 
 ## O que são pacotes?
 
-Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que "expandem" o poder da linguagem R. A principal opção para instalação de pacotes é através do [CRAN](https://cran.r-project.org/web/packages/index.html). O CRAN é um repositório que contém milhares de pacotes (19.466 em maio de 2023). No CRAN também podem ser encontrados pacotes em suas versões "antigas". Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo.
+Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que "expandem" o poder da linguagem. A principal opção para instalação de pacotes é através do [CRAN](https://cran.r-project.org/web/packages/index.html). O CRAN é um repositório que contém milhares de pacotes (19.466 em maio de 2023). Nele também podem ser encontrados pacotes em suas versões "antigas". Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo (muitos distribuem através do Github).
 
-Existem alguns pacotes "especiais" em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são "classificados" com prioridade "base".
+Existem alguns pacotes "especiais" em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são "classificados" com prioridade "base". Assim quando se faz a instalação da linguagem R, muitos pacotes também são instalados.
 
 ## Pacotes Instalados
 
@@ -40,12 +40,14 @@ packageDescription('base')
 
 ## Pasta de Instalação
 
-O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação possui diversos pacotes que foram instalados junto com o R (os pacotes "básicos" e os recomendados).
+O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os "básicos" e os recomendados).
 
 ```{r}
 .libPaths()
-list.files(.libPaths()[1])
-list.files(.libPaths()[2])
+# Exibir 10 primeiros da primeira pasta
+list.files(.libPaths()[1])[1:10]
+# Exibir 10 primeiros da segunda pasta
+list.files(.libPaths()[2])[1:10]
 ```
 
 ## Pacotes Disponíveis
@@ -53,6 +55,7 @@ list.files(.libPaths()[2])
 A função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
 
 ```{r}
+# Definir repositório
 options(repos = 'https://cran.rstudio.com/')
 
 # Exibindo 5 primeiros
@@ -62,7 +65,7 @@ available.packages()[1:5]
 
 ## Dependências de Pacotes
 
-Os pacotes podem, e em sua maioria, utilizam funções de outros pacotes. Estes "outrous pacotes" são denominadas de dependências. As informações de dependências também constam no *DESCRIPTION* do pacote.
+Os pacotes podem e em sua maioria utilizam funções de outros pacotes. Estes "outros pacotes" são denominadas de dependências. As informações de dependências também constam no *DESCRIPTION* do pacote.
 
 O pacote tools, que faz parte da base do R, oferece uma função para busca de dependências de pacotes. Inclusive existe a opção de recursividade, ou seja, busca também as dependências das dependências do pacote desejado.
 
@@ -72,6 +75,10 @@ tools::package_dependencies('dplyr')
 tools::package_dependencies('dplyr', recursive = T)
 
 ```
+
+## Instalação de Pacotes
+
+Para efetuar a instalação de pacotes usa-se a função install.packages. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.
 
 ------------------------------------------------------------------------
 

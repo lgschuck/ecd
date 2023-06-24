@@ -233,11 +233,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">3.1</span>  O que são data frames ?</a>
+  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">3.1</span>  O que são data frames ?</a></li>
+  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos"><span class="toc-section-number">3.2</span>  Atributos</a></li>
+  <li><a href="#dimensões" id="toc-dimensões" class="nav-link" data-scroll-target="#dimensões"><span class="toc-section-number">3.3</span>  Dimensões</a></li>
+  <li><a href="#acessando-dados" id="toc-acessando-dados" class="nav-link" data-scroll-target="#acessando-dados"><span class="toc-section-number">3.4</span>  Acessando Dados</a>
   <ul class="collapse">
-  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos"><span class="toc-section-number">3.1.1</span>  Atributos</a></li>
-  <li><a href="#dimensões" id="toc-dimensões" class="nav-link" data-scroll-target="#dimensões"><span class="toc-section-number">3.1.2</span>  Dimensões</a></li>
-  <li><a href="#acessando-dados" id="toc-acessando-dados" class="nav-link" data-scroll-target="#acessando-dados"><span class="toc-section-number">3.1.3</span>  Acessando Dados</a></li>
+  <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices"><span class="toc-section-number">3.4.1</span>  Índices</a></li>
+  <li><a href="#usando-nomes-das-colunas" id="toc-usando-nomes-das-colunas" class="nav-link" data-scroll-target="#usando-nomes-das-colunas"><span class="toc-section-number">3.4.2</span>  Usando Nomes das Colunas</a></li>
+  <li><a href="#filtrando-dados" id="toc-filtrando-dados" class="nav-link" data-scroll-target="#filtrando-dados"><span class="toc-section-number">3.4.3</span>  Filtrando Dados</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -282,8 +285,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
 </div>
-<section id="atributos" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="atributos"><span class="header-section-number">3.1.1</span> Atributos</h3>
+</section>
+<section id="atributos" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="atributos"><span class="header-section-number">3.2</span> Atributos</h2>
 <p>Os atributos “padrão” de um data.frame são: names, class e row.names. É possível acessá-los com a função attributes. O atributo names também pode ser obtido com a função names.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -311,8 +315,8 @@ $row.names
 </div>
 </div>
 </section>
-<section id="dimensões" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">3.1.2</span> Dimensões</h3>
+<section id="dimensões" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">3.3</span> Dimensões</h2>
 <p>A função dim retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções nrow e ncol.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -329,11 +333,11 @@ $row.names
 </div>
 </div>
 </section>
-<section id="acessando-dados" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="acessando-dados"><span class="header-section-number">3.1.3</span> Acessando Dados</h3>
-<section id="índices" class="level4" data-number="3.1.3.1">
-<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="índices"><span class="header-section-number">3.1.3.1</span> Índices</h4>
-<p>Como a estrutura de um data.frame é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes ([ ]): nome[linha, coluna]. Podem ser usados intervalos de índices com o operador ‘:’.</p>
+<section id="acessando-dados" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="acessando-dados"><span class="header-section-number">3.4</span> Acessando Dados</h2>
+<section id="índices" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="índices"><span class="header-section-number">3.4.1</span> Índices</h3>
+<p>Como a estrutura de um data.frame é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes ([ ]): base[linha, coluna]. Podem ser usados intervalos de índices com o operador ‘:’.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (Sepal.Width)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -346,10 +350,10 @@ $row.names
 <pre><code>[1] 3.5 3.0 3.2</code></pre>
 </div>
 </div>
-<p>Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável ‘1’ pode mudar caso o data.frame seja editado. Por exemplo, caso em algum momento anterior a variável Sepal.Length tenha sido excluída, uma nova variável assumirá o índice 1. Além disto ao se ler o código não fica claro que variável está sendo acessada.</p>
+<p>Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável ‘1’ pode mudar caso o data.frame seja editado. Por exemplo, caso em algum momento anterior a variável Sepal.Length tenha sido excluída, uma nova variável assumirá o índice 1. Além disto ao se ler o código não fica claro qual variável está sendo acessada.</p>
 </section>
-<section id="nomes" class="level4" data-number="3.1.3.2">
-<h4 data-number="3.1.3.2" class="anchored" data-anchor-id="nomes"><span class="header-section-number">3.1.3.2</span> Nomes</h4>
+<section id="usando-nomes-das-colunas" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="usando-nomes-das-colunas"><span class="header-section-number">3.4.2</span> Usando Nomes das Colunas</h3>
 <p>Existem diversas outras formas para acessar dados de um data.frame, inclusive utilizando o nome da coluna de forma explícita.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (pelo nome)</span></span>
@@ -372,9 +376,9 @@ $row.names
 </div>
 </div>
 </section>
-<section id="filtrando-dados" class="level4" data-number="3.1.3.3">
-<h4 data-number="3.1.3.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">3.1.3.3</span> Filtrando Dados</h4>
-<p>Para acessar linhas que atendam condições específicas pode ser usada a forma abaixo:</p>
+<section id="filtrando-dados" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">3.4.3</span> Filtrando Dados</h3>
+<p>Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do data.frame, deve ser informada condição lógica na forma abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna valores de Speal.Width onde Petal.Length for maior do que 6</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> iris[iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="dv">6</span>,<span class="st">'Sepal.Width'</span>]</span>
@@ -394,14 +398,14 @@ $row.names
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p>O retorno é dado pelas linha em que a variável Petal.Length atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores TRUE são os que “permanecem”. Abaixo outro exemplo:</p>
+<p>O retorno é dado pelas linhas em que a variável Petal.Length atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores TRUE são os que “permanecem”. Abaixo outro exemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris<span class="sc">$</span>Petal.Length) <span class="sc">&gt;</span> <span class="fl">1.4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 </div>
 </div>
-<p>Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a TRUE devem ser mantidas. No exemplo abaixo, as posições(linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão filtradas. É um comando equivalente</p>
+<p>Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a TRUE devem ser mantidas. No exemplo abaixo, as posições (linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão selecionadas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>iris2 <span class="ot">&lt;-</span> <span class="fu">head</span>(iris)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>filtro <span class="ot">&lt;-</span> <span class="fu">head</span>(iris2<span class="sc">$</span>Petal.Length) <span class="sc">&gt;</span> <span class="fl">1.4</span></span>
@@ -418,67 +422,39 @@ $row.names
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
-<section id="função-subset" class="level5" data-number="3.1.3.3.1">
-<h5 data-number="3.1.3.3.1" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">3.1.3.3.1</span> Função Subset</h5>
-<p>A função subset permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Esta função tmabém permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
+<section id="função-subset" class="level4" data-number="3.4.3.1">
+<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">3.4.3.1</span> Função Subset</h4>
+<p>A função subset permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">12</span>, <span class="fu">c</span>(mpg, cyl, hp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                   mpg cyl  hp
-Mazda RX4         21.0   6 110
-Mazda RX4 Wag     21.0   6 110
-Datsun 710        22.8   4  93
-Hornet 4 Drive    21.4   6 110
-Hornet Sportabout 18.7   8 175
-Valiant           18.1   6 105
-Duster 360        14.3   8 245
-Merc 240D         24.4   4  62
-Merc 230          22.8   4  95
-Merc 280          19.2   6 123
-Merc 280C         17.8   6 123
-Merc 450SE        16.4   8 180
-Merc 450SL        17.3   8 180
-Merc 450SLC       15.2   8 180
-Chrysler Imperial 14.7   8 230
-Fiat 128          32.4   4  66
-Honda Civic       30.4   4  52
-Toyota Corolla    33.9   4  65
-Toyota Corona     21.5   4  97
-Dodge Challenger  15.5   8 150
-AMC Javelin       15.2   8 150
-Camaro Z28        13.3   8 245
-Pontiac Firebird  19.2   8 175
-Fiat X1-9         27.3   4  66
-Porsche 914-2     26.0   4  91
-Lotus Europa      30.4   4 113
-Ford Pantera L    15.8   8 264
-Ferrari Dino      19.7   6 175
-Maserati Bora     15.0   8 335
-Volvo 142E        21.4   4 109</code></pre>
-</div>
-</div>
-<p>Usando um filtro um pouco mais complexo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> mtcars, </span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> mpg <span class="sc">&gt;</span> <span class="dv">12</span> <span class="sc">&amp;</span> cyl <span class="sc">==</span> <span class="dv">6</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">100</span>, </span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(mpg, cyl, hp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> mtcars, <span class="co"># dados</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> mpg <span class="sc">&gt;</span> <span class="dv">25</span>, <span class="co"># filtro  </span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  hp
-Mazda RX4      21.0   6 110
-Mazda RX4 Wag  21.0   6 110
-Hornet 4 Drive 21.4   6 110
-Valiant        18.1   6 105
-Merc 280       19.2   6 123
-Merc 280C      17.8   6 123
-Ferrari Dino   19.7   6 175</code></pre>
+Fiat 128       32.4   4  66
+Honda Civic    30.4   4  52
+Toyota Corolla 33.9   4  65
+Fiat X1-9      27.3   4  66
+Porsche 914-2  26.0   4  91
+Lotus Europa   30.4   4 113</code></pre>
+</div>
+</div>
+<p>Usando um filtro um pouco mais complexo e sem a informação do nome dos parâmetros:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(mtcars, <span class="co"># dados </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>       mpg <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">70</span>, <span class="co"># filtro  </span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               mpg cyl  hp
+Porsche 914-2 26.0   4  91
+Lotus Europa  30.4   4 113</code></pre>
 </div>
 </div>
 <hr>
 <p><a href="https://rstudio.github.io/r-manuals/r-lang/Objects.html#data-frame-objects">R Manuals :: R Language Definition - Capítulo 2</a></p>
-<p>Última atualização: 22/06/2023 - 21:05:23</p>
+<p>Última atualização: 23/06/2023 - 22:28:58</p>
 
 
-</section>
 </section>
 </section>
 </section>

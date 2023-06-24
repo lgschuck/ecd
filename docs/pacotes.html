@@ -238,6 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#pasta-de-instalação" id="toc-pasta-de-instalação" class="nav-link" data-scroll-target="#pasta-de-instalação"><span class="toc-section-number">4.3</span>  Pasta de Instalação</a></li>
   <li><a href="#pacotes-disponíveis" id="toc-pacotes-disponíveis" class="nav-link" data-scroll-target="#pacotes-disponíveis"><span class="toc-section-number">4.4</span>  Pacotes Disponíveis</a></li>
   <li><a href="#dependências-de-pacotes" id="toc-dependências-de-pacotes" class="nav-link" data-scroll-target="#dependências-de-pacotes"><span class="toc-section-number">4.5</span>  Dependências de Pacotes</a></li>
+  <li><a href="#instalação-de-pacotes" id="toc-instalação-de-pacotes" class="nav-link" data-scroll-target="#instalação-de-pacotes"><span class="toc-section-number">4.6</span>  Instalação de Pacotes</a></li>
   </ul>
 </nav>
     </div>
@@ -263,8 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="o-que-são-pacotes" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="o-que-são-pacotes"><span class="header-section-number">4.1</span> O que são pacotes?</h2>
-<p>Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que “expandem” o poder da linguagem R. A principal opção para instalação de pacotes é através do <a href="https://cran.r-project.org/web/packages/index.html">CRAN</a>. O CRAN é um repositório que contém milhares de pacotes (19.466 em maio de 2023). No CRAN também podem ser encontrados pacotes em suas versões “antigas”. Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo.</p>
-<p>Existem alguns pacotes “especiais” em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são “classificados” com prioridade “base”.</p>
+<p>Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que “expandem” o poder da linguagem. A principal opção para instalação de pacotes é através do <a href="https://cran.r-project.org/web/packages/index.html">CRAN</a>. O CRAN é um repositório que contém milhares de pacotes (19.466 em maio de 2023). Nele também podem ser encontrados pacotes em suas versões “antigas”. Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo (muitos distribuem através do Github).</p>
+<p>Existem alguns pacotes “especiais” em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são “classificados” com prioridade “base”. Assim quando se faz a instalação da linguagem R, muitos pacotes também são instalados.</p>
 </section>
 <section id="pacotes-instalados" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="pacotes-instalados"><span class="header-section-number">4.2</span> Pacotes Instalados</h2>
@@ -366,50 +367,24 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="pasta-de-instalação" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="pasta-de-instalação"><span class="header-section-number">4.3</span> Pasta de Instalação</h2>
-<p>O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação possui diversos pacotes que foram instalados junto com o R (os pacotes “básicos” e os recomendados).</p>
+<p>O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os “básicos” e os recomendados).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3"
 [2] "C:/Program Files/R/R-4.3.0/library"            </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da primeira pasta</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] "askpass"       "backports"     "base64enc"     "bit"          
-  [5] "bit64"         "blob"          "broom"         "bslib"        
-  [9] "cachem"        "callr"         "cellranger"    "cli"          
- [13] "clipr"         "colorspace"    "conflicted"    "cpp11"        
- [17] "crayon"        "curl"          "data.table"    "DBI"          
- [21] "dbplyr"        "digest"        "dplyr"         "dtplyr"       
- [25] "ellipsis"      "evaluate"      "fansi"         "farver"       
- [29] "fastmap"       "fontawesome"   "forcats"       "fs"           
- [33] "ftools"        "gargle"        "generics"      "ggplot2"      
- [37] "glue"          "googledrive"   "googlesheets4" "gtable"       
- [41] "haven"         "highr"         "hms"           "htmltools"    
- [45] "httr"          "ids"           "isoband"       "jquerylib"    
- [49] "jsonlite"      "knitr"         "labeling"      "lifecycle"    
- [53] "lubridate"     "magrittr"      "memoise"       "mime"         
- [57] "modelr"        "munsell"       "openssl"       "pillar"       
- [61] "pkgconfig"     "prettyunits"   "processx"      "progress"     
- [65] "ps"            "purrr"         "R6"            "ragg"         
- [69] "rappdirs"      "RColorBrewer"  "readr"         "readxl"       
- [73] "rematch"       "rematch2"      "reprex"        "rlang"        
- [77] "rmarkdown"     "rstudioapi"    "rvest"         "sass"         
- [81] "scales"        "selectr"       "stringi"       "stringr"      
- [85] "sys"           "systemfonts"   "textshaping"   "tibble"       
- [89] "tidyr"         "tidyselect"    "tidyverse"     "timechange"   
- [93] "tinytex"       "tzdb"          "utf8"          "uuid"         
- [97] "vctrs"         "viridisLite"   "vroom"         "withr"        
-[101] "xfun"          "xml2"          "yaml"         </code></pre>
+<pre><code> [1] "askpass"   "backports" "base64enc" "bit"       "bit64"     "blob"     
+ [7] "broom"     "bslib"     "cachem"    "callr"    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da segunda pasta</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "base"         "boot"         "class"        "cluster"      "codetools"   
- [6] "compiler"     "datasets"     "foreign"      "graphics"     "grDevices"   
-[11] "grid"         "KernSmooth"   "lattice"      "MASS"         "Matrix"      
-[16] "methods"      "mgcv"         "nlme"         "nnet"         "parallel"    
-[21] "rpart"        "spatial"      "splines"      "stats"        "stats4"      
-[26] "survival"     "tcltk"        "tools"        "translations" "utils"       </code></pre>
+<pre><code> [1] "base"      "boot"      "class"     "cluster"   "codetools" "compiler" 
+ [7] "datasets"  "foreign"   "graphics"  "grDevices"</code></pre>
 </div>
 </div>
 </section>
@@ -417,10 +392,11 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 <h2 data-number="4.4" class="anchored" data-anchor-id="pacotes-disponíveis"><span class="header-section-number">4.4</span> Pacotes Disponíveis</h2>
 <p>A função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="st">'https://cran.rstudio.com/'</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">available.packages</span>()[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir repositório</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="st">'https://cran.rstudio.com/'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">available.packages</span>()[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "A3"            "AalenJohansen" "AATtools"      "ABACUS"       
 [5] "abbreviate"   </code></pre>
@@ -429,7 +405,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="dependências-de-pacotes" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="dependências-de-pacotes"><span class="header-section-number">4.5</span> Dependências de Pacotes</h2>
-<p>Os pacotes podem, e em sua maioria, utilizam funções de outros pacotes. Estes “outrous pacotes” são denominadas de dependências. As informações de dependências também constam no <em>DESCRIPTION</em> do pacote.</p>
+<p>Os pacotes podem e em sua maioria utilizam funções de outros pacotes. Estes “outros pacotes” são denominadas de dependências. As informações de dependências também constam no <em>DESCRIPTION</em> do pacote.</p>
 <p>O pacote tools, que faz parte da base do R, oferece uma função para busca de dependências de pacotes. Inclusive existe a opção de recursividade, ou seja, busca também as dependências das dependências do pacote desejado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tools<span class="sc">::</span><span class="fu">package_dependencies</span>(<span class="st">'dplyr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -448,8 +424,12 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 [16] "pkgconfig"  "withr"      "grDevices"  "graphics"   "stats"     </code></pre>
 </div>
 </div>
+</section>
+<section id="instalação-de-pacotes" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="instalação-de-pacotes"><span class="header-section-number">4.6</span> Instalação de Pacotes</h2>
+<p>Para efetuar a instalação de pacotes usa-se a função install.packages. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.</p>
 <hr>
-<p>Última atualização: 22/06/2023 - 20:50:05</p>
+<p>Última atualização: 23/06/2023 - 22:07:54</p>
 
 
 </section>
