@@ -178,7 +178,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="toc-section-number">1.2.1</span>  Install Packages</a></li>
   <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">1.2.2</span>  Check for Package Updates</a></li>
-  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">1.2.3</span>  Global Options</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">1.2.3</span>  Version Control</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">1.2.4</span>  Terminal</a></li>
+  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">1.2.5</span>  Background Jobs</a></li>
+  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">1.2.6</span>  Global Options</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,14 +216,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/rstudio/img2.PNG" class="img-fluid figure-img"></p>
+<p><img src="images/rstudio/about_rstudio.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <section id="layout" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="layout"><span class="header-section-number">1.1.1</span> Layout</h3>
 <p>O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.</p>
 <ul>
-<li>Console: neste painel está embutido o R propriamente dito.</li>
+<li><strong>Console:</strong> neste painel está embutido o R propriamente dito.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -228,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <ul>
-<li>Files: estrutura de pastas do sistema.</li>
+<li><strong>Output:</strong> painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -236,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <ul>
-<li>Environment: apresenta os objetos criados no ambiente do R.</li>
+<li><strong>Environment:</strong> apresenta os objetos criados no ambiente do R.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -244,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <ul>
-<li>Source: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).</li>
+<li><strong>Source:</strong> aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -306,8 +309,20 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="global-options" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="global-options"><span class="header-section-number">1.2.3</span> Global Options</h3>
+<section id="version-control" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">1.2.3</span> Version Control</h3>
+<p>Oferece opção de controle de versões de código através do Git ou SVN.</p>
+</section>
+<section id="terminal" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">1.2.4</span> Terminal</h3>
+<p>Permite acesso ao terminal do sistema operacional a partir do RStudio.</p>
+</section>
+<section id="background-jobs" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">1.2.5</span> Background Jobs</h3>
+<p>Fornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.</p>
+</section>
+<section id="global-options" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="global-options"><span class="header-section-number">1.2.6</span> Global Options</h3>
 <p>Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -315,9 +330,9 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <hr>
-<p><a href="https://posit.co/products/open-source/rstudio/">RStudio</a></p>
+<p><a href="https://docs.posit.co/ide/user/">RStudio - User Guide</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a></p>
-<p>Última atualização: 02/08/2023 - 19:55:41</p>
+<p>Última atualização: 03/08/2023 - 18:26:24</p>
 
 
 </section>

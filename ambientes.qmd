@@ -2,14 +2,14 @@
 
 ## Global Env
 
-O Global Env é o ambiente "atual" do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários. Ele pode ser "visualizado" com os comandos abaixo:
+O Global Env é o ambiente "atual" do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários por exemplo. Ele pode ser "visualizado" com os comandos abaixo:
 
 ```{r}
 globalenv()
 .GlobalEnv
 ```
 
-Podemos visualizar os objetos presentes no ambiente desejado com a função ls.
+Os objetos presentes no almbiente desejado podem ser visualizados com a função ls.
 
 ```{r}
 
@@ -33,15 +33,20 @@ ls(as.environment('package:data.table'))[1:10]
 
 ## Ambientes "Pai"
 
+Cada ambiente possui um ambiente de nível superior associado, com exceção do R_EmptyEnv. 
 
 ```{r}
+# Ambiente superior ao GlobalEnv
 parent.env(.GlobalEnv)
+# Ambiente superior ao do apcote stats e base
 parent.env(as.environment("package:stats"))
 parent.env(as.environment("package:base"))
 
 ```
 
 ### Buscar Ambiente Pai (Recursivamente)
+
+Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o R_EmptyEnv.
 
 ```{r}
 
@@ -70,20 +75,32 @@ buscar_envs_pai(globalenv())
 
 ## Criando Ambientes
 
+Em R é possível que se faça a criação de novos ambientes. 
+
 ```{r}
 amb1 <- new.env()
 
 amb1
 
 parent.env(amb1)
+```
 
+Objetos criados dentro de um ambiente podem ser acessados através do operador '$' após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.
+
+```{r}
+# Objeto x do amb1
 amb1$x <- 10
+amb1$y <- 99
 
+# Objeto x do GlobalEnv
 x <- 15
 
 x
 amb1$x
 
+ls(amb1)
+
+amb1$x * amb1$y
 ```
 
 ---------------------

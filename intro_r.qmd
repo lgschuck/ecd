@@ -8,21 +8,23 @@ No [IEEE Spectrum Top Programming Languages 2022](https://spectrum.ieee.org/top-
 
 ## Distribuição de Conhecimento
 
-Uma vantagem da liguagem R é a existência de uma gama enorme de conteúdos distribuídos através da Internet, muitos de forma livre e de fácil acesso. Abaixo alguns sites com conteúdos muito ricos sobre R:
+Uma grande vantagem da liguagem R é a existência de uma gama enorme de conteúdos distribuídos através da Internet, muitos de forma livre e de fácil acesso. Abaixo alguns sites com conteúdos muito ricos sobre R:
 
--   https://rstudio.github.io/r-manuals/
+-   [Introdução à Linguagem R: seus fundamentos e sua prática](https://pedropark99.github.io/Introducao_R/)
 
--   https://www.bigbookofr.com/
+-   [R Manuals](https://rstudio.github.io/r-manuals/)
 
--   https://r4ds.hadley.nz/
+-   [Big Book of R](https://www.bigbookofr.com/)
 
--   https://www.datacamp.com/
+-   [R for Data Science](https://r4ds.hadley.nz/)
 
--   https://statisticsglobe.com/
+-   [Datacamp](https://www.datacamp.com/)
 
--   https://r-charts.com/
+-   [Statistics Globe](https://statisticsglobe.com/)
 
--   http://www.sthda.com/english/
+-   [R Charts](https://r-charts.com/)
+
+-   [Statistical tools for high-throughput data analysis](http://www.sthda.com/english/)
 
 ------------------------------------------------------------------------
 

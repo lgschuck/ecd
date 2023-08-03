@@ -6,25 +6,25 @@ O RStudio é um IDE (Integrated Development Environment) criado pela Posit para 
 
 ![](images/rstudio/img1.PNG){fig-align="center"}
 
-![](images/rstudio/img2.PNG){fig-align="center"}
+![](images/rstudio/about_rstudio.png){fig-align="center"}
 
 ### Layout
 
 O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.
 
--   Console: neste painel está embutido o R propriamente dito.
+-   **Console:** neste painel está embutido o R propriamente dito.
 
 ![](images/rstudio/console.PNG){fig-align="center"}
 
--   Files: estrutura de pastas do sistema.
+-   **Output:** painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.
 
 ![](images/rstudio/files.PNG){fig-align="center"}
 
--   Environment: apresenta os objetos criados no ambiente do R.
+-   **Environment:** apresenta os objetos criados no ambiente do R.
 
 ![](images/rstudio/environment.PNG){fig-align="center"}
 
--   Source: aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
+-   **Source:** aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
 
 ![](images/rstudio/source.PNG){fig-align="center"}
 
@@ -64,6 +64,18 @@ Este opção abre a janela Update Packages, permitindo visualizar quais pacotes 
 
 ![](images/rstudio/menu_tools_update_pkgs.png){fig-align="center"}
 
+### Version Control
+
+Oferece opção de controle de versões de código através do Git ou SVN.
+
+### Terminal
+
+Permite acesso ao terminal do sistema operacional a partir do RStudio.
+
+### Background Jobs
+
+Fornece opções para execução de 'Jobs', basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.
+
 ### Global Options
 
 Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.
@@ -72,7 +84,7 @@ Esta opção abre a janela Options do RStudio onde podem ser feitas as principai
 
 ------------------------------------------------------------------------
 
-[RStudio](https://posit.co/products/open-source/rstudio/)
+[RStudio - User Guide](https://docs.posit.co/ide/user/)
 
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
 
