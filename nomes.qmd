@@ -15,13 +15,20 @@ x <- 10
 
 ```
 
-Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases. Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada. 
+::: callout-tip
+## Nomes Significativos
+
+Escolha nomes intuitivos e que facilitem a identificação do conteúdo armazenado nos objetos.
+:::
+
+Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases. Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.
 
 ```{r}
 'teste 1' #retorna como string
 # Exibe conteúdo do objeto
 `teste 1`
 ```
+
 Objetos podem ser criados com "." no início de seus nomes. Estes são objetos ocultos e portanto não aparecem em um comando ls "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função ls pode ser usado o parâmetro all.names = T.
 
 ```{r}
@@ -41,13 +48,14 @@ $x <- 10
 55x <- 10 
 ```
 
-Perceba que números podem ser usados desde que o primeiro caractere seja 'válido'. Mas o mesmo não ocorre com caracteres "especiais".
+Perceba que números podem ser usados nos nomes, desde que o primeiro caractere seja 'válido'. Mas o mesmo não ocorre com caracteres "especiais".
 
 ```{r}
 x55x <- 888
 
 x55x
 ```
+
 ```{r error = T}
 x$ <- 10
 ```
@@ -63,6 +71,7 @@ Uma alternativa se dá mais uma vez com o uso de aspas ou crases. Com elas é po
 
 `55 teste @!&`
 ```
+
 Apesar de possível, objetos com nomes mais complicados como os exemplificados acabam tornando a vida do programador um pouco mais difícil.
 
 ## Case Sensitive
@@ -100,6 +109,6 @@ Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.
 
 [R Manuals :: An Introduction to R - Capítulo 1](https://rstudio.github.io/r-manuals/r-intro/Introduction-and-preliminaries.html)
 
-[Naming_convention_(programming)](https://en.wikipedia.org/wiki/Naming_convention_(programming))
+[Naming_convention\_(programming)](https://en.wikipedia.org/wiki/Naming_convention_(programming))
 
 Última atualização: `r format(file.info('nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

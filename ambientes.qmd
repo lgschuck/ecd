@@ -9,7 +9,7 @@ globalenv()
 .GlobalEnv
 ```
 
-Os objetos presentes no almbiente desejado podem ser visualizados com a função ls.
+Os objetos presentes no almbiente desejado podem ser visualizados com a função **ls**.
 
 ```{r}
 
@@ -22,7 +22,7 @@ ls()
 
 ## Ambiente de Pacotes
 
-Os pacotes também possuem ambientes e podemos listar seu "conteúdo" com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.
+Os pacotes também possuem ambientes e podemos listar seu "conteúdo" com a função **ls**. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.
 
 ```{r}
 library(data.table)
@@ -33,7 +33,7 @@ ls(as.environment('package:data.table'))[1:10]
 
 ## Ambientes "Pai"
 
-Cada ambiente possui um ambiente de nível superior associado, com exceção do R_EmptyEnv. 
+Cada ambiente possui um ambiente de nível superior associado, com exceção do R_EmptyEnv.
 
 ```{r}
 # Ambiente superior ao GlobalEnv
@@ -75,7 +75,7 @@ buscar_envs_pai(globalenv())
 
 ## Criando Ambientes
 
-Em R é possível que se faça a criação de novos ambientes. 
+Em R é possível que se faça a criação de novos ambientes.
 
 ```{r}
 amb1 <- new.env()
@@ -85,7 +85,7 @@ amb1
 parent.env(amb1)
 ```
 
-Objetos criados dentro de um ambiente podem ser acessados através do operador '$' após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.
+Objetos criados dentro de um ambiente podem ser acessados através do operador '\$' após o nome do ambiente. Também é possível utilizar a função **ls** com o nome do ambiente desejado para que sejam listados seus objetos.
 
 ```{r}
 # Objeto x do amb1
@@ -103,7 +103,8 @@ ls(amb1)
 amb1$x * amb1$y
 ```
 
----------------------
+------------------------------------------------------------------------
+
 [Hands-On Programming with R](https://rstudio-education.github.io/hopr/), especialmente capítulo 8 - Environments
 
 [data.table](https://rdatatable.gitlab.io/data.table/)

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.242">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -276,7 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
 </div>
 </div>
-<p>Os objetos presentes no almbiente desejado podem ser visualizados com a função ls.</p>
+<p>Os objetos presentes no almbiente desejado podem ser visualizados com a função <strong>ls</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>variavel <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -291,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="ambiente-de-pacotes" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="ambiente-de-pacotes"><span class="header-section-number">5.2</span> Ambiente de Pacotes</h2>
-<p>Os pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função ls. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.</p>
+<p>Os pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função <strong>ls</strong>. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.environment</span>(<span class="st">"package:data.table"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -388,14 +388,14 @@ attr(,"path")
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x0000014d0cab9a58&gt;</code></pre>
+<pre><code>&lt;environment: 0x000002225ba91448&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
 </div>
 </div>
-<p>Objetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.</p>
+<p>Objetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função <strong>ls</strong> com o nome do ambiente desejado para que sejam listados seus objetos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Objeto x do amb1</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -425,7 +425,7 @@ attr(,"path")
 <p><a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>, especialmente capítulo 8 - Environments</p>
 <p><a href="https://rdatatable.gitlab.io/data.table/">data.table</a></p>
 <p><a href="https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package/">R-Bloggers - Environments Name</a></p>
-<p>Última atualização: 03/08/2023 - 18:37:58</p>
+<p>Última atualização: 03/08/2023 - 23:38:10</p>
 
 
 </section>

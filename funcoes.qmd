@@ -2,7 +2,7 @@
 
 ## Criando Funções
 
-Funções podem ser criadas através do comando function.
+Funções podem ser criadas através do comando **function**.
 
 ```{r}
 
@@ -36,8 +36,8 @@ funcao_exibir_envs
 
 ```
 
----------------------
-[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), 
-especialmente capítulo 8 - Environments
+------------------------------------------------------------------------
+
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), especialmente capítulo 8 - Environments
 
 Última atualização: `r format(file.info('funcoes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

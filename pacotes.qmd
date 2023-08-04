@@ -8,7 +8,7 @@ Existem alguns pacotes "especiais" em R que compõem a própria linguagem. Estes
 
 ## Pacotes Instalados
 
-Podemos ver os pacotes instalados com o comando installed.packages:
+Podemos ver os pacotes instalados com o comando **installed.packages**:
 
 ```{r}
 # Exibindo 5 primeiros
@@ -16,7 +16,7 @@ as.data.frame(installed.packages())$Package[1:5]
 
 ```
 
-A função installed.packages retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.
+A função **installed.packages** retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função **t**, que transpõe o data.frame de colunas para linhas.
 
 ```{r}
 pacotes <- as.data.frame(installed.packages())
@@ -31,7 +31,7 @@ t(pacotes[pacotes$Package == 'data.table',])
 
 Pode ser visto no campo *Priority* que para o pacote base o conteúdo é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote "normal", não possui informação no campo *Priority*.
 
-Também podemos visualizar dados do pacote (arquivo *DESCRIPTION* do próprio pacote) com o comando packageDescription:
+Também podemos visualizar dados do pacote (arquivo *DESCRIPTION* do próprio pacote) com o comando **packageDescription**:
 
 ```{r}
 packageDescription('base')
@@ -40,7 +40,7 @@ packageDescription('base')
 
 ## Pasta de Instalação
 
-O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando .libPaths. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os "básicos" e os recomendados).
+O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando **.libPaths**. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os "básicos" e os recomendados).
 
 ```{r}
 .libPaths()
@@ -52,7 +52,7 @@ list.files(.libPaths()[2])[1:10]
 
 ## Pacotes Disponíveis
 
-A função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
+A função **available.packages** procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
 
 ```{r}
 # Definir repositório
@@ -78,7 +78,7 @@ tools::package_dependencies('dplyr', recursive = T)
 
 ## Instalação de Pacotes
 
-Para efetuar a instalação de pacotes usa-se a função install.packages. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.
+Para efetuar a instalação de pacotes usa-se a função **install.packages**. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.
 
 ------------------------------------------------------------------------
 

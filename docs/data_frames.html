@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.242">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -267,8 +267,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="o-que-são-data-frames" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="o-que-são-data-frames"><span class="header-section-number">3.1</span> O que são data frames ?</h2>
-<p>Conforme o próprio manual do R, data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. De forma resumida um data.frame é uma estrutura tabular com colunas (variáveis, atributos, etc) e registros (casos, observações, instâncias, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados.</p>
-<p>Um data.frame possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto data.frame possui o mesmo nome ‘data.frame’. Abaixo pode ser visualizada a classe do data.frame <a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris</a> (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando head.</p>
+<p>Conforme o próprio manual do R, data.frame é a estrutura que imita de forma mais próxima um dataset do <strong>SAS</strong> ou <strong>SPSS</strong>. De forma resumida um data.frame é uma estrutura tabular com colunas (variáveis, atributos, etc) e registros (casos, observações, instâncias, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados.</p>
+<p>Um data.frame possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto data.frame possui o mesmo nome, ‘data.frame’. Abaixo pode ser visualizada a classe do data.frame <a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris</a> (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando head.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -288,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="atributos" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="atributos"><span class="header-section-number">3.2</span> Atributos</h2>
-<p>Os atributos “padrão” de um data.frame são: names, class e row.names. É possível acessá-los com a função attributes. O atributo names também pode ser obtido com a função names.</p>
+<p>Os atributos “padrão” de um data.frame são: names, class e row.names. É possível acessá-los com a função <strong>attributes</strong>. O atributo names também pode ser obtido com a função <strong>names</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -317,7 +317,7 @@ $row.names
 </section>
 <section id="dimensões" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">3.3</span> Dimensões</h2>
-<p>A função dim retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções nrow e ncol.</p>
+<p>A função <strong>dim</strong> retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções <strong>nrow</strong> e <strong>ncol</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -362,7 +362,7 @@ $row.names
 <pre><code>[1] 3.5 3.0 3.2</code></pre>
 </div>
 </div>
-<p>Uma forma mais comum é utilizando o operador $ para acessar a coluna pelo seu nome.</p>
+<p>Uma forma bastante comum é utilizando o operador $ para acessar a coluna pelo seu nome.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (pelo nome)</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>,]<span class="sc">$</span>Sepal.Width</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -422,13 +422,45 @@ $row.names
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
-<section id="função-subset" class="level4" data-number="3.4.3.1">
-<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">3.4.3.1</span> Função Subset</h4>
-<p>A função subset permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
+<section id="classes-de-retorno" class="level4" data-number="3.4.3.1">
+<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">3.4.3.1</span> Classes de retorno</h4>
+<p>Os filtros em data.frames usados com $ ou [ ] (com apenas 1 variável) retornam vetores e não data.frames. Desta forma se perde a classe e aestrutura tabular original do data.frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> mtcars, <span class="co"># dados</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> mpg <span class="sc">&gt;</span> <span class="dv">25</span>, <span class="co"># filtro  </span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">'Sepal.Width'</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>Entretanto, sendo selecionadas mais de uma coluna, a classe retornada segue sendo um data.frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+</section>
+<section id="função-subset" class="level4" data-number="3.4.3.2">
+<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">3.4.3.2</span> Função Subset</h4>
+<p>A função <strong>subset</strong> permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um data.frame, mesmo com a seleção de apenas 1 variável.</p>
+<p>Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">subset</span>(iris, <span class="at">select =</span> Petal.Width))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> mtcars, <span class="co"># dados</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> mpg <span class="sc">&gt;</span> <span class="dv">25</span>, <span class="co"># filtro  </span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  hp
 Fiat 128       32.4   4  66
@@ -441,9 +473,11 @@ Lotus Europa   30.4   4 113</code></pre>
 </div>
 <p>Usando um filtro um pouco mais complexo e sem a informação do nome dos parâmetros:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(mtcars, <span class="co"># dados </span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>       mpg <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">70</span>, <span class="co"># filtro  </span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>mtcars_filtrado <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, <span class="co"># dados </span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>       mpg <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">70</span>, <span class="co"># filtro  </span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>mtcars_filtrado</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               mpg cyl  hp
 Porsche 914-2 26.0   4  91
@@ -452,7 +486,7 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 <hr>
 <p><a href="https://rstudio.github.io/r-manuals/r-lang/Objects.html#data-frame-objects">R Manuals :: R Language Definition - Capítulo 2</a></p>
-<p>Última atualização: 23/06/2023 - 22:28:58</p>
+<p>Última atualização: 03/08/2023 - 23:30:38</p>
 
 
 </section>

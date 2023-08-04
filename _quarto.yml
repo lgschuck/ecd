@@ -3,12 +3,12 @@ project:
   output-dir: docs
 
 lang: pt-br
+engine: knitr
 
 book:
   title: "eRando em Ciênc1a de D4do$"
   author: "Luís Gustavo Schuck"
   date: today
-
 
   page-footer:
     left: |

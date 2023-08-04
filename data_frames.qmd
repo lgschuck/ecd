@@ -2,9 +2,9 @@
 
 ## O que são data frames ?
 
-Conforme o próprio manual do R, data.frame é a estrutura que imita de forma mais próxima um dataset do SAS ou SPSS. De forma resumida um data.frame é uma estrutura tabular com colunas (variáveis, atributos, etc) e registros (casos, observações, instâncias, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados.
+Conforme o próprio manual do R, data.frame é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um data.frame é uma estrutura tabular com colunas (variáveis, atributos, etc) e registros (casos, observações, instâncias, etc). Diferente de uma matriz um data.frame pode ter diferentes tipos de dados.
 
-Um data.frame possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto data.frame possui o mesmo nome 'data.frame'. Abaixo pode ser visualizada a classe do data.frame [Iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando head.
+Um data.frame possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto data.frame possui o mesmo nome, 'data.frame'. Abaixo pode ser visualizada a classe do data.frame [Iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando head.
 
 ```{r}
 class(iris)
@@ -14,7 +14,7 @@ head(iris)
 
 ## Atributos
 
-Os atributos "padrão" de um data.frame são: names, class e row.names. É possível acessá-los com a função attributes. O atributo names também pode ser obtido com a função names.
+Os atributos "padrão" de um data.frame são: names, class e row.names. É possível acessá-los com a função **attributes**. O atributo names também pode ser obtido com a função **names**.
 
 ```{r}
 attributes(iris)
@@ -23,7 +23,7 @@ names(iris)
 
 ## Dimensões
 
-A função dim retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções nrow e ncol.
+A função **dim** retorna as dimensões de um data.frame (linhas e colunas). Estes dados também podem ser obtidos com as funções **nrow** e **ncol**.
 
 ```{r}
 dim(iris)
@@ -56,7 +56,7 @@ iris[1:3,'Sepal.Width']
 
 ```
 
-Uma forma mais comum é utilizando o operador \$ para acessar a coluna pelo seu nome.
+Uma forma bastante comum é utilizando o operador \$ para acessar a coluna pelo seu nome.
 
 ```{r}
 # Acessar primeira linha e segunda coluna (pelo nome)
@@ -101,9 +101,35 @@ Equivalente ao comando abaixo:
 iris2[c(4,6), 'Sepal.Width']
 ```
 
+#### Classes de retorno
+
+Os filtros em data.frames usados com \$ ou \[ \] (com apenas 1 variável) retornam vetores e não data.frames. Desta forma se perde a classe e aestrutura tabular original do data.frame.
+
+```{r}
+
+class(iris[1:3, 1])
+class(iris[1:3, 'Sepal.Width'])
+
+```
+
+Entretanto, sendo selecionadas mais de uma coluna, a classe retornada segue sendo um data.frame.
+
+```{r}
+
+class(iris[1:3, c("Sepal.Length", "Sepal.Width")])
+class(iris[1:3, 1:2])
+
+```
+
 #### Função Subset
 
-A função subset permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
+A função **subset** permite efetuar filtro em um data.frame e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um data.frame, mesmo com a seleção de apenas 1 variável.
+
+Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o data.frame seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
+
+```{r}
+class(subset(iris, select = Petal.Width))
+```
 
 ```{r}
 subset(x = mtcars, # dados
@@ -114,9 +140,11 @@ subset(x = mtcars, # dados
 Usando um filtro um pouco mais complexo e sem a informação do nome dos parâmetros:
 
 ```{r}
-subset(mtcars, # dados 
+mtcars_filtrado <- subset(mtcars, # dados 
        mpg > 25 & cyl == 4 & hp > 70, # filtro  
        c(mpg, cyl, hp)) # colunas
+
+mtcars_filtrado
 ```
 
 ------------------------------------------------------------------------
