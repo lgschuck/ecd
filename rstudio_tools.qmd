@@ -1,40 +1,10 @@
-# RStudio
-
-## O que é o RStudio?
-
-O RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Neste capítulo serão apresentados alguns de seus principais recursos.
-
-![](images/rstudio/img1.PNG){fig-align="center"}
-
-![](images/rstudio/about_rstudio.png){fig-align="center"}
-
-### Layout
-
-O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.
-
--   **Console:** neste painel está embutido o R propriamente dito.
-
-![](images/rstudio/console.PNG){fig-align="center"}
-
--   **Output:** painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.
-
-![](images/rstudio/files.PNG){fig-align="center"}
-
--   **Environment:** apresenta os objetos criados no ambiente do R.
-
-![](images/rstudio/environment.PNG){fig-align="center"}
-
--   **Source:** aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
-
-![](images/rstudio/source.PNG){fig-align="center"}
-
-## Menu Tools
+# Menu Tools
 
 O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.
 
 ![](images/rstudio/menu_tools.png){fig-align="center"}
 
-### Install Packages
+## Install Packages
 
 Nesta opção é aberta a janela para instalação de pacotes.
 
@@ -58,25 +28,25 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
 -   **Install Dependencies:** marcação para que seja feita isntalação de dependências dos pacotes selecionados.
 
-### Check for Package Updates
+## Check for Package Updates
 
 Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.
 
 ![](images/rstudio/menu_tools_update_pkgs.png){fig-align="center"}
 
-### Version Control
+## Version Control
 
 Oferece opção de controle de versões de código através do Git ou SVN.
 
-### Terminal
+## Terminal
 
 Permite acesso ao terminal do sistema operacional a partir do RStudio.
 
-### Background Jobs
+## Background Jobs
 
 Fornece opções para execução de 'Jobs', basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.
 
-### Global Options
+## Global Options
 
 Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.
 
@@ -88,4 +58,4 @@ Esta opção abre a janela Options do RStudio onde podem ser feitas as principai
 
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
 
-Última atualização: `r format(file.info('rstudio.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('rstudio_tools.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

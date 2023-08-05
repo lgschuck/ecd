@@ -1,0 +1,17 @@
+# RStudio
+
+## O que é o RStudio?
+
+O **RStudio** é um IDE (Integrated Development Environment) criado pela [**Posit**](https://posit.co/) para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Nesta seção serão apresentados alguns de seus principais recursos.
+
+![](images/rstudio/rstudio_layout.png){fig-align="center"}
+
+![](images/rstudio/about_rstudio.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+[RStudio - User Guide](https://docs.posit.co/ide/user/)
+
+[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
+
+Última atualização: `r format(file.info('intro_rstudio.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

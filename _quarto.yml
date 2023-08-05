@@ -20,13 +20,16 @@ book:
     - index.qmd
     - part: intro_r.qmd
       chapters:
-        - rstudio.qmd
         - nomes.qmd
         - data_frames.qmd
+        - operacoes_logicas.qmd
         - pacotes.qmd
         - ambientes.qmd
         - funcoes.qmd
-
+    - part: intro_rstudio.qmd
+      chapters:
+        - rstudio_layout.qmd
+        - rstudio_tools.qmd
     - part: intro_cd.qmd
       chapters:
         - vies_var.qmd

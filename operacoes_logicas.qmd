@@ -1,0 +1,111 @@
+# Operações Lógicas
+
+A linguagem R oferece uma série de operadores para utilização em testes lógicos.
+
+## Operadores Relacionais
+
+| Operador | Função           |
+|----------|------------------|
+| \>       | Maior que        |
+| \<       | Menor que        |
+| \>=      | Maior ou igual a |
+| \<=      | Menor ou igual a |
+| ==       | Igual a          |
+| !=       | Diferente de     |
+
+```{r}
+5 > 6
+5 <= 6
+5 == 6
+5 != 6
+```
+
+## Operadores Lógicos
+
+| Operador | Função              |
+|----------|---------------------|
+| !        | Negação             |
+| &        | E                   |
+| \|       | Ou                  |
+| xor      | Ou exclusivo        |
+| isTRUE   | Testa se verdadeiro |
+| isFALSE  | Testa se falso      |
+
+```{r}
+!FALSE
+!TRUE
+
+5 > 6
+!5 > 6
+
+isTRUE(5 > 6)
+
+isFALSE(5 > 6)
+```
+
+### Ou Exclusivo (Xor)
+
+O operador Xor fornece saída verdadeira quando apenas um dos valores for verdadeiro.
+
+```{r}
+# Falso XOR Falso = Falso
+xor(5 > 6, 6 > 9)
+
+# Verdadeiro XOR Verdadeiro = Falso
+xor(5 > 4, 6 > 5)
+
+# Verdadeiro XOR Falso = Verdadeiro
+xor(5 > 4, 6 > 9)
+
+# Falso XOR Verdadeiro = Falso
+xor(5 > 6, 6 > 5)
+
+```
+
+## Precedência
+
+Na utilização de testes lógicos é importante observar a ordem (precedência) de aplicação dos operadores. O uso de parênteses altera a o escopo de aplicação dos operadores.
+
+| Ordem | Operador                 |
+|-------|--------------------------|
+| 1     | \<, \>, \<=, \>=, ==, != |
+| 2     | !                        |
+| 3     | &                        |
+| 4     | \|                       |
+
+: Precedência de Operadores
+
+Abaixo alguns testes.
+
+```{r}
+# Falso E Falso = Falso
+5 > 6 & 4 > 5
+
+# Verdadeiro E Verdadeiro = Verdadeiro}
+!5 > 6 & !4 > 5
+
+# Verdadeiro E Falso = Falso
+!5 > 6 & 4 > 5
+
+# Negação de( Falso E Falso = Falso) = Verdadeiro
+!(5 > 6 & 4 > 5)
+```
+
+```{r}
+# Falso OU Falso = Falso
+5 > 6 | 4 > 5
+
+# Verdadeiro OU Verdadeiro = Verdadeiro
+!5 > 6 | !4 > 5
+
+# Verdadeiro OU Falso = Verdadeiro
+!5 > 6 | 4 > 5
+
+# Negação de( Falso OU Falso = Falso) = Verdadeiro
+!(5 > 6 | 4 > 5)
+
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('operacoes_logicas.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

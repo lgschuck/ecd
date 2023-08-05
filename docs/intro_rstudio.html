@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 1&nbsp; RStudio</title>
+<title>eRando em Ciênc1a de D4do$ - RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./nomes.html" rel="next">
-<link href="./intro_r.html" rel="prev">
+<link href="./rstudio_layout.html" rel="next">
+<link href="./funcoes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio</span></h1>
+      <h1 class="quarto-secondary-nav-title">RStudio</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -111,17 +111,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio</span></a>
+  <a href="./nomes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nomes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></a>
+  <a href="./data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./intro_cd.html" class="sidebar-item-text sidebar-link">Ciência de Dados</a>
+            <a href="./intro_rstudio.html" class="sidebar-item-text sidebar-link active">RStudio</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -151,7 +151,27 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./rstudio_layout.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Layout</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./intro_cd.html" class="sidebar-item-text sidebar-link">Ciência de Dados</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -170,19 +190,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#o-que-é-o-rstudio" id="toc-o-que-é-o-rstudio" class="nav-link active" data-scroll-target="#o-que-é-o-rstudio"><span class="toc-section-number">1.1</span>  O que é o RStudio?</a>
-  <ul class="collapse">
-  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout"><span class="toc-section-number">1.1.1</span>  Layout</a></li>
-  </ul></li>
-  <li><a href="#menu-tools" id="toc-menu-tools" class="nav-link" data-scroll-target="#menu-tools"><span class="toc-section-number">1.2</span>  Menu Tools</a>
-  <ul class="collapse">
-  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="toc-section-number">1.2.1</span>  Install Packages</a></li>
-  <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">1.2.2</span>  Check for Package Updates</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">1.2.3</span>  Version Control</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">1.2.4</span>  Terminal</a></li>
-  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">1.2.5</span>  Background Jobs</a></li>
-  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">1.2.6</span>  Global Options</a></li>
-  </ul></li>
+  <li><a href="#o-que-é-o-rstudio" id="toc-o-que-é-o-rstudio" class="nav-link active" data-scroll-target="#o-que-é-o-rstudio">O que é o RStudio?</a></li>
   </ul>
 </nav>
     </div>
@@ -191,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio</span></h1>
+<h1 class="title d-none d-lg-block">RStudio</h1>
 </div>
 
 
@@ -206,12 +214,12 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="o-que-é-o-rstudio" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="o-que-é-o-rstudio"><span class="header-section-number">1.1</span> O que é o RStudio?</h2>
-<p>O RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Neste capítulo serão apresentados alguns de seus principais recursos.</p>
+<section id="o-que-é-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-o-rstudio">O que é o RStudio?</h2>
+<p>O <strong>RStudio</strong> é um IDE (Integrated Development Environment) criado pela <a href="https://posit.co/"><strong>Posit</strong></a> para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Nesta seção serão apresentados alguns de seus principais recursos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/rstudio/img1.PNG" class="img-fluid figure-img"></p>
+<p><img src="images/rstudio/rstudio_layout.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -219,123 +227,12 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/rstudio/about_rstudio.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<section id="layout" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="layout"><span class="header-section-number">1.1.1</span> Layout</h3>
-<p>O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.</p>
-<ul>
-<li><strong>Console:</strong> neste painel está embutido o R propriamente dito.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/console.PNG" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><strong>Output:</strong> painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/files.PNG" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><strong>Environment:</strong> apresenta os objetos criados no ambiente do R.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/environment.PNG" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><strong>Source:</strong> aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/source.PNG" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-</section>
-<section id="menu-tools" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="menu-tools"><span class="header-section-number">1.2</span> Menu Tools</h2>
-<p>O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<section id="install-packages" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">1.2.1</span> Install Packages</h3>
-<p>Nesta opção é aberta a janela para instalação de pacotes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools_inst_pkgs.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><p><strong>Install From:</strong> local de busca dos pacotes a serem instalados</p>
-<ul>
-<li><p>Repository: repositório configurado</p>
-<ul>
-<li>Packages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula</li>
-</ul></li>
-<li><p><strong>Package Archive File:</strong> opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote</p>
-<ul>
-<li>Package archive: arquivo do pacote a ser instalado</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools_inst_pkgs_from.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools_inst_pkgs_archive.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><p><strong>Install to Library:</strong> pasta de instalação dos pacotes</p></li>
-<li><p><strong>Install Dependencies:</strong> marcação para que seja feita isntalação de dependências dos pacotes selecionados.</p></li>
-</ul>
-</section>
-<section id="check-for-package-updates" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="check-for-package-updates"><span class="header-section-number">1.2.2</span> Check for Package Updates</h3>
-<p>Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools_update_pkgs.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="version-control" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">1.2.3</span> Version Control</h3>
-<p>Oferece opção de controle de versões de código através do Git ou SVN.</p>
-</section>
-<section id="terminal" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">1.2.4</span> Terminal</h3>
-<p>Permite acesso ao terminal do sistema operacional a partir do RStudio.</p>
-</section>
-<section id="background-jobs" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">1.2.5</span> Background Jobs</h3>
-<p>Fornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.</p>
-</section>
-<section id="global-options" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="global-options"><span class="header-section-number">1.2.6</span> Global Options</h3>
-<p>Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio/menu_tools_global_options.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
 <hr>
 <p><a href="https://docs.posit.co/ide/user/">RStudio - User Guide</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a></p>
-<p>Última atualização: 03/08/2023 - 18:26:24</p>
+<p>Última atualização: 04/08/2023 - 22:13:02</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -474,13 +371,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro_r.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linguagem R</span>
+      <a href="./funcoes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Funções</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./nomes.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rstudio_layout.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Layout</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
