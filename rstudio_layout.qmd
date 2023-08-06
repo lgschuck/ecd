@@ -6,7 +6,7 @@ O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis
 
 Neste painel está embutido o R propriamente dito.
 
-```{r, fig.cap = "Console", out.width="90%", echo = FALSE}
+```{r, label = 'fig-rstudio-console', fig.cap = "Console", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/console.PNG')
 ```
 
@@ -14,7 +14,7 @@ Neste painel está embutido o R propriamente dito.
 
 Painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.
 
-```{r, fig.cap = "Files", out.width="90%", echo = FALSE}
+```{r, label = 'fig-rstudio-files', fig.cap = "Files", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/files.PNG')
 ```
 
@@ -22,7 +22,7 @@ Painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(F
 
 Apresenta os objetos criados no ambiente do R.
 
-```{r, fig.cap = "Environment", out.width="90%", echo = FALSE}
+```{r, label = 'fig-rstudio-environment', fig.cap = "Environment", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/environment.PNG')
 ```
 
@@ -30,7 +30,7 @@ Apresenta os objetos criados no ambiente do R.
 
 Aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
 
-```{r, fig.cap = "Source", out.width="90%", echo = FALSE}
+```{r, label = 'fig-rstudio-source', fig.cap = "Source", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/source.PNG')
 ```
 

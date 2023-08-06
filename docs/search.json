@@ -151,7 +151,7 @@
     "href": "ambientes.html#criando-ambientes",
     "title": "5  Ambientes",
     "section": "5.4 Criando Ambientes",
-    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000017001b3ee48>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name\nÚltima atualização: 03/08/2023 - 23:38:10"
+    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000012a405d0f08>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name\nÚltima atualização: 03/08/2023 - 23:38:10"
   },
   {
     "objectID": "funcoes.html#criando-funções",
@@ -165,56 +165,56 @@
     "href": "funcoes.html#função-x-ambiente",
     "title": "6  Funções",
     "section": "6.2 Função x Ambiente",
-    "text": "6.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x000002128ca00308>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\nPara visualizar o código de uma função podemos usar seu nome sem os parênteses.\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\nÚltima atualização: 03/08/2023 - 23:38:52"
+    "text": "6.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x0000021ff5e89330>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\nPara visualizar o código de uma função podemos usar seu nome sem os parênteses.\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\nÚltima atualização: 03/08/2023 - 23:38:52"
   },
   {
     "objectID": "intro_rstudio.html#o-que-é-o-rstudio",
     "href": "intro_rstudio.html#o-que-é-o-rstudio",
     "title": "RStudio",
     "section": "O que é o RStudio?",
-    "text": "O que é o RStudio?\nO RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Nesta seção serão apresentados alguns de seus principais recursos.\n\n\n\n\n\nRStudio - Tela inicial\n\n\n\n\n\n\n\n\n\nAbout RStudio\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 10:45:07"
+    "text": "O que é o RStudio?\nO RStudio é um IDE (Integrated Development Environment) criado pela Posit para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Nesta seção serão apresentados alguns de seus principais recursos.\n\n\n\n\n\nFigura 1: RStudio - Tela inicial\n\n\n\n\n\n\n\n\n\nFigura 2: About RStudio\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 11:09:51"
   },
   {
     "objectID": "rstudio_layout.html#console",
     "href": "rstudio_layout.html#console",
     "title": "7  Layout",
     "section": "7.1 Console",
-    "text": "7.1 Console\nNeste painel está embutido o R propriamente dito.\n\n\n\n\n\nConsole"
+    "text": "7.1 Console\nNeste painel está embutido o R propriamente dito.\n\n\n\n\n\nFigura 7.1: Console"
   },
   {
     "objectID": "rstudio_layout.html#output",
     "href": "rstudio_layout.html#output",
     "title": "7  Layout",
     "section": "7.2 Output",
-    "text": "7.2 Output\nPainel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.\n\n\n\n\n\nFiles"
+    "text": "7.2 Output\nPainel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.\n\n\n\n\n\nFigura 7.2: Files"
   },
   {
     "objectID": "rstudio_layout.html#environment",
     "href": "rstudio_layout.html#environment",
     "title": "7  Layout",
     "section": "7.3 Environment",
-    "text": "7.3 Environment\nApresenta os objetos criados no ambiente do R.\n\n\n\n\n\nEnvironment"
+    "text": "7.3 Environment\nApresenta os objetos criados no ambiente do R.\n\n\n\n\n\nFigura 7.3: Environment"
   },
   {
     "objectID": "rstudio_layout.html#source",
     "href": "rstudio_layout.html#source",
     "title": "7  Layout",
     "section": "7.4 Source",
-    "text": "7.4 Source\nAqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\nSource\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 10:35:43"
+    "text": "7.4 Source\nAqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\nFigura 7.4: Source\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 11:11:54"
   },
   {
     "objectID": "rstudio_tools.html#install-packages",
     "href": "rstudio_tools.html#install-packages",
     "title": "8  Menu Tools",
     "section": "8.1 Install Packages",
-    "text": "8.1 Install Packages\nNesta opção é aberta a janela para instalação de pacotes.\n\n\n\n\n\nInstall Packages\n\n\n\n\n\nInstall From: local de busca dos pacotes a serem instalados\n\nRepository: repositório configurado\n\nPackages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula\n\nPackage Archive File: opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote\n\nPackage archive: arquivo do pacote a ser instalado\n\n\n\n\n\n\n\n\nInstall From\n\n\n\n\n\n\n\n\n\nPackage Archive File\n\n\n\n\n\nInstall to Library: pasta de instalação dos pacotes\nInstall Dependencies: marcação para que seja feita isntalação de dependências dos pacotes selecionados."
+    "text": "8.1 Install Packages\nNesta opção é aberta a janela para instalação de pacotes.\n\n\n\n\n\nFigura 8.2: Install Packages\n\n\n\n\n\nInstall From: local de busca dos pacotes a serem instalados\n\nRepository: repositório configurado\n\nPackages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula\n\nPackage Archive File: opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote\n\nPackage archive: arquivo do pacote a ser instalado\n\n\n\n\n\n\n\n\nFigura 8.3: Install From\n\n\n\n\n\n\n\n\n\nFigura 8.4: Package Archive File\n\n\n\n\n\nInstall to Library: pasta de instalação dos pacotes\nInstall Dependencies: marcação para que seja feita isntalação de dependências dos pacotes selecionados."
   },
   {
     "objectID": "rstudio_tools.html#check-for-package-updates",
     "href": "rstudio_tools.html#check-for-package-updates",
     "title": "8  Menu Tools",
     "section": "8.2 Check for Package Updates",
-    "text": "8.2 Check for Package Updates\nEste opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.\n\n\n\n\n\nCheck for Package Updates"
+    "text": "8.2 Check for Package Updates\nEste opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.\n\n\n\n\n\nFigura 8.5: Check for Package Updates"
   },
   {
     "objectID": "rstudio_tools.html#version-control",
@@ -242,7 +242,7 @@
     "href": "rstudio_tools.html#global-options",
     "title": "8  Menu Tools",
     "section": "8.6 Global Options",
-    "text": "8.6 Global Options\nEsta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.\n\n\n\n\n\nGlobal Options\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 10:47:23"
+    "text": "8.6 Global Options\nEsta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.\n\n\n\n\n\nFigura 8.6: Global Options\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 06/08/2023 - 11:14:36"
   },
   {
     "objectID": "intro_cd.html",

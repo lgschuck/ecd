@@ -2,7 +2,7 @@
 
 O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.
 
-```{r, fig.cap = "Menu Tools", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-tools', fig.cap = "Menu Tools", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools.png')
 ```
 
@@ -10,7 +10,7 @@ O menu Tools oferece uma série de funcionalidades para configuração do ambien
 
 Nesta opção é aberta a janela para instalação de pacotes.
 
-```{r, fig.cap = "Install Packages", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-inst-pkgs', fig.cap = "Install Packages", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools_inst_pkgs.png')
 ```
 
@@ -24,11 +24,11 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
         -   Package archive: arquivo do pacote a ser instalado
 
-```{r, fig.cap = "Install From", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-inst-pkgs-from', fig.cap = "Install From", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools_inst_pkgs_from.png')
 ```
 
-```{r, fig.cap = "Package Archive File", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-inst-pkgs-archive', fig.cap = "Package Archive File", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools_inst_pkgs_archive.png')
 ```
 
@@ -40,7 +40,7 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
 Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.
 
-```{r, fig.cap = "Check for Package Updates", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-update-pkgs', fig.cap = "Check for Package Updates", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools_update_pkgs.png')
 ```
 
@@ -60,7 +60,7 @@ Fornece opções para execução de 'Jobs', basicamente scripts em R, em outra i
 
 Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.
 
-```{r, fig.cap = "Global Options", echo = FALSE}
+```{r, label = 'fig-rstudio-menu-global-options', fig.cap = "Global Options", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools_global_options.png')
 ```
 
