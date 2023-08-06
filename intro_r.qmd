@@ -2,7 +2,9 @@
 
 Conforme o site r-project.org o [R](https://www.r-project.org/about.html) 'é um ambiente de software livre para computação estatística e gráficos'¹. R é distribuída sob a licença [GPLv2](https://www.r-project.org/COPYING) e é mantida pela R Foundation. Atualmente, 2023, é uma das linguagens mais buscadas no Google como pode ser visto pelo [PYPL](https://pypl.github.io/PYPL.html).
 
-![](images/intro/pypl.PNG)  
+```{r, fig.cap = "PYPL PopularitY of Programming Language", out.width="100%", echo = FALSE}
+  knitr::include_graphics('images/intro/pypl.PNG')
+```
 
 No [IEEE Spectrum Top Programming Languages 2022](https://spectrum.ieee.org/top-programming-languages-2022) a linguagem R também aparece com bastante relevância.
 
