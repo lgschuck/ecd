@@ -7,6 +7,13 @@
     "text": "Bem Vindo\nEste é um livro sobre a utilização da linguagem R em Ciência de Dados.\nEste material é um projeto pessoal usado como fonte de consulta e aprendizado, sem compromisso com uma estrutura específica.\nMuitas vezes o exposto aqui é a prática (para fixação e exploração) de conceitos apresentados em outros materiais. Assim todas as fontes utilizadas, mesmo que de forma subjetiva, são citadas.\n\n\nVersões\nA versão do R utilizada é a 4.3.0, Already Tomorrow.\nA versão do RStudio é 2023.06.1+524, Mountain Hydrangea.\nA versão do Quarto é 1.2.475.\n\nÚltima atualização: 04/08/2023 - 00:09:36"
   },
   {
+    "objectID": "autor.html",
+    "href": "autor.html",
+    "title": "Sobre o Autor",
+    "section": "",
+    "text": "Luís Gustavo Schuck\nLuís Gustavo Schuck é formado em Gestão Financeira (2013) pelo Centro Universitário Internacional - Uninter. Possui Especialização em Business Analytics (2021) pela Universidade Federal do Rio Grande do Sul - UFRGS, Especialização em Administração e Finanças (2017) pelo Centro Universitário Internacional - Uninter e Especialização em Gestão Bancária (2015) pelo Centro Universitário Leonardo da Vinci - Uniasselvi. Possui certificação ANBIMA CPA-10 (Certificação Profissional ANBIMA Série-10).\nAtualmente é aluno do curso de Análise e Desenvovimento de Sistemas pela Universidade Feevale e atua como analista na Unidade de Risco de Crédito do Banco do Estado do Rio Grande do Sul (Banrisul).\nCurrículo Lattes\n\nÚltima atualização: 06/08/2023 - 11:44:44"
+  },
+  {
     "objectID": "intro_r.html#distribuição-de-conhecimento",
     "href": "intro_r.html#distribuição-de-conhecimento",
     "title": "Linguagem R",
@@ -151,7 +158,7 @@
     "href": "ambientes.html#criando-ambientes",
     "title": "5  Ambientes",
     "section": "5.4 Criando Ambientes",
-    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000012a405d0f08>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name\nÚltima atualização: 03/08/2023 - 23:38:10"
+    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x000001fd2f5d14f8>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\ndata.table\nR-Bloggers - Environments Name\nÚltima atualização: 03/08/2023 - 23:38:10"
   },
   {
     "objectID": "funcoes.html#criando-funções",
@@ -165,7 +172,7 @@
     "href": "funcoes.html#função-x-ambiente",
     "title": "6  Funções",
     "section": "6.2 Função x Ambiente",
-    "text": "6.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x0000021ff5e89330>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\nPara visualizar o código de uma função podemos usar seu nome sem os parênteses.\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\nÚltima atualização: 03/08/2023 - 23:38:52"
+    "text": "6.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfuncao_exibir_envs <- function(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\nfuncao_exibir_envs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x0000016df83975e8>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\nPara visualizar o código de uma função podemos usar seu nome sem os parênteses.\n\nfuncao_exibir_envs  \n\nfunction(){\n  print('Ambiente atual:') \n  print(environment())\n  \n  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))\n}\n\n\n\nHands-On Programming with R, especialmente capítulo 8 - Environments\nÚltima atualização: 03/08/2023 - 23:38:52"
   },
   {
     "objectID": "intro_rstudio.html#o-que-é-o-rstudio",
