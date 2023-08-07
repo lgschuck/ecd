@@ -37,8 +37,12 @@ book:
         - vies_var.qmd
 
     - referencias.qmd
-bibliography: references.bib
+
+bibliography: referencias.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [cosmo , ecd.css]
+      dark: [slate , ecd.css]
+

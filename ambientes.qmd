@@ -105,7 +105,7 @@ amb1$x * amb1$y
 
 ------------------------------------------------------------------------
 
-[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), especialmente capítulo 8 - Environments
+@grolemund2014
 
 [data.table](https://rdatatable.gitlab.io/data.table/)
 
