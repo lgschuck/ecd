@@ -30,6 +30,6 @@ Uma grande vantagem da liguagem R é a existência de uma gama enorme de conteú
 
 ------------------------------------------------------------------------
 
-¹ https://www.r-project.org/
+@r
 
 Última atualização: `r format(file.info('intro_r.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

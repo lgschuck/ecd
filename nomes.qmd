@@ -105,10 +105,10 @@ Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.
 
 ------------------------------------------------------------------------
 
-[Hands-On Programming with R](https://rstudio-education.github.io/hopr/), especialmente capítulo 2 - The Very Basics
+@grolemund2014
 
-[R Manuals :: An Introduction to R - Capítulo 1](https://rstudio.github.io/r-manuals/r-intro/Introduction-and-preliminaries.html)
+@introduction_r
 
-[Naming_convention\_(programming)](https://en.wikipedia.org/wiki/Naming_convention_(programming))
+@wiki_naming_convention
 
 Última atualização: `r format(file.info('nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

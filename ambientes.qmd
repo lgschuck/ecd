@@ -107,8 +107,8 @@ amb1$x * amb1$y
 
 @grolemund2014
 
-[data.table](https://rdatatable.gitlab.io/data.table/)
+@data.table
 
-[R-Bloggers - Environments Name](https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package/)
+@r_bloggers_env_names
 
 Última atualização: `r format(file.info('ambientes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

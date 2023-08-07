@@ -108,4 +108,6 @@ Abaixo alguns testes.
 
 ------------------------------------------------------------------------
 
+@r
+
 Última atualização: `r format(file.info('operacoes_logicas.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
