@@ -15,6 +15,7 @@ book:
       eRando em Ciênc1a de D4do$
     right: |
       Material criado com software livre: R, RStudio e Quarto.
+    background: '#03a17f'
 
   chapters:
     - index.qmd

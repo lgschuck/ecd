@@ -1,12 +1,8 @@
 # Sobre o Autor {.unnumbered}
 
-**Luís Gustavo Schuck**
+[Luís Gustavo Schuck](http://lattes.cnpq.br/0794590310791580 "Lattes") é formado em **Gestão Financeira** (2013) pelo Centro Universitário Internacional - Uninter. Possui **Especialização em Business Analytics** (2021) pela Universidade Federal do Rio Grande do Sul - UFRGS, **MBA** **em Administração e Finanças** (2017) pelo Centro Universitário Internacional - Uninter e **MBA em Gestão Bancária** (2015) pelo Centro Universitário Leonardo da Vinci - Uniasselvi. Possui certificação **ANBIMA CPA-10** (Certificação Profissional ANBIMA Série-10).
 
-Luís Gustavo Schuck é formado em Gestão Financeira (2013) pelo Centro Universitário Internacional - Uninter. Possui Especialização em Business Analytics (2021) pela Universidade Federal do Rio Grande do Sul - UFRGS, Especialização em Administração e Finanças (2017) pelo Centro Universitário Internacional - Uninter e Especialização em Gestão Bancária (2015) pelo Centro Universitário Leonardo da Vinci - Uniasselvi. Possui certificação ANBIMA CPA-10 (Certificação Profissional ANBIMA Série-10). 
-
-Atualmente é aluno do curso de Análise e Desenvovimento de Sistemas pela Universidade Feevale e atua como analista na Unidade de Risco de Crédito do Banco do Estado do Rio Grande do Sul (Banrisul). 
-
-[Currículo Lattes](http://lattes.cnpq.br/0794590310791580)
+Atualmente é aluno do curso de **Análise e Desenvolvimento de Sistemas** pela Universidade Feevale e atua como **Analista na Unidade de Risco de Crédito** do Banco do Estado do Rio Grande do Sul ([Banrisul](https://ri.banrisul.com.br/quem-somos/)). Utiliza R desde 2017.
 
 ------------------------------------------------------------------------
 
