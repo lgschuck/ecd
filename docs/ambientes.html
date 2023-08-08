@@ -326,7 +326,7 @@ div.csl-indent {
 <pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
 </div>
 </div>
-<p>Os objetos presentes no almbiente desejado podem ser visualizados com a função <strong>ls</strong>.</p>
+<p>Os objetos presentes no almbiente desejado podem ser visualizados com a função <code>ls</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>variavel <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -341,7 +341,7 @@ div.csl-indent {
 </section>
 <section id="ambiente-de-pacotes" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="ambiente-de-pacotes"><span class="header-section-number">5.2</span> Ambiente de Pacotes</h2>
-<p>Os pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função <strong>ls</strong>. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.</p>
+<p>Os pacotes também possuem ambientes e podemos listar seu “conteúdo” com a função <code>ls</code>. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote <strong>data.table</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.environment</span>(<span class="st">"package:data.table"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -362,7 +362,7 @@ attr(,"path")
 </section>
 <section id="ambientes-pai" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="ambientes-pai"><span class="header-section-number">5.3</span> Ambientes “Pai”</h2>
-<p>Cada ambiente possui um ambiente de nível superior associado, com exceção do R_EmptyEnv.</p>
+<p>Cada ambiente possui um ambiente de nível superior associado, com exceção do <code>R_EmptyEnv</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ambiente superior ao GlobalEnv</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(.GlobalEnv)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -389,7 +389,7 @@ attr(,"path")
 </div>
 <section id="buscar-ambiente-pai-recursivamente" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">5.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
-<p>Abaixo função que busca recursivamente os ambientes e seus ‘pais’ até que se chege no ‘último’ ambiente, o R_EmptyEnv.</p>
+<p>Abaixo função que busca recursivamente os ambientes e seus ‘pais’ até que se chege no ‘último’ ambiente, o <code>R_EmptyEnv</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>buscar_envs_pai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> </span>
@@ -438,14 +438,14 @@ attr(,"path")
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x000001d49a5bcdd8&gt;</code></pre>
+<pre><code>&lt;environment: 0x000001d4cd5955a8&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;environment: R_GlobalEnv&gt;</code></pre>
 </div>
 </div>
-<p>Objetos criados dentro de um ambiente podem ser acessados através do operador ‘$’ após o nome do ambiente. Também é possível utilizar a função <strong>ls</strong> com o nome do ambiente desejado para que sejam listados seus objetos.</p>
+<p>Objetos criados dentro de um ambiente podem ser acessados através do operador <code>$</code> após o nome do ambiente. Também é possível utilizar a função <code>ls</code> com o nome do ambiente desejado para que sejam listados seus objetos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Objeto x do amb1</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>amb1<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -475,7 +475,7 @@ attr(,"path")
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
 <p><span class="citation" data-cites="data.table">Dowle e Srinivasan (<a href="referencias.html#ref-data.table" role="doc-biblioref">2023</a>)</span></p>
 <p><span class="citation" data-cites="r_bloggers_env_names">Mastropietro (<a href="referencias.html#ref-r_bloggers_env_names" role="doc-biblioref">2019</a>)</span></p>
-<p>Última atualização: 07/08/2023 - 19:55:01</p>
+<p>Última atualização: 08/08/2023 - 18:52:32</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

@@ -300,7 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="pacotes-instalados" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="pacotes-instalados"><span class="header-section-number">4.2</span> Pacotes Instalados</h2>
-<p>Podemos ver os pacotes instalados com o comando <strong>installed.packages</strong>:</p>
+<p>Podemos ver os pacotes instalados com o comando <code>installed.packages</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())<span class="sc">$</span>Package[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -308,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] "askpass"   "backports" "base64enc" "bit"       "bit64"    </code></pre>
 </div>
 </div>
-<p>A função <strong>installed.packages</strong> retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função <strong>t</strong>, que transpõe o data.frame de colunas para linhas.</p>
+<p>A função <code>installed.packages</code> retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função <code>t</code>, que transpõe o data.frame de colunas para linhas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote base</span></span>
@@ -376,7 +376,7 @@ Built                 "4.3.0"                                                   
 </div>
 </div>
 <p>Pode ser visto no campo <em>Priority</em> que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote “normal”, não possui informação no campo <em>Priority</em>.</p>
-<p>Também podemos visualizar dados do pacote (arquivo <em>DESCRIPTION</em> do próprio pacote) com o comando <strong>packageDescription</strong>:</p>
+<p>Também podemos visualizar dados do pacote (arquivo <em>DESCRIPTION</em> do próprio pacote) com o comando <code>packageDescription</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageDescription</span>(<span class="st">'base'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -398,7 +398,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="pasta-de-instalação" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="pasta-de-instalação"><span class="header-section-number">4.3</span> Pasta de Instalação</h2>
-<p>O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando <strong>.libPaths</strong>. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os “básicos” e os recomendados).</p>
+<p>O R possui pastas de instalação dos pacotes. Para visualizá-las basta usar o comando <code>.libPaths</code>. A pasta padrão de instalação traz os diversos pacotes que foram instalados junto com o R (os “básicos” e os recomendados).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -421,7 +421,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="pacotes-disponíveis" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="pacotes-disponíveis"><span class="header-section-number">4.4</span> Pacotes Disponíveis</h2>
-<p>A função <strong>available.packages</strong> procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
+<p>A função <code>available.packages</code> procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir repositório</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="st">'https://cran.rstudio.com/'</span>)</span>
@@ -458,9 +458,9 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="instalação-de-pacotes" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="instalação-de-pacotes"><span class="header-section-number">4.6</span> Instalação de Pacotes</h2>
-<p>Para efetuar a instalação de pacotes usa-se a função <strong>install.packages</strong>. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.</p>
+<p>Para efetuar a instalação de pacotes usa-se a função <code>install.packages</code>. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.</p>
 <hr>
-<p>Última atualização: 03/08/2023 - 23:56:35</p>
+<p>Última atualização: 08/08/2023 - 18:50:25</p>
 
 
 </section>

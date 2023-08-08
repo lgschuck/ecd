@@ -9,20 +9,18 @@ globalenv()
 .GlobalEnv
 ```
 
-Os objetos presentes no almbiente desejado podem ser visualizados com a função **ls**.
+Os objetos presentes no almbiente desejado podem ser visualizados com a função `ls`.
 
 ```{r}
-
 variavel <- 5
 ls(globalenv())
 
 ls()
-
 ```
 
 ## Ambiente de Pacotes
 
-Os pacotes também possuem ambientes e podemos listar seu "conteúdo" com a função **ls**. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote data.table.
+Os pacotes também possuem ambientes e podemos listar seu "conteúdo" com a função `ls`. Abaixo usando ls para mostrar os 10 primeiros elementos presentes no ambiente do pacote **data.table**.
 
 ```{r}
 library(data.table)
@@ -33,7 +31,7 @@ ls(as.environment('package:data.table'))[1:10]
 
 ## Ambientes "Pai"
 
-Cada ambiente possui um ambiente de nível superior associado, com exceção do R_EmptyEnv.
+Cada ambiente possui um ambiente de nível superior associado, com exceção do `R_EmptyEnv`.
 
 ```{r}
 # Ambiente superior ao GlobalEnv
@@ -46,7 +44,7 @@ parent.env(as.environment("package:base"))
 
 ### Buscar Ambiente Pai (Recursivamente)
 
-Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o R_EmptyEnv.
+Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o `R_EmptyEnv`.
 
 ```{r}
 
@@ -85,7 +83,7 @@ amb1
 parent.env(amb1)
 ```
 
-Objetos criados dentro de um ambiente podem ser acessados através do operador '\$' após o nome do ambiente. Também é possível utilizar a função **ls** com o nome do ambiente desejado para que sejam listados seus objetos.
+Objetos criados dentro de um ambiente podem ser acessados através do operador `$` após o nome do ambiente. Também é possível utilizar a função `ls` com o nome do ambiente desejado para que sejam listados seus objetos.
 
 ```{r}
 # Objeto x do amb1

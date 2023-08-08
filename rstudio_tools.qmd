@@ -34,7 +34,7 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
 -   **Install to Library:** pasta de instalação dos pacotes
 
--   **Install Dependencies:** marcação para que seja feita isntalação de dependências dos pacotes selecionados.
+-   **Install Dependencies:** marcação para que seja feita instalação de dependências dos pacotes selecionados.
 
 ## Check for Package Updates
 

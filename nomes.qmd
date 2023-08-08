@@ -29,7 +29,7 @@ Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado q
 `teste 1`
 ```
 
-Objetos podem ser criados com "." no início de seus nomes. Estes são objetos ocultos e portanto não aparecem em um comando ls "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função ls pode ser usado o parâmetro all.names = T.
+Objetos podem ser criados com "." no início de seus nomes. Estes são objetos ocultos e portanto não aparecem em um comando `ls` "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função ls pode ser usado o parâmetro `all.names = T`.
 
 ```{r}
 ls()
@@ -101,7 +101,7 @@ objeto_teste <- 'Teste snake_case'
 
 ```
 
-Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro, seja ele próximo ou distante.
+Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro e muitas vezes por outros usuários.
 
 ------------------------------------------------------------------------
 

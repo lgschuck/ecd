@@ -2,16 +2,15 @@
 
 ## Criando Funções
 
-Funções podem ser criadas através do comando **function**.
+Funções podem ser criadas através do comando `function`.
 
 ```{r}
 
-funcao_somar <- function(param1, param2){
+funcao_somar <- function(param1, param2) {
   param1 + param2
-  }
+}
 
 funcao_somar(5, 8)
-
 ```
 
 ## Função x Ambiente
@@ -19,11 +18,12 @@ funcao_somar(5, 8)
 As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente 'pai'.
 
 ```{r}
-funcao_exibir_envs <- function(){
-  print('Ambiente atual:') 
+funcao_exibir_envs <- function() {
+  print('Ambiente atual:')
   print(environment())
   
-  print(paste('Ambiente Pai:', environmentName(parent.env(environment()))))
+  print(paste('Ambiente Pai:', environmentName(parent.env(environment(
+  )))))
 }
 
 funcao_exibir_envs()

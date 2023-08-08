@@ -45,7 +45,7 @@ isFALSE(5 > 6)
 
 ### Ou Exclusivo (Xor)
 
-O operador Xor fornece saída verdadeira quando apenas um dos valores for verdadeiro.
+O operador `xor` fornece saída verdadeira quando apenas um dos valores for verdadeiro.
 
 ```{r}
 # Falso XOR Falso = Falso
