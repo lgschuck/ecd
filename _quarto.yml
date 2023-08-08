@@ -45,5 +45,5 @@ repo-url: https://github.com/lgschuck/ecd
 format:
   html:
     theme:
-      light: [cosmo , ecd.css]
-      dark: [slate , ecd.css]
+      light: [cosmo , ecd.scss]
+      dark: [slate]
