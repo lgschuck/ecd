@@ -3,4 +3,22 @@
 
 .sidebar-title {
   color: #03a17f;
+  font-weight: bold;
+
+}
+
+.sidebar-item-container {
+  color: #03a17f;
+
+}
+
+
+$btn-code-copy-color: #03a17f;
+$btn-code-copy-color-active: #03a17f;
+
+$link-color: #119c48;
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+  color: #03a17f;
 }

@@ -16,7 +16,7 @@ book:
     right: |
       Material criado com software livre: R, RStudio e Quarto.
     background: '#03a17f'
-
+  repo-url: https://github.com/lgschuck/ecd
   chapters:
     - index.qmd
     - autor.qmd
@@ -40,9 +40,10 @@ book:
 
 bibliography: referencias.bib
 
+repo-url: https://github.com/lgschuck/ecd
+
 format:
   html:
     theme:
       light: [cosmo , ecd.css]
       dark: [slate , ecd.css]
-
