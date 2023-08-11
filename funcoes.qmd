@@ -13,28 +13,95 @@ funcao_somar <- function(param1, param2) {
 funcao_somar(5, 8)
 ```
 
+Para visualizar o código de uma função podemos usar seu nome sem os parênteses.
+
+```{r}
+funcao_somar
+```
+
 ## Função x Ambiente
 
-As funções possuem seus próprios ambientes. Assim quando objetos são criados dentro de uma função eles só são acessados dentro dela. Abaixo uma função criada para exibir seu ambiente e seu ambiente 'pai'.
+As funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente 'pai'.
 
 ```{r}
 funcao_exibir_envs <- function() {
   print('Ambiente atual:')
   print(environment())
   
-  print(paste('Ambiente Pai:', environmentName(parent.env(environment(
-  )))))
+  print(paste(
+    'Ambiente Pai:', 
+    environmentName(parent.env(environment()
+                               ))))
 }
 
 funcao_exibir_envs()
 ```
 
-Para visualizar o código de uma função podemos usar seu nome sem os parênteses.
+### Objetos no Ambiente da Função
 
-```{r}
-funcao_exibir_envs  
+Objetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.
+
+```{r, error = T}
+funcao_teste <- function(){
+  y <- 15
+  x <- 80
+  ls()
+}
+
+funcao_teste()
+y
+```
+
+Objetos que existam no ambiente corrente não são alterados caso por estarem dentro do ambiente de fuma função. A variável x é inicializada com valor 10 no ambiente corrente. Ela pode ser acessada pela função memso não sendo informada em algum argumento.
+
+```{r, error = T}
+x <- 10
+
+funcao_teste2 <- function(){
+  y <- 15
+  x + y
+}
+
+funcao_teste2()
+y
+x
 
 ```
+Entretando, caso a variável x seja alterada no ambiente da função ela não é alterada no ambiente corrente.
+
+```{r}
+x <- 10
+
+funcao_teste3 <- function(){
+  y <- 15
+  x <- 80
+  x + y
+}
+
+funcao_teste3()
+x
+```
+
+#### Operador `<<-`
+
+Usando o operador de atribuição `<<-` é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no Environment que está acima do Environment da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada tanto no ambiente da função como no ambiente acima deste.
+
+```{r, error = T}
+ls(envir = globalenv())
+x
+funcao_teste4 <- function(){
+  y <- 15
+  x <<- 80
+  x + y
+}
+
+funcao_teste4()
+y
+x
+
+```
+
+Apesar de, neste caso, produzirem o mesmo retorno, as funções `funcao_teste3` e `funcao_teste4` impactam de formas distintas o ambiente do R.
 
 ------------------------------------------------------------------------
 
