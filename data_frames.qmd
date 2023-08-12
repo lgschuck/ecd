@@ -4,7 +4,7 @@
 
 ## O que são data frames ?
 
-Conforme o próprio manual do R, **data frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data.frame** pode ter diferentes tipos de dados em suas colunas.
+Conforme o próprio manual do R, **data frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data frame** pode ter diferentes tipos de dados em suas colunas.
 
 Um **data frame** possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto **data frame** possui o nome **data.frame**. Abaixo pode ser visualizada a classe do **data frame** [iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando `head`.
 
@@ -32,7 +32,7 @@ dsExemplo
 Para continuar os próximos tópicos vamos trabalhar com um **data frame** (**dsIris**) criado a partir do **data frame** **iris**. Faremos ajustes nos nomes deste data frame.
 
 ```{r}
-# criar data.frame dsIris
+# criar data frame dsIris
 dsIris <- iris
 # mudar nomes para maiusculas
 names(dsIris) <- toupper(names(dsIris))
@@ -46,7 +46,7 @@ head(dsIris)
 
 ## Atributos
 
-Os atributos "padrão" de um **data.frame** são: `names`, `class` e `row.names`. É possível acessá-los com a função `attributes`. O atributo `names` também pode ser obtido com a função `names`.
+Os atributos "padrão" de um **data frame** são: `names`, `class` e `row.names`. É possível acessá-los com a função `attributes`. O atributo `names` também pode ser obtido com a função `names`.
 
 ```{r}
 attributes(dsIris)
@@ -55,7 +55,7 @@ names(dsIris)
 
 ## Dimensões
 
-A função `dim` retorna as dimensões de um **data.frame** (linhas e colunas). Estes dados também podem ser obtidos com as funções `nrow` e `ncol`.
+A função `dim` retorna as dimensões de um **data frame** (linhas e colunas). Estes dados também podem ser obtidos com as funções `nrow` e `ncol`.
 
 ```{r}
 dim(dsIris)
@@ -67,7 +67,7 @@ ncol(dsIris)
 
 ### Índices
 
-Como a estrutura de um **data.frame** é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes (`[ ]`): base\[linha, coluna\]. Podem ser usados intervalos de índices com o operador `:`.
+Como a estrutura de um **data frame** é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes (`[ ]`): base\[linha, coluna\]. Podem ser usados intervalos de índices com o operador `:`.
 
 ```{r}
 # Acessar primeira linha e segunda coluna (Sepal.Width)
@@ -76,11 +76,11 @@ dsIris[1, 2]
 dsIris[1:3, 2]
 ```
 
-Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o **data.frame** seja editado. Por exemplo, caso em algum momento anterior a variável **PETAL_LENGTH** tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.
+Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o **data frame** seja editado. Por exemplo, caso em algum momento anterior a variável **PETAL_LENGTH** tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.
 
 ### Usando Nomes das Colunas
 
-Existem diversas outras formas para acessar dados de um **data.frame**, inclusive utilizando o nome da coluna de forma explícita.
+Existem diversas outras formas para acessar dados de um **data frame**, inclusive utilizando o nome da coluna de forma explícita.
 
 ```{r}
 # Acessar primeira linha e segunda coluna (pelo nome)
@@ -99,7 +99,7 @@ dsIris[1:3, ]$SEPAL_WIDTH
 
 ### Filtrando Dados
 
-Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do **data.frame**, deve ser informada condição lógica na forma abaixo:
+Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do **data frame**, deve ser informada condição lógica na forma abaixo:
 
 ```{r}
 # Retorna valores de Speal.Width onde Petal.Length for maior do que 6
