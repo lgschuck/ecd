@@ -1,17 +1,15 @@
 # Ciência de Dados
 
-Uma definição da IBM para Ciência de Dados:
+Segundo Provost e Fawcett [@provost2016, p 3] 'data science é um conjunto de princípios fundamentais que norteiam a extração de conhecimentos a partir de dados'.
 
-'A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização'¹.
+Uma definição da @ibm_ciencia_dados para Ciência de Dados:
 
-Uma definição mais sucinta da AWS:
+'A ciência de dados combina matemática e estatística, programação especializada, análise avançada, inteligência artificial (IA) e aprendizado de máquina com conhecimento em domínio específico para revelar insights acionáveis ocultos nos dados de uma organização'.
 
-'A ciência de dados é o estudo dos dados para extrair insights significativos para os negócios'².
+Uma definição mais sucinta da @aws_ciencia_dados:
+
+'A ciência de dados é o estudo dos dados para extrair insights significativos para os negócios'.
 
 ------------------------------------------------------------------------
-
-¹ https://www.ibm.com/cloud/learn/data-science-introduction
-
-² https://aws.amazon.com/pt/what-is/data-science/
 
 Última atualização: `r format(file.info('intro_cd.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
