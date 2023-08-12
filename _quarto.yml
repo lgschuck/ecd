@@ -35,6 +35,8 @@ book:
     - part: intro_cd.qmd
       chapters:
         - vies_var.qmd
+    - convencoes.qmd
+
 
     - referencias.qmd
 

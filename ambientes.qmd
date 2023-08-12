@@ -1,5 +1,7 @@
 # Ambientes
 
+[Status](convencoes.html#status-do-material) 🟦🟨🟨
+
 ## Global Env
 
 O Global Env é o ambiente "atual" do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários por exemplo. Ele pode ser "visualizado" com os comandos abaixo:
@@ -48,7 +50,7 @@ Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se 
 
 ```{r}
 
-buscar_envs_pai <- function(ambiente, nivel = 1){
+fnBuscarEnvsPai <- function(ambiente, nivel = 1){
  
     if(environmentName(ambiente)=="R_EmptyEnv"){
     return ('Ambiente informado é R_EmptyEnv. Fim da busca.')
@@ -63,11 +65,10 @@ buscar_envs_pai <- function(ambiente, nivel = 1){
     writeLines(paste0(marcacao, '|-- ', environmentName(parent.env(ambiente))))
 
     nivel <- nivel + 1
-    buscar_envs_pai(parent.env(ambiente), nivel = nivel)
+    fnBuscarEnvsPai(parent.env(ambiente), nivel = nivel)
 
 }
-buscar_envs_pai(globalenv())
-
+fnBuscarEnvsPai(globalenv())
 
 ```
 
