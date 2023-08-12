@@ -1,0 +1,8 @@
+# Introdução ao R
+
+[Status](convencoes.html#status-do-material) ⬛⬛⬛
+
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

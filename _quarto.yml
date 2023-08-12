@@ -20,24 +20,25 @@ book:
   chapters:
     - index.qmd
     - autor.qmd
-    - part: intro_r.qmd
+    - part: sobre_r.qmd
       chapters:
-        - nomes.qmd
-        - data_frames.qmd
-        - operacoes_logicas.qmd
-        - pacotes.qmd
-        - ambientes.qmd
-        - funcoes.qmd
-    - part: intro_rstudio.qmd
+        - r_intro.qmd
+        - r_nomes.qmd
+        - r_data_frames.qmd
+        - r_operacoes_logicas.qmd
+        - r_ambientes.qmd
+        - r_funcoes.qmd
+    - part: sobre_pacotes.qmd
       chapters:
-        - rstudio_layout.qmd
+        - pacotes_intro.qmd
+    - part: sobre_rstudio.qmd
+      chapters:
+        - rstudio_intro.qmd
         - rstudio_tools.qmd
-    - part: intro_cd.qmd
+    - part: sobre_cd.qmd
       chapters:
-        - vies_var.qmd
+        - cd_vies_var.qmd
     - convencoes.qmd
-
-
     - referencias.qmd
 
 bibliography: referencias.bib

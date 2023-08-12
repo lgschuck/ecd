@@ -1,12 +1,6 @@
-# Pacotes
+# Introdução a Pacotes
 
 [Status](convencoes.html#status-do-material) 🟦🟨🟨
-
-## O que são pacotes?
-
-Um pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que "expandem" o poder da linguagem. A principal opção para instalação de pacotes é através do [CRAN](https://cran.r-project.org/web/packages/index.html). O CRAN é um repositório que contém milhares de pacotes (`r nrow(available.packages(repos = "https://cran.rstudio.com/"))` em `r format(Sys.Date(), '%d/%m/%Y')`). Nele também podem ser encontrados pacotes em suas versões "antigas". Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo (muitos distribuem através do [Github](https://github.com/)).
-
-Existem alguns pacotes "especiais" em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são "classificados" com prioridade "base". Assim quando se faz a instalação da linguagem R, muitos pacotes também são instalados.
 
 ## Pacotes Instalados
 
@@ -84,4 +78,4 @@ Para efetuar a instalação de pacotes usa-se a função `install.packages`. Os 
 
 ------------------------------------------------------------------------
 
-Última atualização: `r format(file.info('pacotes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('pacotes_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

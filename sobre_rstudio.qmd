@@ -20,4 +20,4 @@ O **RStudio** é um IDE (Integrated Development Environment) criado pela [**Posi
 
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
 
-Última atualização: `r format(file.info('intro_rstudio.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('sobre_rstudio.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

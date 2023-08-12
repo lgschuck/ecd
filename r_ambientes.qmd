@@ -110,4 +110,4 @@ amb1$x * amb1$y
 
 @r_bloggers_env_names
 
-Última atualização: `r format(file.info('ambientes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('r_ambientes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

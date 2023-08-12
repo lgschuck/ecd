@@ -16,4 +16,4 @@ Uma definição mais sucinta da @aws_ciencia_dados:
 
 ------------------------------------------------------------------------
 
-Última atualização: `r format(file.info('intro_cd.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('sobre_cd.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

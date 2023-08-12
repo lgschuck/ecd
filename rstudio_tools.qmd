@@ -2,13 +2,15 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
+## Opções
+
 O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.
 
 ```{r, label = 'fig-rstudio-menu-tools', fig.cap = "Menu Tools", echo = FALSE}
   knitr::include_graphics('images/rstudio/menu_tools.png')
 ```
 
-## Install Packages
+### Install Packages
 
 Nesta opção é aberta a janela para instalação de pacotes.
 
@@ -20,7 +22,7 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
     -   Repository: repositório configurado
 
-        -   Packages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula
+        -   **Packages:** nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula
 
     -   **Package Archive File:** opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote
 
@@ -38,7 +40,7 @@ Nesta opção é aberta a janela para instalação de pacotes.
 
 -   **Install Dependencies:** marcação para que seja feita instalação de dependências dos pacotes selecionados.
 
-## Check for Package Updates
+### Check for Package Updates
 
 Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.
 
@@ -46,19 +48,19 @@ Este opção abre a janela Update Packages, permitindo visualizar quais pacotes 
   knitr::include_graphics('images/rstudio/menu_tools_update_pkgs.png')
 ```
 
-## Version Control
+### Version Control
 
 Oferece opção de controle de versões de código através do Git ou SVN.
 
-## Terminal
+### Terminal
 
 Permite acesso ao terminal do sistema operacional a partir do RStudio.
 
-## Background Jobs
+### Background Jobs
 
 Fornece opções para execução de 'Jobs', basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.
 
-## Global Options
+### Global Options
 
 Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.
 

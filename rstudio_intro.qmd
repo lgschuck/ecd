@@ -1,4 +1,6 @@
-# Layout
+# Introdução ao RStudio
+
+## Layout
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
@@ -42,4 +44,4 @@ Aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc)
 
 [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
 
-Última atualização: `r format(file.info('rstudio_layout.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('rstudio_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

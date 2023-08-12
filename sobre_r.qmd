@@ -36,4 +36,4 @@ Uma grande vantagem da liguagem R é a existência de uma gama enorme de conteú
 
 @r
 
-Última atualização: `r format(file.info('intro_r.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('sobre_r.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

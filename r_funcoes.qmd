@@ -110,4 +110,4 @@ Apesar de, neste caso, produzirem o mesmo retorno, as funções `fnTeste3` e `fn
 
 @grolemund2014
 
-Última atualização: `r format(file.info('funcoes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('r_funcoes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

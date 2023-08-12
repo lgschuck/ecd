@@ -117,4 +117,4 @@ Neste material os nomes de bjetos seguirão o definido no capítulo [Convençõe
 
 @wiki_naming_convention
 
-Última atualização: `r format(file.info('nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
+Última atualização: `r format(file.info('r_nomes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
