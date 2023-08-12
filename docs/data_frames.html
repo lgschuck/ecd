@@ -271,6 +271,11 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./convencoes.html" class="sidebar-item-text sidebar-link">Convenções</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./referencias.html" class="sidebar-item-text sidebar-link">Referências</a>
   </div>
 </li>
@@ -283,7 +288,11 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">2.1</span>  O que são data frames ?</a></li>
+  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">2.1</span>  O que são data frames ?</a>
+  <ul class="collapse">
+  <li><a href="#criando-data-frames" id="toc-criando-data-frames" class="nav-link" data-scroll-target="#criando-data-frames"><span class="toc-section-number">2.1.1</span>  Criando Data Frames</a></li>
+  <li><a href="#aplicar-convenções-de-nomes" id="toc-aplicar-convenções-de-nomes" class="nav-link" data-scroll-target="#aplicar-convenções-de-nomes"><span class="toc-section-number">2.1.2</span>  Aplicar convenções de nomes</a></li>
+  </ul></li>
   <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos"><span class="toc-section-number">2.2</span>  Atributos</a></li>
   <li><a href="#dimensões" id="toc-dimensões" class="nav-link" data-scroll-target="#dimensões"><span class="toc-section-number">2.3</span>  Dimensões</a></li>
   <li><a href="#acessando-dados" id="toc-acessando-dados" class="nav-link" data-scroll-target="#acessando-dados"><span class="toc-section-number">2.4</span>  Acessando Dados</a>
@@ -315,10 +324,11 @@ div.csl-indent {
 
 </header>
 
+<p><a href="convencoes.html#status-do-material">Status</a> 🟦🟦🟦</p>
 <section id="o-que-são-data-frames" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="o-que-são-data-frames"><span class="header-section-number">2.1</span> O que são data frames ?</h2>
-<p>Conforme o próprio manual do R, <strong>data.frame</strong> é a estrutura que imita de forma mais próxima um dataset do <strong>SAS</strong> ou <strong>SPSS</strong>. De forma resumida um <strong>data.frame</strong> é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um <strong>data.frame</strong> pode ter diferentes tipos de dados em suas colunas.</p>
-<p>Um <strong>data.frame</strong> possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto <strong>data.frame</strong> possui o mesmo nome, <strong>data.frame</strong>. Abaixo pode ser visualizada a classe do <strong>data.frame</strong> <a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris</a> (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando <code>head</code>.</p>
+<p>Conforme o próprio manual do R, <strong>data frame</strong> é a estrutura que imita de forma mais próxima um dataset do <strong>SAS</strong> ou <strong>SPSS</strong>. De forma resumida um <strong>data frame</strong> é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um <strong>data.frame</strong> pode ter diferentes tipos de dados em suas colunas.</p>
+<p>Um <strong>data frame</strong> possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto <strong>data frame</strong> possui o nome <strong>data.frame</strong>. Abaixo pode ser visualizada a classe do <strong>data frame</strong> <a href="https://archive.ics.uci.edu/ml/datasets/iris">iris</a> (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando <code>head</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -335,15 +345,62 @@ div.csl-indent {
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
 </div>
+<section id="criando-data-frames" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="criando-data-frames"><span class="header-section-number">2.1.1</span> Criando Data Frames</h3>
+<p>Objetos da classe <strong>data.frame</strong> podem ser criados com a função <code>data.frame</code>.</p>
+<p>Aqui serão usadas as convenções de nomes conforme capítulos <a href="nomes.html">Nomeando Objetos</a> e <a href="convencoes.html">Convenções</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dsExemplo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">VAR_A =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">VAR_B =</span> <span class="fu">c</span>(<span class="dv">101</span><span class="sc">:</span><span class="dv">105</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>dsExemplo</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  VAR_A VAR_B
+1     1   101
+2     2   102
+3     3   103
+4     4   104
+5     5   105</code></pre>
+</div>
+</div>
+</section>
+<section id="aplicar-convenções-de-nomes" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="aplicar-convenções-de-nomes"><span class="header-section-number">2.1.2</span> Aplicar convenções de nomes</h3>
+<p>Para continuar os próximos tópicos vamos trabalhar com um <strong>data frame</strong> (<strong>dsIris</strong>) criado a partir do <strong>data frame</strong> <strong>iris</strong>. Faremos ajustes nos nomes deste data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criar data.frame dsIris</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dsIris <span class="ot">&lt;-</span> iris</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mudar nomes para maiusculas</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dsIris) <span class="ot">&lt;-</span> <span class="fu">toupper</span>(<span class="fu">names</span>(dsIris))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># substituir '.' por '_'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dsIris) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="fu">names</span>(dsIris), <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="at">replacement =</span> <span class="st">"_"</span>)  </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  SEPAL_LENGTH SEPAL_WIDTH PETAL_LENGTH PETAL_WIDTH SPECIES
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="atributos" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="atributos"><span class="header-section-number">2.2</span> Atributos</h2>
 <p>Os atributos “padrão” de um <strong>data.frame</strong> são: <code>names</code>, <code>class</code> e <code>row.names</code>. É possível acessá-los com a função <code>attributes</code>. O atributo <code>names</code> também pode ser obtido com a função <code>names</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$names
-[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
+[1] "SEPAL_LENGTH" "SEPAL_WIDTH"  "PETAL_LENGTH" "PETAL_WIDTH"  "SPECIES"     
 
 $class
 [1] "data.frame"
@@ -359,9 +416,9 @@ $row.names
 [127] 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144
 [145] 145 146 147 148 149 150</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     </code></pre>
+<pre><code>[1] "SEPAL_LENGTH" "SEPAL_WIDTH"  "PETAL_LENGTH" "PETAL_WIDTH"  "SPECIES"     </code></pre>
 </div>
 </div>
 </section>
@@ -369,15 +426,15 @@ $row.names
 <h2 data-number="2.3" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">2.3</span> Dimensões</h2>
 <p>A função <code>dim</code> retorna as dimensões de um <strong>data.frame</strong> (linhas e colunas). Estes dados também podem ser obtidos com as funções <code>nrow</code> e <code>ncol</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 150   5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 150</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(dsIris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -389,38 +446,38 @@ $row.names
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="índices"><span class="header-section-number">2.4.1</span> Índices</h3>
 <p>Como a estrutura de um <strong>data.frame</strong> é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes (<code>[ ]</code>): base[linha, coluna]. Podem ser usados intervalos de índices com o operador <code>:</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (Sepal.Width)</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>, <span class="dv">2</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (Sepal.Width)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dsIris[<span class="dv">1</span>, <span class="dv">2</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar linhas 1 até 3 e a segunda coluna</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">2</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar linhas 1 até 3 e a segunda coluna</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">2</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5 3.0 3.2</code></pre>
 </div>
 </div>
-<p>Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável ‘1’ pode mudar caso o <strong>data.frame</strong> seja editado. Por exemplo, caso em algum momento anterior a variável <strong>Sepal.Length</strong> tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.</p>
+<p>Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável ‘1’ pode mudar caso o <strong>data.frame</strong> seja editado. Por exemplo, caso em algum momento anterior a variável <strong>PETAL_LENGTH</strong> tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.</p>
 </section>
 <section id="usando-nomes-das-colunas" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="usando-nomes-das-colunas"><span class="header-section-number">2.4.2</span> Usando Nomes das Colunas</h3>
 <p>Existem diversas outras formas para acessar dados de um <strong>data.frame</strong>, inclusive utilizando o nome da coluna de forma explícita.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (pelo nome)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">'Sepal.Width'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (pelo nome)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">'SEPAL_WIDTH'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5 3.0 3.2</code></pre>
 </div>
 </div>
 <p>Uma forma bastante comum é através da utilização do operador <code>$</code> para acessar a coluna pelo seu nome.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span>, ]<span class="sc">$</span>Sepal.Width</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dsIris[<span class="dv">1</span>, ]<span class="sc">$</span>SEPAL_WIDTH</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar linhas 1 até 3 e a segunda coluna</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, ]<span class="sc">$</span>Sepal.Width</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar linhas 1 até 3 e a segunda coluna</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, ]<span class="sc">$</span>SEPAL_WIDTH</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.5 3.0 3.2</code></pre>
 </div>
@@ -430,71 +487,71 @@ $row.names
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">2.4.3</span> Filtrando Dados</h3>
 <p>Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do <strong>data.frame</strong>, deve ser informada condição lógica na forma abaixo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna valores de Speal.Width onde Petal.Length for maior do que 6</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> iris[iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="fl">6.5</span>, <span class="st">'Sepal.Width'</span>]</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> iris[iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="fl">6.5</span>, ]<span class="sc">$</span>Sepal.Width</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna valores de Speal.Width onde Petal.Length for maior do que 6</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> dsIris[dsIris<span class="sc">$</span>PETAL_LENGTH <span class="sc">&gt;</span> <span class="dv">6</span>, <span class="st">'SEPAL_WIDTH'</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> dsIris[dsIris<span class="sc">$</span>PETAL_LENGTH <span class="sc">&gt;</span> <span class="fl">6.5</span>, ]<span class="sc">$</span>SEPAL_WIDTH</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.0 2.9 3.6 3.8 2.6 2.8 2.8 3.8 3.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.0 3.8 2.6 2.8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que compara os objetos</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(x, y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.0 3.8 2.6 2.8</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que compara os objetos</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(x, y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
+<pre><code>[1] FALSE</code></pre>
 </div>
 </div>
-<p>O retorno é dado pelas linhas em que a variável <strong>Petal.Length</strong> atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores <code>TRUE</code> são os que “permanecem”. Abaixo outro exemplo:</p>
+<p>O retorno é dado pelas linhas em que a variável <strong>PETAL_LENGTH</strong> atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores <code>TRUE</code> são os que “permanecem”. Abaixo outro exemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris<span class="sc">$</span>Petal.Length) <span class="sc">&gt;</span> <span class="fl">1.4</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dsIris<span class="sc">$</span>PETAL_LENGTH) <span class="sc">&gt;</span> <span class="fl">1.4</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 </div>
 </div>
 <p>Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a <code>TRUE</code> devem ser mantidas. No exemplo abaixo, as posições (linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão selecionadas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>iris2 <span class="ot">&lt;-</span> <span class="fu">head</span>(iris)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>filtro <span class="ot">&lt;-</span> <span class="fu">head</span>(iris2<span class="sc">$</span>Petal.Length) <span class="sc">&gt;</span> <span class="fl">1.4</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>filtro</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>dsIris2 <span class="ot">&lt;-</span> <span class="fu">head</span>(dsIris)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>filtro <span class="ot">&lt;-</span> <span class="fu">head</span>(dsIris2<span class="sc">$</span>PETAL_LENGTH) <span class="sc">&gt;</span> <span class="fl">1.4</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>filtro</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>iris2[filtro, <span class="st">'Sepal.Width'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>dsIris2[filtro, <span class="st">'SEPAL_WIDTH'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
 <p>Equivalente ao comando abaixo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>iris2[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>), <span class="st">'Sepal.Width'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>dsIris2[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>), <span class="st">'SEPAL_WIDTH'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
 <section id="classes-de-retorno" class="level4" data-number="2.4.3.1">
 <h4 data-number="2.4.3.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">2.4.3.1</span> Classes de retorno</h4>
-<p>Os filtros em data.frames usados com <code>$</code> ou <code>[ ]</code> (com apenas 1 variável) retornam vetores e não <strong>data.frame</strong>. Desta forma se perde a classe e a estrutura tabular original do <strong>data.frame</strong>.</p>
+<p>Os filtros em <strong>data frames</strong> usados com <code>$</code> ou <code>[ ]</code> (com apenas 1 variável) retornam vetores e não <strong>data frames</strong>. Desta forma se perde a classe e a estrutura tabular característica do <strong>data frame</strong> original.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">'Sepal.Width'</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">'SEPAL_WIDTH'</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
 </div>
 <p>Entretanto, sendo selecionadas mais de uma coluna, a classe retornada segue sendo <strong>data.frame</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"SEPAL_LENGTH"</span>, <span class="st">"SEPAL_WIDTH"</span>)])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dsIris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
@@ -502,20 +559,24 @@ $row.names
 </section>
 <section id="função-subset" class="level4" data-number="2.4.3.2">
 <h4 data-number="2.4.3.2" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">2.4.3.2</span> Função Subset</h4>
-<p>A função <code>subset</code> permite efetuar filtro em um <strong>data.frame</strong> e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um <strong>data.frame</strong>, mesmo com a seleção de apenas 1 variável.</p>
-<p>Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o <strong>data.frame</strong> seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
+<p>A função <code>subset</code> permite efetuar filtro em um <strong>data frame</strong> e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um <strong>data frame</strong>, mesmo com a seleção de apenas 1 variável.</p>
+<p>Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o <strong>data frame</strong> seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">subset</span>(iris, <span class="at">select =</span> Petal.Width))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">subset</span>(dsIris, <span class="at">select =</span> SEPAL_WIDTH))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> mtcars, <span class="co"># dados</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> mpg <span class="sc">&gt;</span> <span class="dv">25</span>, <span class="co"># filtro  </span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>dsMtcars <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mudar nomes para maiusculas</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dsMtcars) <span class="ot">&lt;-</span> <span class="fu">toupper</span>(<span class="fu">names</span>(dsMtcars))</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> dsMtcars, <span class="co"># dados</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subset =</span> MPG <span class="sc">&gt;</span> <span class="dv">25</span>, <span class="co"># filtro  </span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">select =</span> <span class="fu">c</span>(MPG, CYL, HP)) <span class="co"># colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                mpg cyl  hp
+<pre><code>                MPG CYL  HP
 Fiat 128       32.4   4  66
 Honda Civic    30.4   4  52
 Toyota Corolla 33.9   4  65
@@ -526,20 +587,20 @@ Lotus Europa   30.4   4 113</code></pre>
 </div>
 <p>Usando um filtro um pouco mais complexo e sem inserir o nome dos argumentos da função (<code>x</code>, <code>subset</code> e <code>select)</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>mtcars_filtrado <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, <span class="co"># dados </span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>       mpg <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">70</span>, <span class="co"># filtro  </span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(mpg, cyl, hp)) <span class="co"># colunas</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>mtcars_filtrado</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>dsMtcarsFiltrado <span class="ot">&lt;-</span> <span class="fu">subset</span>(dsMtcars, <span class="co"># dados </span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>       MPG <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> CYL <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> HP <span class="sc">&gt;</span> <span class="dv">70</span>, <span class="co"># filtro  </span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">c</span>(MPG, CYL, HP)) <span class="co"># colunas</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>dsMtcarsFiltrado</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               mpg cyl  hp
+<pre><code>               MPG CYL  HP
 Porsche 914-2 26.0   4  91
 Lotus Europa  30.4   4 113</code></pre>
 </div>
 </div>
 <hr>
 <p><span class="citation" data-cites="r_language_definition">Team (<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 08/08/2023 - 18:56:06</p>
+<p>Última atualização: 12/08/2023 - 15:56:19</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

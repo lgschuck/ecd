@@ -271,6 +271,11 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./convencoes.html" class="sidebar-item-text sidebar-link">Convenções</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./referencias.html" class="sidebar-item-text sidebar-link">Referências</a>
   </div>
 </li>
@@ -313,6 +318,7 @@ div.csl-indent {
 
 </header>
 
+<p><a href="convencoes.html#status-do-material">Status</a> 🟦🟨🟨</p>
 <section id="global-env" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="global-env"><span class="header-section-number">5.1</span> Global Env</h2>
 <p>O Global Env é o ambiente “atual” do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários por exemplo. Ele pode ser “visualizado” com os comandos abaixo:</p>
@@ -391,7 +397,7 @@ attr(,"path")
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">5.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
 <p>Abaixo função que busca recursivamente os ambientes e seus ‘pais’ até que se chege no ‘último’ ambiente, o <code>R_EmptyEnv</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>buscar_envs_pai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fnBuscarEnvsPai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">environmentName</span>(ambiente)<span class="sc">==</span><span class="st">"R_EmptyEnv"</span>){</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (<span class="st">'Ambiente informado é R_EmptyEnv. Fim da busca.'</span>)</span>
@@ -406,10 +412,10 @@ attr(,"path")
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">writeLines</span>(<span class="fu">paste0</span>(marcacao, <span class="st">'|-- '</span>, <span class="fu">environmentName</span>(<span class="fu">parent.env</span>(ambiente))))</span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    nivel <span class="ot">&lt;-</span> nivel <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">buscar_envs_pai</span>(<span class="fu">parent.env</span>(ambiente), <span class="at">nivel =</span> nivel)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fnBuscarEnvsPai</span>(<span class="fu">parent.env</span>(ambiente), <span class="at">nivel =</span> nivel)</span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">buscar_envs_pai</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">fnBuscarEnvsPai</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> |-- package:data.table
   |-- tools:quarto
@@ -438,7 +444,7 @@ attr(,"path")
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x00000285b684b458&gt;</code></pre>
+<pre><code>&lt;environment: 0x0000015b5b7bc820&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -475,7 +481,7 @@ attr(,"path")
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
 <p><span class="citation" data-cites="data.table">Dowle e Srinivasan (<a href="referencias.html#ref-data.table" role="doc-biblioref">2023</a>)</span></p>
 <p><span class="citation" data-cites="r_bloggers_env_names">Mastropietro (<a href="referencias.html#ref-r_bloggers_env_names" role="doc-biblioref">2019</a>)</span></p>
-<p>Última atualização: 08/08/2023 - 18:52:32</p>
+<p>Última atualização: 12/08/2023 - 15:56:19</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

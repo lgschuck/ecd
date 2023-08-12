@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - Sobre o Autor</title>
+<title>eRando em Ciênc1a de D4do$ - Convenções</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro_r.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./referencias.html" rel="next">
+<link href="./vies_var.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Sobre o Autor</h1>
+      <h1 class="quarto-secondary-nav-title">Convenções</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./autor.html" class="sidebar-item-text sidebar-link active">Sobre o Autor</a>
+  <a href="./autor.html" class="sidebar-item-text sidebar-link">Sobre o Autor</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./convencoes.html" class="sidebar-item-text sidebar-link">Convenções</a>
+  <a href="./convencoes.html" class="sidebar-item-text sidebar-link active">Convenções</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,14 +202,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#nomes-de-objetos" id="toc-nomes-de-objetos" class="nav-link active" data-scroll-target="#nomes-de-objetos">Nomes de Objetos</a></li>
+  <li><a href="#status-do-material" id="toc-status-do-material" class="nav-link" data-scroll-target="#status-do-material">Status do Material</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Sobre o Autor</h1>
+<h1 class="title d-none d-lg-block">Convenções</h1>
 </div>
 
 
@@ -224,13 +231,157 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><a href="convencoes.html#status-do-material">Status</a> 🟩🟩🟩</p>
-<p><a href="http://lattes.cnpq.br/0794590310791580" title="Lattes">Luís Gustavo Schuck</a> é formado em <strong>Gestão Financeira</strong> (2013) pelo Centro Universitário Internacional - Uninter. Possui <strong>Especialização em Business Analytics</strong> (2021) pela Universidade Federal do Rio Grande do Sul - UFRGS, <strong>MBA</strong> <strong>em Administração e Finanças</strong> (2017) pelo Centro Universitário Internacional - Uninter e <strong>MBA em Gestão Bancária</strong> (2015) pelo Centro Universitário Leonardo da Vinci - Uniasselvi. Possui certificação <strong>ANBIMA CPA-10</strong> (Certificação Profissional ANBIMA Série-10).</p>
-<p>Atualmente é aluno do curso de <strong>Análise e Desenvolvimento de Sistemas</strong> pela Universidade Feevale e atua como <strong>Analista na Unidade de Risco de Crédito</strong> do Banco do Estado do Rio Grande do Sul (<a href="https://ri.banrisul.com.br/quem-somos/">Banrisul</a>). Utiliza R desde 2017.</p>
+<p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
+<section id="nomes-de-objetos" class="level2">
+<h2 class="anchored" data-anchor-id="nomes-de-objetos">Nomes de Objetos</h2>
+<p>Abaixo convenções a serem usadas neste material.</p>
+<table class="table">
+<caption>Convenções de código</caption>
+<colgroup>
+<col style="width: 31%">
+<col style="width: 43%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo Objeto</th>
+<th>Convenção</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data.frame, tibble ou data.table</td>
+<td>camelCase iniciado por ds (<strong>d</strong>ata<strong>s</strong>et).</td>
+<td>dsClientes</td>
+</tr>
+<tr class="even">
+<td>Variáveis de datasets</td>
+<td>SCREAMING_SNAKE_CASE</td>
+<td>dsClientes$NOME_CLIENTE</td>
+</tr>
+<tr class="odd">
+<td>Funções</td>
+<td>camelCase iniciado por fn</td>
+<td>fnBuscarClientes</td>
+</tr>
+<tr class="even">
+<td>Vetores, listas, etc.</td>
+<td>snake_case</td>
+<td>nomes_cidades</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="status-do-material" class="level2">
+<h2 class="anchored" data-anchor-id="status-do-material">Status do Material</h2>
+<p>Para indicação de status do material apresentado serão usados os símbolos baixo no topo de cada capítulo:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Indicador</th>
+<th>Estrutura</th>
+<th>Conteúdo</th>
+<th>Status Geral</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>⬛⬛⬛</td>
+<td>não iniciado</td>
+<td>não iniciado</td>
+<td>não iniciado</td>
+</tr>
+<tr class="even">
+<td>🟨⬛🟨</td>
+<td>incipiente</td>
+<td>não criado</td>
+<td>incipiente</td>
+</tr>
+<tr class="odd">
+<td>🟨🟨🟨</td>
+<td>incipiente</td>
+<td>incipiente</td>
+<td>incipiente</td>
+</tr>
+<tr class="even">
+<td>🟨🟦🟨</td>
+<td>incipiente</td>
+<td>em revisão</td>
+<td>incipiente</td>
+</tr>
+<tr class="odd">
+<td>🟦🟦🟦</td>
+<td>em revisão</td>
+<td>em revisão</td>
+<td>em revisão</td>
+</tr>
+<tr class="even">
+<td>🟦🟩🟦</td>
+<td>em revisão</td>
+<td>amadurecido</td>
+<td>em revisão</td>
+</tr>
+<tr class="odd">
+<td>🟦🟨🟨</td>
+<td>em revisão</td>
+<td>incipiente</td>
+<td>incipiente</td>
+</tr>
+<tr class="even">
+<td>🟨🟩🟨</td>
+<td>incipiente</td>
+<td>amadurecido</td>
+<td>incipiente</td>
+</tr>
+<tr class="odd">
+<td>🟨🟥🟥</td>
+<td>incipiente</td>
+<td>desatualizado</td>
+<td>desatualizado</td>
+</tr>
+<tr class="even">
+<td>🟩🟨🟨</td>
+<td>amadurecido</td>
+<td>incipiente</td>
+<td>incipiente</td>
+</tr>
+<tr class="odd">
+<td>🟩🟦🟦</td>
+<td>amadurecido</td>
+<td>em revisão</td>
+<td>em revisão</td>
+</tr>
+<tr class="even">
+<td>🟩🟥🟥</td>
+<td>amadurecido</td>
+<td>desatualizado</td>
+<td>desatualizado</td>
+</tr>
+<tr class="odd">
+<td>🟩🟩🟩</td>
+<td>amadurecido</td>
+<td>amadurecido</td>
+<td>amadurecido</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>🟨 <strong>incipiente:</strong> recém iniciado, é o status mais volátil. Após melhores definições passa a ser marcado como 🟦.</p></li>
+<li><p>🟦 <strong>em revisão:</strong> em alterações (grandes) para melhorias. Após este status será marcado como 🟩.</p></li>
+<li><p>🟩 <strong>amadurecido:</strong> já passado por revisão. Pode sofrer pequenas alterações e atualizações. Caso se identifique que necessite de grandes alterações será marcado como:</p>
+<ul>
+<li><p>🟦 para revisão por decisão</p></li>
+<li><p>🟥 para revisão por desatualização</p></li>
+</ul></li>
+<li><p>🟥 <strong>desatualizado:</strong> necessita ser reescrito por força maior, como desatualização de conceitos ou códigos.</p>
+<p>⬛ <strong>não iniciado:</strong> serve como marcação de ‘todo’. usado para seções que se entendem necessárias mas que ainda não foram iniciadas.</p></li>
+</ul>
 <hr>
 <p>Última atualização: 12/08/2023 - 15:56:19</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -483,13 +634,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bem Vindo</span>
+      <a href="./vies_var.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro_r.html" class="pagination-link">
-        <span class="nav-page-text">Linguagem R</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./referencias.html" class="pagination-link">
+        <span class="nav-page-text">Referências</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

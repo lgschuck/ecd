@@ -271,6 +271,11 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./convencoes.html" class="sidebar-item-text sidebar-link">Convenções</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./referencias.html" class="sidebar-item-text sidebar-link">Referências</a>
   </div>
 </li>
@@ -312,6 +317,7 @@ div.csl-indent {
 
 </header>
 
+<p><a href="convencoes.html#status-do-material">Status</a> 🟦🟦🟦</p>
 <section id="nomes" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="nomes"><span class="header-section-number">1.1</span> Nomes</h2>
 <p>A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).</p>
@@ -434,7 +440,8 @@ Nomes Significativos
 </section>
 <section id="convenções" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="convenções"><span class="header-section-number">1.3</span> Convenções</h2>
-<p>Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc. Uma “regra” importante seria não usar “.” em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.</p>
+<p>Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.</p>
+<p>Uma “regra” importante seria não usar “.” em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># camelCase</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>objetoTeste <span class="ot">&lt;-</span> <span class="st">'Teste camelCase'</span></span>
@@ -443,11 +450,12 @@ Nomes Significativos
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>objeto_teste <span class="ot">&lt;-</span> <span class="st">'Teste snake_case'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Um bom guia é o <a href="https://style.tidyverse.org/syntax.html">The tidyverse style guide</a>. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro e muitas vezes por outros usuários.</p>
+<p>Neste material os nomes de bjetos seguirão o definido no capítulo <a href="convencoes.html">Convenções</a>.</p>
 <hr>
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
 <p><span class="citation" data-cites="introduction_r">Team (<a href="referencias.html#ref-introduction_r" role="doc-biblioref">2023</a>)</span></p>
 <p><span class="citation" data-cites="wiki_naming_convention">Wikipedia (<a href="referencias.html#ref-wiki_naming_convention" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 08/08/2023 - 18:48:56</p>
+<p>Última atualização: 12/08/2023 - 15:56:19</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
