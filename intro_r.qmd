@@ -12,6 +12,8 @@ No [IEEE Spectrum Top Programming Languages 2022](https://spectrum.ieee.org/top-
 
 Uma grande vantagem da liguagem R é a existência de uma gama enorme de conteúdos distribuídos através da Internet, muitos de forma livre e de fácil acesso. Abaixo alguns sites com conteúdos muito ricos sobre R:
 
+-   [Análise de Dados Financeiros e Econômicos com o R - Versão Online](https://msperlin.com/adfer/)
+
 -   [Introdução à Linguagem R: seus fundamentos e sua prática](https://pedropark99.github.io/Introducao_R/)
 
 -   [R Manuals](https://rstudio.github.io/r-manuals/)

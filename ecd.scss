@@ -2,27 +2,32 @@
 /*-- scss:defaults --*/
 
 .sidebar-title {
-  color: #03a17f;
+  color: white;
   font-weight: bold;
 
 }
 
-$link-color: #07a847;
-
+$sidebar-bg: #03a17f;
+$link-color: #03a17f;
 
 h1 {
   color: #03a17f;
 }
 
-.sidebar-item-container {
-  color: #03a17f;
-
-}
-
 $btn-code-copy-color: #03a17f;
 $btn-code-copy-color-active: #03a17f;
 
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+/*-- scss:rules --*/
+
+.sidebar-item-container {
+  color: white;
+}
+
 div.sidebar-item-container .active {
   font-weight: bold;
-  color: #03a17f;
+  color: white;
 }
