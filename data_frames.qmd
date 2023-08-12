@@ -1,14 +1,46 @@
 # Data Frames
 
+[Status](convencoes.html#status-do-material) 🟦🟦🟦
+
 ## O que são data frames ?
 
-Conforme o próprio manual do R, **data.frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data.frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data.frame** pode ter diferentes tipos de dados em suas colunas.
+Conforme o próprio manual do R, **data frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data.frame** pode ter diferentes tipos de dados em suas colunas.
 
-Um **data.frame** possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto **data.frame** possui o mesmo nome, **data.frame**. Abaixo pode ser visualizada a classe do **data.frame** [Iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando `head`.
+Um **data frame** possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto **data frame** possui o nome **data.frame**. Abaixo pode ser visualizada a classe do **data frame** [iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando `head`.
 
 ```{r}
 class(iris)
 head(iris)
+```
+
+### Criando Data Frames
+
+Objetos da classe **data.frame** podem ser criados com a função `data.frame`.
+
+Aqui serão usadas as convenções de nomes conforme capítulos [Nomeando Objetos](nomes.html) e [Convenções](convencoes.html).
+
+```{r}
+dsExemplo <- data.frame(
+  VAR_A = c(1:5),
+  VAR_B = c(101:105)
+)
+dsExemplo
+```
+
+### Aplicar convenções de nomes
+
+Para continuar os próximos tópicos vamos trabalhar com um **data frame** (**dsIris**) criado a partir do **data frame** **iris**. Faremos ajustes nos nomes deste data frame.
+
+```{r}
+# criar data.frame dsIris
+dsIris <- iris
+# mudar nomes para maiusculas
+names(dsIris) <- toupper(names(dsIris))
+# substituir '.' por '_'
+names(dsIris) <- gsub(names(dsIris), pattern = "\\.", replacement = "_")  
+
+class(dsIris)
+head(dsIris)
 
 ```
 
@@ -17,8 +49,8 @@ head(iris)
 Os atributos "padrão" de um **data.frame** são: `names`, `class` e `row.names`. É possível acessá-los com a função `attributes`. O atributo `names` também pode ser obtido com a função `names`.
 
 ```{r}
-attributes(iris)
-names(iris)
+attributes(dsIris)
+names(dsIris)
 ```
 
 ## Dimensões
@@ -26,9 +58,9 @@ names(iris)
 A função `dim` retorna as dimensões de um **data.frame** (linhas e colunas). Estes dados também podem ser obtidos com as funções `nrow` e `ncol`.
 
 ```{r}
-dim(iris)
-nrow(iris)
-ncol(iris)
+dim(dsIris)
+nrow(dsIris)
+ncol(dsIris)
 ```
 
 ## Acessando Dados
@@ -39,12 +71,12 @@ Como a estrutura de um **data.frame** é organizada em linhas e colunas, podemos
 
 ```{r}
 # Acessar primeira linha e segunda coluna (Sepal.Width)
-iris[1, 2]
+dsIris[1, 2]
 # Acessar linhas 1 até 3 e a segunda coluna
-iris[1:3, 2]
+dsIris[1:3, 2]
 ```
 
-Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o **data.frame** seja editado. Por exemplo, caso em algum momento anterior a variável **Sepal.Length** tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.
+Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o **data.frame** seja editado. Por exemplo, caso em algum momento anterior a variável **PETAL_LENGTH** tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.
 
 ### Usando Nomes das Colunas
 
@@ -52,7 +84,7 @@ Existem diversas outras formas para acessar dados de um **data.frame**, inclusiv
 
 ```{r}
 # Acessar primeira linha e segunda coluna (pelo nome)
-iris[1:3, 'Sepal.Width']
+dsIris[1:3, 'SEPAL_WIDTH']
 
 ```
 
@@ -60,9 +92,9 @@ Uma forma bastante comum é através da utilização do operador `$` para acessa
 
 ```{r}
 # Acessar primeira linha e segunda coluna
-iris[1, ]$Sepal.Width
+dsIris[1, ]$SEPAL_WIDTH
 # Acessar linhas 1 até 3 e a segunda coluna
-iris[1:3, ]$Sepal.Width
+dsIris[1:3, ]$SEPAL_WIDTH
 ```
 
 ### Filtrando Dados
@@ -71,8 +103,8 @@ Digamos que se deseje acessar apenas dados que cumpram determinada condição. P
 
 ```{r}
 # Retorna valores de Speal.Width onde Petal.Length for maior do que 6
-x <- iris[iris$Petal.Length > 6.5, 'Sepal.Width']
-y <- iris[iris$Petal.Length > 6.5, ]$Sepal.Width
+x <- dsIris[dsIris$PETAL_LENGTH > 6, 'SEPAL_WIDTH']
+y <- dsIris[dsIris$PETAL_LENGTH > 6.5, ]$SEPAL_WIDTH
 
 x
 y
@@ -80,68 +112,72 @@ y
 identical(x, y)
 ```
 
-O retorno é dado pelas linhas em que a variável **Petal.Length** atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores `TRUE` são os que "permanecem". Abaixo outro exemplo:
+O retorno é dado pelas linhas em que a variável **PETAL_LENGTH** atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores `TRUE` são os que "permanecem". Abaixo outro exemplo:
 
 ```{r}
-head(iris$Petal.Length) > 1.4
+head(dsIris$PETAL_LENGTH) > 1.4
 ```
 
 Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a `TRUE` devem ser mantidas. No exemplo abaixo, as posições (linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão selecionadas.
 
 ```{r}
-iris2 <- head(iris)
-filtro <- head(iris2$Petal.Length) > 1.4
+dsIris2 <- head(dsIris)
+filtro <- head(dsIris2$PETAL_LENGTH) > 1.4
 filtro
-iris2[filtro, 'Sepal.Width']
+dsIris2[filtro, 'SEPAL_WIDTH']
 ```
 
 Equivalente ao comando abaixo:
 
 ```{r}
-iris2[c(4, 6), 'Sepal.Width']
+dsIris2[c(4, 6), 'SEPAL_WIDTH']
 ```
 
 #### Classes de retorno
 
-Os filtros em data.frames usados com `$` ou `[ ]` (com apenas 1 variável) retornam vetores e não **data.frame**. Desta forma se perde a classe e a estrutura tabular original do **data.frame**.
+Os filtros em **data frames** usados com `$` ou `[ ]` (com apenas 1 variável) retornam vetores e não **data frames**. Desta forma se perde a classe e a estrutura tabular característica do **data frame** original.
 
 ```{r}
-class(iris[1:3, 1])
-class(iris[1:3, 'Sepal.Width'])
+class(dsIris[1:3, 1])
+class(dsIris[1:3, 'SEPAL_WIDTH'])
 ```
 
 Entretanto, sendo selecionadas mais de uma coluna, a classe retornada segue sendo **data.frame**.
 
 ```{r}
 
-class(iris[1:3, c("Sepal.Length", "Sepal.Width")])
-class(iris[1:3, 1:2])
+class(dsIris[1:3, c("SEPAL_LENGTH", "SEPAL_WIDTH")])
+class(dsIris[1:3, 1:2])
 ```
 
 #### Função Subset
 
-A função `subset` permite efetuar filtro em um **data.frame** e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um **data.frame**, mesmo com a seleção de apenas 1 variável.
+A função `subset` permite efetuar filtro em um **data frame** e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um **data frame**, mesmo com a seleção de apenas 1 variável.
 
-Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o **data.frame** seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
+Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o **data frame** seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
 
 ```{r}
-class(subset(iris, select = Petal.Width))
+class(subset(dsIris, select = SEPAL_WIDTH))
 ```
 
 ```{r}
-subset(x = mtcars, # dados
-       subset = mpg > 25, # filtro  
-       select = c(mpg, cyl, hp)) # colunas
+dsMtcars <- mtcars
+# mudar nomes para maiusculas
+names(dsMtcars) <- toupper(names(dsMtcars))
+
+subset(x = dsMtcars, # dados
+       subset = MPG > 25, # filtro  
+       select = c(MPG, CYL, HP)) # colunas
 ```
 
 Usando um filtro um pouco mais complexo e sem inserir o nome dos argumentos da função (`x`, `subset` e `select)`:
 
 ```{r}
-mtcars_filtrado <- subset(mtcars, # dados 
-       mpg > 25 & cyl == 4 & hp > 70, # filtro  
-       c(mpg, cyl, hp)) # colunas
+dsMtcarsFiltrado <- subset(dsMtcars, # dados 
+       MPG > 25 & CYL == 4 & HP > 70, # filtro  
+       c(MPG, CYL, HP)) # colunas
 
-mtcars_filtrado
+dsMtcarsFiltrado
 ```
 
 ------------------------------------------------------------------------

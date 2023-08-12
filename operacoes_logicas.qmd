@@ -1,5 +1,7 @@
 # Operações Lógicas
 
+[Status](convencoes.html#status-do-material) 🟦🟨🟨
+
 A linguagem R oferece uma série de operadores para utilização em testes lógicos.
 
 ## Operadores Relacionais

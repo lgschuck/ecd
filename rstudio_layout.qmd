@@ -1,5 +1,7 @@
 # Layout
 
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
 O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.
 
 ## Console

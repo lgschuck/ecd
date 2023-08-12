@@ -1,5 +1,9 @@
 # Ciência de Dados
 
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Definições
+
 Segundo Provost e Fawcett [@provost2016, p 3] 'data science é um conjunto de princípios fundamentais que norteiam a extração de conhecimentos a partir de dados'.
 
 Uma definição da @ibm_ciencia_dados para Ciência de Dados:

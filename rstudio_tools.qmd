@@ -1,5 +1,7 @@
 # Menu Tools
 
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
 O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.
 
 ```{r, label = 'fig-rstudio-menu-tools', fig.cap = "Menu Tools", echo = FALSE}

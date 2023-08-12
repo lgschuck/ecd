@@ -1,0 +1,54 @@
+# Convenções {.unnumbered}
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Nomes de Objetos
+
+Abaixo convenções a serem usadas neste material.
+
+| Tipo Objeto                      | Convenção                                    | Exemplo                  |
+|-----------------------|-------------------------------|------------------|
+| Data.frame, tibble ou data.table | camelCase iniciado por ds (**d**ata**s**et). | dsClientes               |
+| Variáveis de datasets            | SCREAMING_SNAKE_CASE                         | dsClientes\$NOME_CLIENTE |
+| Funções                          | camelCase iniciado por fn                    | fnBuscarClientes         |
+| Vetores, listas, etc.            | snake_case                                   | nomes_cidades            |
+
+: Convenções de código
+
+## Status do Material
+
+Para indicação de status do material apresentado serão usados os símbolos baixo no topo de cada capítulo:
+
+| Indicador | Estrutura    | Conteúdo      | Status Geral  |
+|-----------|--------------|---------------|---------------|
+| ⬛⬛⬛    | não iniciado | não iniciado  | não iniciado  |
+| 🟨⬛🟨    | incipiente   | não criado    | incipiente    |
+| 🟨🟨🟨    | incipiente   | incipiente    | incipiente    |
+| 🟨🟦🟨    | incipiente   | em revisão    | incipiente    |
+| 🟦🟦🟦    | em revisão   | em revisão    | em revisão    |
+| 🟦🟩🟦    | em revisão   | amadurecido   | em revisão    |
+| 🟦🟨🟨    | em revisão   | incipiente    | incipiente    |
+| 🟨🟩🟨    | incipiente   | amadurecido   | incipiente    |
+| 🟨🟥🟥    | incipiente   | desatualizado | desatualizado |
+| 🟩🟨🟨    | amadurecido  | incipiente    | incipiente    |
+| 🟩🟦🟦    | amadurecido  | em revisão    | em revisão    |
+| 🟩🟥🟥    | amadurecido  | desatualizado | desatualizado |
+| 🟩🟩🟩    | amadurecido  | amadurecido   | amadurecido   |
+
+-   🟨 **incipiente:** recém iniciado, é o status mais volátil. Após melhores definições passa a ser marcado como 🟦.
+
+-   🟦 **em revisão:** em alterações (grandes) para melhorias. Após este status será marcado como 🟩.
+
+-   🟩 **amadurecido:** já passado por revisão. Pode sofrer pequenas alterações e atualizações. Caso se identifique que necessite de grandes alterações será marcado como:
+
+    -   🟦 para revisão por decisão
+
+    -   🟥 para revisão por desatualização
+
+-   🟥 **desatualizado:** necessita ser reescrito por força maior, como desatualização de conceitos ou códigos.
+
+    ⬛ **não iniciado:** serve como marcação de 'todo'. usado para seções que se entendem necessárias mas que ainda não foram iniciadas.
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('convencoes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

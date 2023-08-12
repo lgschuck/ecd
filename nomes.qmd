@@ -1,5 +1,7 @@
 # Nomeando Objetos
 
+[Status](convencoes.html#status-do-material) 🟦🟦🟦
+
 ## Nomes
 
 A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).
@@ -89,7 +91,9 @@ ls()
 
 ## Convenções
 
-Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc. Uma "regra" importante seria não usar "." em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.
+Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.
+
+Uma "regra" importante seria não usar "." em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.
 
 ```{r}
 
@@ -102,6 +106,8 @@ objeto_teste <- 'Teste snake_case'
 ```
 
 Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro e muitas vezes por outros usuários.
+
+Neste material os nomes de bjetos seguirão o definido no capítulo [Convenções](convencoes.html).
 
 ------------------------------------------------------------------------
 

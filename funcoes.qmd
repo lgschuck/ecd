@@ -1,22 +1,24 @@
 # Funções
 
+[Status](convencoes.html#status-do-material) 🟦🟨🟨
+
 ## Criando Funções
 
 Funções podem ser criadas através do comando `function`.
 
 ```{r}
 
-funcao_somar <- function(param1, param2) {
+fnSomar <- function(param1, param2) {
   param1 + param2
 }
 
-funcao_somar(5, 8)
+fnSomar(5, 8)
 ```
 
 Para visualizar o código de uma função podemos usar seu nome sem os parênteses.
 
 ```{r}
-funcao_somar
+fnSomar
 ```
 
 ## Função x Ambiente
@@ -24,7 +26,7 @@ funcao_somar
 As funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente 'pai'.
 
 ```{r}
-funcao_exibir_envs <- function() {
+fnExibirEnvs <- function() {
   print('Ambiente atual:')
   print(environment())
   
@@ -34,7 +36,7 @@ funcao_exibir_envs <- function() {
                                ))))
 }
 
-funcao_exibir_envs()
+fnExibirEnvs()
 ```
 
 ### Objetos no Ambiente da Função
@@ -42,13 +44,13 @@ funcao_exibir_envs()
 Objetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.
 
 ```{r, error = T}
-funcao_teste <- function(){
+fnTeste <- function(){
   y <- 15
   x <- 80
   ls()
 }
 
-funcao_teste()
+fnTeste()
 y
 ```
 
@@ -57,28 +59,29 @@ Objetos que existam no ambiente corrente não são alterados caso por estarem de
 ```{r, error = T}
 x <- 10
 
-funcao_teste2 <- function(){
+fnTeste2 <- function(){
   y <- 15
   x + y
 }
 
-funcao_teste2()
+fnTeste2()
 y
 x
 
 ```
+
 Entretando, caso a variável x seja alterada no ambiente da função ela não é alterada no ambiente corrente.
 
 ```{r}
 x <- 10
 
-funcao_teste3 <- function(){
+fnTeste3 <- function(){
   y <- 15
   x <- 80
   x + y
 }
 
-funcao_teste3()
+fnTeste3()
 x
 ```
 
@@ -89,19 +92,19 @@ Usando o operador de atribuição `<<-` é possível alterar objetos que estejam
 ```{r, error = T}
 ls(envir = globalenv())
 x
-funcao_teste4 <- function(){
+fnTeste4 <- function(){
   y <- 15
   x <<- 80
   x + y
 }
 
-funcao_teste4()
+fnTeste4()
 y
 x
 
 ```
 
-Apesar de, neste caso, produzirem o mesmo retorno, as funções `funcao_teste3` e `funcao_teste4` impactam de formas distintas o ambiente do R.
+Apesar de, neste caso, produzirem o mesmo retorno, as funções `fnTeste3` e `fnTeste4` impactam de formas distintas o ambiente do R.
 
 ------------------------------------------------------------------------
 
