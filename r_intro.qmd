@@ -7,6 +7,8 @@
 Conforme o R Core Team[@introduction_r, cap 3] 'as entidades nas quais R opera são tecnicamente conhecidas como objetos'. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo **vetor**, pois este é o objeto mais básico.
 
 ::: callout-note
+## Variáveis
+
 Muitas vezes objetos em R são chamados de **variáveis**, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.
 :::
 
@@ -25,7 +27,7 @@ Vetores são entidades que armazenam dados em posições [@r_language_definition
 
 : Tipos de Vetores
 
-### Atribuição
+## Atribuição
 
 Para criação de objetos no R são usados os operadores de atribuição, `<-` e `=`. O operador mais usado é o `<-`. Assim para criação de um objeto pode ser usado o código abaixo:
 
@@ -55,7 +57,7 @@ Por exemplo, a função `typeof` exige a informação de um argumento (um objeto
 typeof(objeto1)
 ```
 
-O R processa esta função e devolve seu retorno.
+O R processa esta função e devolve seu retorno, no caso qual o tipo do **objeto1**.
 
 Pode-se visualizar o valor armazenado em um objeto com a função `print`, bem como exibir os objetos criados no R com a função `ls`. Note que a função `ls` aparentemente não exige argumentos.
 
@@ -66,7 +68,7 @@ ls()
 
 ### Argumentos de Funções
 
-As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função `ls` usada "sem" argumentos é processada normalmente.
+As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função `ls` usada "sem" argumentos é processada normalmente. Mais detlahes em [Funções](r_funcoes.html).
 
 ### Armazenando Retorno
 
@@ -82,7 +84,7 @@ Agora o objeto **tipo** armazena o valor retornado pelo função `typeof`, no ca
 
 ## Remoção de Objetos
 
-Objetos podem ser removidos (excluídos) com a função `rm`;
+Objetos podem ser removidos (excluídos) com a função `rm`.
 
 ```{r}
 rm(objeto1)
