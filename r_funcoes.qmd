@@ -106,6 +106,8 @@ x
 
 Apesar de, neste caso, produzirem o mesmo retorno, as funções `fnTeste3` e `fnTeste4` impactam de formas distintas o ambiente do R.
 
+## Funções Genéricas
+
 ------------------------------------------------------------------------
 
 @grolemund2014

@@ -23,19 +23,12 @@ x <- 10
 Escolha nomes intuitivos e que facilitem a identificação do conteúdo armazenado nos objetos.
 :::
 
-Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases. Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.
+Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases (*backticks*). Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.
 
 ```{r}
 'teste 1' #retorna como string
 # Exibe conteúdo do objeto
 `teste 1`
-```
-
-Objetos podem ser criados com "." no início de seus nomes. Estes são objetos ocultos e portanto não aparecem em um comando `ls` "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função ls pode ser usado o parâmetro `all.names = T`.
-
-```{r}
-ls()
-ls(all.names = T)
 ```
 
 ### Primeiro Caractere
@@ -74,9 +67,18 @@ Uma alternativa se dá mais uma vez com o uso de aspas ou crases. Com elas é po
 `55 teste @!&`
 ```
 
-Apesar de possível, objetos com nomes mais complicados como os exemplificados acabam tornando a vida do programador um pouco mais difícil.
+Apesar de possível, objetos com nomes mais complicados como os exemplificados acabam tornando a vida do programador um pouco mais difícil. Em geral, evite caracteres caracteres especiais e espaços nos nomes. Caso algum dado (bases de dados) seja carregado de arquivo externo com este tipo de caracteres, faça a uniformização dos nomes o quanto antes.
 
-## Case Sensitive
+#### Objetos "Ocultos"
+
+Objetos podem ser criados com "." no início de seus nomes desde que o segundo carctere seja uma letra. Estes são objetos "ocultos" e portanto não aparecem em um comando `ls` "puro", por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função `ls` deve ser usado o parâmetro `all.names = T`.
+
+```{r}
+ls()
+ls(all.names = T)
+```
+
+### Case Sensitive
 
 R é uma linguagem *case sensitive*, ou seja, ela diferencia maiúsculas de minúsculas. Assim um objeto com nome de Teste é diferente teste, tesTe, TESTE...
 
@@ -89,11 +91,15 @@ TESTE <- 25
 ls()
 ```
 
+::: callout-tip
+## Campos de Tabelas
+
+Campos (variáveis) de dados tabulados, como planilhas de Excel, seguem as mesmas regras. Este tipo de dado será tratado no capítulo sobre **data frames**.
+:::
+
 ## Convenções
 
-Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como camelCase, snake_case, SCREAMING_SNAKE_CASE, etc.
-
-Uma "regra" importante seria não usar "." em nome de objetos, pois através do ponto o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão.
+Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como **camelCase**, **snake_case**, **SCREAMING_SNAKE_CASE**, **PascalCase**, etc.
 
 ```{r}
 
@@ -107,7 +113,18 @@ objeto_teste <- 'Teste snake_case'
 
 Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.html). Tenha sempre em mente que sue código deve ser lido com facilidade no futuro e muitas vezes por outros usuários.
 
-Neste material os nomes de bjetos seguirão o definido no capítulo [Convenções](convencoes.html).
+Neste material os nomes de objetos e derivados seguirão a tabela abaixo. Estas definições foram escolhidas a fim de uniformizar o conteúdo apresentado e se baseiam em experiência de uso e no **Tidyverse Style Guide**. Mais detalhes em [Convenções](convencoes.html).
+
+| Tipo Objeto                      | Convenção                                                                     | Exemplo                  |
+|------------------|-----------------------------------|------------------|
+| Data.frame, tibble ou data.table | camelCase iniciado por ds (**d**ata**s**et)                                   | dsClientes               |
+| Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                          | dsClientes\$NOME_CLIENTE |
+| Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn será um verbo | fnBuscarClientes         |
+| Demais (vetores, listas, etc.)   | snake_case                                                                    | nomes_cidades            |
+
+::: callout-tip
+Evite usar "**.**" em nome de objetos, pois através do **ponto** o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão. Mais detalhes [Funções](r_funcoes.html#funções-genéricas).
+:::
 
 ------------------------------------------------------------------------
 

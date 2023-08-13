@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 1&nbsp; Introdução ao R</title>
+<title>eRando em Ciênc1a de D4do$ - 1&nbsp; Introdução</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,88 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -73,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução ao R</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -114,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Linguagem R</a>
+            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">A Linguagem R</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -122,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução ao R</span></a>
+  <a href="./r_intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -217,14 +299,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#objetos" id="toc-objetos" class="nav-link active" data-scroll-target="#objetos"><span class="toc-section-number">1.1</span>  Objetos</a>
+  <ul class="collapse">
+  <li><a href="#vetores" id="toc-vetores" class="nav-link" data-scroll-target="#vetores"><span class="toc-section-number">1.1.1</span>  Vetores</a></li>
+  <li><a href="#atribuição" id="toc-atribuição" class="nav-link" data-scroll-target="#atribuição"><span class="toc-section-number">1.1.2</span>  Atribuição</a></li>
+  </ul></li>
+  <li><a href="#usando-funções" id="toc-usando-funções" class="nav-link" data-scroll-target="#usando-funções"><span class="toc-section-number">1.2</span>  Usando Funções</a>
+  <ul class="collapse">
+  <li><a href="#argumentos-de-funções" id="toc-argumentos-de-funções" class="nav-link" data-scroll-target="#argumentos-de-funções"><span class="toc-section-number">1.2.1</span>  Argumentos de Funções</a></li>
+  <li><a href="#armazenando-retorno" id="toc-armazenando-retorno" class="nav-link" data-scroll-target="#armazenando-retorno"><span class="toc-section-number">1.2.2</span>  Armazenando Retorno</a></li>
+  </ul></li>
+  <li><a href="#remoção-de-objetos" id="toc-remoção-de-objetos" class="nav-link" data-scroll-target="#remoção-de-objetos"><span class="toc-section-number">1.3</span>  Remoção de Objetos</a></li>
+  <li><a href="#coerção" id="toc-coerção" class="nav-link" data-scroll-target="#coerção"><span class="toc-section-number">1.4</span>  Coerção</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução ao R</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></h1>
 </div>
 
 
@@ -239,11 +338,164 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><a href="convencoes.html#status-do-material">Status</a> ⬛⬛⬛</p>
+<p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
+<section id="objetos" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="objetos"><span class="header-section-number">1.1</span> Objetos</h2>
+<p>Conforme o R Core Team<span class="citation" data-cites="introduction_r">(<a href="referencias.html#ref-introduction_r" role="doc-biblioref">Team 2023a</a>, cap 3)</span> ‘as entidades nas quais R opera são tecnicamente conhecidas como objetos’. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo <strong>vetor</strong>, pois este é o objeto mais básico.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Muitas vezes objetos em R são chamados de <strong>variáveis</strong>, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.</p>
+</div>
+</div>
+<section id="vetores" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="vetores"><span class="header-section-number">1.1.1</span> Vetores</h3>
+<p>Vetores são entidades que armazenam dados em posições <span class="citation" data-cites="r_language_definition">(<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">Team 2023b</a>, cap 2)</span>. Os vetores são ditos <strong>atômicos</strong>, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma “local” onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:</p>
+<table class="table">
+<caption>Tipos de Vetores</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 50%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>logical</em></td>
+<td>lógico</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td><em>integer</em></td>
+<td>número inteiro</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><em>double</em></td>
+<td>número com ponto flutuante (real)</td>
+<td>1.5</td>
+</tr>
+<tr class="even">
+<td><em>complex</em></td>
+<td>número complexo</td>
+<td>1i</td>
+</tr>
+<tr class="odd">
+<td><em>character</em></td>
+<td>texto (<em>strings</em>)</td>
+<td>R é software livre.</td>
+</tr>
+<tr class="even">
+<td><em>raw</em></td>
+<td>bytes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="atribuição" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="atribuição"><span class="header-section-number">1.1.2</span> Atribuição</h3>
+<p>Para criação de objetos no R são usados os operadores de atribuição, <code>&lt;-</code> e <code>=</code>. O operador mais usado é o <code>&lt;-</code>. Assim para criação de um objeto pode ser usado o código abaixo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>objeto1 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># atribui valor 10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para criação de variáveis do tipo etxto, devem ser usadas aspas, simples ou duplas. Aqui o <strong>objeto2</strong> foi criado com uso de aspas para que o R trate o valor como <em>character</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>objeto2 <span class="ot">=</span> <span class="st">'texto'</span> <span class="co"># atribui texto</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+# Comentários
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R aceita comentários em seu código através do caractere sustenido (<em>hashtag</em>), ’<strong>#’</strong>. Qualquer texto após será ignorado pelo interpretador.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="usando-funções" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="usando-funções"><span class="header-section-number">1.2</span> Usando Funções</h2>
+<p>O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento).</p>
+<p>Por exemplo, a função <code>typeof</code> exige a informação de um argumento (um objeto do R).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+<p>O R processa esta função e devolve seu retorno.</p>
+<p>Pode-se visualizar o valor armazenado em um objeto com a função <code>print</code>, bem como exibir os objetos criados no R com a função <code>ls</code>. Note que a função <code>ls</code> aparentemente não exige argumentos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "objeto1" "objeto2"</code></pre>
+</div>
+</div>
+<section id="argumentos-de-funções" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="argumentos-de-funções"><span class="header-section-number">1.2.1</span> Argumentos de Funções</h3>
+<p>As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função <code>ls</code> usada “sem” argumentos é processada normalmente.</p>
+</section>
+<section id="armazenando-retorno" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="armazenando-retorno"><span class="header-section-number">1.2.2</span> Armazenando Retorno</h3>
+<p>Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tipo <span class="ot">&lt;-</span> <span class="fu">typeof</span>(objeto2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Agora o objeto <strong>tipo</strong> armazena o valor retornado pelo função <code>typeof</code>, no caso o texto (<em>character</em>) “double”.</p>
+</section>
+</section>
+<section id="remoção-de-objetos" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="remoção-de-objetos"><span class="header-section-number">1.3</span> Remoção de Objetos</h2>
+<p>Objetos podem ser removidos (excluídos) com a função <code>rm</code>;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="coerção" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="coerção"><span class="header-section-number">1.4</span> Coerção</h2>
 <hr>
-<p>Última atualização: 12/08/2023 - 20:19:29</p>
+<p>Última atualização: 12/08/2023 - 23:21:42</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-introduction_r" class="csl-entry" role="doc-biblioentry">
+Team, R Core. 2023a. <em>An Introduction to R</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">https://cran.r-project.org/doc/manuals/r-release/R-intro.html</a>.
+</div>
+<div id="ref-r_language_definition" class="csl-entry" role="doc-biblioentry">
+———. 2023b. <em>R Language Definition</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html">https://cran.r-project.org/doc/manuals/r-release/R-lang.html</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -497,7 +749,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./sobre_r.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linguagem R</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">A Linguagem R</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,7 +1,94 @@
-# Introdução ao R
+# Introdução
 
-[Status](convencoes.html#status-do-material) ⬛⬛⬛
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
 
+## Objetos
+
+Conforme o R Core Team[@introduction_r, cap 3] 'as entidades nas quais R opera são tecnicamente conhecidas como objetos'. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo **vetor**, pois este é o objeto mais básico.
+
+::: callout-note
+Muitas vezes objetos em R são chamados de **variáveis**, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.
+:::
+
+### Vetores
+
+Vetores são entidades que armazenam dados em posições [@r_language_definition, cap 2]. Os vetores são ditos **atômicos**, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma "local" onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:
+
+| Tipo        | Descrição                         | Exemplo             |
+|-------------|-----------------------------------|---------------------|
+| *logical*   | lógico                            | TRUE                |
+| *integer*   | número inteiro                    | 1                   |
+| *double*    | número com ponto flutuante (real) | 1.5                 |
+| *complex*   | número complexo                   | 1i                  |
+| *character* | texto (*strings*)                 | R é software livre. |
+| *raw*       | bytes                             |                     |
+
+: Tipos de Vetores
+
+### Atribuição
+
+Para criação de objetos no R são usados os operadores de atribuição, `<-` e `=`. O operador mais usado é o `<-`. Assim para criação de um objeto pode ser usado o código abaixo:
+
+```{r}
+objeto1 <- 10 # atribui valor 10
+```
+
+Para criação de variáveis do tipo etxto, devem ser usadas aspas, simples ou duplas. Aqui o **objeto2** foi criado com uso de aspas para que o R trate o valor como *character*.
+
+```{r}
+objeto2 = 'texto' # atribui texto
+```
+
+::: callout-note
+# \# Comentários
+
+R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Qualquer texto após será ignorado pelo interpretador.
+:::
+
+## Usando Funções
+
+O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento).
+
+Por exemplo, a função `typeof` exige a informação de um argumento (um objeto do R).
+
+```{r}
+typeof(objeto1)
+```
+
+O R processa esta função e devolve seu retorno.
+
+Pode-se visualizar o valor armazenado em um objeto com a função `print`, bem como exibir os objetos criados no R com a função `ls`. Note que a função `ls` aparentemente não exige argumentos.
+
+```{r}
+print(objeto1)
+ls()
+```
+
+### Argumentos de Funções
+
+As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função `ls` usada "sem" argumentos é processada normalmente.
+
+### Armazenando Retorno
+
+Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:
+
+```{r}
+tipo <- typeof(objeto2)
+print(tipo)
+typeof(tipo)
+```
+
+Agora o objeto **tipo** armazena o valor retornado pelo função `typeof`, no caso o texto (*character*) "double".
+
+## Remoção de Objetos
+
+Objetos podem ser removidos (excluídos) com a função `rm`;
+
+```{r}
+rm(objeto1)
+```
+
+## Coerção
 
 ------------------------------------------------------------------------
 
