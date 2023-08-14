@@ -2,7 +2,7 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
-Este capítulo tem como objetvo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.
+Este capítulo tem como objetivo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.
 
 ## Tela Inicial
 
@@ -37,6 +37,14 @@ knitr::include_graphics('images/r/intro/tela_inicial_atualizacao_console.png')
 
 Para buscar comandos executados anteriormente, pode-se usar a seta para cima do teclado. Os comandos vão sendo apresentados do mais recente ao mais antigo.
 :::
+
+### Erros
+
+Sempre que ocorrer algum erro na execução de um comando será exibida no console uma mensagem com o termo **Error**. Muitas vezes a mensagem de erro auxilia na identificação da causa do erro reportado. Abaixo um exemplo com erro retornado pelo R após a tentativa de execução de uma função inexistente (erro na digitação do comando).
+
+```{r, error = T}
+citatin()
+```
 
 ## Objetos
 
@@ -83,9 +91,63 @@ objeto2 = 'texto' # atribui texto
 R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Qualquer texto após será ignorado pelo interpretador.
 :::
 
+## Operações com Objetos
+
+Objetos podem ser atualizados novamente com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com a função`c`, que concatena valores, em conjunto com o operador **:**, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
+
+```{r}
+objeto3 <- c(1:5)
+objeto3
+typeof(objeto3)
+objeto3 <- objeto3 + 10
+```
+
+O vetor objeto3 foi criado com 5 posições, armazenando os valores de 1 a 5. Podemos acessar, por exemplo a terceira posição do vetor, através do operador de extração **[** em combinação com o índice do vetor.
+
+```{r}
+objeto3[3] # exibe terceiro elemento
+objeto3[3] + 10 # somando valor
+```
+
+Note que sem o operador de atribuição o valor da posição 3 do objeto3 não é atualizada, apenas exibda no console. Para atualizar seu valor usamos:
+
+```{r}
+objeto3
+objeto3[3] <- objeto3[3] + 30
+objeto3
+```
+
+### Coerção
+
+Quando vetores recebem dados de um tipo diferente o R tenta fazer uma operação de **coerção**, transformando os valores a fim de "atender" a todos. Nem sempre esta operação é possível e ela muitas vezes altera o vetor original. No exemplo abaixo o valor da posição 1 do vetor será atualizado para receber a letra **A**. Como o vetor originalmente era do tipo **integer**, o R fará a conversão dos valores para tipo **character**. Desta forma operações matemáticas não serão mais possíveis sobre este vetor.
+
+```{r, error = T}
+objeto3[1] <- 'A'
+objeto3
+typeof(objeto3)
+objeto3 + 10
+```
+
+## Exibindo Objetos
+
+O R possui a função `ls` que exibe os objetos existentes no ambiente.
+
+```{r}
+ls()
+```
+
+## Remoção de Objetos
+
+Objetos podem ser removidos (excluídos) com a função `rm`.
+
+```{r}
+rm(objeto2)
+ls()
+```
+
 ## Usando Funções
 
-O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento).
+O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento1, argumento2, ...).
 
 Por exemplo, a função `typeof` exige a informação de um argumento (um objeto do R).
 
@@ -106,27 +168,44 @@ ls()
 
 As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função `ls` usada "sem" argumentos é processada normalmente. Mais detlahes em [Funções](r_funcoes.html).
 
+Importante notar que os argumento possuem nomes e estes podem/devem ser usados. Voltemos a função `typeof`, ela possui apenas um argumento de nome **x**. Podemos usar a função `typeof` informando o nome do argumento e obtendo mesmo resultado anterior.
+
+```{r}
+typeof(x = objeto1)
+```
+
+Os argumentos podem ser omitidos e serão interpretados pelo R na ordem em que forem informados. Por exemplo a função `rep.int` retorna valores os valores indicados no argumento **x** n (**times**) vezes.
+
+```{r}
+rep.int(5, 4)
+rep.int(x = 5, times = 4) # de forma explícita
+```
+
+Perceba que os argumentos podem ser informados em ordem diversa, entretanto devem ser atribuidos de forma explícita. `rep.int(times = 4, x = 5)` é diferente de `rep.int(4, 5)`.
+
+```{r}
+rep.int(times = 4, x = 5)
+
+rep.int(4, 5)
+```
+
+:::callout-note
+Algumas funções não possuem argumentos e "apenas" executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções Sys.Date() e Sys.time(), que retornam a data e data e hora respectivamente.
+:::
+
 ### Armazenando Retorno
 
 Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:
 
 ```{r}
-tipo <- typeof(objeto2)
+tipo <- typeof(objeto1)
 print(tipo)
 typeof(tipo)
 ```
 
 Agora o objeto **tipo** armazena o valor retornado pelo função `typeof`, no caso o texto (*character*) "double".
 
-## Remoção de Objetos
 
-Objetos podem ser removidos (excluídos) com a função `rm`.
-
-```{r}
-rm(objeto1)
-```
-
-## Coerção
 
 ------------------------------------------------------------------------
 

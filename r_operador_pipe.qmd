@@ -1,18 +1,20 @@
 # Operador Pipe
 
-[Status](convencoes.html#status-do-material) 🟨🟨🟨
+[Status](convencoes.html#status-do-material) 🟦🟨🟨
 
 ## Introdução
 
-O operador `|>` (*pipe*) passa um valor para uma função. Os dados são passados do lado esquerdo (**lfs** - *left hand side*) para o lado direito (**rhs** - *right hand side*). O valor do lado esquerdo (lhs) é passado como o primeiro argumento da função do lado direito (rhs).
+Muitas vezes seu código demanda muitas transformações e acaba ficando muito verboso e de dificíl entendimento. Uma forma de facilitar a compreensão em torno das operações em sequência é criar um fluxo em que as operações vão sendo efetuadas em sequência, onde as entradas são as saídas do passo anterior.
 
-No exemplo abaixo o vetor que possue números de 1 até 20 é passado para a função `head`. Como o vetor é passado como **primeiro argumento** da função `head` esta exibe os seis primeiros elementos. 
+O operador `|>` (*pipe*) existe com este intuito, organizar as operações em um fluxo contínuo. O *pipe* foi implementado a partir da versão 4.1.0 do R e passa um valor para uma função. Os dados são passados do lado esquerdo (**lfs** - *left hand side*) para o lado direito (**rhs** - *right hand side*). O valor do lado esquerdo (lhs) é passado como o primeiro argumento da função do lado direito (rhs).
+
+Vejamos um exemplo simplificado onde o vetor que possue números de 1 até 20 é passado para a função `head`. Com o uso do `|>` o vetor é passado como **primeiro argumento** da função `head` e esta por sua vez exibe os seis primeiros elementos.
 
 ```{r}
 c(1:20) |> head()
 ```
 
-Equivalente a:
+O código acima é equivalente a:
 
 ```{r}
 head(c(1:20))
@@ -30,9 +32,56 @@ Equivalente a:
 head(c(1:20), n = 10)
 ```
 
+Vejamos um outro exemplo, um pouco mais realista e complexo: usar a base **mtcars** e a partir desta selecionar casos em que o campo **mpg** seja maior do que 10 e após criar uma variável chamada **media_hp**, que será a média a partir do campo **hp**. Poderia ser feito algo do tipo:
+
+```{r}
+df_mtcars <- subset(mtcars, mpg > 10)
+media_hp <- mean(df_mtcars$hp)
+media_hp
+```
+
+Mesmo sendo um processo pequeno com apenas 2 operações bastante corriqueiras, ler o código já se torna enfadonho, para dizer o mínimo. Também não fica claro, em uma passada de olhos, se as operações possuem relação entre si.
+
+Imagine agora criar as mesmas operações de forma "concatenada" em que uma transformação é passada para a seguinte até que se chegue ao final do fluxo. Em linguagem "humana" algo do tipo:
+
+data frame ➡️ filtrar casos ➡️ selecionar variável ➡️ calcular média
+
+Em R:
+
+```{r}
+mtcars |> 
+  subset(mpg > 10) |> 
+  subset(select = hp, drop = T) |> 
+  mean()
+
+# ou de forma mais sucinta
+mtcars |> 
+  subset(mpg > 10, select = hp, drop = T) |> 
+  mean()
+```
+
+Este código é equivalente ao anterior, porém aqui fica mais claro que todas as transformações foram feitas a fim de obter o valor da média de **hp** dos casos desejados (**mpg \> 10**). Para fazer a atribuição do resultado em uma variável basta, como de costume, ao início ou ao final usar o operador de atribuição `<-.`
+
+```{r}
+media_hp <- mtcars |> 
+  subset(mpg > 10) |> 
+  subset(select = hp, drop = T) |> 
+  mean()
+
+media_hp
+
+# ou de forma menos usual
+mtcars |> 
+  subset(mpg > 10) |> 
+  subset(select = hp, drop = T) |> 
+  mean() -> media_hp
+
+media_hp
+```
+
 ## Placeholder
 
-É possível utilizar o *pipe* para que o valor lfs seja passado para outro argumento que não o primeiro da função rhs. Para isto utiliza-se o símbolo **`_`**, chamado de *placeholder*.
+A partir da versão **4.2.0** o *pipe* passou a ter um ***placeholder*** (símbolo **`_`**) que serve para que o valor **lfs** seja passado para outro argumento que não o primeiro da função **rhs**.
 
 ```{r}
 8 |> head(c(1:20), n = _)
@@ -44,6 +93,21 @@ Equivalente a:
 head(c(1:20), n = 8)
 ```
 
+A partir da versão **4.3.0** o *placeholder* também pode ser utilizado para operações de extrações com `[`. Replicando o exemplo do cálculo de **media_hp**, porém agora fazendo a extração da variável **hp** que é retornada como um vetor e passada para a função `mean`.
+
+```{r}
+media_hp <- mtcars |> 
+  subset(mpg > 10) |> 
+  _$hp |> 
+  mean()
+
+media_hp
+```
+
 ------------------------------------------------------------------------
+
+@r_news
+
+@pipe_x_magrittr
 
 Última atualização: `r format(file.info('r_operador_pipe.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

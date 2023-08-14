@@ -16,7 +16,7 @@ No [IEEE Spectrum Top Programming Languages 2022](https://spectrum.ieee.org/top-
 
 A R Foundation é uma organização sem fins lucrativos que tem como objetivo promover o desenvolvimento da linguagem R e ser ponto de referência para entidades que desejem interagir com a comunidade de desenvolvimento do R.
 
-A R Foundation possui uma grande quantidade de apoiadores e doadores. Dentre os principais Patronos do R está a empresa [**Posit**](https://posit.co/), anteriormente **RStudio**, que desenvolve o principal IDE para R, RStudio.
+A R Foundation possui uma grande quantidade de apoiadores e doadores. Dentre os principais Patronos do R está a empresa [**Posit**](https://posit.co/), anteriormente **RStudio**, que desenvolve o principal IDE para R, também chamado de **RStudio**.
 
 Você pode ser um [apoiador!](https://www.r-project.org/foundation/donations.html)
 

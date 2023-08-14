@@ -1,0 +1,33 @@
+# Gráficos
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Introdução
+
+R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apreesentações dos gráficos.
+
+Abaixo um exemplo de um gráfico de pontos:
+
+```{r}
+plot(mtcars$hp, mtcars$mpg)
+```
+
+Customizando:
+
+```{r}
+plot(mtcars$hp, mtcars$mpg, 
+     col ='brown3', main = 'Scatter Plot', 
+     xlab = 'HP', ylab = 'MPG')
+```
+
+Abaixo um exemplo de um histograma
+
+```{r}
+hist(mtcars$hp, col ='aquamarine3', 
+     main = 'Histograma', xlab = 'HP',
+     ylab = 'Qtde')
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_graficos.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
