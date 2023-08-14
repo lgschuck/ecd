@@ -151,22 +151,27 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +186,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
+  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
   </div>
 </li>
       </ul>
@@ -196,12 +201,12 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
+  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +221,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -240,7 +245,8 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#comunidade" id="toc-comunidade" class="nav-link active" data-scroll-target="#comunidade">Comunidade</a></li>
+  <li><a href="#r-foundation" id="toc-r-foundation" class="nav-link active" data-scroll-target="#r-foundation">R Foundation</a></li>
+  <li><a href="#comunidade" id="toc-comunidade" class="nav-link" data-scroll-target="#comunidade">Comunidade</a></li>
   </ul>
 </nav>
     </div>
@@ -265,19 +271,25 @@ div.csl-indent {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟦🟨🟨</p>
-<p>Conforme o <strong>R Core Team</strong> <span class="citation" data-cites="r">(<a href="referencias.html#ref-r" role="doc-biblioref">Team 2023</a>)</span> ‘R é uma linguagem e ambiente para computação estatística e gráficos’. Criada na década de 1990, R é uma <strong>linguagem livre</strong> e é distribuída sob a licença <a href="https://www.r-project.org/COPYING">GPLv2</a>.</p>
-<p>Mantida pela R Foundation, atualmente (agosto/2023) é uma das linguagens mais buscadas no Google como pode ser visto pelo <a href="https://pypl.github.io/PYPL.html">PYPL - PopularitY of Programming Language</a>.</p>
+<p>Conforme o <strong>R Core Team</strong> <span class="citation" data-cites="r">(<a href="referencias.html#ref-r" role="doc-biblioref">R Core Team 2023</a>)</span> ‘R é uma linguagem e ambiente para computação estatística e gráficos’. Criada na década de 1990, R é uma <strong>linguagem livre</strong> e é distribuída sob a licença <a href="https://www.r-project.org/COPYING">GPLv2</a>.</p>
+<p>Mantida pela <a href="https://www.r-project.org/foundation/">R Foundation</a>, atualmente (agosto/2023) é uma das linguagens mais usadas para Ciência de Dados e está entre as linguagens mais buscadas no Google como pode ser visto pelo <a href="https://pypl.github.io/PYPL.html">PYPL - PopularitY of Programming Language</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/intro/pypl.PNG" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="images/r/pypl.PNG" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">05/2023 - PYPL PopularitY of Programming Language</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>No <a href="https://spectrum.ieee.org/top-programming-languages-2022">IEEE Spectrum Top Programming Languages 2022</a> a linguagem R também aparece com bastante relevância.</p>
+<section id="r-foundation" class="level2">
+<h2 class="anchored" data-anchor-id="r-foundation">R Foundation</h2>
+<p>A R Foundation é uma organização sem fins lucrativos que tem como objetivo promover o desenvolvimento da linguagem R e ser ponto de referência para entidades que desejem interagir com a comunidade de desenvolvimento do R.</p>
+<p>A R Foundation possui uma grande quantidade de apoiadores e doadores. Dentre os principais Patronos do R está a empresa <a href="https://posit.co/"><strong>Posit</strong></a>, anteriormente <strong>RStudio</strong>, que desenvolve o principal IDE para R, RStudio.</p>
+<p>Você pode ser um <a href="https://www.r-project.org/foundation/donations.html">apoiador!</a></p>
+</section>
 <section id="comunidade" class="level2">
 <h2 class="anchored" data-anchor-id="comunidade">Comunidade</h2>
 <p>Uma grande vantagem da liguagem R é a existência de uma grande comunidade de desenvolvimento, assim como uma gama enorme de conteúdos distribuídos através da Internet, muitos de forma livre e de fácil acesso. Abaixo alguns sites com conteúdos muito ricos sobre R:</p>
@@ -293,12 +305,12 @@ div.csl-indent {
 <li><p><a href="http://www.sthda.com/english/">Statistical tools for high-throughput data analysis</a></p></li>
 </ul>
 <hr>
-<p>Última atualização: 12/08/2023 - 21:23:55</p>
+<p>Última atualização: 13/08/2023 - 22:13:29</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-r" class="csl-entry" role="doc-biblioentry">
-Team, R Core. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 </div>
 </section>

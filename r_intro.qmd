@@ -2,6 +2,42 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
+Este capítulo tem como objetvo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.
+
+## Tela Inicial
+
+A tela inicial do R é um console, onde são passados comandos e o interpratador do R os executa e, se for o caso, exibe saídas. O cursor fica posicionado ao lado do símbolo do *prompt* do R, `>`. Este símbolo indica que o sistema está pronto para receber novo comando.
+
+```{r, label = 'fig-r-intro-tela-inicial', fig.cap = "Tela Inicial", echo = FALSE}
+knitr::include_graphics('images/r/intro/tela_inicial.png')
+```
+
+### Executando Comandos
+
+A tela inicial fornece algumas sugestões para consulta a dados sobre R, como licença da linguagem, citação, ajudas, etc. Usaremos como exemplo inicial o comando `license()`. Após a digitação do comando devemos confirmar com **ENTER** para que o R execute o comando informado e exiba na tela o resultado, no caso a licença da própria linguagem. Após a execução um novo sinal do *prompt* é exibido em aguardo de um possível próximo comando.
+
+```{r, label = 'fig-r-intro-tela-inicial-licenca', fig.cap = "Tela Inicial - Licença", echo = FALSE}
+knitr::include_graphics('images/r/intro/tela_inicial_licenca.png')
+```
+
+Podemos digitar `q()`, por exemplo, que é a função que efetua o encerramento do R.
+
+```{r, label = 'fig-r-intro-tela-inicial-quit', fig.cap = "Tela Inicial - Quit (sair)", echo = FALSE}
+knitr::include_graphics('images/r/intro/tela_inicial_quit.png')
+```
+
+Agora considere um cenário diferente, onde executamos o comando `license()` seguido do comando `citation()` (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos forem sendo passados o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando "cheia" os dados exibidos no topo vão "sumindo" para dar lugar aos mais recentes, na parte inferior.
+
+```{r, label = 'fig-r-intro-tela-inicial-atualizacao-console', fig.cap = "Tela Inicial - Atualização do Console", echo = FALSE}
+knitr::include_graphics('images/r/intro/tela_inicial_atualizacao_console.png')
+```
+
+::: callout-tip
+## Buscando Comandos Anteriores
+
+Para buscar comandos executados anteriormente, pode-se usar a seta para cima do teclado. Os comandos vão sendo apresentados do mais recente ao mais antigo.
+:::
+
 ## Objetos
 
 Conforme o R Core Team[@introduction_r, cap 3] 'as entidades nas quais R opera são tecnicamente conhecidas como objetos'. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo **vetor**, pois este é o objeto mais básico.

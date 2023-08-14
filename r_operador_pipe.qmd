@@ -1,0 +1,49 @@
+# Operador Pipe
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Introdução
+
+O operador `|>` (*pipe*) passa um valor para uma função. Os dados são passados do lado esquerdo (**lfs** - *left hand side*) para o lado direito (**rhs** - *right hand side*). O valor do lado esquerdo (lhs) é passado como o primeiro argumento da função do lado direito (rhs).
+
+No exemplo abaixo o vetor que possue números de 1 até 20 é passado para a função `head`. Como o vetor é passado como **primeiro argumento** da função `head` esta exibe os seis primeiros elementos. 
+
+```{r}
+c(1:20) |> head()
+```
+
+Equivalente a:
+
+```{r}
+head(c(1:20))
+```
+
+Caso se deseje alterar o número de elementos, basta usar o argumento **n**.
+
+```{r}
+c(1:20) |> head(n = 10)
+```
+
+Equivalente a:
+
+```{r}
+head(c(1:20), n = 10)
+```
+
+## Placeholder
+
+É possível utilizar o *pipe* para que o valor lfs seja passado para outro argumento que não o primeiro da função rhs. Para isto utiliza-se o símbolo **`_`**, chamado de *placeholder*.
+
+```{r}
+8 |> head(c(1:20), n = _)
+```
+
+Equivalente a:
+
+```{r}
+head(c(1:20), n = 8)
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_operador_pipe.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

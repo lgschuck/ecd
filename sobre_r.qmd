@@ -2,15 +2,23 @@
 
 [Status](convencoes.html#status-do-material) 🟦🟨🟨
 
-Conforme o **R Core Team** [@r] 'R é uma linguagem e ambiente para computação estatística e gráficos'. Criada na década de 1990, R é uma **linguagem livre** e é distribuída sob a licença [GPLv2](https://www.r-project.org/COPYING). 
+Conforme o **R Core Team** [@r] 'R é uma linguagem e ambiente para computação estatística e gráficos'. Criada na década de 1990, R é uma **linguagem livre** e é distribuída sob a licença [GPLv2](https://www.r-project.org/COPYING).
 
-Mantida pela R Foundation, atualmente (`r format(Sys.Date(), '%B/%Y')`) é uma das linguagens mais buscadas no Google como pode ser visto pelo [PYPL - PopularitY of Programming Language](https://pypl.github.io/PYPL.html).
+Mantida pela [R Foundation](https://www.r-project.org/foundation/), atualmente (`r format(Sys.Date(), '%B/%Y')`) é uma das linguagens mais usadas para Ciência de Dados e está entre as linguagens mais buscadas no Google como pode ser visto pelo [PYPL - PopularitY of Programming Language](https://pypl.github.io/PYPL.html).
 
 ```{r, fig.cap = "05/2023 - PYPL PopularitY of Programming Language", out.width="100%", echo = FALSE}
-  knitr::include_graphics('images/intro/pypl.PNG')
+  knitr::include_graphics('images/r/pypl.PNG')
 ```
 
 No [IEEE Spectrum Top Programming Languages 2022](https://spectrum.ieee.org/top-programming-languages-2022) a linguagem R também aparece com bastante relevância.
+
+## R Foundation
+
+A R Foundation é uma organização sem fins lucrativos que tem como objetivo promover o desenvolvimento da linguagem R e ser ponto de referência para entidades que desejem interagir com a comunidade de desenvolvimento do R.
+
+A R Foundation possui uma grande quantidade de apoiadores e doadores. Dentre os principais Patronos do R está a empresa [**Posit**](https://posit.co/), anteriormente **RStudio**, que desenvolve o principal IDE para R, RStudio.
+
+Você pode ser um [apoiador!](https://www.r-project.org/foundation/donations.html)
 
 ## Comunidade
 

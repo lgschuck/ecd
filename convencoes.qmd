@@ -6,18 +6,18 @@
 
 A fim de facilitar a leitura e evidenciar itens importantes no texto, serão adotadas as seguintes marcações:
 
-| Tipo do Texto                   | Marcação | Exemplo     |
-|---------------------------------|----------|-------------|
-| Funções, operadores do R        | Código   | `print`     |
-| Objetos od R, termos relevantes | Negrito  | **Negrito** |
-| Palavras de língua estrangeira  | Itálico  | *Itálico*   |
+| Tipo do Texto                           | Marcação | Exemplo     |
+|-----------------------------------------|----------|-------------|
+| Funções, operadores do R                | Código   | `print`     |
+| Objetos criados no R, termos relevantes | Negrito  | **Negrito** |
+| Palavras de língua estrangeira          | Itálico  | *Itálico*   |
 
 ## Nomes de Objetos
 
 Abaixo convenções a serem usadas neste material.
 
 | Tipo Objeto                      | Convenção                                                                     | Exemplo                  |
-|-----------------|---------------------------------------|-----------------|
+|------------------|-------------------------------------|------------------|
 | Data.frame, tibble ou data.table | camelCase iniciado por ds (**d**ata**s**et)                                   | dsClientes               |
 | Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                          | dsClientes\$NOME_CLIENTE |
 | Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn será um verbo | fnBuscarClientes         |

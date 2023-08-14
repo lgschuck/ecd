@@ -214,22 +214,27 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
       </ul>
@@ -244,7 +249,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
+  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
   </div>
 </li>
       </ul>
@@ -259,12 +264,12 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
+  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
   </div>
 </li>
       </ul>
@@ -279,7 +284,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -303,18 +308,22 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#objetos" id="toc-objetos" class="nav-link active" data-scroll-target="#objetos"><span class="toc-section-number">1.1</span>  Objetos</a>
+  <li><a href="#tela-inicial" id="toc-tela-inicial" class="nav-link active" data-scroll-target="#tela-inicial"><span class="toc-section-number">1.1</span>  Tela Inicial</a>
   <ul class="collapse">
-  <li><a href="#vetores" id="toc-vetores" class="nav-link" data-scroll-target="#vetores"><span class="toc-section-number">1.1.1</span>  Vetores</a></li>
+  <li><a href="#executando-comandos" id="toc-executando-comandos" class="nav-link" data-scroll-target="#executando-comandos"><span class="toc-section-number">1.1.1</span>  Executando Comandos</a></li>
   </ul></li>
-  <li><a href="#atribuição" id="toc-atribuição" class="nav-link" data-scroll-target="#atribuição"><span class="toc-section-number">1.2</span>  Atribuição</a></li>
-  <li><a href="#usando-funções" id="toc-usando-funções" class="nav-link" data-scroll-target="#usando-funções"><span class="toc-section-number">1.3</span>  Usando Funções</a>
+  <li><a href="#objetos" id="toc-objetos" class="nav-link" data-scroll-target="#objetos"><span class="toc-section-number">1.2</span>  Objetos</a>
   <ul class="collapse">
-  <li><a href="#argumentos-de-funções" id="toc-argumentos-de-funções" class="nav-link" data-scroll-target="#argumentos-de-funções"><span class="toc-section-number">1.3.1</span>  Argumentos de Funções</a></li>
-  <li><a href="#armazenando-retorno" id="toc-armazenando-retorno" class="nav-link" data-scroll-target="#armazenando-retorno"><span class="toc-section-number">1.3.2</span>  Armazenando Retorno</a></li>
+  <li><a href="#vetores" id="toc-vetores" class="nav-link" data-scroll-target="#vetores"><span class="toc-section-number">1.2.1</span>  Vetores</a></li>
   </ul></li>
-  <li><a href="#remoção-de-objetos" id="toc-remoção-de-objetos" class="nav-link" data-scroll-target="#remoção-de-objetos"><span class="toc-section-number">1.4</span>  Remoção de Objetos</a></li>
-  <li><a href="#coerção" id="toc-coerção" class="nav-link" data-scroll-target="#coerção"><span class="toc-section-number">1.5</span>  Coerção</a></li>
+  <li><a href="#atribuição" id="toc-atribuição" class="nav-link" data-scroll-target="#atribuição"><span class="toc-section-number">1.3</span>  Atribuição</a></li>
+  <li><a href="#usando-funções" id="toc-usando-funções" class="nav-link" data-scroll-target="#usando-funções"><span class="toc-section-number">1.4</span>  Usando Funções</a>
+  <ul class="collapse">
+  <li><a href="#argumentos-de-funções" id="toc-argumentos-de-funções" class="nav-link" data-scroll-target="#argumentos-de-funções"><span class="toc-section-number">1.4.1</span>  Argumentos de Funções</a></li>
+  <li><a href="#armazenando-retorno" id="toc-armazenando-retorno" class="nav-link" data-scroll-target="#armazenando-retorno"><span class="toc-section-number">1.4.2</span>  Armazenando Retorno</a></li>
+  </ul></li>
+  <li><a href="#remoção-de-objetos" id="toc-remoção-de-objetos" class="nav-link" data-scroll-target="#remoção-de-objetos"><span class="toc-section-number">1.5</span>  Remoção de Objetos</a></li>
+  <li><a href="#coerção" id="toc-coerção" class="nav-link" data-scroll-target="#coerção"><span class="toc-section-number">1.6</span>  Coerção</a></li>
   </ul>
 </nav>
     </div>
@@ -339,9 +348,73 @@ div.csl-indent {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
-<section id="objetos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetos"><span class="header-section-number">1.1</span> Objetos</h2>
-<p>Conforme o R Core Team<span class="citation" data-cites="introduction_r">(<a href="referencias.html#ref-introduction_r" role="doc-biblioref">Team 2023a</a>, cap 3)</span> ‘as entidades nas quais R opera são tecnicamente conhecidas como objetos’. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo <strong>vetor</strong>, pois este é o objeto mais básico.</p>
+<p>Este capítulo tem como objetvo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.</p>
+<section id="tela-inicial" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="tela-inicial"><span class="header-section-number">1.1</span> Tela Inicial</h2>
+<p>A tela inicial do R é um console, onde são passados comandos e o interpratador do R os executa e, se for o caso, exibe saídas. O cursor fica posicionado ao lado do símbolo do <em>prompt</em> do R, <code>&gt;</code>. Este símbolo indica que o sistema está pronto para receber novo comando.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-tela-inicial" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/tela_inicial.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.1: Tela Inicial</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="executando-comandos" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="executando-comandos"><span class="header-section-number">1.1.1</span> Executando Comandos</h3>
+<p>A tela inicial fornece algumas sugestões para consulta a dados sobre R, como licença da linguagem, citação, ajudas, etc. Usaremos como exemplo inicial o comando <code>license()</code>. Após a digitação do comando devemos confirmar com <strong>ENTER</strong> para que o R execute o comando informado e exiba na tela o resultado, no caso a licença da própria linguagem. Após a execução um novo sinal do <em>prompt</em> é exibido em aguardo de um possível próximo comando.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-tela-inicial-licenca" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/tela_inicial_licenca.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.2: Tela Inicial - Licença</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos digitar <code>q()</code>, por exemplo, que é a função que efetua o encerramento do R.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-tela-inicial-quit" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/tela_inicial_quit.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.3: Tela Inicial - Quit (sair)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora considere um cenário diferente, onde executamos o comando <code>license()</code> seguido do comando <code>citation()</code> (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos forem sendo passados o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando “cheia” os dados exibidos no topo vão “sumindo” para dar lugar aos mais recentes, na parte inferior.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-tela-inicial-atualizacao-console" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/tela_inicial_atualizacao_console.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.4: Tela Inicial - Atualização do Console</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Buscando Comandos Anteriores
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para buscar comandos executados anteriormente, pode-se usar a seta para cima do teclado. Os comandos vão sendo apresentados do mais recente ao mais antigo.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="objetos" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="objetos"><span class="header-section-number">1.2</span> Objetos</h2>
+<p>Conforme o R Core Team<span class="citation" data-cites="introduction_r">(<a href="referencias.html#ref-introduction_r" role="doc-biblioref">R Core Team 2023a</a>, cap 3)</span> ‘as entidades nas quais R opera são tecnicamente conhecidas como objetos’. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo <strong>vetor</strong>, pois este é o objeto mais básico.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -355,9 +428,9 @@ Variáveis
 <p>Muitas vezes objetos em R são chamados de <strong>variáveis</strong>, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.</p>
 </div>
 </div>
-<section id="vetores" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="vetores"><span class="header-section-number">1.1.1</span> Vetores</h3>
-<p>Vetores são entidades que armazenam dados em posições <span class="citation" data-cites="r_language_definition">(<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">Team 2023b</a>, cap 2)</span>. Os vetores são ditos <strong>atômicos</strong>, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma “local” onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:</p>
+<section id="vetores" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="vetores"><span class="header-section-number">1.2.1</span> Vetores</h3>
+<p>Vetores são entidades que armazenam dados em posições <span class="citation" data-cites="r_language_definition">(<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">R Core Team 2023b</a>, cap 2)</span>. Os vetores são ditos <strong>atômicos</strong>, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma “local” onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:</p>
 <table class="table">
 <caption>Tipos de Vetores</caption>
 <colgroup>
@@ -407,8 +480,8 @@ Variáveis
 </table>
 </section>
 </section>
-<section id="atribuição" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="atribuição"><span class="header-section-number">1.2</span> Atribuição</h2>
+<section id="atribuição" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="atribuição"><span class="header-section-number">1.3</span> Atribuição</h2>
 <p>Para criação de objetos no R são usados os operadores de atribuição, <code>&lt;-</code> e <code>=</code>. O operador mais usado é o <code>&lt;-</code>. Assim para criação de um objeto pode ser usado o código abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>objeto1 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># atribui valor 10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -431,8 +504,8 @@ Variáveis
 </div>
 </div>
 </section>
-<section id="usando-funções" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="usando-funções"><span class="header-section-number">1.3</span> Usando Funções</h2>
+<section id="usando-funções" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="usando-funções"><span class="header-section-number">1.4</span> Usando Funções</h2>
 <p>O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento).</p>
 <p>Por exemplo, a função <code>typeof</code> exige a informação de um argumento (um objeto do R).</p>
 <div class="cell">
@@ -453,12 +526,12 @@ Variáveis
 <pre><code>[1] "objeto1" "objeto2"</code></pre>
 </div>
 </div>
-<section id="argumentos-de-funções" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="argumentos-de-funções"><span class="header-section-number">1.3.1</span> Argumentos de Funções</h3>
+<section id="argumentos-de-funções" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="argumentos-de-funções"><span class="header-section-number">1.4.1</span> Argumentos de Funções</h3>
 <p>As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função <code>ls</code> usada “sem” argumentos é processada normalmente. Mais detlahes em <a href="r_funcoes.html">Funções</a>.</p>
 </section>
-<section id="armazenando-retorno" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="armazenando-retorno"><span class="header-section-number">1.3.2</span> Armazenando Retorno</h3>
+<section id="armazenando-retorno" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="armazenando-retorno"><span class="header-section-number">1.4.2</span> Armazenando Retorno</h3>
 <p>Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tipo <span class="ot">&lt;-</span> <span class="fu">typeof</span>(objeto2)</span>
@@ -474,22 +547,22 @@ Variáveis
 <p>Agora o objeto <strong>tipo</strong> armazena o valor retornado pelo função <code>typeof</code>, no caso o texto (<em>character</em>) “double”.</p>
 </section>
 </section>
-<section id="remoção-de-objetos" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="remoção-de-objetos"><span class="header-section-number">1.4</span> Remoção de Objetos</h2>
+<section id="remoção-de-objetos" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="remoção-de-objetos"><span class="header-section-number">1.5</span> Remoção de Objetos</h2>
 <p>Objetos podem ser removidos (excluídos) com a função <code>rm</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="coerção" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="coerção"><span class="header-section-number">1.5</span> Coerção</h2>
+<section id="coerção" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="coerção"><span class="header-section-number">1.6</span> Coerção</h2>
 <hr>
-<p>Última atualização: 12/08/2023 - 23:31:59</p>
+<p>Última atualização: 13/08/2023 - 21:41:29</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-introduction_r" class="csl-entry" role="doc-biblioentry">
-Team, R Core. 2023a. <em>An Introduction to R</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">https://cran.r-project.org/doc/manuals/r-release/R-intro.html</a>.
+R Core Team. 2023a. <em>An Introduction to R</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">https://cran.r-project.org/doc/manuals/r-release/R-intro.html</a>.
 </div>
 <div id="ref-r_language_definition" class="csl-entry" role="doc-biblioentry">
 ———. 2023b. <em>R Language Definition</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html">https://cran.r-project.org/doc/manuals/r-release/R-lang.html</a>.
