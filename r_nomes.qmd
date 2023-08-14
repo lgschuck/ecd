@@ -115,12 +115,12 @@ Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.
 
 Neste material os nomes de objetos e derivados seguirão a tabela abaixo. Estas definições foram escolhidas a fim de uniformizar o conteúdo apresentado e se baseiam em experiência de uso e no **Tidyverse Style Guide**. Mais detalhes em [Convenções](convencoes.html).
 
-| Tipo Objeto                      | Convenção                                                                     | Exemplo                  |
-|------------------|-----------------------------------|------------------|
-| Data.frame, tibble ou data.table | camelCase iniciado por ds (**d**ata**s**et)                                   | dsClientes               |
-| Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                          | dsClientes\$NOME_CLIENTE |
-| Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn será um verbo | fnBuscarClientes         |
-| Demais (vetores, listas, etc.)   | snake_case                                                                    | nomes_cidades            |
+| Tipo Objeto                      | Convenção                                                                | Exemplo                   |
+|-------------------|----------------------------------|-------------------|
+| Data.frame, tibble ou data.table | snake_case iniciado por df (**d**ata **f**rame)                          | df_clientes               |
+| Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                     | df_clientes\$NOME_CLIENTE |
+| Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn um verbo | fnBuscarClientes          |
+| Demais (vetores, listas, etc.)   | snake_case                                                               | nomes_cidades             |
 
 ::: callout-tip
 Evite usar "**.**" em nome de objetos, pois através do **ponto** o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão. Mais detalhes [Funções](r_funcoes.html#funções-genéricas).

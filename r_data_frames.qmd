@@ -20,27 +20,27 @@ Objetos da classe **data.frame** podem ser criados com a função `data.frame`.
 Aqui serão usadas as convenções de nomes conforme capítulos [Nomeando Objetos](nomes.html) e [Convenções](convencoes.html).
 
 ```{r}
-dsExemplo <- data.frame(
+df_exemplo <- data.frame(
   VAR_A = c(1:5),
   VAR_B = c(101:105)
 )
-dsExemplo
+df_exemplo
 ```
 
 ### Aplicar convenções de nomes
 
-Para continuar os próximos tópicos vamos trabalhar com um **data frame** (**dsIris**) criado a partir do **data frame** **iris**. Faremos ajustes nos nomes deste data frame.
+Para continuar os próximos tópicos vamos trabalhar com um **data frame** (**df_iris**) criado a partir do **data frame** **iris**. Faremos ajustes nos nomes deste data frame.
 
 ```{r}
-# criar data frame dsIris
-dsIris <- iris
+# criar data frame df_iris
+df_iris <- iris
 # mudar nomes para maiusculas
-names(dsIris) <- toupper(names(dsIris))
+names(df_iris) <- toupper(names(df_iris))
 # substituir '.' por '_'
-names(dsIris) <- gsub(names(dsIris), pattern = "\\.", replacement = "_")  
+names(df_iris) <- gsub(names(df_iris), pattern = "\\.", replacement = "_")  
 
-class(dsIris)
-head(dsIris)
+class(df_iris)
+head(df_iris)
 
 ```
 
@@ -49,8 +49,8 @@ head(dsIris)
 Os atributos "padrão" de um **data frame** são: `names`, `class` e `row.names`. É possível acessá-los com a função `attributes`. O atributo `names` também pode ser obtido com a função `names`.
 
 ```{r}
-attributes(dsIris)
-names(dsIris)
+attributes(df_iris)
+names(df_iris)
 ```
 
 ## Dimensões
@@ -58,9 +58,9 @@ names(dsIris)
 A função `dim` retorna as dimensões de um **data frame** (linhas e colunas). Estes dados também podem ser obtidos com as funções `nrow` e `ncol`.
 
 ```{r}
-dim(dsIris)
-nrow(dsIris)
-ncol(dsIris)
+dim(df_iris)
+nrow(df_iris)
+ncol(df_iris)
 ```
 
 ## Acessando Dados
@@ -71,9 +71,9 @@ Como a estrutura de um **data frame** é organizada em linhas e colunas, podemos
 
 ```{r}
 # Acessar primeira linha e segunda coluna (Sepal.Width)
-dsIris[1, 2]
+df_iris[1, 2]
 # Acessar linhas 1 até 3 e a segunda coluna
-dsIris[1:3, 2]
+df_iris[1:3, 2]
 ```
 
 Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável '1' pode mudar caso o **data frame** seja editado. Por exemplo, caso em algum momento anterior a variável **PETAL_LENGTH** tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.
@@ -84,7 +84,7 @@ Existem diversas outras formas para acessar dados de um **data frame**, inclusiv
 
 ```{r}
 # Acessar primeira linha e segunda coluna (pelo nome)
-dsIris[1:3, 'SEPAL_WIDTH']
+df_iris[1:3, 'SEPAL_WIDTH']
 
 ```
 
@@ -92,9 +92,9 @@ Uma forma bastante comum é através da utilização do operador `$` para acessa
 
 ```{r}
 # Acessar primeira linha e segunda coluna
-dsIris[1, ]$SEPAL_WIDTH
+df_iris[1, ]$SEPAL_WIDTH
 # Acessar linhas 1 até 3 e a segunda coluna
-dsIris[1:3, ]$SEPAL_WIDTH
+df_iris[1:3, ]$SEPAL_WIDTH
 ```
 
 ### Filtrando Dados
@@ -103,8 +103,8 @@ Digamos que se deseje acessar apenas dados que cumpram determinada condição. P
 
 ```{r}
 # Retorna valores de Speal.Width onde Petal.Length for maior do que 6
-x <- dsIris[dsIris$PETAL_LENGTH > 6, 'SEPAL_WIDTH']
-y <- dsIris[dsIris$PETAL_LENGTH > 6.5, ]$SEPAL_WIDTH
+x <- df_iris[df_iris$PETAL_LENGTH > 6, 'SEPAL_WIDTH']
+y <- df_iris[df_iris$PETAL_LENGTH > 6.5, ]$SEPAL_WIDTH
 
 x
 y
@@ -115,22 +115,22 @@ identical(x, y)
 O retorno é dado pelas linhas em que a variável **PETAL_LENGTH** atende as condições declaradas. Este teste retorna um vetor de valores lógicos, e os valores `TRUE` são os que "permanecem". Abaixo outro exemplo:
 
 ```{r}
-head(dsIris$PETAL_LENGTH) > 1.4
+head(df_iris$PETAL_LENGTH) > 1.4
 ```
 
 Aplicando este vetor de valores lógicos, o R entende que as posições correspondentes a `TRUE` devem ser mantidas. No exemplo abaixo, as posições (linhas) 4 e 6 atendem a condição especificada, portanto apenas estas serão selecionadas.
 
 ```{r}
-dsIris2 <- head(dsIris)
-filtro <- head(dsIris2$PETAL_LENGTH) > 1.4
+df_iris2 <- head(df_iris)
+filtro <- head(df_iris2$PETAL_LENGTH) > 1.4
 filtro
-dsIris2[filtro, 'SEPAL_WIDTH']
+df_iris2[filtro, 'SEPAL_WIDTH']
 ```
 
 Equivalente ao comando abaixo:
 
 ```{r}
-dsIris2[c(4, 6), 'SEPAL_WIDTH']
+df_iris2[c(4, 6), 'SEPAL_WIDTH']
 ```
 
 #### Classes de retorno
@@ -138,16 +138,16 @@ dsIris2[c(4, 6), 'SEPAL_WIDTH']
 Os filtros em **data frames** usados com `$` ou `[ ]` (com apenas 1 variável) retornam vetores e não **data frames**. Desta forma se perde a classe e a estrutura tabular característica do **data frame** original.
 
 ```{r}
-class(dsIris[1:3, 1])
-class(dsIris[1:3, 'SEPAL_WIDTH'])
+class(df_iris[1:3, 1])
+class(df_iris[1:3, 'SEPAL_WIDTH'])
 ```
 
 Entretanto, sendo selecionadas mais de uma coluna, a classe retornada segue sendo **data.frame**.
 
 ```{r}
 
-class(dsIris[1:3, c("SEPAL_LENGTH", "SEPAL_WIDTH")])
-class(dsIris[1:3, 1:2])
+class(df_iris[1:3, c("SEPAL_LENGTH", "SEPAL_WIDTH")])
+class(df_iris[1:3, 1:2])
 ```
 
 #### Função Subset
@@ -157,15 +157,15 @@ A função `subset` permite efetuar filtro em um **data frame** e muitas vezes o
 Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o **data frame** seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
 
 ```{r}
-class(subset(dsIris, select = SEPAL_WIDTH))
+class(subset(df_iris, select = SEPAL_WIDTH))
 ```
 
 ```{r}
-dsMtcars <- mtcars
+df_mtcars <- mtcars
 # mudar nomes para maiusculas
-names(dsMtcars) <- toupper(names(dsMtcars))
+names(df_mtcars) <- toupper(names(df_mtcars))
 
-subset(x = dsMtcars, # dados
+subset(x = df_mtcars, # dados
        subset = MPG > 25, # filtro  
        select = c(MPG, CYL, HP)) # colunas
 ```
@@ -173,11 +173,11 @@ subset(x = dsMtcars, # dados
 Usando um filtro um pouco mais complexo e sem inserir o nome dos argumentos da função (`x`, `subset` e `select)`:
 
 ```{r}
-dsMtcarsFiltrado <- subset(dsMtcars, # dados 
+df_mtcars_filtrado <- subset(df_mtcars, # dados 
        MPG > 25 & CYL == 4 & HP > 70, # filtro  
        c(MPG, CYL, HP)) # colunas
 
-dsMtcarsFiltrado
+df_mtcars_filtrado
 ```
 
 ------------------------------------------------------------------------
