@@ -4,9 +4,27 @@
 
 Este capítulo tem como objetivo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.
 
-## Tela Inicial
+## Iniciando o R...Studio
 
-A tela inicial do R é um console, onde são passados comandos e o interpratador do R os executa e, se for o caso, exibe saídas. O cursor fica posicionado ao lado do símbolo do *prompt* do R, `>`. Este símbolo indica que o sistema está pronto para receber novo comando.
+R é uma linguagem de programação e não está focada em oferecer uma interface sofisticada de interação com o usuário. Este papel fica por conta de outras ferramentas, como o **RStudio**, o **IDE** mais usado para a linguagem. Na prática "ninguém" usa o R puro para desenvolver seus projetos.
+
+Desta forma usaremos o RStudio como ferramenta de desenvolvimento, pois ela irá nos fornecer muitas funcionalidades como preenchimento de código (*code completion*), janelas para instalar pacotes, janelas com arquivos de scripts, navegação por pastas, visualização e exportação de gráfico e claro comunicação direta com o R.
+
+Ao longo deste livro serão usadas diversas funcionalidades do RStudio. Porém o foco será sempre no conteúdo, pois o detalhamento das principais funcionalidades do RStudio é tratada em seção [específica](#0 "RStudio").
+
+```{r, label = 'fig-r-intro-rstudio-layout', fig.cap = "Tela Inicial do RStudio", echo = FALSE}
+knitr::include_graphics('images/rstudio/rstudio_layout.png')
+```
+
+::: callout-note
+### Outros IDE's
+
+Além do RStudio existem outras ferramentas para utilização em conjunto com R, entre elas: [Jupyter](https://jupyter.org/), [VS Code](https://code.visualstudio.com/docs/languages/r) e [RKWard](https://rkward.kde.org/).
+:::
+
+## Console do R
+
+A tela inicial do R em si é um console, onde são passados comandos e seu interpratador os executa e, se for o caso, exibe saídas. O cursor fica posicionado ao lado do símbolo do *prompt* do R, `>`. Este símbolo indica que o sistema está pronto para receber novo comando.
 
 ```{r, label = 'fig-r-intro-tela-inicial', fig.cap = "Tela Inicial", echo = FALSE}
 knitr::include_graphics('images/r/intro/tela_inicial.png')
@@ -26,7 +44,7 @@ Podemos digitar `q()`, por exemplo, que é a função que efetua o encerramento 
 knitr::include_graphics('images/r/intro/tela_inicial_quit.png')
 ```
 
-Agora considere um cenário diferente, onde executamos o comando `license()` seguido do comando `citation()` (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos forem sendo passados o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando "cheia" os dados exibidos no topo vão "sumindo" para dar lugar aos mais recentes, na parte inferior.
+Agora considere um cenário diferente, onde executamos o comando `license()` seguido do comando `citation()` (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos forem sendo passados, o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando "cheia" os dados exibidos no topo vão "sumindo" para dar lugar aos mais recentes, na parte inferior.
 
 ```{r, label = 'fig-r-intro-tela-inicial-atualizacao-console', fig.cap = "Tela Inicial - Atualização do Console", echo = FALSE}
 knitr::include_graphics('images/r/intro/tela_inicial_atualizacao_console.png')
@@ -45,6 +63,20 @@ Sempre que ocorrer algum erro na execução de um comando será exibida no conso
 ```{r, error = T}
 citatin()
 ```
+
+## Trabalhando com Scripts
+
+Scripts são arquivos de texto que recebem códigos e conforme desejo do usuário são estes são enviados ao console para execução. Na prática usar o console diretamente é útil para pequenas operações. No Rstudio você pode criar um script em File \> New File \> R Script. O arquivo de script será aberto no painel **Source**.
+
+### Comentários
+
+R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Qualquer texto após será ignorado pelo interpretador. Comentários são muito importantes para facilitar a leitura do código posteriormente.
+
+::: callout-tip
+### Porquê...
+
+Em operações mais complexas procure colocar comentários que expliquem os motivos de se executar alguma operação e não o que o código está fazendo. Foque no 'porquê' de cada operação e não no 'o que'.
+:::
 
 ## Objetos
 
@@ -71,7 +103,7 @@ Vetores são entidades que armazenam dados em posições [@r_language_definition
 
 : Tipos de Vetores
 
-## Atribuição
+## Criação de Objetos
 
 Para criação de objetos no R são usados os operadores de atribuição, `<-` e `=`. O operador mais usado é o `<-`. Assim para criação de um objeto pode ser usado o código abaixo:
 
@@ -79,21 +111,15 @@ Para criação de objetos no R são usados os operadores de atribuição, `<-` e
 objeto1 <- 10 # atribui valor 10
 ```
 
-Para criação de variáveis do tipo etxto, devem ser usadas aspas, simples ou duplas. Aqui o **objeto2** foi criado com uso de aspas para que o R trate o valor como *character*.
+Para criação de variáveis do tipo texto, devem ser usadas aspas, simples ou duplas. Aqui o **objeto2** foi criado com uso de aspas para que o R trate o valor como *character*.
 
 ```{r}
 objeto2 = 'texto' # atribui texto
 ```
 
-::: callout-note
-# \# Comentários
-
-R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Qualquer texto após será ignorado pelo interpretador.
-:::
-
 ## Operações com Objetos
 
-Objetos podem ser atualizados novamente com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com a função`c`, que concatena valores, em conjunto com o operador **:**, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
+Objetos podem ser atualizados novamente com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com a função`c`, que concatena valores, em conjunto com o operador `:`, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
 
 ```{r}
 objeto3 <- c(1:5)
@@ -102,7 +128,7 @@ typeof(objeto3)
 objeto3 <- objeto3 + 10
 ```
 
-O vetor objeto3 foi criado com 5 posições, armazenando os valores de 1 a 5. Podemos acessar, por exemplo a terceira posição do vetor, através do operador de extração **[** em combinação com o índice do vetor.
+O vetor objeto3 foi criado com 5 posições, armazenando os valores de 1 a 5. Podemos acessar, por exemplo a terceira posição do vetor, através do operador de extração **\[** em combinação com o índice do vetor.
 
 ```{r}
 objeto3[3] # exibe terceiro elemento
@@ -189,7 +215,7 @@ rep.int(times = 4, x = 5)
 rep.int(4, 5)
 ```
 
-:::callout-note
+::: callout-note
 Algumas funções não possuem argumentos e "apenas" executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções Sys.Date() e Sys.time(), que retornam a data e data e hora respectivamente.
 :::
 
@@ -204,8 +230,6 @@ typeof(tipo)
 ```
 
 Agora o objeto **tipo** armazena o valor retornado pelo função `typeof`, no caso o texto (*character*) "double".
-
-
 
 ------------------------------------------------------------------------
 
