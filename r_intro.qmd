@@ -19,11 +19,11 @@ knitr::include_graphics('images/rstudio/rstudio_layout.png')
 Neste capítulo focaremos no painel **Console**, que "abriga" o R e no **Source**, que permite utilização de scripts.
 
 ```{r, label = 'fig-r-intro-rstudio-console', fig.cap = "Aba Console", echo = FALSE}
-knitr::include_graphics('images/rstudio/console.png')
+knitr::include_graphics('images/r/intro/console.png')
 ```
 
 ```{r, label = 'fig-r-intro-rstudio-source', fig.cap = "Aba Source", echo = FALSE}
-knitr::include_graphics('images/rstudio/source.png')
+knitr::include_graphics('images/r/intro/source.png')
 ```
 
 ::: callout-note
@@ -81,7 +81,7 @@ Scripts são arquivos de texto que recebem códigos e conforme desejo do usuári
 Para executar comandos de um arquivo de script você pode usar atalhos de teclado (Ctrl + Enter) ou através do botão Run no topo superior direito da aba Source. Ambas opções executam ou a linha corrente ou a parte do texto selecionada.
 
 ```{r, label = 'fig-r-intro-source-run', fig.cap = "Source - Botão Run", echo = FALSE}
-knitr::include_graphics('images/rstudio/source_run.png')
+knitr::include_graphics('images/r/intro/source_run.png')
 ```
 
 ### Comentários
