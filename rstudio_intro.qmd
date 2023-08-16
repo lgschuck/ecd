@@ -4,7 +4,13 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
-O RStudio possui basicamente 4 painéis dimensionáveis. Cada um destes painéis pode trazer uma série de abas.
+O RStudio possui basicamente 4 painéis dimensionáveis e cada um deles painéis pode trazer uma série de abas. Você pode configurar a localização de cada painel conforme sua preferência nos menus: View > Panes > Pane Layout ou em Tools > Global Options > Pane Layout.
+
+```{r, label = 'fig-rstudio-pane-layout', fig.cap = "Pane Layout", out.width="90%", echo = FALSE}
+  knitr::include_graphics('images/rstudio/pane_layout.png')
+```
+
+Dentro dos painéis *Environment* e *Files* podem ser adicionadas ou removidas diversas abas (basta marcar/desmarcar *checkbox*). Muitas delas ficam ocultas e são "chamadas" pelo RStudio apenas quando necessárias.
 
 ## Console
 
@@ -14,15 +20,15 @@ Neste painel está embutido o R propriamente dito.
   knitr::include_graphics('images/rstudio/console.PNG')
 ```
 
-## Output
+## *Output*
 
-Painel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.
+Painel com diversas saídas fornecidas. Gráficos (*Plots*), Estrutura de Pastas(*Files*), Ajuda (*Help*), Pacotes(*Packages*), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.
 
 ```{r, label = 'fig-rstudio-files', fig.cap = "Files", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/files.PNG')
 ```
 
-## Environment
+## *Environment*
 
 Apresenta os objetos criados no ambiente do R.
 
@@ -30,9 +36,9 @@ Apresenta os objetos criados no ambiente do R.
   knitr::include_graphics('images/rstudio/environment.PNG')
 ```
 
-## Source
+## *Source*
 
-Aqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).
+Aqui são abertos os arquivos de códigos (*scripts*, Rmarkdown, Quarto, SQL, etc).
 
 ```{r, label = 'fig-rstudio-source', fig.cap = "Source", out.width="90%", echo = FALSE}
   knitr::include_graphics('images/rstudio/source.PNG')

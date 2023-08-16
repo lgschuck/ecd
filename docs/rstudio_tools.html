@@ -237,14 +237,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#opções" id="toc-opções" class="nav-link active" data-scroll-target="#opções"><span class="toc-section-number">12.1</span>  Opções</a>
+  <li><a href="#install-packages" id="toc-install-packages" class="nav-link active" data-scroll-target="#install-packages"><span class="toc-section-number">12.1</span>  Install Packages</a></li>
+  <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">12.2</span>  Check for Package Updates</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">12.3</span>  Version Control</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">12.4</span>  Terminal</a>
   <ul class="collapse">
-  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="toc-section-number">12.1.1</span>  Install Packages</a></li>
-  <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">12.1.2</span>  Check for Package Updates</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">12.1.3</span>  Version Control</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">12.1.4</span>  Terminal</a></li>
-  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">12.1.5</span>  Background Jobs</a></li>
-  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">12.1.6</span>  Global Options</a></li>
+  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">12.4.1</span>  Background Jobs</a></li>
+  </ul></li>
+  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">12.5</span>  Global Options</a>
+  <ul class="collapse">
+  <li><a href="#geral-basic" id="toc-geral-basic" class="nav-link" data-scroll-target="#geral-basic"><span class="toc-section-number">12.5.1</span>  Geral &gt; <em>Basic</em></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -270,8 +272,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
-<section id="opções" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="opções"><span class="header-section-number">12.1</span> Opções</h2>
 <p>O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -283,8 +283,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="install-packages" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">12.1.1</span> Install Packages</h3>
+<section id="install-packages" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">12.1</span> Install Packages</h2>
 <p>Nesta opção é aberta a janela para instalação de pacotes.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -299,9 +299,9 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><strong>Install From:</strong> local de busca dos pacotes a serem instalados</p>
 <ul>
-<li><p>Repository: repositório configurado</p>
+<li><p><strong>Repository:</strong> repositório configurado</p>
 <ul>
-<li><strong>Packages:</strong> nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula</li>
+<li>Packages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula</li>
 </ul></li>
 <li><p><strong>Package Archive File:</strong> opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote</p>
 <ul>
@@ -334,8 +334,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Install Dependencies:</strong> marcação para que seja feita instalação de dependências dos pacotes selecionados.</p></li>
 </ul>
 </section>
-<section id="check-for-package-updates" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="check-for-package-updates"><span class="header-section-number">12.1.2</span> Check for Package Updates</h3>
+<section id="check-for-package-updates" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="check-for-package-updates"><span class="header-section-number">12.2</span> Check for Package Updates</h2>
 <p>Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -348,20 +348,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="version-control" class="level3" data-number="12.1.3">
-<h3 data-number="12.1.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">12.1.3</span> Version Control</h3>
+<section id="version-control" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">12.3</span> Version Control</h2>
 <p>Oferece opção de controle de versões de código através do Git ou SVN.</p>
 </section>
-<section id="terminal" class="level3" data-number="12.1.4">
-<h3 data-number="12.1.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">12.1.4</span> Terminal</h3>
+<section id="terminal" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">12.4</span> Terminal</h2>
 <p>Permite acesso ao terminal do sistema operacional a partir do RStudio.</p>
-</section>
-<section id="background-jobs" class="level3" data-number="12.1.5">
-<h3 data-number="12.1.5" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">12.1.5</span> Background Jobs</h3>
+<section id="background-jobs" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">12.4.1</span> Background Jobs</h3>
 <p>Fornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.</p>
 </section>
-<section id="global-options" class="level3" data-number="12.1.6">
-<h3 data-number="12.1.6" class="anchored" data-anchor-id="global-options"><span class="header-section-number">12.1.6</span> Global Options</h3>
+</section>
+<section id="global-options" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="global-options"><span class="header-section-number">12.5</span> Global Options</h2>
 <p>Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -373,10 +373,35 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="geral-basic" class="level3" data-number="12.5.1">
+<h3 data-number="12.5.1" class="anchored" data-anchor-id="geral-basic"><span class="header-section-number">12.5.1</span> Geral &gt; <em>Basic</em></h3>
+<p>Nesta tela incial Geral &gt; Basic podemos definir muitas características do RStudio, algumas das principais:</p>
+<ul>
+<li><p><strong>R <em>Sessions</em></strong></p>
+<ul>
+<li><p>R <em>Version</em>: versão a ser usada do R dentro do RStudio. Esta versão pode ser alterada caso exista uma outra isntalação no computador.</p></li>
+<li><p><em>Restore most recently opened project at startup</em>: define se o projeto mais recente será carregado ao inicializar.</p></li>
+<li><p><em>Restore previously open source documents at startup</em>: define se arquivos de código (<em>sources</em>) recentemente usados serão carregados al inicializar.</p></li>
+</ul></li>
+<li><p><strong><em>Workspace</em></strong></p>
+<ul>
+<li><p><em>Restore .RData into workspace at startup</em>: define se ao ser inicializado o RStudio carregará o arquivo .RData do projeto. Esta opção pode ser muito útil, pois resgata a sessão anterior onde ela foi fechada. Entretando caso sejam usados arquivos muito grandes o inicialização pode demorar.</p></li>
+<li><p>Save workspace to .RData on exit: o “inverso” do anterior, define se os dados da sessão serão salvas ao fechar o RStudio. As opções são: <em>Always</em>, <em>Never</em> e <em>Ask</em>.</p></li>
+</ul></li>
+<li><p><strong><em>History</em></strong></p>
+<ul>
+<li><p><em>Always saves History</em>: os comandos passados para o R serão ou não armazenados para consulta posterior?</p></li>
+<li><p><em>Remove duplicate entries</em>: elimina as repetições, muitas vezes quando se efetuam testes os mesmos comandos são executados diversas vezes.</p></li>
+</ul></li>
+<li><p><strong><em>Other</em></strong></p>
+<ul>
+<li><em>Automatically notify me of RStudio updates</em>: verificar e avisar o usuário se existirem atualizações do RStudio.</li>
+</ul></li>
+</ul>
 <hr>
 <p><a href="https://docs.posit.co/ide/user/">RStudio - User Guide</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a></p>
-<p>Última atualização: 12/08/2023 - 20:44:16</p>
+<p>Última atualização: 16/08/2023 - 20:37:17</p>
 
 
 </section>

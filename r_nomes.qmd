@@ -2,7 +2,7 @@
 
 [Status](convencoes.html#status-do-material) 🟦🟦🟦
 
-## Nomes
+## Regras
 
 A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).
 
@@ -14,7 +14,6 @@ x <- 10
 `nome com espaco` <- 55
 
 'teste 1' <- 2
-
 ```
 
 ::: callout-tip
@@ -26,9 +25,8 @@ Escolha nomes intuitivos e que facilitem a identificação do conteúdo armazena
 Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando "chamado" com crases (*backticks*). Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.
 
 ```{r}
-'teste 1' #retorna como string
-# Exibe conteúdo do objeto
-`teste 1`
+'teste 1' # retorna como string
+`teste 1` # Exibe conteúdo do objeto
 ```
 
 ### Primeiro Caractere
@@ -97,6 +95,40 @@ ls()
 Campos (variáveis) de dados tabulados, como planilhas de Excel, seguem as mesmas regras. Este tipo de dado será tratado no capítulo sobre **data frames**.
 :::
 
+## Resumo
+
++----------------------+------------------------------------+--------------------------------------+--------------+
+| Caracteres           | Regra                              | Exceção                              | Exemplo      |
++======================+====================================+======================================+==============+
+| Letras               | Permitido                          |                                      | objeto       |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | variavel     |
++----------------------+------------------------------------+--------------------------------------+--------------+
+| Números              | Permitido, após primeiro caractere | Iniciado com '.'                     | objeto1      |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | ~~1objeto~~  |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | ~~.1objeto~~ |
++----------------------+------------------------------------+--------------------------------------+--------------+
+| Espaços              | Não permitido                      | Permitido com uso de aspas ou crases | ~~teste 1~~  |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | 'teste 2'    |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | '2 teste'    |
++----------------------+------------------------------------+--------------------------------------+--------------+
+| Caracteres especiais | Não permitido                      | Permitido com uso de aspas ou crases | ~~#teste~~   |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | '\# teste'   |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | 't #\$\$%'   |
++----------------------+------------------------------------+--------------------------------------+--------------+
+| Ponto '.'            | Uso livre inclusive no início      |                                      | objeto.2     |
+|                      |                                    |                                      |              |
+|                      |                                    |                                      | .objeto.2    |
++----------------------+------------------------------------+--------------------------------------+--------------+
+
+: Resumo das Regras para Nomes
+
 ## Convenções
 
 Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como **camelCase**, **snake_case**, **SCREAMING_SNAKE_CASE**, **PascalCase**, etc.
@@ -115,12 +147,17 @@ Um bom guia é o [The tidyverse style guide](https://style.tidyverse.org/syntax.
 
 Neste material os nomes de objetos e derivados seguirão a tabela abaixo. Estas definições foram escolhidas a fim de uniformizar o conteúdo apresentado e se baseiam em experiência de uso e no **Tidyverse Style Guide**. Mais detalhes em [Convenções](convencoes.html).
 
++----------------------------------+--------------------------------------------------------------------------+---------------------------+
 | Tipo Objeto                      | Convenção                                                                | Exemplo                   |
-|-------------------|----------------------------------|-------------------|
++==================================+==========================================================================+===========================+
 | Data.frame, tibble ou data.table | snake_case iniciado por df (**d**ata **f**rame)                          | df_clientes               |
++----------------------------------+--------------------------------------------------------------------------+---------------------------+
 | Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                     | df_clientes\$NOME_CLIENTE |
++----------------------------------+--------------------------------------------------------------------------+---------------------------+
 | Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn um verbo | fnBuscarClientes          |
++----------------------------------+--------------------------------------------------------------------------+---------------------------+
 | Demais (vetores, listas, etc.)   | snake_case                                                               | nomes_cidades             |
++----------------------------------+--------------------------------------------------------------------------+---------------------------+
 
 ::: callout-tip
 Evite usar "**.**" em nome de objetos, pois através do **ponto** o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão. Mais detalhes [Funções](r_funcoes.html#funções-genéricas).

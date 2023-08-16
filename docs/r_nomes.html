@@ -319,12 +319,13 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#nomes" id="toc-nomes" class="nav-link active" data-scroll-target="#nomes"><span class="toc-section-number">2.1</span>  Nomes</a>
+  <li><a href="#regras" id="toc-regras" class="nav-link active" data-scroll-target="#regras"><span class="toc-section-number">2.1</span>  Regras</a>
   <ul class="collapse">
   <li><a href="#primeiro-caractere" id="toc-primeiro-caractere" class="nav-link" data-scroll-target="#primeiro-caractere"><span class="toc-section-number">2.1.1</span>  Primeiro Caractere</a></li>
   <li><a href="#case-sensitive" id="toc-case-sensitive" class="nav-link" data-scroll-target="#case-sensitive"><span class="toc-section-number">2.1.2</span>  Case Sensitive</a></li>
   </ul></li>
-  <li><a href="#convenções" id="toc-convenções" class="nav-link" data-scroll-target="#convenções"><span class="toc-section-number">2.2</span>  Convenções</a></li>
+  <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo"><span class="toc-section-number">2.2</span>  Resumo</a></li>
+  <li><a href="#convenções" id="toc-convenções" class="nav-link" data-scroll-target="#convenções"><span class="toc-section-number">2.3</span>  Convenções</a></li>
   </ul>
 </nav>
     </div>
@@ -349,8 +350,8 @@ div.csl-indent {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟦🟦🟦</p>
-<section id="nomes" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="nomes"><span class="header-section-number">2.1</span> Nomes</h2>
+<section id="regras" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="regras"><span class="header-section-number">2.1</span> Regras</h2>
 <p>A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -376,12 +377,11 @@ Nomes Significativos
 </div>
 <p>Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando “chamado” com crases (<em>backticks</em>). Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span> <span class="co">#retorna como string</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span> <span class="co"># retorna como string</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "teste 1"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibe conteúdo do objeto</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste 1</span><span class="st">`</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste 1</span><span class="st">`</span> <span class="co"># Exibe conteúdo do objeto</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -486,8 +486,68 @@ Campos de Tabelas
 </div>
 </section>
 </section>
-<section id="convenções" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="convenções"><span class="header-section-number">2.2</span> Convenções</h2>
+<section id="resumo" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="resumo"><span class="header-section-number">2.2</span> Resumo</h2>
+<table class="table">
+<caption>Resumo das Regras para Nomes</caption>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 31%">
+<col style="width: 33%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caracteres</th>
+<th>Regra</th>
+<th>Exceção</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Letras</td>
+<td>Permitido</td>
+<td></td>
+<td><p>objeto</p>
+<p>variavel</p></td>
+</tr>
+<tr class="even">
+<td>Números</td>
+<td>Permitido, após primeiro caractere</td>
+<td>Iniciado com ‘.’</td>
+<td><p>objeto1</p>
+<p><del>1objeto</del></p>
+<p><del>.1objeto</del></p></td>
+</tr>
+<tr class="odd">
+<td>Espaços</td>
+<td>Não permitido</td>
+<td>Permitido com uso de aspas ou crases</td>
+<td><p><del>teste 1</del></p>
+<p>‘teste 2’</p>
+<p>‘2 teste’</p></td>
+</tr>
+<tr class="even">
+<td>Caracteres especiais</td>
+<td>Não permitido</td>
+<td>Permitido com uso de aspas ou crases</td>
+<td><p><del>#teste</del></p>
+<p>‘# teste’</p>
+<p>‘t #$$%’</p></td>
+</tr>
+<tr class="odd">
+<td>Ponto ‘.’</td>
+<td>Uso livre inclusive no início</td>
+<td></td>
+<td><p>objeto.2</p>
+<p>.objeto.2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="convenções" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="convenções"><span class="header-section-number">2.3</span> Convenções</h2>
 <p>Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como <strong>camelCase</strong>, <strong>snake_case</strong>, <strong>SCREAMING_SNAKE_CASE</strong>, <strong>PascalCase</strong>, etc.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># camelCase</span></span>
@@ -500,9 +560,9 @@ Campos de Tabelas
 <p>Neste material os nomes de objetos e derivados seguirão a tabela abaixo. Estas definições foram escolhidas a fim de uniformizar o conteúdo apresentado e se baseiam em experiência de uso e no <strong>Tidyverse Style Guide</strong>. Mais detalhes em <a href="convencoes.html">Convenções</a>.</p>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 47%">
-<col style="width: 26%">
+<col style="width: 25%">
+<col style="width: 53%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -551,7 +611,7 @@ Dica
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
 <p><span class="citation" data-cites="introduction_r">R Core Team (<a href="referencias.html#ref-introduction_r" role="doc-biblioref">2023</a>)</span></p>
 <p><span class="citation" data-cites="wiki_naming_convention">Wikipedia (<a href="referencias.html#ref-wiki_naming_convention" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 13/08/2023 - 22:38:42</p>
+<p>Última atualização: 16/08/2023 - 20:32:17</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
