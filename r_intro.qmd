@@ -10,7 +10,7 @@ R é uma linguagem de programação e não está focada em oferecer uma interfac
 
 Desta forma usaremos o RStudio como ferramenta de desenvolvimento, pois ela irá nos fornecer muitas funcionalidades como preenchimento de código (*code completion*), janelas para instalar pacotes, janelas com arquivos de scripts, navegação por pastas, visualização e exportação de gráfico e claro comunicação direta com o R.
 
-Ao longo deste livro serão usadas diversas funcionalidades do RStudio. Porém o foco será sempre no conteúdo, pois o detalhamento das principais funcionalidades do RStudio é tratada em seção [específica](#0 "RStudio").
+Ao longo deste livro serão usadas diversas funcionalidades do RStudio. Porém o foco será sempre no conteúdo, pois o detalhamento das principais funcionalidades do RStudio é tratada em seção [específica](sobre_rstudio.html "RStudio").
 
 ```{r, label = 'fig-r-intro-rstudio-layout', fig.cap = "Tela Inicial do RStudio", echo = FALSE}
 knitr::include_graphics('images/rstudio/rstudio_layout.png')
@@ -78,7 +78,7 @@ citatin()
 
 Scripts são arquivos de texto que recebem códigos e conforme desejo do usuário são enviados ao console para execução. Na prática usar o console diretamente é útil para pequenas operações. No Rstudio você pode criar um script em File \> New File \> R Script. O arquivo de script será aberto no painel **Source**.
 
-Para executar comandos de um arquivo de script você pode usar atalhos de teclado (Ctrl + Enter) ou através do botão Run no topo superior esquerdo da aba Source. Ambas opções executam ou a linha corrente ou a parte do texto selecionada.
+Para executar comandos de um arquivo de script você pode usar atalhos de teclado (Ctrl + Enter) ou através do botão Run no topo superior direito da aba Source. Ambas opções executam ou a linha corrente ou a parte do texto selecionada.
 
 ```{r, label = 'fig-r-intro-source-run', fig.cap = "Source - Botão Run", echo = FALSE}
 knitr::include_graphics('images/rstudio/source_run.png')
@@ -108,14 +108,14 @@ Muitas vezes objetos em R são chamados de **variáveis**, no sentido de que var
 
 Vetores são entidades que armazenam dados em posições [@r_language_definition, cap 2]. Os vetores são ditos **atômicos**, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma "local" onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:
 
-| Tipo        | Descrição                         | Exemplo             |
-|-------------|-----------------------------------|---------------------|
-| *logical*   | lógico                            | TRUE                |
-| *integer*   | número inteiro                    | 1                   |
-| *double*    | número com ponto flutuante (real) | 1.5                 |
-| *complex*   | número complexo                   | 1i                  |
-| *character* | texto (*strings*)                 | R é software livre. |
-| *raw*       | bytes                             |                     |
+| Tipo        | Descrição                         | Exemplo               |
+|-------------|-----------------------------------|-----------------------|
+| *logical*   | lógico                            | TRUE                  |
+| *integer*   | número inteiro                    | 1                     |
+| *double*    | número com ponto flutuante (real) | 1.5                   |
+| *complex*   | número complexo                   | 1i                    |
+| *character* | texto (*strings*)                 | 'R é software livre.' |
+| *raw*       | bytes                             |                       |
 
 : Tipos de Vetores
 

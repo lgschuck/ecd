@@ -6,7 +6,7 @@
 
 Assim como outras linguagens de programação R oferece uma série de operadores para controle de fluxo de código.
 
-:::callout-note
+::: callout-note
 Controles de fluxo são declarações usadas na linguagem, mas **não são funções**.
 :::
 
@@ -39,7 +39,7 @@ if (x > 4) print('x é maior do que quatro')
 
 ## Ifelse
 
-R possui a **função** `ifelse`, que apesar de não ser para  controle de fluxo, possui lógica de uso muito semelhante ao **if** e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso. 
+R possui a **função** `ifelse`, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao **if** e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.
 
 O retorno de `ifelse` possui o mesmo formato da estrutura informada no argumento **test**. Esta função pode ser usada para atribuição em data frames de forma mais sucinta.
 
@@ -98,7 +98,30 @@ if(x > 3) {
 
 ## Laço For
 
-Um laço **for** é uma operação que efetua uma determinada quantidade de passos de acordo com a sequência informada.
+Um laço **for** é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: `for(x in seq)`, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em `seq` e ecerrando no último. Um exemplo:
+
+```{r}
+for(x in 1:5){
+  print(paste('Iteração:', x))
+}
+```
+
+Caso se deseje mudar o incremento a cada passo pode ser usada a função `seq`. Também é possível usar um passo decrescente.
+
+```{r}
+for(x in seq(2, 1, -0.25)) {
+  print(paste('Valor de x:', x))
+}
+```
+
+No eemplo acima, x é inicializado com valor 1 e vvai sendo incrementado em 1 unidade ao início do próximo passo. Um laço **for** também pode fazer iterações sobre vetores com texto, por exemplo.
+
+```{r}
+for(i in c('São Paulo', 'Rio de Janeiro', 'Porto Alegre')){
+  print(paste('Cidade atual:', i))
+}
+
+```
 
 No laço **for** a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.
 
@@ -111,6 +134,12 @@ for(i in 1:x) {
 ```
 
 ## While
+
+::: callout-note
+## For x While
+
+Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use **while**.
+:::
 
 ## Repeat
 

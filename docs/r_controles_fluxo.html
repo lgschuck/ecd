@@ -476,14 +476,50 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 </section>
 <section id="laço-for" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="laço-for"><span class="header-section-number">8.5</span> Laço For</h2>
-<p>Um laço <strong>for</strong> é uma operação que efetua uma determinada quantidade de passos de acordo com a sequência informada.</p>
+<p>Um laço <strong>for</strong> é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: <code>for(x in seq)</code>, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em <code>seq</code> e ecerrando no último. Um exemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Iteração:'</span>, x))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Iteração: 1"
+[1] "Iteração: 2"
+[1] "Iteração: 3"
+[1] "Iteração: 4"
+[1] "Iteração: 5"</code></pre>
+</div>
+</div>
+<p>Caso se deseje mudar o incremento a cada passo pode ser usada a função <code>seq</code>. Também é possível usar um passo decrescente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.25</span>)) {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Valor de x:'</span>, x))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Valor de x: 2"
+[1] "Valor de x: 1.75"
+[1] "Valor de x: 1.5"
+[1] "Valor de x: 1.25"
+[1] "Valor de x: 1"</code></pre>
+</div>
+</div>
+<p>No eemplo acima, x é inicializado com valor 1 e vvai sendo incrementado em 1 unidade ao início do próximo passo. Um laço <strong>for</strong> também pode fazer iterações sobre vetores com texto, por exemplo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">'São Paulo'</span>, <span class="st">'Rio de Janeiro'</span>, <span class="st">'Porto Alegre'</span>)){</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Cidade atual:'</span>, i))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cidade atual: São Paulo"
+[1] "Cidade atual: Rio de Janeiro"
+[1] "Cidade atual: Porto Alegre"</code></pre>
+</div>
+</div>
 <p>No laço <strong>for</strong> a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>x) {</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>x) {</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5
 [1] 7
@@ -493,11 +529,24 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 </section>
 <section id="while" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="while"><span class="header-section-number">8.6</span> While</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+For x While
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use <strong>while</strong>.</p>
+</div>
+</div>
 </section>
 <section id="repeat" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="repeat"><span class="header-section-number">8.7</span> Repeat</h2>
 <hr>
-<p>Última atualização: 16/08/2023 - 01:26:31</p>
+<p>Última atualização: 16/08/2023 - 18:18:50</p>
 
 
 </section>
