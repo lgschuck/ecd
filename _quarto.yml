@@ -43,6 +43,8 @@ book:
     - convencoes.qmd
     - referencias.qmd
 
+  downloads: [pdf]
+
 bibliography: referencias.bib
 
 repo-url: https://github.com/lgschuck/ecd
@@ -52,3 +54,4 @@ format:
     theme:
       light: [cosmo , ecd.scss]
       dark: [slate]
+  pdf: default
