@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 11&nbsp; Menu Tools</title>
+<title>eRando em Ciênc1a de D4do$ - 12&nbsp; Menu Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Menu Tools</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Menu Tools</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -158,7 +158,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_graficos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Gráficos</span></a>
+  <a href="./r_controles_fluxo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_graficos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Gráficos</span></a>
   </div>
 </li>
       </ul>
@@ -173,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
+  <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
   </div>
 </li>
       </ul>
@@ -188,12 +193,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
+  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
   </div>
 </li>
       </ul>
@@ -208,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -232,14 +237,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#opções" id="toc-opções" class="nav-link active" data-scroll-target="#opções"><span class="toc-section-number">11.1</span>  Opções</a>
+  <li><a href="#opções" id="toc-opções" class="nav-link active" data-scroll-target="#opções"><span class="toc-section-number">12.1</span>  Opções</a>
   <ul class="collapse">
-  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="toc-section-number">11.1.1</span>  Install Packages</a></li>
-  <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">11.1.2</span>  Check for Package Updates</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">11.1.3</span>  Version Control</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">11.1.4</span>  Terminal</a></li>
-  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">11.1.5</span>  Background Jobs</a></li>
-  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">11.1.6</span>  Global Options</a></li>
+  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="toc-section-number">12.1.1</span>  Install Packages</a></li>
+  <li><a href="#check-for-package-updates" id="toc-check-for-package-updates" class="nav-link" data-scroll-target="#check-for-package-updates"><span class="toc-section-number">12.1.2</span>  Check for Package Updates</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">12.1.3</span>  Version Control</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">12.1.4</span>  Terminal</a></li>
+  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="toc-section-number">12.1.5</span>  Background Jobs</a></li>
+  <li><a href="#global-options" id="toc-global-options" class="nav-link" data-scroll-target="#global-options"><span class="toc-section-number">12.1.6</span>  Global Options</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -249,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Menu Tools</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Menu Tools</span></h1>
 </div>
 
 
@@ -265,28 +270,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
-<section id="opções" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="opções"><span class="header-section-number">11.1</span> Opções</h2>
+<section id="opções" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="opções"><span class="header-section-number">12.1</span> Opções</h2>
 <p>O menu Tools oferece uma série de funcionalidades para configuração do ambiente de trabalho.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-rstudio-menu-tools" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.1: Menu Tools</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.1: Menu Tools</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="install-packages" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">11.1.1</span> Install Packages</h3>
+<section id="install-packages" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">12.1.1</span> Install Packages</h3>
 <p>Nesta opção é aberta a janela para instalação de pacotes.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-rstudio-menu-inst-pkgs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools_inst_pkgs.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.2: Install Packages</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.2: Install Packages</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -309,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-rstudio-menu-inst-pkgs-from" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools_inst_pkgs_from.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.3: Install From</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.3: Install From</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -319,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-rstudio-menu-inst-pkgs-archive" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools_inst_pkgs_archive.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.4: Package Archive File</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.4: Package Archive File</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -329,41 +334,41 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Install Dependencies:</strong> marcação para que seja feita instalação de dependências dos pacotes selecionados.</p></li>
 </ul>
 </section>
-<section id="check-for-package-updates" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="check-for-package-updates"><span class="header-section-number">11.1.2</span> Check for Package Updates</h3>
+<section id="check-for-package-updates" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="check-for-package-updates"><span class="header-section-number">12.1.2</span> Check for Package Updates</h3>
 <p>Este opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-rstudio-menu-update-pkgs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools_update_pkgs.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.5: Check for Package Updates</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.5: Check for Package Updates</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="version-control" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">11.1.3</span> Version Control</h3>
+<section id="version-control" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">12.1.3</span> Version Control</h3>
 <p>Oferece opção de controle de versões de código através do Git ou SVN.</p>
 </section>
-<section id="terminal" class="level3" data-number="11.1.4">
-<h3 data-number="11.1.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">11.1.4</span> Terminal</h3>
+<section id="terminal" class="level3" data-number="12.1.4">
+<h3 data-number="12.1.4" class="anchored" data-anchor-id="terminal"><span class="header-section-number">12.1.4</span> Terminal</h3>
 <p>Permite acesso ao terminal do sistema operacional a partir do RStudio.</p>
 </section>
-<section id="background-jobs" class="level3" data-number="11.1.5">
-<h3 data-number="11.1.5" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">11.1.5</span> Background Jobs</h3>
+<section id="background-jobs" class="level3" data-number="12.1.5">
+<h3 data-number="12.1.5" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">12.1.5</span> Background Jobs</h3>
 <p>Fornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.</p>
 </section>
-<section id="global-options" class="level3" data-number="11.1.6">
-<h3 data-number="11.1.6" class="anchored" data-anchor-id="global-options"><span class="header-section-number">11.1.6</span> Global Options</h3>
+<section id="global-options" class="level3" data-number="12.1.6">
+<h3 data-number="12.1.6" class="anchored" data-anchor-id="global-options"><span class="header-section-number">12.1.6</span> Global Options</h3>
 <p>Esta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-rstudio-menu-global-options" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/rstudio/menu_tools_global_options.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;11.6: Global Options</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;12.6: Global Options</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -629,7 +634,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./rstudio_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

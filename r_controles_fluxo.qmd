@@ -1,0 +1,119 @@
+# Controles de Fluxo
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Introdução
+
+Assim como outras linguagens de programação R oferece uma série de operadores para controle de fluxo de código.
+
+:::callout-note
+Controles de fluxo são declarações usadas na linguagem, mas **não são funções**.
+:::
+
+## If
+
+O controle **if** é a estrutura de controle mais básica que tomada de decisão e "direcionamento" de código. Em caso negativo do teste lógico nenhuma operação é executada.
+
+```{r, erro = T}
+x <- 5
+
+# Códigos equivalentes
+if(x > 4) print('x é maior do que quatro')
+if(x > 4) { print('x é maior do que quatro')}
+if(x > 4) {
+  print('x é maior do que quatro') }
+if(x > 4) { print('x é maior do que quatro')
+}
+if(x > 4) {
+  print('x é maior do que quatro')
+} # o mais organizado
+```
+
+Note que se o teste não retornar `TRUE` ou `FALSE` o R reportará erro.
+
+```{r, error = T}
+x <- NA
+
+if (x > 4) print('x é maior do que quatro')
+```
+
+## Ifelse
+
+R possui a **função** `ifelse`, que apesar de não ser para  controle de fluxo, possui lógica de uso muito semelhante ao **if** e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso. 
+
+O retorno de `ifelse` possui o mesmo formato da estrutura informada no argumento **test**. Esta função pode ser usada para atribuição em data frames de forma mais sucinta.
+
+Vejamos um exemplo:
+
+```{r, erro = T}
+df_mtcars6 <-
+  mtcars |> 
+  subset(select = c('hp', 'mpg', 'cyl')) |> 
+  head()
+
+df_mtcars6                 
+
+df_mtcars6[df_mtcars6$hp > 100, 'RESULTADO'] <-
+  df_mtcars6[df_mtcars6$hp > 100, ]$mpg
+
+df_mtcars6[df_mtcars6$hp <= 100, 'RESULTADO'] <-
+  df_mtcars6[df_mtcars6$hp <= 100,]$cyl
+
+df_mtcars6
+
+# com ifelse
+df_mtcars6$RESULTADO2 <- 
+  ifelse(df_mtcars6$hp > 100, 
+         df_mtcars6$mpg, 
+         df_mtcars6$cyl)
+
+df_mtcars6
+```
+
+## If Else
+
+O **if else** pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo **if**.
+
+```{r}
+x <- 3
+if(x > 4) {
+  print('x é maior do que quatro')
+} else {
+   print('x não é maior do que quatro')
+}
+```
+
+Veja que podem ser usadas muitas declaração **else** em sequência.
+
+```{r}
+x <- 3
+if(x > 3) {
+  print('x é maior do que três')
+} else if (x < 3){
+  print('x é menor do que três')
+} else if (x == 3){
+  print('x é igual a três')
+}
+```
+
+## Laço For
+
+Um laço **for** é uma operação que efetua uma determinada quantidade de passos de acordo com a sequência informada.
+
+No laço **for** a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.
+
+```{r}
+x <- 3
+for(i in 1:x) {
+  x <- x + 2
+  print(x)
+}
+```
+
+## While
+
+## Repeat
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_controles_fluxo.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

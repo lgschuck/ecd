@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 2&nbsp; Nomeando Objetos</title>
+<title>eRando em Ciênc1a de D4do$ - 8&nbsp; Controles de Fluxo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,25 +83,6 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -112,8 +93,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r_operador_pipe.html" rel="next">
-<link href="./r_intro.html" rel="prev">
+<link href="./r_graficos.html" rel="next">
+<link href="./r_funcoes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -155,7 +136,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -210,7 +191,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_nomes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></a>
+  <a href="./r_nomes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +221,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_controles_fluxo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></a>
+  <a href="./r_controles_fluxo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -319,12 +300,13 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#nomes" id="toc-nomes" class="nav-link active" data-scroll-target="#nomes"><span class="toc-section-number">2.1</span>  Nomes</a>
-  <ul class="collapse">
-  <li><a href="#primeiro-caractere" id="toc-primeiro-caractere" class="nav-link" data-scroll-target="#primeiro-caractere"><span class="toc-section-number">2.1.1</span>  Primeiro Caractere</a></li>
-  <li><a href="#case-sensitive" id="toc-case-sensitive" class="nav-link" data-scroll-target="#case-sensitive"><span class="toc-section-number">2.1.2</span>  Case Sensitive</a></li>
-  </ul></li>
-  <li><a href="#convenções" id="toc-convenções" class="nav-link" data-scroll-target="#convenções"><span class="toc-section-number">2.2</span>  Convenções</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="toc-section-number">8.1</span>  Introdução</a></li>
+  <li><a href="#if" id="toc-if" class="nav-link" data-scroll-target="#if"><span class="toc-section-number">8.2</span>  If</a></li>
+  <li><a href="#ifelse" id="toc-ifelse" class="nav-link" data-scroll-target="#ifelse"><span class="toc-section-number">8.3</span>  Ifelse</a></li>
+  <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else"><span class="toc-section-number">8.4</span>  If Else</a></li>
+  <li><a href="#laço-for" id="toc-laço-for" class="nav-link" data-scroll-target="#laço-for"><span class="toc-section-number">8.5</span>  Laço For</a></li>
+  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="toc-section-number">8.6</span>  While</a></li>
+  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="toc-section-number">8.7</span>  Repeat</a></li>
   </ul>
 </nav>
     </div>
@@ -333,7 +315,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nomeando Objetos</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></h1>
 </div>
 
 
@@ -348,223 +330,176 @@ div.csl-indent {
 
 </header>
 
-<p><a href="convencoes.html#status-do-material">Status</a> 🟦🟦🟦</p>
-<section id="nomes" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="nomes"><span class="header-section-number">2.1</span> Nomes</h2>
-<p>A linguagem R aceita muitas possibilidades para nomeação de objetos. Inclusive podem ser criados objetos com espaços em seus nomes e até mesmo com caracteres especiais (desde que entre aspas ou crases).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
+<section id="introdução" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">8.1</span> Introdução</h2>
+<p>Assim como outras linguagens de programação R oferece uma série de operadores para controle de fluxo de código.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Controles de fluxo são declarações usadas na linguagem, mas <strong>não são funções</strong>.</p>
+</div>
+</div>
+</section>
+<section id="if" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="if"><span class="header-section-number">8.2</span> If</h2>
+<p>O controle <strong>if</strong> é a estrutura de controle mais básica que tomada de decisão e “direcionamento” de código. Em caso negativo do teste lógico nenhuma operação é executada.</p>
+<div class="cell" data-erro="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>.x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">nome com espaco</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">55</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span> <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Nomes Significativos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Escolha nomes intuitivos e que facilitem a identificação do conteúdo armazenado nos objetos.</p>
-</div>
-</div>
-<p>Um objeto criado através do uso de aspas ou crases tem seu conteúdo acessado quando “chamado” com crases (<em>backticks</em>). Aspas são entendidas como sinalização para strings e assim não retornam o conteúdo do objeto e sim a própria string informada.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">'teste 1'</span> <span class="co">#retorna como string</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Códigos equivalentes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "teste 1"</code></pre>
+<pre><code>[1] "x é maior do que quatro"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibe conteúdo do objeto</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste 1</span><span class="st">`</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) { <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] "x é maior do que quatro"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>) }</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x é maior do que quatro"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) { <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x é maior do que quatro"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>} <span class="co"># o mais organizado</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x é maior do que quatro"</code></pre>
 </div>
 </div>
-<section id="primeiro-caractere" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="primeiro-caractere"><span class="header-section-number">2.1.1</span> Primeiro Caractere</h3>
-<p>Existem algumas regras para iniciar o nome dos objetos. Alguns caracteres “especiais” não podem ser usados, bem como os números.</p>
+<p>Note que se o teste não retornar <code>TRUE</code> ou <code>FALSE</code> o R reportará erro.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="dv">10</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: &lt;text&gt;:1:1: '$' inesperado
-1: $
-    ^</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>55x <span class="ot">&lt;-</span> <span class="dv">10</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: &lt;text&gt;:1:3: unexpected symbol
-1: 55x
-      ^</code></pre>
-</div>
-</div>
-<p>Perceba que números podem ser usados nos nomes, desde que o primeiro caractere seja ‘válido’. Mas o mesmo não ocorre com caracteres “especiais”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x55x <span class="ot">&lt;-</span> <span class="dv">888</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x55x</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 888</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: &lt;text&gt;:1:4: unexpected assignment
-1: x$ &lt;-
-       ^</code></pre>
-</div>
-</div>
-<p>Uma alternativa se dá mais uma vez com o uso de aspas ou crases. Com elas é possível ‘burlar’ estas limitações.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste @!&amp;</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">123456</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">teste @!&amp;</span><span class="st">`</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 123456</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="st">'55 teste @!&amp;'</span> <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">55 teste @!&amp;</span><span class="st">`</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
-</div>
-</div>
-<p>Apesar de possível, objetos com nomes mais complicados como os exemplificados acabam tornando a vida do programador um pouco mais difícil. Em geral, evite caracteres caracteres especiais e espaços nos nomes. Caso algum dado (bases de dados) seja carregado de arquivo externo com este tipo de caracteres, faça a uniformização dos nomes o quanto antes.</p>
-<section id="objetos-ocultos" class="level4" data-number="2.1.1.1">
-<h4 data-number="2.1.1.1" class="anchored" data-anchor-id="objetos-ocultos"><span class="header-section-number">2.1.1.1</span> Objetos “Ocultos”</h4>
-<p>Objetos podem ser criados com “.” no início de seus nomes desde que o segundo carctere seja uma letra. Estes são objetos “ocultos” e portanto não aparecem em um comando <code>ls</code> “puro”, por exemplo. Tampouco são exibidos na aba Environment do RStudio. Para visualizá-los através da função <code>ls</code> deve ser usado o parâmetro <code>all.names = T</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "55 teste @!&amp;"    "nome com espaco" "teste @!&amp;"       "teste 1"        
-[5] "x"               "x55x"           </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">all.names =</span> T)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] ".main"           ".x"              "55 teste @!&amp;"    "nome com espaco"
-[5] "teste @!&amp;"       "teste 1"         "x"               "x55x"           </code></pre>
+<pre><code>Error in if (x &gt; 4) print("x é maior do que quatro"): valor ausente onde TRUE/FALSE necessário</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="case-sensitive" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="case-sensitive"><span class="header-section-number">2.1.2</span> Case Sensitive</h3>
-<p>R é uma linguagem <em>case sensitive</em>, ou seja, ela diferencia maiúsculas de minúsculas. Assim um objeto com nome de Teste é diferente teste, tesTe, TESTE…</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Teste <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>tesTe <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>TESTE <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ifelse" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="ifelse"><span class="header-section-number">8.3</span> Ifelse</h2>
+<p>R possui a <strong>função</strong> <code>ifelse</code>, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao <strong>if</strong> e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.</p>
+<p>O retorno de <code>ifelse</code> possui o mesmo formato da estrutura informada no argumento <strong>test</strong>. Esta função pode ser usada para atribuição em data frames de forma mais sucinta.</p>
+<p>Vejamos um exemplo:</p>
+<div class="cell" data-erro="true">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_mtcars6 <span class="ot">&lt;-</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(<span class="st">'hp'</span>, <span class="st">'mpg'</span>, <span class="st">'cyl'</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df_mtcars6                 </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "55 teste @!&amp;"    "nome com espaco" "teste"           "tesTe"          
- [5] "Teste"           "TESTE"           "teste @!&amp;"       "teste 1"        
- [9] "x"               "x55x"           </code></pre>
+<pre><code>                   hp  mpg cyl
+Mazda RX4         110 21.0   6
+Mazda RX4 Wag     110 21.0   6
+Datsun 710         93 22.8   4
+Hornet 4 Drive    110 21.4   6
+Hornet Sportabout 175 18.7   8
+Valiant           105 18.1   6</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_mtcars6[df_mtcars6<span class="sc">$</span>hp <span class="sc">&gt;</span> <span class="dv">100</span>, <span class="st">'RESULTADO'</span>] <span class="ot">&lt;-</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  df_mtcars6[df_mtcars6<span class="sc">$</span>hp <span class="sc">&gt;</span> <span class="dv">100</span>, ]<span class="sc">$</span>mpg</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>df_mtcars6[df_mtcars6<span class="sc">$</span>hp <span class="sc">&lt;=</span> <span class="dv">100</span>, <span class="st">'RESULTADO'</span>] <span class="ot">&lt;-</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  df_mtcars6[df_mtcars6<span class="sc">$</span>hp <span class="sc">&lt;=</span> <span class="dv">100</span>,]<span class="sc">$</span>cyl</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>df_mtcars6</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   hp  mpg cyl RESULTADO
+Mazda RX4         110 21.0   6      21.0
+Mazda RX4 Wag     110 21.0   6      21.0
+Datsun 710         93 22.8   4       4.0
+Hornet 4 Drive    110 21.4   6      21.4
+Hornet Sportabout 175 18.7   8      18.7
+Valiant           105 18.1   6      18.1</code></pre>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Campos de Tabelas
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Campos (variáveis) de dados tabulados, como planilhas de Excel, seguem as mesmas regras. Este tipo de dado será tratado no capítulo sobre <strong>data frames</strong>.</p>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># com ifelse</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df_mtcars6<span class="sc">$</span>RESULTADO2 <span class="ot">&lt;-</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(df_mtcars6<span class="sc">$</span>hp <span class="sc">&gt;</span> <span class="dv">100</span>, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>         df_mtcars6<span class="sc">$</span>mpg, </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>         df_mtcars6<span class="sc">$</span>cyl)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>df_mtcars6</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   hp  mpg cyl RESULTADO RESULTADO2
+Mazda RX4         110 21.0   6      21.0       21.0
+Mazda RX4 Wag     110 21.0   6      21.0       21.0
+Datsun 710         93 22.8   4       4.0        4.0
+Hornet 4 Drive    110 21.4   6      21.4       21.4
+Hornet Sportabout 175 18.7   8      18.7       18.7
+Valiant           105 18.1   6      18.1       18.1</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="convenções" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="convenções"><span class="header-section-number">2.2</span> Convenções</h2>
-<p>Conforme o seu código em R (e de outra linguagem qualquer) for crescendo você perceberá rapidamente a necessidade de identificar de forma intuitiva os objetos criados. Assim, é muito interessante a utilização de alguma convenção para facilitar sua vida. Existem diversas delas, como <strong>camelCase</strong>, <strong>snake_case</strong>, <strong>SCREAMING_SNAKE_CASE</strong>, <strong>PascalCase</strong>, etc.</p>
+<section id="if-else" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="if-else"><span class="header-section-number">8.4</span> If Else</h2>
+<p>O <strong>if else</strong> pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo <strong>if</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># camelCase</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>objetoTeste <span class="ot">&lt;-</span> <span class="st">'Teste camelCase'</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># snake_case</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>objeto_teste <span class="ot">&lt;-</span> <span class="st">'Teste snake_case'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Um bom guia é o <a href="https://style.tidyverse.org/syntax.html">The tidyverse style guide</a>. Tenha sempre em mente que sue código deve ser lido com facilidade no futuro e muitas vezes por outros usuários.</p>
-<p>Neste material os nomes de objetos e derivados seguirão a tabela abaixo. Estas definições foram escolhidas a fim de uniformizar o conteúdo apresentado e se baseiam em experiência de uso e no <strong>Tidyverse Style Guide</strong>. Mais detalhes em <a href="convencoes.html">Convenções</a>.</p>
-<table class="table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 47%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tipo Objeto</th>
-<th>Convenção</th>
-<th>Exemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Data.frame, tibble ou data.table</td>
-<td>snake_case iniciado por df (<strong>d</strong>ata <strong>f</strong>rame)</td>
-<td>df_clientes</td>
-</tr>
-<tr class="even">
-<td>Variáveis de datasets</td>
-<td>SCREAMING_SNAKE_CASE</td>
-<td>df_clientes$NOME_CLIENTE</td>
-</tr>
-<tr class="odd">
-<td>Funções</td>
-<td>camelCase iniciado por <strong>fn</strong>, sendo a primeira palavra após fn um verbo</td>
-<td>fnBuscarClientes</td>
-</tr>
-<tr class="even">
-<td>Demais (vetores, listas, etc.)</td>
-<td>snake_case</td>
-<td>nomes_cidades</td>
-</tr>
-</tbody>
-</table>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Dica
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é maior do que quatro'</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">print</span>(<span class="st">'x não é maior do que quatro'</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x não é maior do que quatro"</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Evite usar “<strong>.</strong>” em nome de objetos, pois através do <strong>ponto</strong> o R acessa funções (métodos) de acordo com a classe do objeto. Usar o ponto pode causar certa confusão. Mais detalhes <a href="r_funcoes.html#funções-genéricas">Funções</a>.</p>
+<p>Veja que podem ser usadas muitas declaração <strong>else</strong> em sequência.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é maior do que três'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">3</span>){</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é menor do que três'</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">3</span>){</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'x é igual a três'</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x é igual a três"</code></pre>
 </div>
 </div>
+</section>
+<section id="laço-for" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="laço-for"><span class="header-section-number">8.5</span> Laço For</h2>
+<p>Um laço <strong>for</strong> é uma operação que efetua uma determinada quantidade de passos de acordo com a sequência informada.</p>
+<p>No laço <strong>for</strong> a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>x) {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+[1] 7
+[1] 9</code></pre>
+</div>
+</div>
+</section>
+<section id="while" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="while"><span class="header-section-number">8.6</span> While</h2>
+</section>
+<section id="repeat" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="repeat"><span class="header-section-number">8.7</span> Repeat</h2>
 <hr>
-<p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
-<p><span class="citation" data-cites="introduction_r">R Core Team (<a href="referencias.html#ref-introduction_r" role="doc-biblioref">2023</a>)</span></p>
-<p><span class="citation" data-cites="wiki_naming_convention">Wikipedia (<a href="referencias.html#ref-wiki_naming_convention" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 13/08/2023 - 22:38:42</p>
+<p>Última atualização: 16/08/2023 - 01:26:31</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-grolemund2014" class="csl-entry" role="doc-biblioentry">
-Grolemund, Garrett. 2014. <em>Hands-On Programming with R</em>. O’Reilly. <a href="https://rstudio-education.github.io/hopr/">https://rstudio-education.github.io/hopr/</a>.
-</div>
-<div id="ref-introduction_r" class="csl-entry" role="doc-biblioentry">
-R Core Team. 2023. <em>An Introduction to R</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">https://cran.r-project.org/doc/manuals/r-release/R-intro.html</a>.
-</div>
-<div id="ref-wiki_naming_convention" class="csl-entry" role="doc-biblioentry">
-Wikipedia, the free encyclopedia. 2023. <span>"Naming convention (programming)"</span>. 2023. <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -818,13 +753,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span>
+      <a href="./r_funcoes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funções</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r_operador_pipe.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r_graficos.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Gráficos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
