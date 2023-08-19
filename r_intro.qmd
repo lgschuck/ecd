@@ -78,25 +78,37 @@ citatin()
 
 Scripts são arquivos de texto que recebem códigos e conforme desejo do usuário são enviados ao console para execução. Na prática usar o console diretamente é útil para pequenas operações. No Rstudio você pode criar um script em File \> New File \> R Script. O arquivo de script será aberto no painel **Source**.
 
+```{r, label = 'fig-r-intro-script1', fig.cap = "Script - Painel Source", echo = FALSE}
+knitr::include_graphics('images/r/intro/script1.png')
+```
+
 Para executar comandos de um arquivo de script você pode usar atalhos de teclado (Ctrl + Enter) ou através do botão Run no topo superior direito da aba Source. Ambas opções executam ou a linha corrente ou a parte do texto selecionada.
 
 ```{r, label = 'fig-r-intro-source-run', fig.cap = "Source - Botão Run", echo = FALSE}
 knitr::include_graphics('images/r/intro/source_run.png')
 ```
 
+```{r, label = 'fig-r-intro-script2', fig.cap = "Script - Código a Processar", echo = FALSE}
+knitr::include_graphics('images/r/intro/script2.png')
+```
+
+```{r, label = 'fig-r-intro-console-script2', fig.cap = "Console - Resultado", echo = FALSE}
+knitr::include_graphics('images/r/intro/console_script2.png')
+```
+
 ### Comentários
 
-R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Qualquer texto após será ignorado pelo interpretador. Comentários são muito importantes para facilitar a leitura do código posteriormente.
+R aceita comentários em seu código através do caractere sustenido (*hashtag*), '**\#'**. Comentários são muito importantes para facilitar a leitura do código posteriormente. Uma forma interessante de organizar o seu código é criar uma linha de comentário para separação de etapas de processamento. Perceba que as linhas de comentários foram passadas para o console e este não emitiu nenhuma mensagem, tampouco efetuou qualquer operação.
 
 ::: callout-tip
 ### Porquê...
 
-Em operações mais complexas procure colocar comentários que expliquem os motivos de se executar alguma operação e não o que o código está fazendo. Foque no 'porquê' de cada operação e não no 'o que'.
+Em operações mais complexas procure colocar comentários que expliquem os motivos de se executar alguma operação e não o que o código está fazendo. Foque no **'porquê'** de cada operação e não no **'o que'**.
 :::
 
 ## Objetos
 
-Conforme o R Core Team[@introduction_r, cap 3] 'as entidades nas quais R opera são tecnicamente conhecidas como objetos'. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo **vetor**, pois este é o objeto mais básico.
+R opera sobre entidades que são conhecidas como **objetos** [@introduction_r, cap 3]. Existem diversos tipos de objetos em R como listas, matrizes, bases de dados, séries temporais, gráficos, modelos, etc. Neste capítulo inicial serão utilizados os **vetores**, pois são as estruturas mais básicas. As operações anteriores, por exemplo, de soma e multiplicação, foram feitas sobre números, que em R são vetores.
 
 ::: callout-note
 ## Variáveis
@@ -104,13 +116,13 @@ Conforme o R Core Team[@introduction_r, cap 3] 'as entidades nas quais R opera s
 Muitas vezes objetos em R são chamados de **variáveis**, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.
 :::
 
-### Vetores
+### Vetores (Atômicos)
 
 Vetores são entidades que armazenam dados em posições [@r_language_definition, cap 2]. Os vetores são ditos **atômicos**, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma "local" onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:
 
 | Tipo        | Descrição                         | Exemplo               |
 |-------------|-----------------------------------|-----------------------|
-| *logical*   | lógico                            | TRUE                  |
+| *logical*   | valor lógico                      | TRUE, FALSE           |
 | *integer*   | número inteiro                    | 1                     |
 | *double*    | número com ponto flutuante (real) | 1.5                   |
 | *complex*   | número complexo                   | 1i                    |
@@ -121,7 +133,7 @@ Vetores são entidades que armazenam dados em posições [@r_language_definition
 
 ## Criação de Objetos
 
-Para criação de objetos no R são usados os operadores de atribuição, `<-` e `=`. O operador mais usado é o `<-`. Assim para criação de um objeto pode ser usado o código abaixo:
+Para criação de objetos no R são usados os operadores de atribuição, `<-` e `=`. O operador mais usado é o `<-`. Assim para criação de um objeto do tipo vetor, pode ser usado o código abaixo:
 
 ```{r}
 objeto1 <- 10 # atribui valor 10
@@ -135,12 +147,11 @@ objeto2 = 'texto' # atribui texto
 
 ## Operações com Objetos
 
-Objetos podem ser atualizados novamente com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com a função`c`, que concatena valores, em conjunto com o operador `:`, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
+Objetos podem ser atualizados/alterados, novamente, com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com o operador `:`, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
 
 ```{r}
-objeto3 <- c(1:5)
+objeto3 <- 1:5
 objeto3
-typeof(objeto3)
 objeto3 <- objeto3 + 10
 ```
 
@@ -151,7 +162,7 @@ objeto3[3] # exibe terceiro elemento
 objeto3[3] + 10 # somando valor
 ```
 
-Note que sem o operador de atribuição o valor da posição 3 do objeto3 não é atualizada, apenas exibda no console. Para atualizar seu valor usamos:
+Note que sem o operador de atribuição o valor da posição 3 do objeto3 não é atualizada, apenas exibida no console. Para atualizar seu valor usamos:
 
 ```{r}
 objeto3
@@ -166,7 +177,6 @@ Quando vetores recebem dados de um tipo diferente o R tenta fazer uma operação
 ```{r, error = T}
 objeto3[1] <- 'A'
 objeto3
-typeof(objeto3)
 objeto3 + 10
 ```
 
@@ -191,13 +201,17 @@ ls()
 
 O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento1, argumento2, ...).
 
-Por exemplo, a função `typeof` exige a informação de um argumento (um objeto do R).
+Por exemplo, a função `typeof` exige a informação de um argumento (um objeto do R). O R processa esta função e devolve seu retorno, no caso qual o tipo do **objeto1**.
 
 ```{r}
 typeof(objeto1)
 ```
 
-O R processa esta função e devolve seu retorno, no caso qual o tipo do **objeto1**.
+A função `is.vector` por sua vez testa se um objeto é um vetor e retorna um valor lógico, `TRUE` ou `FALSE`.
+
+```{r}
+is.vector(5)
+```
 
 Pode-se visualizar o valor armazenado em um objeto com a função `print`, bem como exibir os objetos criados no R com a função `ls`. Note que a função `ls` aparentemente não exige argumentos.
 
@@ -232,20 +246,23 @@ rep.int(4, 5)
 ```
 
 ::: callout-note
-Algumas funções não possuem argumentos e "apenas" executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções Sys.Date() e Sys.time(), que retornam a data e data e hora respectivamente.
+Algumas funções não possuem argumentos e "apenas" executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções `Sys.Date()` e `Sys.time()`, que retornam a data e data e hora respectivamente.
 :::
 
 ### Armazenando Retorno
 
-Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:
+Para que o valor retornado por uma função seja armazenado em um objeto basta usar o operador de atribuição.
 
 ```{r}
 tipo <- typeof(objeto1)
 print(tipo)
 typeof(tipo)
+is.vector(tipo)
+is.character(tipo)
+is.double(tipo)
 ```
 
-Agora o objeto **tipo** armazena o valor retornado pelo função `typeof`, no caso o texto (*character*) "double".
+Agora o objeto **tipo** armazena o valor retornado pelo função `typeof` em formto texto (*character*) e seu conteúdo é "*double*". Veja que a função `is.double` que testa se o objeto é *double* retorna `FALSE`. Cuidado para não confundir o tipo do objeto com seu conteúdo.
 
 ------------------------------------------------------------------------
 

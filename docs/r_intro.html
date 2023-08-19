@@ -331,7 +331,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#objetos" id="toc-objetos" class="nav-link" data-scroll-target="#objetos"><span class="toc-section-number">1.4</span>  Objetos</a>
   <ul class="collapse">
-  <li><a href="#vetores" id="toc-vetores" class="nav-link" data-scroll-target="#vetores"><span class="toc-section-number">1.4.1</span>  Vetores</a></li>
+  <li><a href="#vetores-atômicos" id="toc-vetores-atômicos" class="nav-link" data-scroll-target="#vetores-atômicos"><span class="toc-section-number">1.4.1</span>  Vetores (Atômicos)</a></li>
   </ul></li>
   <li><a href="#criação-de-objetos" id="toc-criação-de-objetos" class="nav-link" data-scroll-target="#criação-de-objetos"><span class="toc-section-number">1.5</span>  Criação de Objetos</a></li>
   <li><a href="#operações-com-objetos" id="toc-operações-com-objetos" class="nav-link" data-scroll-target="#operações-com-objetos"><span class="toc-section-number">1.6</span>  Operações com Objetos</a>
@@ -496,20 +496,50 @@ Buscando Comandos Anteriores
 <section id="trabalhando-com-scripts" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="trabalhando-com-scripts"><span class="header-section-number">1.3</span> Trabalhando com Scripts</h2>
 <p>Scripts são arquivos de texto que recebem códigos e conforme desejo do usuário são enviados ao console para execução. Na prática usar o console diretamente é útil para pequenas operações. No Rstudio você pode criar um script em File &gt; New File &gt; R Script. O arquivo de script será aberto no painel <strong>Source</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-script1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/script1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.8: Script - Painel Source</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Para executar comandos de um arquivo de script você pode usar atalhos de teclado (Ctrl + Enter) ou através do botão Run no topo superior direito da aba Source. Ambas opções executam ou a linha corrente ou a parte do texto selecionada.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-r-intro-source-run" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/r/intro/source_run.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;1.8: Source - Botão Run</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.9: Source - Botão Run</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-script2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/script2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.10: Script - Código a Processar</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-r-intro-console-script2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/r/intro/console_script2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;1.11: Console - Resultado</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <section id="comentários" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="comentários"><span class="header-section-number">1.3.1</span> Comentários</h3>
-<p>R aceita comentários em seu código através do caractere sustenido (<em>hashtag</em>), ’<strong>#’</strong>. Qualquer texto após será ignorado pelo interpretador. Comentários são muito importantes para facilitar a leitura do código posteriormente.</p>
+<p>R aceita comentários em seu código através do caractere sustenido (<em>hashtag</em>), ’<strong>#’</strong>. Comentários são muito importantes para facilitar a leitura do código posteriormente. Uma forma interessante de organizar o seu código é criar uma linha de comentário para separação de etapas de processamento. Perceba que as linhas de comentários foram passadas para o console e este não emitiu nenhuma mensagem, tampouco efetuou qualquer operação.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -520,14 +550,14 @@ Porquê…
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Em operações mais complexas procure colocar comentários que expliquem os motivos de se executar alguma operação e não o que o código está fazendo. Foque no ‘porquê’ de cada operação e não no ‘o que’.</p>
+<p>Em operações mais complexas procure colocar comentários que expliquem os motivos de se executar alguma operação e não o que o código está fazendo. Foque no <strong>‘porquê’</strong> de cada operação e não no <strong>‘o que’</strong>.</p>
 </div>
 </div>
 </section>
 </section>
 <section id="objetos" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="objetos"><span class="header-section-number">1.4</span> Objetos</h2>
-<p>Conforme o R Core Team<span class="citation" data-cites="introduction_r">(<a href="referencias.html#ref-introduction_r" role="doc-biblioref">R Core Team 2023a</a>, cap 3)</span> ‘as entidades nas quais R opera são tecnicamente conhecidas como objetos’. Existem diversos tipos de estrutura de dados em R, mas neste capítulo inicial serão usados objetos do tipo <strong>vetor</strong>, pois este é o objeto mais básico.</p>
+<p>R opera sobre entidades que são conhecidas como <strong>objetos</strong> <span class="citation" data-cites="introduction_r">(<a href="referencias.html#ref-introduction_r" role="doc-biblioref">R Core Team 2023a</a>, cap 3)</span>. Existem diversos tipos de objetos em R como listas, matrizes, bases de dados, séries temporais, gráficos, modelos, etc. Neste capítulo inicial serão utilizados os <strong>vetores</strong>, pois são as estruturas mais básicas. As operações anteriores, por exemplo, de soma e multiplicação, foram feitas sobre números, que em R são vetores.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -541,8 +571,8 @@ Variáveis
 <p>Muitas vezes objetos em R são chamados de <strong>variáveis</strong>, no sentido de que variáveis armazenam dados. Isto ocorre principalmente para objetos que armazenam um único valor, como um único número ou texto.</p>
 </div>
 </div>
-<section id="vetores" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="vetores"><span class="header-section-number">1.4.1</span> Vetores</h3>
+<section id="vetores-atômicos" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="vetores-atômicos"><span class="header-section-number">1.4.1</span> Vetores (Atômicos)</h3>
 <p>Vetores são entidades que armazenam dados em posições <span class="citation" data-cites="r_language_definition">(<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">R Core Team 2023b</a>, cap 2)</span>. Os vetores são ditos <strong>atômicos</strong>, pois seus dados são todos do mesmo tipo. Você pode pensar em um vetor como uma “local” onde serão armazenados dados. Os vetores podem ser de um dos 6 tipos abaixo:</p>
 <table class="table">
 <caption>Tipos de Vetores</caption>
@@ -561,8 +591,8 @@ Variáveis
 <tbody>
 <tr class="odd">
 <td><em>logical</em></td>
-<td>lógico</td>
-<td>TRUE</td>
+<td>valor lógico</td>
+<td>TRUE, FALSE</td>
 </tr>
 <tr class="even">
 <td><em>integer</em></td>
@@ -595,7 +625,7 @@ Variáveis
 </section>
 <section id="criação-de-objetos" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="criação-de-objetos"><span class="header-section-number">1.5</span> Criação de Objetos</h2>
-<p>Para criação de objetos no R são usados os operadores de atribuição, <code>&lt;-</code> e <code>=</code>. O operador mais usado é o <code>&lt;-</code>. Assim para criação de um objeto pode ser usado o código abaixo:</p>
+<p>Para criação de objetos no R são usados os operadores de atribuição, <code>&lt;-</code> e <code>=</code>. O operador mais usado é o <code>&lt;-</code>. Assim para criação de um objeto do tipo vetor, pode ser usado o código abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>objeto1 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># atribui valor 10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -606,38 +636,34 @@ Variáveis
 </section>
 <section id="operações-com-objetos" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="operações-com-objetos"><span class="header-section-number">1.6</span> Operações com Objetos</h2>
-<p>Objetos podem ser atualizados novamente com o operador <code>&lt;-</code>. No exemplo abaixo vamos criar um vetor de nome <strong>objeto3</strong> com a função<code>c</code>, que concatena valores, em conjunto com o operador <code>:</code>, que cria sequências de valores. Na sequência o <strong>objeto3</strong> será atualizado recebendo seu próprio conteúdo acrescido do valor 10.</p>
+<p>Objetos podem ser atualizados/alterados, novamente, com o operador <code>&lt;-</code>. No exemplo abaixo vamos criar um vetor de nome <strong>objeto3</strong> com o operador <code>:</code>, que cria sequências de valores. Na sequência o <strong>objeto3</strong> será atualizado recebendo seu próprio conteúdo acrescido do valor 10.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(objeto3)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="ot">&lt;-</span> objeto3 <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="ot">&lt;-</span> objeto3 <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>O vetor objeto3 foi criado com 5 posições, armazenando os valores de 1 a 5. Podemos acessar, por exemplo a terceira posição do vetor, através do operador de extração <strong>[</strong> em combinação com o índice do vetor.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="co"># exibe terceiro elemento</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="co"># exibe terceiro elemento</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="sc">+</span> <span class="dv">10</span> <span class="co"># somando valor</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="sc">+</span> <span class="dv">10</span> <span class="co"># somando valor</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 23</code></pre>
 </div>
 </div>
-<p>Note que sem o operador de atribuição o valor da posição 3 do objeto3 não é atualizada, apenas exibda no console. Para atualizar seu valor usamos:</p>
+<p>Note que sem o operador de atribuição o valor da posição 3 do objeto3 não é atualizada, apenas exibida no console. Para atualizar seu valor usamos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11 12 13 14 15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="ot">&lt;-</span> objeto3[<span class="dv">3</span>] <span class="sc">+</span> <span class="dv">30</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">3</span>] <span class="ot">&lt;-</span> objeto3[<span class="dv">3</span>] <span class="sc">+</span> <span class="dv">30</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11 12 43 14 15</code></pre>
 </div>
@@ -646,16 +672,12 @@ Variáveis
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="coerção"><span class="header-section-number">1.6.1</span> Coerção</h3>
 <p>Quando vetores recebem dados de um tipo diferente o R tenta fazer uma operação de <strong>coerção</strong>, transformando os valores a fim de “atender” a todos. Nem sempre esta operação é possível e ela muitas vezes altera o vetor original. No exemplo abaixo o valor da posição 1 do vetor será atualizado para receber a letra <strong>A</strong>. Como o vetor originalmente era do tipo <strong>integer</strong>, o R fará a conversão dos valores para tipo <strong>character</strong>. Desta forma operações matemáticas não serão mais possíveis sobre este vetor.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">'A'</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>objeto3[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">'A'</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>objeto3</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "A"  "12" "43" "14" "15"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(objeto3)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>objeto3 <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in objeto3 + 10: argumento não-numérico para operador binário</code></pre>
 </div>
@@ -666,7 +688,7 @@ Variáveis
 <h2 data-number="1.7" class="anchored" data-anchor-id="exibindo-objetos"><span class="header-section-number">1.7</span> Exibindo Objetos</h2>
 <p>O R possui a função <code>ls</code> que exibe os objetos existentes no ambiente.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "objeto1" "objeto2" "objeto3"</code></pre>
 </div>
@@ -676,8 +698,8 @@ Variáveis
 <h2 data-number="1.8" class="anchored" data-anchor-id="remoção-de-objetos"><span class="header-section-number">1.8</span> Remoção de Objetos</h2>
 <p>Objetos podem ser removidos (excluídos) com a função <code>rm</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(objeto2)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(objeto2)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "objeto1" "objeto3"</code></pre>
 </div>
@@ -686,21 +708,27 @@ Variáveis
 <section id="usando-funções" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="usando-funções"><span class="header-section-number">1.9</span> Usando Funções</h2>
 <p>O coração da linguagém R são suas funções. Através delas são feitas as mais diversas operações sobre os objetos. Basicamente funções devem ser usadas através de seus nomes e com os argumentos dentro de parênteses: funcao(argumento1, argumento2, …).</p>
-<p>Por exemplo, a função <code>typeof</code> exige a informação de um argumento (um objeto do R).</p>
+<p>Por exemplo, a função <code>typeof</code> exige a informação de um argumento (um objeto do R). O R processa esta função e devolve seu retorno, no caso qual o tipo do <strong>objeto1</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "double"</code></pre>
 </div>
 </div>
-<p>O R processa esta função e devolve seu retorno, no caso qual o tipo do <strong>objeto1</strong>.</p>
+<p>A função <code>is.vector</code> por sua vez testa se um objeto é um vetor e retorna um valor lógico, <code>TRUE</code> ou <code>FALSE</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
 <p>Pode-se visualizar o valor armazenado em um objeto com a função <code>print</code>, bem como exibir os objetos criados no R com a função <code>ls</code>. Note que a função <code>ls</code> aparentemente não exige argumentos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "objeto1" "objeto3"</code></pre>
 </div>
@@ -710,29 +738,29 @@ Variáveis
 <p>As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. Por este motivo a função <code>ls</code> usada “sem” argumentos é processada normalmente. Mais detlahes em <a href="r_funcoes.html">Funções</a>.</p>
 <p>Importante notar que os argumento possuem nomes e estes podem/devem ser usados. Voltemos a função <code>typeof</code>, ela possui apenas um argumento de nome <strong>x</strong>. Podemos usar a função <code>typeof</code> informando o nome do argumento e obtendo mesmo resultado anterior.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="at">x =</span> objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="at">x =</span> objeto1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "double"</code></pre>
 </div>
 </div>
 <p>Os argumentos podem ser omitidos e serão interpretados pelo R na ordem em que forem informados. Por exemplo a função <code>rep.int</code> retorna valores os valores indicados no argumento <strong>x</strong> n (<strong>times</strong>) vezes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 5 5 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="at">x =</span> <span class="dv">5</span>, <span class="at">times =</span> <span class="dv">4</span>) <span class="co"># de forma explícita</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="at">x =</span> <span class="dv">5</span>, <span class="at">times =</span> <span class="dv">4</span>) <span class="co"># de forma explícita</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 5 5 5</code></pre>
 </div>
 </div>
 <p>Perceba que os argumentos podem ser informados em ordem diversa, entretanto devem ser atribuidos de forma explícita. <code>rep.int(times = 4, x = 5)</code> é diferente de <code>rep.int(4, 5)</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="at">times =</span> <span class="dv">4</span>, <span class="at">x =</span> <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="at">times =</span> <span class="dv">4</span>, <span class="at">x =</span> <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 5 5 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="dv">4</span>, <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep.int</span>(<span class="dv">4</span>, <span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4 4 4 4 4</code></pre>
 </div>
@@ -747,27 +775,39 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Algumas funções não possuem argumentos e “apenas” executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções Sys.Date() e Sys.time(), que retornam a data e data e hora respectivamente.</p>
+<p>Algumas funções não possuem argumentos e “apenas” executam seu código, não exigindo interação de entrada por parte do usuário, como por exemplo as funções <code>Sys.Date()</code> e <code>Sys.time()</code>, que retornam a data e data e hora respectivamente.</p>
 </div>
 </div>
 </section>
 <section id="armazenando-retorno" class="level3" data-number="1.9.2">
 <h3 data-number="1.9.2" class="anchored" data-anchor-id="armazenando-retorno"><span class="header-section-number">1.9.2</span> Armazenando Retorno</h3>
-<p>Para que o valor retornado por uma função seja armazenado, basta usar o operador de traibuição:</p>
+<p>Para que o valor retornado por uma função seja armazenado em um objeto basta usar o operador de atribuição.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>tipo <span class="ot">&lt;-</span> <span class="fu">typeof</span>(objeto1)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>tipo <span class="ot">&lt;-</span> <span class="fu">typeof</span>(objeto1)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "double"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
 </div>
-<p>Agora o objeto <strong>tipo</strong> armazena o valor retornado pelo função <code>typeof</code>, no caso o texto (<em>character</em>) “double”.</p>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.double</span>(tipo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>Agora o objeto <strong>tipo</strong> armazena o valor retornado pelo função <code>typeof</code> em formto texto (<em>character</em>) e seu conteúdo é “<em>double</em>”. Veja que a função <code>is.double</code> que testa se o objeto é <em>double</em> retorna <code>FALSE</code>. Cuidado para não confundir o tipo do objeto com seu conteúdo.</p>
 <hr>
-<p>Última atualização: 16/08/2023 - 19:47:56</p>
+<p>Última atualização: 18/08/2023 - 22:31:04</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
