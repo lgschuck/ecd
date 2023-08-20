@@ -21,6 +21,8 @@ Para visualizar o código de uma função podemos usar seu nome sem os parêntes
 fnSomar
 ```
 
+### Argumentos - Valores Padrão
+
 ## Função x Ambiente
 
 As funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente 'pai'.
