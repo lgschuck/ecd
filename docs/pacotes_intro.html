@@ -336,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())<span class="sc">$</span>Package[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "askpass"   "backports" "base64enc" "bit"       "bit64"    </code></pre>
+<pre><code>[1] "askpass"   "base64enc" "bslib"     "cachem"    "cli"      </code></pre>
 </div>
 </div>
 <p>A função <code>installed.packages</code> retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função <code>t</code>, que transpõe o data.frame de colunas para linhas.</p>
@@ -389,7 +389,7 @@ Built                 "4.3.0"                                          </code></
 <div class="cell-output cell-output-stdout">
 <pre><code>                      data.table                                                                                               
 Package               "data.table"                                                                                             
-LibPath               "C:/Users/luisg/AppData/Local/R/win-library/4.3"                                                         
+LibPath               "C:/Users/luisg/r_pacotes/ecd"                                                                           
 Version               "1.14.8"                                                                                                 
 Priority              NA                                                                                                       
 Depends               "R (&gt;= 3.1.0)"                                                                                           
@@ -433,14 +433,13 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3"
-[2] "C:/Program Files/R/R-4.3.0/library"            </code></pre>
+<pre><code>[1] "C:/Users/luisg/r_pacotes/ecd"       "C:/Program Files/R/R-4.3.0/library"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da primeira pasta</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "askpass"   "backports" "base64enc" "bit"       "bit64"     "blob"     
- [7] "broom"     "bslib"     "cachem"    "callr"    </code></pre>
+<pre><code> [1] "askpass"    "base64enc"  "bslib"      "cachem"     "cli"       
+ [6] "curl"       "data.table" "digest"     "ellipsis"   "evaluate"  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da segunda pasta</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>

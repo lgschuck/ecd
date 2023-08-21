@@ -8,11 +8,13 @@ Muitas vezes o exposto aqui é a prática (para fixação e exploração) de con
 
 ## Versões {.unnumbered}
 
-A versão do **R** utilizada é a `r getRversion()`, `r R.Version()$nickname`.
+A versão deste material é: **0.1.0.`r format(Sys.Date(), '%d-%m-%Y')`**.
 
-A versão do **RStudio** é 2023.06.1+524, Mountain Hydrangea.
+A versão do **R** utilizada é: `r getRversion()`, `r R.Version()$nickname`.
 
-A versão do **Quarto** é `r quarto::quarto_version()`.
+A versão do **RStudio** é: 2023.06.1+524, Mountain Hydrangea.
+
+A versão do **Quarto** é: `r quarto::quarto_version()`.
 
 ------------------------------------------------------------------------
 
