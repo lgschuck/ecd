@@ -120,7 +120,6 @@ No eemplo acima, x é inicializado com valor 1 e vvai sendo incrementado em 1 un
 for(i in c('São Paulo', 'Rio de Janeiro', 'Porto Alegre')){
   print(paste('Cidade atual:', i))
 }
-
 ```
 
 No laço **for** a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.
@@ -136,13 +135,51 @@ for(i in 1:x) {
 ## While
 
 ::: callout-note
-## For x While
+### For x While
 
 Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use **while**.
 :::
 
+A estrutura **while** possui a seguinte configuração: `while(condição)`. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:
+
+```{r}
+condicao <- 5
+while(condicao < 7){
+  print(condicao)
+  condicao <- condicao + 1
+}
+```
+
+A variável `condicao` é iniciada com valor 5 e atende a condição **se \< 7**. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de **se \< 7**. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o **while** é encerrado.
+
+A estrutura **while** pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando **ESC** no teclado.
+
+```{r, eval = F}
+while(TRUE){
+  print(condicao)
+  condicao <- condicao + 1
+}
+```
+
+## Break e Next
+
 ## Repeat
 
+E estrutura repeat funciona de forma análoga ao while, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.
+
+```{r}
+x <- 1
+y <- 2
+  
+repeat{
+  x <- x + y  
+  print(x)  
+  if (x > 11) break
+}
+```
+
 ------------------------------------------------------------------------
+
+@datamentor_repeat_loop
 
 Última atualização: `r format(file.info('r_controles_fluxo.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

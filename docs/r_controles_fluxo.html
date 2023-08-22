@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -283,6 +302,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./bases_dados.html" class="sidebar-item-text sidebar-link">Bases de Dados</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./convencoes.html" class="sidebar-item-text sidebar-link">Convenções</a>
   </div>
 </li>
@@ -306,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else"><span class="toc-section-number">8.4</span>  If Else</a></li>
   <li><a href="#laço-for" id="toc-laço-for" class="nav-link" data-scroll-target="#laço-for"><span class="toc-section-number">8.5</span>  Laço For</a></li>
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="toc-section-number">8.6</span>  While</a></li>
-  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="toc-section-number">8.7</span>  Repeat</a></li>
+  <li><a href="#break-e-next" id="toc-break-e-next" class="nav-link" data-scroll-target="#break-e-next"><span class="toc-section-number">8.7</span>  Break e Next</a></li>
+  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="toc-section-number">8.8</span>  Repeat</a></li>
   </ul>
 </nav>
     </div>
@@ -542,13 +567,61 @@ For x While
 <p>Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use <strong>while</strong>.</p>
 </div>
 </div>
+<p>A estrutura <strong>while</strong> possui a seguinte configuração: <code>while(condição)</code>. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>condicao <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(condicao <span class="sc">&lt;</span> <span class="dv">7</span>){</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(condicao)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  condicao <span class="ot">&lt;-</span> condicao <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+[1] 6</code></pre>
+</div>
+</div>
+<p>A variável <code>condicao</code> é iniciada com valor 5 e atende a condição <strong>se &lt; 7</strong>. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de <strong>se &lt; 7</strong>. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o <strong>while</strong> é encerrado.</p>
+<p>A estrutura <strong>while</strong> pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando <strong>ESC</strong> no teclado.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(<span class="cn">TRUE</span>){</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(condicao)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  condicao <span class="ot">&lt;-</span> condicao <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="repeat" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="repeat"><span class="header-section-number">8.7</span> Repeat</h2>
+<section id="break-e-next" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="break-e-next"><span class="header-section-number">8.7</span> Break e Next</h2>
+</section>
+<section id="repeat" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="repeat"><span class="header-section-number">8.8</span> Repeat</h2>
+<p>E estrutura repeat funciona de forma análoga ao while, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span>{</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> y  </span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)  </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">11</span>) <span class="cf">break</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3
+[1] 5
+[1] 7
+[1] 9
+[1] 11
+[1] 13</code></pre>
+</div>
+</div>
 <hr>
-<p>Última atualização: 16/08/2023 - 18:18:50</p>
+<p><span class="citation" data-cites="datamentor_repeat_loop">DataMentor (<a href="referencias.html#ref-datamentor_repeat_loop" role="doc-biblioref">s.d.</a>)</span></p>
+<p>Última atualização: 21/08/2023 - 23:39:21</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-datamentor_repeat_loop" class="csl-entry" role="doc-biblioentry">
+DataMentor. s.d. <span>"R repeat loop"</span>. <a href="https://www.datamentor.io/r-programming/repeat-loop">https://www.datamentor.io/r-programming/repeat-loop</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

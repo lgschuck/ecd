@@ -1,0 +1,7 @@
+# Bases de Dados {.unnumbered}
+
+[BNDES](https://dados.gov.br/dados/organizacoes/visualizar/banco-nacional-de-desenvolvimento-economico-e-social)
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('bases_dados.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

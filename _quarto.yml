@@ -41,8 +41,10 @@ book:
     - part: sobre_cd.qmd
       chapters:
         - cd_vies_var.qmd
+    - bases_dados.qmd
     - convencoes.qmd
     - referencias.qmd
+
 
   downloads: [pdf]
 
