@@ -1,0 +1,27 @@
+# Importar Dados
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Importar Arquivos csv
+
+Muitas vezes os dados que o usuário possui acesso em sua Instituição estã armazenados em bancos de dados. Porém dados distribuídos por entidades públicas muitas vezes estão em formato **csv**.
+
+Neste exemplo vamos importar a base **Estatísticas de Aprovações - Por Porte de Empresa** do BNDES.
+
+```{r}
+df_aprovacoes_porte <-
+  read.csv(
+    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',
+    header = T,
+    sep = ';',
+    dec = ',',
+    quote = "\""
+  )
+
+head(df_aprovacoes_porte)
+
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_importar_dados.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

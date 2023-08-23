@@ -26,6 +26,7 @@ book:
         - r_nomes.qmd
         - r_operador_pipe.qmd
         - r_data_frames.qmd
+        - r_importar_dados.qmd
         - r_operacoes_logicas.qmd
         - r_ambientes.qmd
         - r_funcoes.qmd
