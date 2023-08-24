@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 8&nbsp; Funções</title>
+<title>eRando em Ciênc1a de D4do$ - 5&nbsp; Funções</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r_controles_fluxo.html" rel="next">
+<link href="./r_data_frames.html" rel="next">
 <link href="./r_ambientes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -155,7 +155,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Funções</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -220,27 +220,27 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -329,15 +329,19 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#criando-funções" id="toc-criando-funções" class="nav-link active" data-scroll-target="#criando-funções"><span class="toc-section-number">8.1</span>  Criando Funções</a>
+  <li><a href="#criando-funções" id="toc-criando-funções" class="nav-link active" data-scroll-target="#criando-funções"><span class="toc-section-number">5.1</span>  Criando Funções</a>
   <ul class="collapse">
-  <li><a href="#argumentos---valores-padrão" id="toc-argumentos---valores-padrão" class="nav-link" data-scroll-target="#argumentos---valores-padrão"><span class="toc-section-number">8.1.1</span>  Argumentos - Valores Padrão</a></li>
+  <li><a href="#argumentos---valores-padrão" id="toc-argumentos---valores-padrão" class="nav-link" data-scroll-target="#argumentos---valores-padrão"><span class="toc-section-number">5.1.1</span>  Argumentos - Valores Padrão</a></li>
   </ul></li>
-  <li><a href="#função-x-ambiente" id="toc-função-x-ambiente" class="nav-link" data-scroll-target="#função-x-ambiente"><span class="toc-section-number">8.2</span>  Função x Ambiente</a>
+  <li><a href="#função-x-ambiente" id="toc-função-x-ambiente" class="nav-link" data-scroll-target="#função-x-ambiente"><span class="toc-section-number">5.2</span>  Função x Ambiente</a>
   <ul class="collapse">
-  <li><a href="#objetos-no-ambiente-da-função" id="toc-objetos-no-ambiente-da-função" class="nav-link" data-scroll-target="#objetos-no-ambiente-da-função"><span class="toc-section-number">8.2.1</span>  Objetos no Ambiente da Função</a></li>
+  <li><a href="#objetos-no-ambiente-da-função" id="toc-objetos-no-ambiente-da-função" class="nav-link" data-scroll-target="#objetos-no-ambiente-da-função"><span class="toc-section-number">5.2.1</span>  Objetos no Ambiente da Função</a></li>
   </ul></li>
-  <li><a href="#funções-genéricas" id="toc-funções-genéricas" class="nav-link" data-scroll-target="#funções-genéricas"><span class="toc-section-number">8.3</span>  Funções Genéricas</a></li>
+  <li><a href="#recursividade" id="toc-recursividade" class="nav-link" data-scroll-target="#recursividade"><span class="toc-section-number">5.3</span>  Recursividade</a>
+  <ul class="collapse">
+  <li><a href="#buscar-ambiente-pai-recursivamente" id="toc-buscar-ambiente-pai-recursivamente" class="nav-link" data-scroll-target="#buscar-ambiente-pai-recursivamente"><span class="toc-section-number">5.3.1</span>  Buscar Ambiente Pai (Recursivamente)</a></li>
+  </ul></li>
+  <li><a href="#funções-genéricas" id="toc-funções-genéricas" class="nav-link" data-scroll-target="#funções-genéricas"><span class="toc-section-number">5.4</span>  Funções Genéricas</a></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +350,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Funções</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></h1>
 </div>
 
 
@@ -362,8 +366,8 @@ div.csl-indent {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟦🟨🟨</p>
-<section id="criando-funções" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="criando-funções"><span class="header-section-number">8.1</span> Criando Funções</h2>
+<section id="criando-funções" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="criando-funções"><span class="header-section-number">5.1</span> Criando Funções</h2>
 <p>Funções podem ser criadas através do comando <code>function</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fnSomar <span class="ot">&lt;-</span> <span class="cf">function</span>(param1, param2) {</span>
@@ -384,12 +388,12 @@ div.csl-indent {
 }</code></pre>
 </div>
 </div>
-<section id="argumentos---valores-padrão" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="argumentos---valores-padrão"><span class="header-section-number">8.1.1</span> Argumentos - Valores Padrão</h3>
+<section id="argumentos---valores-padrão" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="argumentos---valores-padrão"><span class="header-section-number">5.1.1</span> Argumentos - Valores Padrão</h3>
 </section>
 </section>
-<section id="função-x-ambiente" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="função-x-ambiente"><span class="header-section-number">8.2</span> Função x Ambiente</h2>
+<section id="função-x-ambiente" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="função-x-ambiente"><span class="header-section-number">5.2</span> Função x Ambiente</h2>
 <p>As funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fnExibirEnvs <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
@@ -405,12 +409,12 @@ div.csl-indent {
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fnExibirEnvs</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ambiente atual:"
-&lt;environment: 0x000002d1c1420a18&gt;
+&lt;environment: 0x0000025ed1830ca0&gt;
 [1] "Ambiente Pai: R_GlobalEnv"</code></pre>
 </div>
 </div>
-<section id="objetos-no-ambiente-da-função" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="objetos-no-ambiente-da-função"><span class="header-section-number">8.2.1</span> Objetos no Ambiente da Função</h3>
+<section id="objetos-no-ambiente-da-função" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="objetos-no-ambiente-da-função"><span class="header-section-number">5.2.1</span> Objetos no Ambiente da Função</h3>
 <p>Objetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fnTeste <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
@@ -469,8 +473,8 @@ div.csl-indent {
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
-<section id="operador--" class="level4" data-number="8.2.1.1">
-<h4 data-number="8.2.1.1" class="anchored" data-anchor-id="operador--"><span class="header-section-number">8.2.1.1</span> Operador <code>&lt;&lt;-</code></h4>
+<section id="operador--" class="level4" data-number="5.2.1.1">
+<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="operador--"><span class="header-section-number">5.2.1.1</span> Operador <code>&lt;&lt;-</code></h4>
 <p>Usando o operador de atribuição <code>&lt;&lt;-</code> é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no Environment que está acima do Environment da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada tanto no ambiente da função como no ambiente acima deste.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">envir =</span> <span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -505,11 +509,55 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="funções-genéricas" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="funções-genéricas"><span class="header-section-number">8.3</span> Funções Genéricas</h2>
+<section id="recursividade" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="recursividade"><span class="header-section-number">5.3</span> Recursividade</h2>
+<section id="buscar-ambiente-pai-recursivamente" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="buscar-ambiente-pai-recursivamente"><span class="header-section-number">5.3.1</span> Buscar Ambiente Pai (Recursivamente)</h3>
+<p>Abaixo função que busca recursivamente os ambientes e seus ‘pais’ até que se chege no ‘último’ ambiente, o <code>R_EmptyEnv</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fnBuscarEnvsPai <span class="ot">&lt;-</span> <span class="cf">function</span>(ambiente, <span class="at">nivel =</span> <span class="dv">1</span>){</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">environmentName</span>(ambiente)<span class="sc">==</span><span class="st">"R_EmptyEnv"</span>){</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (<span class="st">'Ambiente informado é R_EmptyEnv. Fim da busca.'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    marcacao <span class="ot">&lt;-</span> <span class="st">''</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nivel){</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>      marcacao <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">' '</span>, marcacao)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">writeLines</span>(<span class="fu">paste0</span>(marcacao, <span class="st">'|-- '</span>, <span class="fu">environmentName</span>(<span class="fu">parent.env</span>(ambiente))))</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    nivel <span class="ot">&lt;-</span> nivel <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fnBuscarEnvsPai</span>(<span class="fu">parent.env</span>(ambiente), <span class="at">nivel =</span> nivel)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="fu">fnBuscarEnvsPai</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> |-- tools:quarto
+  |-- tools:quarto
+   |-- package:stats
+    |-- package:graphics
+     |-- package:grDevices
+      |-- package:utils
+       |-- package:datasets
+        |-- package:methods
+         |-- Autoloads
+          |-- base
+           |-- R_EmptyEnv</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Ambiente informado é R_EmptyEnv. Fim da busca."</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="funções-genéricas" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="funções-genéricas"><span class="header-section-number">5.4</span> Funções Genéricas</h2>
 <hr>
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
-<p>Última atualização: 19/08/2023 - 22:34:38</p>
+<p>Última atualização: 23/08/2023 - 21:14:48</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -771,12 +819,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./r_ambientes.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ambientes</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ambientes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r_controles_fluxo.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r_data_frames.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

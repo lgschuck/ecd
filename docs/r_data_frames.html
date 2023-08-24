@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 4&nbsp; Data Frames</title>
+<title>eRando em Ciênc1a de D4do$ - 6&nbsp; Data Frames</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./r_importar_dados.html" rel="next">
-<link href="./r_operador_pipe.html" rel="prev">
+<link href="./r_funcoes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -155,7 +155,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -220,27 +220,27 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -329,19 +329,20 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">4.1</span>  O que são data frames ?</a>
+  <li><a href="#o-que-são-data-frames" id="toc-o-que-são-data-frames" class="nav-link active" data-scroll-target="#o-que-são-data-frames"><span class="toc-section-number">6.1</span>  O que são data frames ?</a>
   <ul class="collapse">
-  <li><a href="#criando-data-frames" id="toc-criando-data-frames" class="nav-link" data-scroll-target="#criando-data-frames"><span class="toc-section-number">4.1.1</span>  Criando Data Frames</a></li>
-  <li><a href="#aplicar-convenções-de-nomes" id="toc-aplicar-convenções-de-nomes" class="nav-link" data-scroll-target="#aplicar-convenções-de-nomes"><span class="toc-section-number">4.1.2</span>  Aplicar convenções de nomes</a></li>
+  <li><a href="#criando-data-frames" id="toc-criando-data-frames" class="nav-link" data-scroll-target="#criando-data-frames"><span class="toc-section-number">6.1.1</span>  Criando Data Frames</a></li>
+  <li><a href="#aplicar-convenções-de-nomes" id="toc-aplicar-convenções-de-nomes" class="nav-link" data-scroll-target="#aplicar-convenções-de-nomes"><span class="toc-section-number">6.1.2</span>  Aplicar convenções de nomes</a></li>
   </ul></li>
-  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos"><span class="toc-section-number">4.2</span>  Atributos</a></li>
-  <li><a href="#dimensões" id="toc-dimensões" class="nav-link" data-scroll-target="#dimensões"><span class="toc-section-number">4.3</span>  Dimensões</a></li>
-  <li><a href="#acessando-dados" id="toc-acessando-dados" class="nav-link" data-scroll-target="#acessando-dados"><span class="toc-section-number">4.4</span>  Acessando Dados</a>
+  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos"><span class="toc-section-number">6.2</span>  Atributos</a></li>
+  <li><a href="#dimensões" id="toc-dimensões" class="nav-link" data-scroll-target="#dimensões"><span class="toc-section-number">6.3</span>  Dimensões</a></li>
+  <li><a href="#acessando-dados" id="toc-acessando-dados" class="nav-link" data-scroll-target="#acessando-dados"><span class="toc-section-number">6.4</span>  Acessando Dados</a>
   <ul class="collapse">
-  <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices"><span class="toc-section-number">4.4.1</span>  Índices</a></li>
-  <li><a href="#usando-nomes-das-colunas" id="toc-usando-nomes-das-colunas" class="nav-link" data-scroll-target="#usando-nomes-das-colunas"><span class="toc-section-number">4.4.2</span>  Usando Nomes das Colunas</a></li>
-  <li><a href="#filtrando-dados" id="toc-filtrando-dados" class="nav-link" data-scroll-target="#filtrando-dados"><span class="toc-section-number">4.4.3</span>  Filtrando Dados</a></li>
+  <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices"><span class="toc-section-number">6.4.1</span>  Índices</a></li>
+  <li><a href="#usando-nomes-das-colunas" id="toc-usando-nomes-das-colunas" class="nav-link" data-scroll-target="#usando-nomes-das-colunas"><span class="toc-section-number">6.4.2</span>  Usando Nomes das Colunas</a></li>
+  <li><a href="#filtrando-dados" id="toc-filtrando-dados" class="nav-link" data-scroll-target="#filtrando-dados"><span class="toc-section-number">6.4.3</span>  Filtrando Dados</a></li>
   </ul></li>
+  <li><a href="#junção-de-dados" id="toc-junção-de-dados" class="nav-link" data-scroll-target="#junção-de-dados"><span class="toc-section-number">6.5</span>  Junção de Dados</a></li>
   </ul>
 </nav>
     </div>
@@ -350,7 +351,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Frames</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></h1>
 </div>
 
 
@@ -366,9 +367,9 @@ div.csl-indent {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟦🟦🟦</p>
-<section id="o-que-são-data-frames" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="o-que-são-data-frames"><span class="header-section-number">4.1</span> O que são data frames ?</h2>
-<p>Conforme o próprio manual do R, <strong>data frame</strong> é a estrutura que imita de forma mais próxima um dataset do <strong>SAS</strong> ou <strong>SPSS</strong>. De forma resumida um <strong>data frame</strong> é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um <strong>data frame</strong> pode ter diferentes tipos de dados em suas colunas.</p>
+<section id="o-que-são-data-frames" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="o-que-são-data-frames"><span class="header-section-number">6.1</span> O que são data frames ?</h2>
+<p>Conforme o <span class="citation" data-cites="r_language_definition">R Core Team (<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">2023</a>)</span>, <strong>data frame</strong> é a estrutura que imita de forma mais próxima um dataset do <strong>SAS</strong> ou <strong>SPSS</strong>. De forma resumida um <strong>data frame</strong> é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um <strong>data frame</strong> pode ter diferentes tipos de dados em suas colunas.</p>
 <p>Um <strong>data frame</strong> possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto <strong>data frame</strong> possui o nome <strong>data.frame</strong>. Abaixo pode ser visualizada a classe do <strong>data frame</strong> <a href="https://archive.ics.uci.edu/ml/datasets/iris">iris</a> (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando <code>head</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -386,8 +387,8 @@ div.csl-indent {
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
 </div>
-<section id="criando-data-frames" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="criando-data-frames"><span class="header-section-number">4.1.1</span> Criando Data Frames</h3>
+<section id="criando-data-frames" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="criando-data-frames"><span class="header-section-number">6.1.1</span> Criando Data Frames</h3>
 <p>Objetos da classe <strong>data.frame</strong> podem ser criados com a função <code>data.frame</code>.</p>
 <p>Aqui serão usadas as convenções de nomes conforme capítulos <a href="nomes.html">Nomeando Objetos</a> e <a href="convencoes.html">Convenções</a>.</p>
 <div class="cell">
@@ -406,8 +407,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="aplicar-convenções-de-nomes" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="aplicar-convenções-de-nomes"><span class="header-section-number">4.1.2</span> Aplicar convenções de nomes</h3>
+<section id="aplicar-convenções-de-nomes" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="aplicar-convenções-de-nomes"><span class="header-section-number">6.1.2</span> Aplicar convenções de nomes</h3>
 <p>Para continuar os próximos tópicos vamos trabalhar com um <strong>data frame</strong> (<strong>df_iris</strong>) criado a partir do <strong>data frame</strong> <strong>iris</strong>. Faremos ajustes nos nomes deste data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criar data frame df_iris</span></span>
@@ -434,8 +435,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="atributos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="atributos"><span class="header-section-number">4.2</span> Atributos</h2>
+<section id="atributos" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="atributos"><span class="header-section-number">6.2</span> Atributos</h2>
 <p>Os atributos “padrão” de um <strong>data frame</strong> são: <code>names</code>, <code>class</code> e <code>row.names</code>. É possível acessá-los com a função <code>attributes</code>. O atributo <code>names</code> também pode ser obtido com a função <code>names</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(df_iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -463,8 +464,8 @@ $row.names
 </div>
 </div>
 </section>
-<section id="dimensões" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">4.3</span> Dimensões</h2>
+<section id="dimensões" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="dimensões"><span class="header-section-number">6.3</span> Dimensões</h2>
 <p>A função <code>dim</code> retorna as dimensões de um <strong>data frame</strong> (linhas e colunas). Estes dados também podem ser obtidos com as funções <code>nrow</code> e <code>ncol</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_iris)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -481,10 +482,10 @@ $row.names
 </div>
 </div>
 </section>
-<section id="acessando-dados" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="acessando-dados"><span class="header-section-number">4.4</span> Acessando Dados</h2>
-<section id="índices" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="índices"><span class="header-section-number">4.4.1</span> Índices</h3>
+<section id="acessando-dados" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="acessando-dados"><span class="header-section-number">6.4</span> Acessando Dados</h2>
+<section id="índices" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="índices"><span class="header-section-number">6.4.1</span> Índices</h3>
 <p>Como a estrutura de um <strong>data frame</strong> é organizada em linhas e colunas, podemos acessar os dados utilizando colchetes (<code>[ ]</code>): base[linha, coluna]. Podem ser usados intervalos de índices com o operador <code>:</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (Sepal.Width)</span></span>
@@ -500,8 +501,8 @@ $row.names
 </div>
 <p>Apesar de ser possível, utilizar o índice faz com que a referência seja relativa, ou seja, a variável ‘1’ pode mudar caso o <strong>data frame</strong> seja editado. Por exemplo, caso em algum momento anterior a variável <strong>PETAL_LENGTH</strong> tenha sido excluída, uma nova variável assumirá o índice 1. Além disto, no momento da leitura do código por um usuário não fica claro qual variável está sendo acessada.</p>
 </section>
-<section id="usando-nomes-das-colunas" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="usando-nomes-das-colunas"><span class="header-section-number">4.4.2</span> Usando Nomes das Colunas</h3>
+<section id="usando-nomes-das-colunas" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="usando-nomes-das-colunas"><span class="header-section-number">6.4.2</span> Usando Nomes das Colunas</h3>
 <p>Existem diversas outras formas para acessar dados de um <strong>data frame</strong>, inclusive utilizando o nome da coluna de forma explícita.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar primeira linha e segunda coluna (pelo nome)</span></span>
@@ -524,8 +525,8 @@ $row.names
 </div>
 </div>
 </section>
-<section id="filtrando-dados" class="level3" data-number="4.4.3">
-<h3 data-number="4.4.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">4.4.3</span> Filtrando Dados</h3>
+<section id="filtrando-dados" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">6.4.3</span> Filtrando Dados</h3>
 <p>Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do <strong>data frame</strong>, deve ser informada condição lógica na forma abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna valores de Speal.Width onde Petal.Length for maior do que 6</span></span>
@@ -573,8 +574,8 @@ $row.names
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
-<section id="classes-de-retorno" class="level4" data-number="4.4.3.1">
-<h4 data-number="4.4.3.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">4.4.3.1</span> Classes de retorno</h4>
+<section id="classes-de-retorno" class="level4" data-number="6.4.3.1">
+<h4 data-number="6.4.3.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">6.4.3.1</span> Classes de retorno</h4>
 <p>Os filtros em <strong>data frames</strong> usados com <code>$</code> ou <code>[ ]</code> (com apenas 1 variável) retornam vetores e não <strong>data frames</strong>. Desta forma se perde a classe e a estrutura tabular característica do <strong>data frame</strong> original.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df_iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,8 +599,8 @@ $row.names
 </div>
 </div>
 </section>
-<section id="função-subset" class="level4" data-number="4.4.3.2">
-<h4 data-number="4.4.3.2" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">4.4.3.2</span> Função Subset</h4>
+<section id="função-subset" class="level4" data-number="6.4.3.2">
+<h4 data-number="6.4.3.2" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">6.4.3.2</span> Função Subset</h4>
 <p>A função <code>subset</code> permite efetuar filtro em um <strong>data frame</strong> e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um <strong>data frame</strong>, mesmo com a seleção de apenas 1 variável.</p>
 <p>Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o <strong>data frame</strong> seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
 <div class="cell">
@@ -639,18 +640,126 @@ Porsche 914-2 26.0   4  91
 Lotus Europa  30.4   4 113</code></pre>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="junção-de-dados" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="junção-de-dados"><span class="header-section-number">6.5</span> Junção de Dados</h2>
+<p>Uma grande necessidade ao se trablahar com dados tabulados é a junção de dados. A junção nada mais é do que usar bases de dados diferentes e carregar dados entre elas a partir de uma chave de identificação. Vamos usar duas bases de dados, uma com código e nome do município e outra com o código do município e sua população. Estes dados foram buscados em <span class="citation" data-cites="ibge_cidades">IBGE (<a href="referencias.html#ref-ibge_cidades" role="doc-biblioref">s.d.</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">NOME =</span> <span class="fu">c</span>(<span class="st">'Porto Alegre'</span>, <span class="st">'São Paulo'</span>, <span class="st">'Rio de Janeiro'</span>)</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>                        </span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">POPULACAO =</span> <span class="fu">c</span>(<span class="dv">1332570</span>, <span class="dv">11451245</span>, <span class="dv">6211423</span>)</span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_cidades)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME
+1       4314902   Porto Alegre
+2       3550308      São Paulo
+3       3304557 Rio de Janeiro</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_populacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO POPULACAO
+1       4314902   1332570
+2       3550308  11451245
+3       3304557   6211423</code></pre>
+</div>
+</div>
+<p>Para juntar estes dados, usaremos como chave de identificação presente nas duas tabelas o campo <strong>COD_MUNICIPIO</strong>. A função usada, <code>merge</code> exige dois argumentos <strong>x</strong> e <strong>y</strong>, que são as bases de dados que usaremos para a junção.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME POPULACAO
+1       3304557 Rio de Janeiro   6211423
+2       3550308      São Paulo  11451245
+3       4314902   Porto Alegre   1332570</code></pre>
+</div>
+</div>
+<p>Este exemplo é o mais básico, onde os dados presentes em ambas tabelas são das mesmas ciades e também são ligadas por apenas uma chave de identificação. Vejamos um exemplo um pouco mais realista, onde alguns dados não estão presentes em ambas tabelas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rbind faz a inclusao de linha nas as bases criadas</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_cidades, <span class="fu">c</span>(<span class="st">'3106200'</span>, <span class="st">'Belo Horizonte'</span>))</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_populacao, <span class="fu">c</span>(<span class="st">'4106902'</span>, <span class="dv">1773733</span>))</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME POPULACAO
+1       3304557 Rio de Janeiro   6211423
+2       3550308      São Paulo  11451245
+3       4314902   Porto Alegre   1332570</code></pre>
+</div>
+</div>
+<p>Veja que os dados de Belo Horizonte e do Município de código 4106902 (Curitiba) não foram inseridos no data frame resultante. Por padrão a função <code>merge</code> faz a junção pelos dados presentes nos dois data frames. Caso desejemos especificar, usamos os parâmetros <code>all.x</code> e <code>all.y</code>.</p>
+<p>Usando <code>all.x</code> informamos ao R que desejamos que todas as linhas presentes na base passada como argumento x sejam mantidas. Onde não existirem dados para estas linhas na tabela y serão preenchidos com <code>NA</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df_completo_x <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.x =</span> T)</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME POPULACAO
+1       3106200 Belo Horizonte      &lt;NA&gt;
+2       3304557 Rio de Janeiro   6211423
+3       3550308      São Paulo  11451245
+4       4314902   Porto Alegre   1332570</code></pre>
+</div>
+</div>
+<p>De forma análoga, usar <code>all.y</code> informa para que as linhas da base y sejam mantidas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>df_completo_y <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.y =</span> T)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME POPULACAO
+1       3304557 Rio de Janeiro   6211423
+2       3550308      São Paulo  11451245
+3       4106902           &lt;NA&gt;   1773733
+4       4314902   Porto Alegre   1332570</code></pre>
+</div>
+</div>
+<p>Para cruzamento de todas as linhas das duas tabelas usamos o argumento <code>all</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all =</span> T)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  COD_MUNICIPIO           NOME POPULACAO
+1       3106200 Belo Horizonte      &lt;NA&gt;
+2       3304557 Rio de Janeiro   6211423
+3       3550308      São Paulo  11451245
+4       4106902           &lt;NA&gt;   1773733
+5       4314902   Porto Alegre   1332570</code></pre>
+</div>
+</div>
 <hr>
-<p><span class="citation" data-cites="r_language_definition">R Core Team (<a href="referencias.html#ref-r_language_definition" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 13/08/2023 - 22:39:20</p>
+<p>Última atualização: 23/08/2023 - 21:11:18</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-ibge_cidades" class="csl-entry" role="doc-biblioentry">
+IBGE. s.d. <span>"IBGE - Cidades"</span>. <a href="https://cidades.ibge.gov.br/">https://cidades.ibge.gov.br/</a>.
+</div>
 <div id="ref-r_language_definition" class="csl-entry" role="doc-biblioentry">
 R Core Team. 2023. <em>R Language Definition</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html">https://cran.r-project.org/doc/manuals/r-release/R-lang.html</a>.
 </div>
 </div>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -904,13 +1013,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_operador_pipe.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></span>
+      <a href="./r_funcoes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./r_importar_dados.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importar Dados</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -108,6 +108,36 @@ x
 
 Apesar de, neste caso, produzirem o mesmo retorno, as funções `fnTeste3` e `fnTeste4` impactam de formas distintas o ambiente do R.
 
+## Recursividade
+
+### Buscar Ambiente Pai (Recursivamente)
+
+Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o `R_EmptyEnv`.
+
+```{r}
+
+fnBuscarEnvsPai <- function(ambiente, nivel = 1){
+ 
+    if(environmentName(ambiente)=="R_EmptyEnv"){
+    return ('Ambiente informado é R_EmptyEnv. Fim da busca.')
+    }
+    
+    marcacao <- ''
+    for (i in 1:nivel){
+      
+      marcacao <- paste0(' ', marcacao)
+    }
+    
+    writeLines(paste0(marcacao, '|-- ', environmentName(parent.env(ambiente))))
+
+    nivel <- nivel + 1
+    fnBuscarEnvsPai(parent.env(ambiente), nivel = nivel)
+
+}
+fnBuscarEnvsPai(globalenv())
+
+```
+
 ## Funções Genéricas
 
 ------------------------------------------------------------------------

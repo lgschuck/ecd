@@ -4,7 +4,7 @@
 
 ## O que são data frames ?
 
-Conforme o próprio manual do R, **data frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data frame** pode ter diferentes tipos de dados em suas colunas.
+Conforme o @r_language_definition, **data frame** é a estrutura que imita de forma mais próxima um dataset do **SAS** ou **SPSS**. De forma resumida um **data frame** é uma estrutura tabular com colunas (variáveis, atributos, etc) e linhas (registros, casos, observações, instâncias, etc). Diferente de uma matriz um **data frame** pode ter diferentes tipos de dados em suas colunas.
 
 Um **data frame** possui todas as colunas com o mesmo tamanho (quantidade de regitros). A classe de um objeto **data frame** possui o nome **data.frame**. Abaixo pode ser visualizada a classe do **data frame** [iris](https://archive.ics.uci.edu/ml/datasets/iris) (muito usado em exemplos em Ciência de Dados) e também as primeiras linhas com o comando `head`.
 
@@ -180,8 +180,85 @@ df_mtcars_filtrado <- subset(df_mtcars, # dados
 df_mtcars_filtrado
 ```
 
-------------------------------------------------------------------------
+## Junção de Dados
 
-@r_language_definition
+Uma grande necessidade ao se trablahar com dados tabulados é a junção de dados. A junção nada mais é do que usar bases de dados diferentes e carregar dados entre elas a partir de uma chave de identificação. Vamos usar duas bases de dados, uma com código e nome do município e outra com o código do município e sua população. Estes dados foram buscados em @ibge_cidades.
+
+```{r}
+
+df_cidades <-
+  data.frame(
+    COD_MUNICIPIO = c('4314902', '3550308', '3304557'),
+    NOME = c('Porto Alegre', 'São Paulo', 'Rio de Janeiro')
+  )
+                        
+df_populacao <-
+  data.frame(
+    COD_MUNICIPIO = c('4314902', '3550308', '3304557'),
+    POPULACAO = c(1332570, 11451245, 6211423)
+  )
+
+head(df_cidades)
+head(df_populacao)
+
+```
+
+Para juntar estes dados, usaremos como chave de identificação presente nas duas tabelas o campo **COD_MUNICIPIO**. A função usada, `merge` exige dois argumentos **x** e **y**, que são as bases de dados que usaremos para a junção.
+
+```{r}
+df_completo <- merge(x = df_cidades, y = df_populacao,
+                     by = "COD_MUNICIPIO")
+
+head(df_completo)
+```
+
+Este exemplo é o mais básico, onde os dados presentes em ambas tabelas são das mesmas ciades e também são ligadas por apenas uma chave de identificação. Vejamos um exemplo um pouco mais realista, onde alguns dados não estão presentes em ambas tabelas.
+
+```{r}
+
+# rbind faz a inclusao de linha nas as bases criadas
+df_cidades <- rbind(df_cidades, c('3106200', 'Belo Horizonte'))
+df_populacao <- rbind(df_populacao, c('4106902', 1773733))
+
+df_completo <- merge(x = df_cidades, y = df_populacao,
+                     by = "COD_MUNICIPIO")
+
+head(df_completo)
+
+```
+
+Veja que os dados de Belo Horizonte e do Município de código 4106902 (Curitiba) não foram inseridos no data frame resultante. Por padrão a função `merge` faz a junção pelos dados presentes nos dois data frames. Caso desejemos especificar, usamos os parâmetros `all.x` e `all.y`.
+
+Usando `all.x` informamos ao R que desejamos que todas as linhas presentes na base passada como argumento x sejam mantidas. Onde não existirem dados para estas linhas na tabela y serão preenchidos com `NA`.
+
+```{r}
+
+df_completo_x <- merge(x = df_cidades, y = df_populacao,
+                     by = "COD_MUNICIPIO", all.x = T)
+
+head(df_completo_x)
+
+```
+
+De forma análoga, usar `all.y` informa para que as linhas da base y sejam mantidas.
+
+```{r}
+df_completo_y <- merge(x = df_cidades, y = df_populacao,
+                     by = "COD_MUNICIPIO", all.y = T)
+
+head(df_completo_y)
+
+```
+
+Para cruzamento de todas as linhas das duas tabelas usamos o argumento `all`.
+
+```{r}
+df_completo <- merge(x = df_cidades, y = df_populacao,
+                     by = "COD_MUNICIPIO", all = T)
+
+head(df_completo)
+```
+
+------------------------------------------------------------------------
 
 Última atualização: `r format(file.info('r_data_frames.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
