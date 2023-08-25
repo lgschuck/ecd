@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - RStudio</title>
+<title>eRando em Ciênc1a de D4do$ - 14&nbsp; Introdução</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./rstudio_intro.html" rel="next">
-<link href="./pacotes_intro.html" rel="prev">
+<link href="./sobre_cd.html" rel="next">
+<link href="./sobre_estatistica.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">RStudio</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introdução</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -190,12 +190,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sobre_rstudio.html" class="sidebar-item-text sidebar-link active">RStudio</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="./sobre_rstudio.html" class="sidebar-item-text sidebar-link">RStudio</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
@@ -211,14 +211,14 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./sobre_estatistica.html" class="sidebar-item-text sidebar-link">Estatística</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./est_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./est_intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introdução</span></a>
   </div>
 </li>
       </ul>
@@ -262,7 +262,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#o-que-é-o-rstudio" id="toc-o-que-é-o-rstudio" class="nav-link active" data-scroll-target="#o-que-é-o-rstudio">O que é o RStudio?</a></li>
+  <li><a href="#população" id="toc-população" class="nav-link active" data-scroll-target="#população"><span class="toc-section-number">14.1</span>  População</a></li>
+  <li><a href="#amostra" id="toc-amostra" class="nav-link" data-scroll-target="#amostra"><span class="toc-section-number">14.2</span>  Amostra</a></li>
+  <li><a href="#tipos-de-dados" id="toc-tipos-de-dados" class="nav-link" data-scroll-target="#tipos-de-dados"><span class="toc-section-number">14.3</span>  Tipos de Dados</a>
+  <ul class="collapse">
+  <li><a href="#nomminal" id="toc-nomminal" class="nav-link" data-scroll-target="#nomminal"><span class="toc-section-number">14.3.1</span>  Nomminal</a></li>
+  <li><a href="#ordinal" id="toc-ordinal" class="nav-link" data-scroll-target="#ordinal"><span class="toc-section-number">14.3.2</span>  Ordinal</a></li>
+  <li><a href="#intervalar" id="toc-intervalar" class="nav-link" data-scroll-target="#intervalar"><span class="toc-section-number">14.3.3</span>  Intervalar</a></li>
+  <li><a href="#razão" id="toc-razão" class="nav-link" data-scroll-target="#razão"><span class="toc-section-number">14.3.4</span>  Razão</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -271,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">RStudio</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introdução</span></h1>
 </div>
 
 
@@ -287,35 +295,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
-<section id="o-que-é-o-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="o-que-é-o-rstudio">O que é o RStudio?</h2>
-<p>O <strong>RStudio</strong> é um IDE (Integrated Development Environment) criado pela <a href="https://posit.co/"><strong>Posit</strong></a> para as linguagens R e Python. Apesar de não ser necessário para uilização de R, o RStudio fornece muitas funcionalidades para programação. Nesta seção serão apresentados alguns de seus principais recursos.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rstudio" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/rstudio/rstudio_layout.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;1: RStudio - Tela inicial</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rstudio-about" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/rstudio/about_rstudio.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;2: About RStudio</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
+<p>Neste capítulo serão discutidos alguns dos principais conceitos de Estatística e que serão base para a continuação.</p>
+<section id="população" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="população"><span class="header-section-number">14.1</span> População</h2>
+<p>O termo população é usado em estatística no sentido de todo um conjunto de dados de interesse.</p>
+</section>
+<section id="amostra" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="amostra"><span class="header-section-number">14.2</span> Amostra</h2>
+<p>Amostra é a definição usada para frações de uma população.</p>
+</section>
+<section id="tipos-de-dados" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="tipos-de-dados"><span class="header-section-number">14.3</span> Tipos de Dados</h2>
+<section id="nomminal" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="nomminal"><span class="header-section-number">14.3.1</span> Nomminal</h3>
+</section>
+<section id="ordinal" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="ordinal"><span class="header-section-number">14.3.2</span> Ordinal</h3>
+</section>
+<section id="intervalar" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="intervalar"><span class="header-section-number">14.3.3</span> Intervalar</h3>
+</section>
+<section id="razão" class="level3" data-number="14.3.4">
+<h3 data-number="14.3.4" class="anchored" data-anchor-id="razão"><span class="header-section-number">14.3.4</span> Razão</h3>
 <hr>
-<p><a href="https://docs.posit.co/ide/user/">RStudio - User Guide</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a></p>
-<p>Última atualização: 12/08/2023 - 20:23:16</p>
+<p>Última atualização: 24/08/2023 - 22:43:11</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -569,13 +575,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./pacotes_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></span>
+      <a href="./sobre_estatistica.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estatística</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rstudio_intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sobre_cd.html" class="pagination-link">
+        <span class="nav-page-text">Ciência de Dados</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

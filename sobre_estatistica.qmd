@@ -1,0 +1,12 @@
+# Estatística
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## O que é Estatística
+
+Para @larson_farber_2007, 'estatísitica é a ciência que se ocupa de coletar, organizar, analisar e interpretar dados a fim de tomar decisões'.
+
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('sobre_estatistica.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

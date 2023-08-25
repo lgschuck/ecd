@@ -1,0 +1,27 @@
+# Introdução
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+Neste capítulo serão discutidos alguns dos principais conceitos de Estatística e que serão base para a continuação.
+
+## População
+
+O termo população é usado em estatística no sentido de todo um conjunto de dados de interesse.
+
+## Amostra
+
+Amostra é a definição usada para frações de uma população.
+
+## Tipos de Dados
+
+### Nomminal
+
+### Ordinal
+
+### Intervalar
+
+### Razão
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('est_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

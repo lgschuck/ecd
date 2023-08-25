@@ -10,6 +10,9 @@ book:
   author: "Luís Gustavo Schuck"
   date: today
 
+  sidebar:
+    collapse-level: 1
+
   page-footer:
     left: |
       eRando em Ciênc1a de D4do$
@@ -39,6 +42,9 @@ book:
       chapters:
         - rstudio_intro.qmd
         - rstudio_tools.qmd
+    - part: sobre_estatistica.qmd
+      chapters:
+        - est_intro.qmd
     - part: sobre_cd.qmd
       chapters:
         - cd_vies_var.qmd
@@ -58,4 +64,5 @@ format:
     theme:
       light: [cosmo , ecd.scss]
       dark: [slate]
+
   pdf: default

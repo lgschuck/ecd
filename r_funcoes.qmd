@@ -87,9 +87,9 @@ fnTeste3()
 x
 ```
 
-#### Operador `<<-`
+#### Operador de Super Atribuição (`<<-`)
 
-Usando o operador de atribuição `<<-` é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no Environment que está acima do Environment da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada tanto no ambiente da função como no ambiente acima deste.
+Usando o operador de super atribuição `<<-` é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no Environment que está acima do Environment da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada tanto no ambiente da função como no ambiente acima deste.
 
 ```{r, error = T}
 ls(envir = globalenv())
@@ -108,7 +108,32 @@ x
 
 Apesar de, neste caso, produzirem o mesmo retorno, as funções `fnTeste3` e `fnTeste4` impactam de formas distintas o ambiente do R.
 
+## Retorno
+
+Na criação de funções, é possível utilizar o comando `return` a fim de definir o que será retornado pela função.
+
+```{r}
+fnRetorno <- function(){
+  return('Este é o retorno da função!')
+}
+fnRetorno()
+```
+
 ## Recursividade
+
+Como outras linguagens de programação, R permite o uso recursivo de funções.
+
+```{r}
+fnRecursividade <- function(x){
+  if(x > 100) return('X ultrapassou 100. Fim!')
+  x <- x + 1
+  print(paste('Valor atual de x:', x))
+  fnRecursividade(x)
+}
+
+fnRecursividade(95)
+```
+
 
 ### Buscar Ambiente Pai (Recursivamente)
 

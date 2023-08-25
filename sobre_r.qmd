@@ -1,4 +1,4 @@
-# A Linguagem R
+# Introdução à Linguagem R
 
 [Status](convencoes.html#status-do-material) 🟦🟨🟨
 
