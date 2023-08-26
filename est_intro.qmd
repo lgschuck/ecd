@@ -14,7 +14,7 @@ Amostra é a definição usada para frações de uma população.
 
 ## Tipos de Dados
 
-### Nomminal
+### Nominal
 
 ### Ordinal
 

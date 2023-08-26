@@ -108,6 +108,98 @@ Abaixo alguns testes.
 
 ```
 
+## All e any
+
+As funções `all` e `any` testam se vetores possuem valores `TRUE`, todos ou pelo menos 1, respectivamente.
+
+```{r}
+vetor_logico <- c(T, T, T)
+
+all(vetor_logico)
+any(vetor_logico)
+```
+
+Apenas valores `FALSE`:
+
+```{r}
+vetor_logico <- c(F, F, F)
+
+all(vetor_logico)
+any(vetor_logico)
+```
+
+Vetor com apenas 1 valor `TRUE`.
+
+```{r}
+vetor_logico <- c(T, F, F, F)
+all(vetor_logico)
+any(vetor_logico)
+```
+
+Vetor com todos os valores falsos (`FALSE`).
+
+```{r}
+vetor_logico <- c(F, F, F, F)
+all(vetor_logico)
+any(vetor_logico)
+```
+
+Note que a presença de valores `NA` altera completamente o retorno da função `all`, mas não da função `any`.
+
+```{r}
+vetor_logico <- c(T, F, T, NA)
+all(vetor_logico)
+any(vetor_logico)
+```
+
+Isto ocorre, pois a função `any` só retorna `NA` se existirem valores `NA` e `FALSE` no vetor.
+
+```{r}
+vetor_logico <- c(F, NA, NA, NA)
+any(vetor_logico)
+
+vetor_logico <- c(NA, NA , NA, NA)
+any(vetor_logico)
+```
+
+Ambas as funções aceitam o parâmetro `na.rm`, que remove no valores `NA` antes de fazer a avalição.
+
+```{r}
+vetor_logico <- c(T, T, T, NA)
+all(vetor_logico, na.rm = T)
+any(vetor_logico, na.rm = T)
+```
+
+Com presença de valores falsos;
+
+```{r}
+vetor_logico <- c(T, F, F, NA)
+all(vetor_logico, na.rm = T)
+any(vetor_logico, na.rm = T)
+```
+
+Equivalente a:
+
+```{r}
+vetor_logico <- c(T, F, F)
+all(vetor_logico, na.rm = T)
+any(vetor_logico, na.rm = T)
+```
+
+## Operador %in%
+
+O operador binário `%in%` efetua teste de presença do objeto da esquerda (*left hand side*) no da direita (*right hand side*).
+
+```{r}
+x <- c(1, 2, 3, 4)
+y <- c(3, 4, 5)
+
+x %in% y
+y %in% x
+```
+
+Veja que o retorno é dado pelo tamanho do objeto da esquerda. Assim `x %in% y` é uma operação completamente diferente de `y %in% x.`
+
 ------------------------------------------------------------------------
 
 @r
