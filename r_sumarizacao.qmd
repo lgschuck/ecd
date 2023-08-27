@@ -1,0 +1,89 @@
+# Sumarização de Dados
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+Uma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.
+
+Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de intersse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.
+
+```{r}
+df_aprovacoes_porte <-
+  read.csv(
+    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',
+    header = T,
+    sep = ';',
+    dec = ',',
+    quote = "\""
+  )
+
+# ajustar nomes
+names(df_aprovacoes_porte) <- toupper(names(df_aprovacoes_porte))
+
+head(df_aprovacoes_porte)
+```
+
+Podemos então fazer a agregação usando a variável **ANO** como variável chave na função `aggregate`. Esta função exige (dentre outros argumentos opcionais) um objeto sobre os quais a função informada será aplicada, uma lista de elementos para definir o agrupamento e a função a ser aplicada. No exemplo, usaremos a função `sum`, que retorna a soma dos valores.
+
+```{r}
+somatorio <-
+  aggregate(subset(df_aprovacoes_porte, select = c(-ANO, -MES)),
+            by = list(df_aprovacoes_porte$ANO),
+            sum)
+
+head(somatorio)
+```
+
+Veja que a função `subset` foi usada pois as somas de **ANO** e **MES** não são de interesse aqui. Sem removê-las a função `aggregate` faria a soma de seus valores. 
+
+A mesma operação pode ser feita usando o *pipe*:
+
+```{r}
+df_aprovacoes_porte |>
+  subset(select = c(-ANO, -MES)) |> 
+  aggregate(by = list(df_aprovacoes_porte$ANO),
+            sum) |> 
+  head()
+```
+
+Uma forma equivalente e ainda mais sucinta é possível com a utilização do `.` (indicando todas as variáveis) e do `~` (indicando que as variáveis "dependem" ou são "explicadas" pela variável **ANO**). Como aqui a variável **ANO** será indicada como "explicativa" das demais ela não deve ser descartada no comando `subset`, como feito no exemplo anterior. 
+
+```{r}
+df_aprovacoes_porte |>
+  subset(select = -MES) |> 
+  aggregate(by = . ~ ANO, sum) |> 
+  head()
+```
+
+## Valores Faltantes - NA
+
+A função `aggregate` possui como padrão o argumento `na.action = na.omit`, assim os valores `NA` são omitidos. Caso seja necessáiro considerar os valores faltantes deve ser informada uma função "alternativa", que trata estes registros. No exemplo abaixo foi informado `NULL`, ou seja, "nenhuma" função a ser aplicada sobre os valores faltantes. Assim eles serão considerados no cálculo.
+
+```{r}
+df_aprovacoes_porte_na <- df_aprovacoes_porte
+
+df_aprovacoes_porte_na[1,]$MICRO <- NA
+
+head(df_aprovacoes_porte_na)
+
+df_aprovacoes_porte_na |>
+  subset(select = -MES) |>
+  aggregate(by = . ~ ANO, sum, 
+            na.action = NULL) |>
+  head()
+```
+
+Veja que agora a soma para o ano de 1995 para o porte MICRO é `NA`.
+
+Caso seja for inserido `na.rm = T` como argumento da função `sum`, os valores faltantes são desconsiderados novamente, mesmo `na.action` sendo nulo.
+
+```{r}
+df_aprovacoes_porte_na |>
+  subset(select = -MES) |>
+  aggregate(by = . ~ ANO, sum, na.rm = T,
+            na.action = NULL) |>
+  head()
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_sumarizacao.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

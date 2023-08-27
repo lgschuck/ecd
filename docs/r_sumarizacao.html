@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 16&nbsp; Trade-Off Viés x Variância</title>
+<title>eRando em Ciênc1a de D4do$ - 11&nbsp; Sumarização de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -30,8 +93,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bases_dados.html" rel="next">
-<link href="./sobre_cd.html" rel="prev">
+<link href="./sobre_pacotes.html" rel="next">
+<link href="./r_graficos.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sumarização de Dados</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -116,11 +179,11 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Introdução à Linguagem R</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
@@ -173,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_sumarizacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sumarização de Dados</span></a>
+  <a href="./r_sumarizacao.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sumarização de Dados</span></a>
   </div>
 </li>
       </ul>
@@ -231,14 +294,14 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./sobre_cd.html" class="sidebar-item-text sidebar-link">Ciência de Dados</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -263,14 +326,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#valores-faltantes---na" id="toc-valores-faltantes---na" class="nav-link active" data-scroll-target="#valores-faltantes---na"><span class="toc-section-number">11.1</span>  Valores Faltantes - NA</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sumarização de Dados</span></h1>
 </div>
 
 
@@ -285,11 +354,141 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Status: ⬛⬛⬛</p>
+<p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
+<p>Uma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.</p>
+<p>Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de intersse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="ot">&lt;-</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'./data/aprovacoes-por-porte-de-empresa-aprovacoes.csv'</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">header =</span> T,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">';'</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dec =</span> <span class="st">','</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ajustar nomes</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df_aprovacoes_porte) <span class="ot">&lt;-</span> <span class="fu">toupper</span>(<span class="fu">names</span>(df_aprovacoes_porte))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_aprovacoes_porte)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   ANO MES    MICRO PEQUENA    MEDIA   GRANDE
+1 1995   1 128.4699       0 10.18922 380.2330
+2 1995   2 106.3283       0 16.21161 495.5282
+3 1995   3 234.5488       0 13.69085 715.9591
+4 1995   4 125.2196       0 16.44511 403.9919
+5 1995   5 209.4168       0 20.88794 477.2529
+6 1995   6 122.5179       0 23.86818 473.2194</code></pre>
+</div>
+</div>
+<p>Podemos então fazer a agregação usando a variável <strong>ANO</strong> como variável chave na função <code>aggregate</code>. Esta função exige (dentre outros argumentos opcionais) um objeto sobre os quais a função informada será aplicada, uma lista de elementos para definir o agrupamento e a função a ser aplicada. No exemplo, usaremos a função <code>sum</code>, que retorna a soma dos valores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>somatorio <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate</span>(<span class="fu">subset</span>(df_aprovacoes_porte, <span class="at">select =</span> <span class="fu">c</span>(<span class="sc">-</span>ANO, <span class="sc">-</span>MES)),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">list</span>(df_aprovacoes_porte<span class="sc">$</span>ANO),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            sum)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(somatorio)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Group.1    MICRO    PEQUENA     MEDIA   GRANDE
+1    1995 1711.645   0.000000  216.8279  7048.91
+2    1996 1431.916   0.000000  271.6768 11362.08
+3    1997 2179.985   1.053206  137.0893 16672.74
+4    1998 1375.066  34.909957 1454.6207 20161.79
+5    1999 1394.739 426.779631 1083.7491 16634.18
+6    2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
+</div>
+</div>
+<p>Veja que a função <code>subset</code> foi usada pois as somas de <strong>ANO</strong> e <strong>MES</strong> não são de interesse aqui. Sem removê-las a função <code>aggregate</code> faria a soma de seus valores.</p>
+<p>A mesma operação pode ser feita usando o <em>pipe</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(<span class="sc">-</span>ANO, <span class="sc">-</span>MES)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate</span>(<span class="at">by =</span> <span class="fu">list</span>(df_aprovacoes_porte<span class="sc">$</span>ANO),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            sum) <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Group.1    MICRO    PEQUENA     MEDIA   GRANDE
+1    1995 1711.645   0.000000  216.8279  7048.91
+2    1996 1431.916   0.000000  271.6768 11362.08
+3    1997 2179.985   1.053206  137.0893 16672.74
+4    1998 1375.066  34.909957 1454.6207 20161.79
+5    1999 1394.739 426.779631 1083.7491 16634.18
+6    2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
+</div>
+</div>
+<p>Uma forma equivalente e ainda mais sucinta é possível com a utilização do <code>.</code> (indicando todas as variáveis) e do <code>~</code> (indicando que as variáveis “dependem” ou são “explicadas” pela variável <strong>ANO</strong>). Como aqui a variável <strong>ANO</strong> será indicada como “explicativa” das demais ela não deve ser descartada no comando <code>subset</code>, como feito no exemplo anterior.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span>MES) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate</span>(<span class="at">by =</span> . <span class="sc">~</span> ANO, sum) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   ANO    MICRO    PEQUENA     MEDIA   GRANDE
+1 1995 1711.645   0.000000  216.8279  7048.91
+2 1996 1431.916   0.000000  271.6768 11362.08
+3 1997 2179.985   1.053206  137.0893 16672.74
+4 1998 1375.066  34.909957 1454.6207 20161.79
+5 1999 1394.739 426.779631 1083.7491 16634.18
+6 2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
+</div>
+</div>
+<section id="valores-faltantes---na" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="valores-faltantes---na"><span class="header-section-number">11.1</span> Valores Faltantes - NA</h2>
+<p>A função <code>aggregate</code> possui como padrão o argumento <code>na.action = na.omit</code>, assim os valores <code>NA</code> são omitidos. Caso seja necessáiro considerar os valores faltantes deve ser informada uma função “alternativa”, que trata estes registros. No exemplo abaixo foi informado <code>NULL</code>, ou seja, “nenhuma” função a ser aplicada sobre os valores faltantes. Assim eles serão considerados no cálculo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte_na <span class="ot">&lt;-</span> df_aprovacoes_porte</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte_na[<span class="dv">1</span>,]<span class="sc">$</span>MICRO <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_aprovacoes_porte_na)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   ANO MES    MICRO PEQUENA    MEDIA   GRANDE
+1 1995   1       NA       0 10.18922 380.2330
+2 1995   2 106.3283       0 16.21161 495.5282
+3 1995   3 234.5488       0 13.69085 715.9591
+4 1995   4 125.2196       0 16.44511 403.9919
+5 1995   5 209.4168       0 20.88794 477.2529
+6 1995   6 122.5179       0 23.86818 473.2194</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte_na <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span>MES) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate</span>(<span class="at">by =</span> . <span class="sc">~</span> ANO, sum, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">na.action =</span> <span class="cn">NULL</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   ANO    MICRO    PEQUENA     MEDIA   GRANDE
+1 1995       NA   0.000000  216.8279  7048.91
+2 1996 1431.916   0.000000  271.6768 11362.08
+3 1997 2179.985   1.053206  137.0893 16672.74
+4 1998 1375.066  34.909957 1454.6207 20161.79
+5 1999 1394.739 426.779631 1083.7491 16634.18
+6 2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
+</div>
+</div>
+<p>Veja que agora a soma para o ano de 1995 para o porte MICRO é <code>NA</code>.</p>
+<p>Caso seja for inserido <code>na.rm = T</code> como argumento da função <code>sum</code>, os valores faltantes são desconsiderados novamente, mesmo <code>na.action</code> sendo nulo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte_na <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span>MES) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aggregate</span>(<span class="at">by =</span> . <span class="sc">~</span> ANO, sum, <span class="at">na.rm =</span> T,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">na.action =</span> <span class="cn">NULL</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   ANO    MICRO    PEQUENA     MEDIA   GRANDE
+1 1995 1583.175   0.000000  216.8279  7048.91
+2 1996 1431.916   0.000000  271.6768 11362.08
+3 1997 2179.985   1.053206  137.0893 16672.74
+4 1998 1375.066  34.909957 1454.6207 20161.79
+5 1999 1394.739 426.779631 1083.7491 16634.18
+6 2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
+</div>
+</div>
 <hr>
-<p>Última atualização: 12/08/2023 - 20:23:23</p>
+<p>Última atualização: 27/08/2023 - 00:01:30</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -542,13 +741,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sobre_cd.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ciência de Dados</span>
+      <a href="./r_graficos.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gráficos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bases_dados.html" class="pagination-link">
-        <span class="nav-page-text">Bases de Dados</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sobre_pacotes.html" class="pagination-link">
+        <span class="nav-page-text">Pacotes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

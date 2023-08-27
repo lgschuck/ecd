@@ -35,6 +35,7 @@ book:
         - r_operacoes_logicas.qmd
         - r_controles_fluxo.qmd
         - r_graficos.qmd
+        - r_sumarizacao.qmd
     - part: sobre_pacotes.qmd
       chapters:
         - pacotes_intro.qmd
