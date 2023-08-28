@@ -6,28 +6,54 @@
 
 R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apreesentações dos gráficos.
 
-Abaixo um exemplo de um gráfico de pontos:
+Abaixo um exemplo de um gráfico de criado com a função `plot` do pacote **graphics**. Os argumentos `x` e `y` são usados nas coordenadas e já são suficientes para a geração de um gráfico.
 
 ```{r}
-plot(mtcars$hp, mtcars$mpg)
+df_mtcars <- mtcars
+names(df_mtcars) <- toupper(names(df_mtcars))
+
+plot(x = df_mtcars$HP, y = df_mtcars$MPG)
 ```
 
-Customizando:
+Podemos customizar com diversos parâmetros. Por exemplo `main` é o argumento que define o título do gráfico, enquanto que `xlab` e `ylab` são os *labels* dos eixos. O argumento `col` define a cor. Note que o R possui muitas cores que podem ser identificadas como *strings*. Você pode ver as disponíveis com a função `colors`.
 
 ```{r}
-plot(mtcars$hp, mtcars$mpg, 
-     col ='brown3', main = 'Scatter Plot', 
+plot(df_mtcars$HP, df_mtcars$MPG, 
+     col ='brown3', main = 'Gráfico HP x MPG', 
      xlab = 'HP', ylab = 'MPG')
 ```
 
-Abaixo um exemplo de um histograma
+Veja que o gráfico foi exibido com pontos para os valores. O parâmetro `type` permite outras opções:
+
+-   `p` (padrão): pontos
+
+-   `l`: linhas
+
+-   `b`: pontos e linhas
+
+-   `c`: pontos 'vazios' ligados por linhas
+
+Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido.
 
 ```{r}
-hist(mtcars$hp, col ='aquamarine3', 
+plot(df_mtcars$HP, df_mtcars$MPG, 
+     type = 'b',
+     col ='aquamarine3', main = 'Gráfico HP x MPG', 
+     xlab = 'HP', ylab = 'MPG')
+```
+
+## Histograma
+
+Abaixo um exemplo de um histograma:
+
+```{r}
+hist(df_mtcars$HP, col ='cyan4', 
      main = 'Histograma', xlab = 'HP',
      ylab = 'Qtde')
 ```
 
 ------------------------------------------------------------------------
+
+@schumuller2019
 
 Última atualização: `r format(file.info('r_graficos.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

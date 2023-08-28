@@ -8,9 +8,9 @@ A fim de facilitar a leitura e evidenciar itens importantes no texto, serão ado
 
 | Tipo do Texto                           | Marcação | Exemplo     |
 |-----------------------------------------|----------|-------------|
-| Funções, operadores do R                | Código   | `print`     |
-| Objetos criados no R, termos relevantes | Negrito  | **Negrito** |
-| Palavras de língua estrangeira          | Itálico  | *Itálico*   |
+| Funções, argumentos, operadores do R    | Código   | `print`     |
+| Objetos criados no R (vetores, data frames, variáveis de data frames) e termos relevantes | Negrito  | **df_mtcars** |
+| Palavras de língua estrangeira          | Itálico  | *pipe*   |
 
 ## Nomes de Objetos
 

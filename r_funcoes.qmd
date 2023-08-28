@@ -43,7 +43,7 @@ fnExibirEnvs()
 
 ### Objetos no Ambiente da Função
 
-Objetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.
+Objetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no **GlobalEnv**.
 
 ```{r, error = T}
 fnTeste <- function(){
@@ -56,7 +56,7 @@ fnTeste()
 y
 ```
 
-Objetos que existam no ambiente corrente não são alterados caso por estarem dentro do ambiente de fuma função. A variável x é inicializada com valor 10 no ambiente corrente. Ela pode ser acessada pela função memso não sendo informada em algum argumento.
+Objetos que existam no ambiente corrente não são alterados caso por estarem dentro do ambiente de fuma função. A variável **x** é inicializada com valor 10 no ambiente corrente. Ela pode ser acessada pela função mesmo não sendo informada em algum argumento.
 
 ```{r, error = T}
 x <- 10
@@ -72,7 +72,7 @@ x
 
 ```
 
-Entretando, caso a variável x seja alterada no ambiente da função ela não é alterada no ambiente corrente.
+Entretando, caso a variável **x** seja alterada no ambiente da função ela não é alterada no ambiente corrente.
 
 ```{r}
 x <- 10
@@ -89,7 +89,7 @@ x
 
 #### Operador de Super Atribuição (`<<-`)
 
-Usando o operador de super atribuição `<<-` é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no Environment que está acima do Environment da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada tanto no ambiente da função como no ambiente acima deste.
+Usando o operador de super atribuição `<<-` é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável **x** é atualizada no ambiente que está acima do ambiente da função. A variável **y** continua não existindo fora da função, porém agora a variável **x** é atualizada em ambos ambientes.
 
 ```{r, error = T}
 ls(envir = globalenv())
@@ -137,7 +137,7 @@ fnRecursividade(95)
 
 ### Buscar Ambiente Pai (Recursivamente)
 
-Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o `R_EmptyEnv`.
+Abaixo função que busca recursivamente os ambientes e seus 'pais' até que se chege no 'último' ambiente, o **R_EmptyEnv**.
 
 ```{r}
 

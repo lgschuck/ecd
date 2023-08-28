@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>eRando em Ciênc1a de D4do$ - 8&nbsp; Operações Lógicas</title>
+<title>eRando em Ciênc1a de D4do$ - 4&nbsp; Operações Lógicas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,8 +112,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r_controles_fluxo.html" rel="next">
-<link href="./r_importar_dados.html" rel="prev">
+<link href="./r_data_frames.html" rel="next">
+<link href="./r_ambientes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -155,7 +155,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -215,32 +215,32 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -349,14 +349,14 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#operadores-relacionais" id="toc-operadores-relacionais" class="nav-link active" data-scroll-target="#operadores-relacionais"><span class="toc-section-number">8.1</span>  Operadores Relacionais</a></li>
-  <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos"><span class="toc-section-number">8.2</span>  Operadores Lógicos</a>
+  <li><a href="#operadores-relacionais" id="toc-operadores-relacionais" class="nav-link active" data-scroll-target="#operadores-relacionais"><span class="toc-section-number">4.1</span>  Operadores Relacionais</a></li>
+  <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos"><span class="toc-section-number">4.2</span>  Operadores Lógicos</a>
   <ul class="collapse">
-  <li><a href="#ou-exclusivo-xor" id="toc-ou-exclusivo-xor" class="nav-link" data-scroll-target="#ou-exclusivo-xor"><span class="toc-section-number">8.2.1</span>  Ou Exclusivo (Xor)</a></li>
+  <li><a href="#ou-exclusivo-xor" id="toc-ou-exclusivo-xor" class="nav-link" data-scroll-target="#ou-exclusivo-xor"><span class="toc-section-number">4.2.1</span>  Ou Exclusivo (Xor)</a></li>
   </ul></li>
-  <li><a href="#precedência" id="toc-precedência" class="nav-link" data-scroll-target="#precedência"><span class="toc-section-number">8.3</span>  Precedência</a></li>
-  <li><a href="#all-e-any" id="toc-all-e-any" class="nav-link" data-scroll-target="#all-e-any"><span class="toc-section-number">8.4</span>  All e any</a></li>
-  <li><a href="#operador-in" id="toc-operador-in" class="nav-link" data-scroll-target="#operador-in"><span class="toc-section-number">8.5</span>  Operador %in%</a></li>
+  <li><a href="#precedência" id="toc-precedência" class="nav-link" data-scroll-target="#precedência"><span class="toc-section-number">4.3</span>  Precedência</a></li>
+  <li><a href="#all-e-any" id="toc-all-e-any" class="nav-link" data-scroll-target="#all-e-any"><span class="toc-section-number">4.4</span>  All e any</a></li>
+  <li><a href="#operador-in" id="toc-operador-in" class="nav-link" data-scroll-target="#operador-in"><span class="toc-section-number">4.5</span>  Operador %in%</a></li>
   </ul>
 </nav>
     </div>
@@ -365,7 +365,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></h1>
 </div>
 
 
@@ -382,8 +382,8 @@ div.csl-indent {
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟦🟨🟨</p>
 <p>A linguagem R oferece uma série de operadores para utilização em testes lógicos.</p>
-<section id="operadores-relacionais" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="operadores-relacionais"><span class="header-section-number">8.1</span> Operadores Relacionais</h2>
+<section id="operadores-relacionais" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="operadores-relacionais"><span class="header-section-number">4.1</span> Operadores Relacionais</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -437,8 +437,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="operadores-lógicos" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="operadores-lógicos"><span class="header-section-number">8.2</span> Operadores Lógicos</h2>
+<section id="operadores-lógicos" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="operadores-lógicos"><span class="header-section-number">4.2</span> Operadores Lógicos</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -499,8 +499,8 @@ div.csl-indent {
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<section id="ou-exclusivo-xor" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="ou-exclusivo-xor"><span class="header-section-number">8.2.1</span> Ou Exclusivo (Xor)</h3>
+<section id="ou-exclusivo-xor" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="ou-exclusivo-xor"><span class="header-section-number">4.2.1</span> Ou Exclusivo (Xor)</h3>
 <p>O operador <code>xor</code> fornece saída verdadeira quando apenas um dos valores for verdadeiro.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Falso XOR Falso = Falso</span></span>
@@ -526,8 +526,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="precedência" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="precedência"><span class="header-section-number">8.3</span> Precedência</h2>
+<section id="precedência" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="precedência"><span class="header-section-number">4.3</span> Precedência</h2>
 <p>Na utilização de testes lógicos é importante observar a ordem (precedência) de aplicação dos operadores. O uso de parênteses altera a o escopo de aplicação dos operadores.</p>
 <table class="table">
 <caption>Precedência de Operadores</caption>
@@ -602,8 +602,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="all-e-any" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="all-e-any"><span class="header-section-number">8.4</span> All e any</h2>
+<section id="all-e-any" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="all-e-any"><span class="header-section-number">4.4</span> All e any</h2>
 <p>As funções <code>all</code> e <code>any</code> testam se vetores possuem valores <code>TRUE</code>, todos ou pelo menos 1, respectivamente.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>vetor_logico <span class="ot">&lt;-</span> <span class="fu">c</span>(T, T, T)</span>
@@ -716,8 +716,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="operador-in" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="operador-in"><span class="header-section-number">8.5</span> Operador %in%</h2>
+<section id="operador-in" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="operador-in"><span class="header-section-number">4.5</span> Operador %in%</h2>
 <p>O operador binário <code>%in%</code> efetua teste de presença do objeto da esquerda (<em>left hand side</em>) no da direita (<em>right hand side</em>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
@@ -996,13 +996,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_importar_dados.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></span>
+      <a href="./r_ambientes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r_controles_fluxo.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Controles de Fluxo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r_data_frames.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Frames</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

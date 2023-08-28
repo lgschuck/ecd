@@ -196,32 +196,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
+  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_ambientes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ambientes</span></a>
+  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funções</span></a>
+  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_data_frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Frames</span></a>
+  <a href="./r_operador_pipe.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Operador Pipe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
+  <a href="./r_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funções</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_operacoes_logicas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></a>
+  <a href="./r_importar_dados.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Importar Dados</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -331,6 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="toc-section-number">10.1</span>  Introdução</a></li>
+  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma"><span class="toc-section-number">10.2</span>  Histograma</a></li>
   </ul>
 </nav>
     </div>
@@ -358,33 +359,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introdução" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">10.1</span> Introdução</h2>
 <p>R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apreesentações dos gráficos.</p>
-<p>Abaixo um exemplo de um gráfico de pontos:</p>
+<p>Abaixo um exemplo de um gráfico de criado com a função <code>plot</code> do pacote <strong>graphics</strong>. Os argumentos <code>x</code> e <code>y</code> são usados nas coordenadas e já são suficientes para a geração de um gráfico.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>hp, mtcars<span class="sc">$</span>mpg)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_mtcars <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df_mtcars) <span class="ot">&lt;-</span> <span class="fu">toupper</span>(<span class="fu">names</span>(df_mtcars))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_mtcars<span class="sc">$</span>HP, <span class="at">y =</span> df_mtcars<span class="sc">$</span>MPG)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Customizando:</p>
+<p>Podemos customizar com diversos parâmetros. Por exemplo <code>main</code> é o argumento que define o título do gráfico, enquanto que <code>xlab</code> e <code>ylab</code> são os <em>labels</em> dos eixos. O argumento <code>col</code> define a cor. Note que o R possui muitas cores que podem ser identificadas como <em>strings</em>. Você pode ver as disponíveis com a função <code>colors</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>hp, mtcars<span class="sc">$</span>mpg, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span><span class="st">'brown3'</span>, <span class="at">main =</span> <span class="st">'Scatter Plot'</span>, </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_mtcars<span class="sc">$</span>HP, df_mtcars<span class="sc">$</span>MPG, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span><span class="st">'brown3'</span>, <span class="at">main =</span> <span class="st">'Gráfico HP x MPG'</span>, </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'HP'</span>, <span class="at">ylab =</span> <span class="st">'MPG'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Abaixo um exemplo de um histograma</p>
+<p>Veja que o gráfico foi exibido com pontos para os valores. O parâmetro <code>type</code> permite outras opções:</p>
+<ul>
+<li><p><code>p</code> (padrão): pontos</p></li>
+<li><p><code>l</code>: linhas</p></li>
+<li><p><code>b</code>: pontos e linhas</p></li>
+<li><p><code>c</code>: pontos ‘vazios’ ligados por linhas</p></li>
+</ul>
+<p>Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mtcars<span class="sc">$</span>hp, <span class="at">col =</span><span class="st">'aquamarine3'</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Histograma'</span>, <span class="at">xlab =</span> <span class="st">'HP'</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">'Qtde'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_mtcars<span class="sc">$</span>HP, df_mtcars<span class="sc">$</span>MPG, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">'b'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span><span class="st">'aquamarine3'</span>, <span class="at">main =</span> <span class="st">'Gráfico HP x MPG'</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'HP'</span>, <span class="at">ylab =</span> <span class="st">'MPG'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="histograma" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="histograma"><span class="header-section-number">10.2</span> Histograma</h2>
+<p>Abaixo um exemplo de um histograma:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_mtcars<span class="sc">$</span>HP, <span class="at">col =</span><span class="st">'cyan4'</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Histograma'</span>, <span class="at">xlab =</span> <span class="st">'HP'</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">'Qtde'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="r_graficos_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <hr>
-<p>Última atualização: 14/08/2023 - 20:54:01</p>
+<p><span class="citation" data-cites="schumuller2019">(<a href="referencias.html#ref-schumuller2019" role="doc-biblioref"><strong>schumuller2019?</strong></a>)</span></p>
+<p>Última atualização: 27/08/2023 - 23:24:41</p>
 
 
 </section>

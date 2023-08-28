@@ -4,14 +4,14 @@
 
 ## Global Env
 
-O Global Env é o ambiente "atual" do usuário. É nele que ficam armazenadas, por padrão, as funções criadas pelos usuários por exemplo. Ele pode ser "visualizado" com os comandos abaixo:
+O **Global Env** é o ambiente "atual" do usuário. É nele que ficam armazenados por padrão os objetos e as funções criadas pelos usuários por exemplo. Ele pode ser "visualizado" com os comandos abaixo:
 
 ```{r}
 globalenv()
 .GlobalEnv
 ```
 
-Os objetos presentes no almbiente desejado podem ser visualizados com a função `ls`.
+Os objetos presentes no ambiente desejado podem ser visualizados com a função `ls`.
 
 ```{r}
 variavel <- 5
@@ -33,7 +33,7 @@ ls(as.environment('package:data.table'))[1:10]
 
 ## Ambientes "Pai"
 
-Cada ambiente possui um ambiente de nível superior associado, com exceção do `R_EmptyEnv`.
+Cada ambiente possui um ambiente de nível superior associado, com exceção do **R_EmptyEnv**.
 
 ```{r}
 # Ambiente superior ao GlobalEnv
