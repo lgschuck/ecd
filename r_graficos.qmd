@@ -42,6 +42,26 @@ plot(df_mtcars$HP, df_mtcars$MPG,
      xlab = 'HP', ylab = 'MPG')
 ```
 
+Podemos criar um gráfico de linhas com a base de dados da [Taxa Selic Acumulado no Mês](bases_dados.html#taxa-de-juros---selic-acumulada-no-m%C3%AAs) divulgada pelo Banco Central do Brasil. Vamos utilizar os parâmetros `lty` (de *line type*) para determinar o tipo de linha e `lwd` (de *line width*) para determinar a largura da linha.
+
+```{r}
+df_taxa_selic <- read.csv2('./data/csv_serie-sgs-4390.csv',
+                           dec = ',', quote = '\"',
+                           col.names = c('DATA', 'SELIC'))
+
+# formatar data
+df_taxa_selic$DATA <- as.Date(df_taxa_selic$DATA, format = '%d/%m/%Y')
+
+# filtrar a partir de 2017
+df_taxa_selic <- df_taxa_selic |> 
+  subset(DATA >= '2017-01-01')
+
+plot(df_taxa_selic$DATA, df_taxa_selic$SELIC, 
+     type = 'b', col ='firebrick3', lty = 3, lwd = 1.5,
+     main = 'Taxa Selic Acumulada Mensal', 
+     xlab = 'Data', ylab = 'Selic Acumulada (% a.m.)')
+```
+
 ## Histograma
 
 Abaixo um exemplo de um histograma:
@@ -54,6 +74,8 @@ hist(df_mtcars$HP, col ='cyan4',
 
 ------------------------------------------------------------------------
 
-@schumuller2019
+@sthda
+
+@schmuller_2019
 
 Última atualização: `r format(file.info('r_graficos.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

@@ -83,13 +83,13 @@ Abaixo alguns testes.
 # Falso E Falso = Falso
 5 > 6 & 4 > 5
 
-# Verdadeiro E Verdadeiro = Verdadeiro}
+# Verdadeiro E Verdadeiro = Verdadeiro
 !5 > 6 & !4 > 5
 
 # Verdadeiro E Falso = Falso
 !5 > 6 & 4 > 5
 
-# Negação de( Falso E Falso = Falso) = Verdadeiro
+# Negação de(Falso E Falso) = Verdadeiro
 !(5 > 6 & 4 > 5)
 ```
 
@@ -103,7 +103,7 @@ Abaixo alguns testes.
 # Verdadeiro OU Falso = Verdadeiro
 !5 > 6 | 4 > 5
 
-# Negação de( Falso OU Falso = Falso) = Verdadeiro
+# Negação de (Falso OU Falso) = Verdadeiro
 !(5 > 6 | 4 > 5)
 
 ```

@@ -33,7 +33,7 @@ somatorio <-
 head(somatorio)
 ```
 
-Veja que a função `subset` foi usada pois as somas de **ANO** e **MES** não são de interesse aqui. Sem removê-las a função `aggregate` faria a soma de seus valores. 
+Veja que a função `subset` foi usada pois as somas de **ANO** e **MES** não são de interesse aqui. Sem removê-las a função `aggregate` faria a soma de seus valores.
 
 A mesma operação pode ser feita usando o *pipe*:
 
@@ -45,7 +45,7 @@ df_aprovacoes_porte |>
   head()
 ```
 
-Uma forma equivalente e ainda mais sucinta é possível com a utilização do `.` (indicando todas as variáveis) e do `~` (indicando que as variáveis "dependem" ou são "explicadas" pela variável **ANO**). Como aqui a variável **ANO** será indicada como "explicativa" das demais ela não deve ser descartada no comando `subset`, como feito no exemplo anterior. 
+Uma forma equivalente e ainda mais sucinta é possível com a utilização do `.` (indicando todas as variáveis) e do `~` (indicando que as variáveis "dependem" ou são "explicadas" pela variável **ANO**). Como aqui a variável **ANO** será indicada como "explicativa" das demais ela não deve ser descartada no comando `subset`, como feito no exemplo anterior.
 
 ```{r}
 df_aprovacoes_porte |>

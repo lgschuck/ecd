@@ -53,7 +53,6 @@ book:
     - convencoes.qmd
     - referencias.qmd
 
-
   downloads: [pdf]
 
 bibliography: referencias.bib
@@ -66,4 +65,5 @@ format:
       light: [cosmo , ecd.scss]
       dark: [slate]
 
-  pdf: default
+  pdf:
+    mainfont: Arial

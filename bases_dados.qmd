@@ -2,9 +2,17 @@
 
 Neste materrial são usadas diversas bases de dados abertas. Abaixo as fontes e as descrições.
 
-[BNDES](https://dados.gov.br/dados/organizacoes/visualizar/banco-nacional-de-desenvolvimento-economico-e-social)
+## [Banco Central do Brasil](https://dadosabertos.bcb.gov.br/)
 
-[Por porte de empresa - Aprovações](https://dadosabertos.bndes.gov.br/dataset/bce5a865-e766-4a7a-b537-9499c81275b6/resource/22daaedb-3cc2-498a-9f40-5b1bdb2309e6/download/aprovacoes-por-porte-de-empresa-aprovacoes.csv)
+### [Taxa de juros - Selic acumulada no mês](https://dadosabertos.bcb.gov.br/dataset/4390-taxa-de-juros---selic-acumulada-no-mes)
+
+**Acesso em:** 28/08/2023 - 20:15
+
+Taxa de juros que representa a taxa média ajustada das operações compromissadas com prazo de um dia útil lastreadas com títulos públicos federais custodiados no Sistema Especial de Liquidação e de Custódia (Selic). Divulgação em % a.m.
+
+## [BNDES](https://dados.gov.br/dados/organizacoes/visualizar/banco-nacional-de-desenvolvimento-economico-e-social)
+
+### [Por porte de empresa - Aprovações](https://dadosabertos.bndes.gov.br/dataset/bce5a865-e766-4a7a-b537-9499c81275b6/resource/22daaedb-3cc2-498a-9f40-5b1bdb2309e6/download/aprovacoes-por-porte-de-empresa-aprovacoes.csv)
 
 **Acesso em:** 22/08/2023 - 20:20
 
