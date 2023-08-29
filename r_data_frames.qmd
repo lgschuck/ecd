@@ -13,6 +13,12 @@ class(iris)
 head(iris)
 ```
 
+Um **data frame** é na verdade uma **lista**, assim as operações efetuadas em **listas** possuem equivalência em **data frames**.
+
+```{r}
+typeof(iris)
+```
+
 ### Criando Data Frames
 
 Objetos da classe **data.frame** podem ser criados com a função `data.frame`.
@@ -96,6 +102,12 @@ df_iris[1, ]$SEPAL_WIDTH
 # Acessar linhas 1 até 3 e a segunda coluna
 df_iris[1:3, ]$SEPAL_WIDTH
 ```
+
+::: callout-tip
+## Nome Abreviado
+
+Assim como nas **listas,** variáveis de um **data frame** podem ser acessadas com o mínimo de caracteres que as identifiquem dentro do **data frame**. Por exemplo, `df_iris$SP` retornará a variável **SPECIES.**
+:::
 
 ### Filtrando Dados
 

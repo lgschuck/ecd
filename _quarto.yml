@@ -29,6 +29,7 @@ book:
         - r_nomes.qmd
         - r_ambientes.qmd
         - r_operacoes_logicas.qmd
+        - r_listas.qmd
         - r_data_frames.qmd
         - r_operador_pipe.qmd
         - r_funcoes.qmd

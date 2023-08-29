@@ -1,0 +1,74 @@
+# Listas
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Introdução
+
+**Listas** são objetos que armazenam outros objetos, podendo ser de variados tipos.
+
+## Criando Listas
+
+Abaixo um exemplo de criação de **lista** através da função `list`. Os seus componentes serão um data frame, um vetor de números de 1 até 10 e um vetor com as letras do alfabeto.
+
+```{r}
+lista_1 <- list(mtcars, 1:10, letters)
+```
+
+## Acessando Componentes
+
+Para acessar os elementos das listas pode-se usar o operador `[[…]]`.
+
+```{r}
+class(lista_1[[1]])
+```
+
+Deve-se tomar cuidado ao usar o operador `[]`, pois este operador é genérico e não retorna o componente 1 da lista em sua "forma" original e sim de uma lista contendo o objeto da lista original. Desta forma, não é possível fazer extração de objetos do vetor retornado.
+
+```{r}
+class(lista_1[1])
+lista_1[2][5]
+```
+
+Usando `[[...]]` o objeto retornado mantém sua forma original e a extração ocorre normalmente.
+
+```{r}
+class(lista_1[[2]])
+lista_1[[2]][5]
+```
+
+## Nomeando Componentes
+
+Os componentes das listas podem ser nomeados com a função `names`.
+
+```{r}
+names(lista_1) <- c('df_mtcars', 'vetor', 'letras')
+lista_1$letras
+
+identical(lista_1$letras, lista_1[[3]])
+identical(lista_1$letras, lista_1[['letras']])
+```
+
+### Nomes Abreviados
+
+Para acessar componentes de listas nomeadas é possível informar seus nomes de forma abreviada.
+
+```{r}
+lista_1$le
+#equivalente a 
+lista_1$letras
+```
+
+Veja que a abreviação deve identificar de forma exclusiva os componentes, caso contrário o valor retornado é `NULL`. A **lista_3** possui dois componentes que começam com 'le' e assim não é possível fazer a seleção.
+
+```{r}
+lista_3 <- list(letras = letters[1:10], letras_maiusculas = LETTERS[1:10])
+
+lista_3$le
+
+```
+
+------------------------------------------------------------------------
+
+@introduction_r
+
+Última atualização: `r format(file.info('r_listas.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
