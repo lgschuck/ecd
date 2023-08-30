@@ -27,6 +27,7 @@ book:
       chapters:
         - r_intro.qmd
         - r_nomes.qmd
+        - r_vetores.qmd
         - r_ambientes.qmd
         - r_operacoes_logicas.qmd
         - r_listas.qmd

@@ -1,0 +1,72 @@
+# Vetores
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Introdução
+
+**Vetores** são o tipo de estrutura de dados mais básica no R. Os vetores podem ser criados de diversas formas. Serão criados dois vetores uma com a função `seq`, que cria uma sequência de acordo com os parâmetros informados, e com o operador `:`.
+
+```{r}
+vetor_1 <- seq(1, 10)
+vetor_2 <- 1:10
+```
+
+Podemos testar se dois objetos são idênticos com a função `identical`.
+
+```{r}
+identical(vetor_1, vetor_2)
+```
+
+Uma outra função muito útil para avaliar um objeto é a função `str`, que exibe a estrutura do objeto.
+
+```{r}
+str(vetor_1)
+str(vetor_2)
+```
+
+## Selecionando Elementos
+
+Podemos selecionar elementos de **vetores** com os operadores `[` e `[[`. A diferença principal é que o primeiro pode selecionar diversos elementos, enquanto o segundo apenas um.
+
+```{r, error = T}
+vetor_1[5]
+
+vetor_1[[5]]
+
+vetor_2[5:6]
+
+vetor_2[[5:6]]
+```
+
+## Nomeando Componentes
+
+Os componentes de vetores podem ser nomeados com a função `names` e posteriormente acessados pelo seu nome. 
+
+```{r}
+names(vetor_1) <- c('componente_1',
+                    'componente_2')
+
+vetor_1['componente_1']
+```
+
+Usando a função `str` podemos ver que agora o vetor possui **atributos**, neste caso nomes. Como foram inseridos apenas nomes para os primeiros dois elementos os demais possuem valor `NA`.
+
+```{r}
+str(vetor_1)
+attributes(vetor_1)
+```
+
+## Testando
+
+Podemos testar se um objeto é um vetor com a função `is.vector`.
+
+```{r}
+is.vector(vetor_1)
+
+```
+
+------------------------------------------------------------------------
+
+@introduction_r
+
+Última atualização: `r format(file.info('r_vetores.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
