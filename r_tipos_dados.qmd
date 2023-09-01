@@ -1,0 +1,39 @@
+# Tipos de Dados
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## *Integer* (Inteiros)
+
+## *Double* (Ponto Flutuante)
+
+## *Logical* (Lógico)
+
+### Valores Faltantes (**NA**)
+
+Em R a constante `NA` (*Not Available*) é usada para expressar valores faltantes. O `NA` é do tipo lógico, mas pode ser atribuído a vetores de outros tipos (exceto *raw*) através de coerção.
+
+```{r}
+typeof(NA)
+is.na(NA)
+
+vetor_1 <- c(1:5, NA, 6:10)
+vetor_1
+
+typeof(vetor_1)
+```
+
+Os valores faltantes são muito importantes na análise de dados, pois podem influenciar cálculos e transformações. Até mesmo operações aritméticas básicas são influenciadas pelo valores faltantes.
+
+```{r}
+1 + 5 + NA
+```
+
+Funções também são influenciadas pela presença dos dados faltantes. A função `max`, por exemplo, que retorna o maior valor dentre os informados, retorna `NA` se este estiver presente.
+
+```{r}
+max(vetor_1)
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_tipos_dados.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
