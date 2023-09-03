@@ -6,6 +6,62 @@
 
 ## *Double* (Ponto Flutuante)
 
+De forma grosseira, *doubles* são valores numéricos com decimais.
+
+### *Not a Number* (**NaN**)
+
+Valores `NaN` ('não um número') são valores de tipo **double**. Valores `NaN` impactam operações lógicas e matemáticas.
+
+```{r}
+typeof(NaN)
+
+NaN > 10
+
+NaN * 10
+
+10/NaN
+5 + NaN
+```
+
+### **Inf** e **-Inf**
+
+No R os valores **Inf** e **-Inf** representam infinito e infinito negativo, respectivamente.
+
+Estes valores impactam cálculos.
+
+```{r}
+is.infinite(Inf)
+5 + Inf
+Inf + Inf
+-Inf * -1 
+Inf - Inf
+```
+
+Mas operações lógicas seguem o 'senso comum'.
+
+```{r}
+Inf > 10
+Inf > -Inf
+Inf == Inf
+```
+
+Valores infinitos podem ser gerados se muito grandes ou por valores divididos por zeros.
+
+```{r}
+10^308
+10^309
+
+10/0
+-10/0
+```
+
+Mas veja que zero dividido por zero é `NaN`.
+
+```{r}
+0/0
+0/Inf
+```
+
 ## *Logical* (Lógico)
 
 ### Valores Faltantes (**NA**)
