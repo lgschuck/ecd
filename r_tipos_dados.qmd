@@ -2,7 +2,7 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
-## *Logical* (Lógico)
+## Lógico (*Logical*) 
 
 Dados do tipo lógico podem assumir basicamente dois valores, verdadeiro (`TRUE`) e falso (`FALSE`). Estes valores podem ser abreviados por `T` e `F`, respectivamente.
 
@@ -54,11 +54,36 @@ Funções também são influenciadas pela presença dos dados faltantes. A funç
 max(vetor_1)
 ```
 
-## *Integer* (Inteiros)
+## Inteiros (*Integer*)
 
-## *Double* (Ponto Flutuante)
+Números inteiros são do tipo `integer` e devem ser criados com a letra **L** ao seu lado. Sem este indicador, por padrão, o R entende o número como do tipo `double`.
+
+```{r}
+typeof(1L)
+typeof(1)
+```
+
+Para testar se um número é do tipo inteiro pode-se utiliazr a função `is.integer`.
+
+```{r}
+is.integer(1)
+```
+
+Para transformar um valor para inteiro usa-se a função `as.integer`.
+
+```{r}
+is.integer(as.integer(1))
+as.integer(1.99)
+```
+
+## Ponto Flutuante (*Double*)
 
 De forma grosseira, *doubles* são valores numéricos com decimais.
+
+```{r}
+is.double(1)
+```
+
 
 ### *Not a Number* (**NaN**)
 
@@ -114,7 +139,7 @@ Mas veja que zero dividido por zero é `NaN`.
 0/Inf
 ```
 
-
+## Fatores (*Factor*)
 
 ------------------------------------------------------------------------
 
