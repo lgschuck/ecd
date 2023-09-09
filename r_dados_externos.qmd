@@ -1,8 +1,10 @@
-# Importar Dados
+# Dados Externos
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
-## Importar Arquivos csv
+## Arquivo Csv
+
+### Importar Arquivos csv
 
 Muitas vezes os dados que o usuário possui acesso em sua Instituição estã armazenados em bancos de dados. Porém dados distribuídos por entidades públicas muitas vezes estão em formato **csv**.
 
@@ -21,6 +23,14 @@ df_aprovacoes_porte <-
 head(df_aprovacoes_porte)
 
 ```
+
+### Exportar Arquivos csv
+
+## Arquivos RDS
+
+### Importar Arquivos RDS
+
+### Exprotar Arquivos RDS
 
 ------------------------------------------------------------------------
 

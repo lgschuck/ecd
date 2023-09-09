@@ -1,0 +1,31 @@
+# Utilidades
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+R oferece uma série de funções para interação com o ambiente externo.
+
+## Listar Arquivos
+
+A função `list.files` exibe arquivos em um diretório informado no argumento `path`.
+
+```{r}
+list.files('./data/')
+```
+
+Podem ser retornados os caminos completos dos arquivos com o parâmetro `full.names`.
+
+```{r}
+list.files('./data/', full.names = T)
+```
+
+## Informações de arquivos
+
+A função `file.info` retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.
+
+```{r}
+t(file.info('./data/csv_serie-sgs-4390.csv'))
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('r_utilidades.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

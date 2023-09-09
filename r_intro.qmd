@@ -48,7 +48,7 @@ citatin()
 
 ## Objetos
 
-R opera sobre entidades que são conhecidas como **objetos** [@introduction_r, cap 3]. Existem diversos tipos de objetos em R como listas, matrizes, bases de dados, séries temporais, gráficos, modelos, etc. Neste capítulo inicial serão utilizados os **vetores**, pois são as estruturas mais básicas. As operações anteriores, por exemplo, de soma e multiplicação, foram feitas sobre números, que em R são vetores.
+R opera sobre entidades que são conhecidas como **objetos** [@introduction_r, cap 3]. Existem diversos tipos de objetos em R como listas, matrizes, bases de dados, séries temporais, gráficos, modelos, etc. Neste capítulo inicial serão utilizados os **vetores**, pois são as estruturas mais básicas.
 
 ::: callout-note
 ## Variáveis

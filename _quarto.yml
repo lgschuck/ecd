@@ -35,10 +35,11 @@ book:
         - r_data_frames.qmd
         - r_operador_pipe.qmd
         - r_funcoes.qmd
-        - r_importar_dados.qmd
+        - r_dados_externos.qmd
         - r_controles_fluxo.qmd
         - r_graficos.qmd
         - r_sumarizacao.qmd
+        - r_utilidades.qmd
     - part: sobre_pacotes.qmd
       chapters:
         - pacotes_intro.qmd
