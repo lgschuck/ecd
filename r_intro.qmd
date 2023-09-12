@@ -94,7 +94,7 @@ objeto2
 
 ## Operações com Objetos
 
-Objetos podem ser atualizados/alterados, novamente, com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com o operador `:`, que cria sequências de valores. Na sequência o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
+Objetos podem ser atualizados/alterados, novamente, com o operador `<-`. No exemplo abaixo vamos criar um vetor de nome **objeto3** com o operador `:`, que cria sequências de valores. Em seguida o **objeto3** será atualizado recebendo seu próprio conteúdo acrescido do valor 10.
 
 ```{r}
 objeto3 <- 1:5
@@ -103,7 +103,11 @@ objeto3 <- objeto3 + 10
 objeto3
 ```
 
-O vetor objeto3 foi criado com 5 posições, armazenando os valores de 1 a 5. Podemos acessar, por exemplo a terceira posição do vetor, através do operador de extração **\[** em combinação com o índice do vetor. Abaixo operação apra retornar o valor da posição 4 do objeto3.
+O vetor objeto3 foi criado com 5 posições, armazenando inicialmente os valores de 1 a 5. Após o vetor recebeu atualização dos valores para 11, 12, 13,14 e 15.
+
+Os valores dos vetores podem ser acessados através de seu índice em combinação com o operador de extração **\[**. Em R os índices iniciam em 1 (em muitas linguagens de programação o primeiro índice é 0).
+
+Assim para receber como retorno o valor da posição 4 do objeto3 usamos:
 
 ```{r}
 objeto3[4] 
@@ -115,12 +119,33 @@ Podemos também operar sobre este valor, por exemplo, adicionando 10 ao valor da
 objeto3[4] + 10
 ```
 
-Note que sem o operador de atribuição o valor da posição 4 do objeto3 não é atualizada, apenas exibida no console. Para atualizar seu valor usamos:
+Note que sem o operador de atribuição o valor da posição 4 do objeto3 não é atualizada, apenas exibida no console. Para atualizar seu valor usamos devemos usar a atribuição.
 
 ```{r}
 objeto3
 objeto3[4] <- objeto3[4] + 10
 objeto3
+```
+
+Neste caso apenas o valor da posição 4 foi alterado.
+
+A busca por índices pode ser feita de forma mais elaborada. Por exemplo, para buscar três valores do vetor que estão armazenados de forma contígua podemos usar:
+
+```{r}
+objeto3[1:3]
+```
+
+Já se for necessário buscar dados de  índices separados podemos usar a função `c` (combinação), que combina valores para formar um vetor.
+
+```{r}
+objeto3[c(1,3,5)]
+```
+
+O sinal de menos pode ser combinado com o índice e isto causará a exclusão do índice da busca. Por exemplo, usar o índice -5 retorna todos os elementos, exceto o quinto.
+
+```{r}
+objeto3[-5]
+objeto3[c(-2, -4)] # de forma combinada
 ```
 
 ### Coerção

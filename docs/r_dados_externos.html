@@ -414,10 +414,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="exportar-arquivos-csv" class="level3" data-number="11.1.2">
 <h3 data-number="11.1.2" class="anchored" data-anchor-id="exportar-arquivos-csv"><span class="header-section-number">11.1.2</span> Exportar Arquivos csv</h3>
+<p>Para salvar um arquivo em csv deve ser informado como parâmetro da função <code>write.csv</code> o nome do objeto e o arquivo no qual ele será salvo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df_aprovacoes_porte,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">paste0</span>(<span class="fu">tempdir</span>(), <span class="st">'/df_aprovacoes_porte.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 <section id="arquivos-rds" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="arquivos-rds"><span class="header-section-number">11.2</span> Arquivos RDS</h2>
+<p>O formato RDS é específico do R e possui diversas vantagens em relação ao uso do formato csv, entre elas:</p>
+<ul>
+<li><p>Permite compactação</p></li>
+<li><p>Permite salvar objetos de diversos tipo (bases de dados, vetores, listas, funções, etc)</p></li>
+<li><p>Mantém a formatação dos dados</p></li>
+</ul>
 <section id="importar-arquivos-rds" class="level3" data-number="11.2.1">
 <h3 data-number="11.2.1" class="anchored" data-anchor-id="importar-arquivos-rds"><span class="header-section-number">11.2.1</span> Importar Arquivos RDS</h3>
 </section>
