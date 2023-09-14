@@ -54,9 +54,17 @@ Oferece opção de controle de versões de código através do Git ou SVN.
 
 Permite acesso ao terminal do sistema operacional a partir do RStudio.
 
-### Background Jobs
+```{r, label = 'fig-rstudio-terminal', fig.cap = "Terminal", echo = FALSE}
+  knitr::include_graphics('images/rstudio/terminal.png')
+```
+
+## Background Jobs
 
 Fornece opções para execução de 'Jobs', basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.
+
+```{r, label = 'fig-rstudio-background_jobs', fig.cap = "Background Jobs", echo = FALSE}
+  knitr::include_graphics('images/rstudio/background_jobs.png')
+```
 
 ## Global Options
 
@@ -93,6 +101,14 @@ Nesta tela incial Geral \> Basic podemos definir muitas características do RStu
 -   ***Other***
 
     -   *Automatically notify me of RStudio updates*: verificar e avisar o usuário se existirem atualizações do RStudio.
+
+### Appearance
+
+Aqui são disponibilizadas diversas configurações visuais para o RStudio, inclusive permitindo a inclusão de um tema externo.
+
+```{r, label = 'fig-rstudio-menu-global-options-appearance', fig.cap = "Global Options - Appearance", echo = FALSE}
+  knitr::include_graphics('images/rstudio/options_appearance.png')
+```
 
 ------------------------------------------------------------------------
 

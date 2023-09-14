@@ -395,12 +395,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [2] "./data/csv_serie-sgs-4390.csv"                        </code></pre>
 </div>
 </div>
+<p>Esta função também oferece a opção de buscar arquivos com algum padrão em seu nome através do parâmetros <code>pattern</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">'.'</span>, <span class="at">pattern =</span> <span class="st">'.yml'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "_quarto.yml"</code></pre>
+</div>
+</div>
 </section>
 <section id="informações-de-arquivos" class="level2" data-number="15.2">
 <h2 data-number="15.2" class="anchored" data-anchor-id="informações-de-arquivos"><span class="header-section-number">15.2</span> Informações de arquivos</h2>
 <p>A função <code>file.info</code> retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      ./data/csv_serie-sgs-4390.csv
 size  "9482"                       
@@ -408,12 +415,12 @@ isdir "FALSE"
 mode  "444"                        
 mtime "2023-08-28 20:15:06"        
 ctime "2023-08-28 20:15:06"        
-atime "2023-09-13 21:56:41"        
+atime "2023-09-14 17:37:19"        
 exe   "no"                         </code></pre>
 </div>
 </div>
 <hr>
-<p>Última atualização: 09/09/2023 - 15:31:49</p>
+<p>Última atualização: 14/09/2023 - 17:35:07</p>
 
 
 </section>

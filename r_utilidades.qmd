@@ -18,6 +18,12 @@ Podem ser retornados os caminos completos dos arquivos com o parâmetro `full.na
 list.files('./data/', full.names = T)
 ```
 
+Esta função também oferece a opção de buscar arquivos com algum padrão em seu nome através do parâmetros `pattern`.
+
+```{r}
+list.files('.', pattern = '.yml')
+```
+
 ## Informações de arquivos
 
 A função `file.info` retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.
