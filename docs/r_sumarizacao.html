@@ -350,7 +350,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#valores-faltantes---na" id="toc-valores-faltantes---na" class="nav-link active" data-scroll-target="#valores-faltantes---na"><span class="toc-section-number">14.1</span>  Valores Faltantes - NA</a></li>
+  <li><a href="#agregação" id="toc-agregação" class="nav-link active" data-scroll-target="#agregação"><span class="toc-section-number">14.1</span>  Agregação</a></li>
+  <li><a href="#valores-faltantes---na" id="toc-valores-faltantes---na" class="nav-link" data-scroll-target="#valores-faltantes---na"><span class="toc-section-number">14.2</span>  Valores Faltantes - NA</a></li>
   </ul>
 </nav>
     </div>
@@ -375,8 +376,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
+<section id="agregação" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="agregação"><span class="header-section-number">14.1</span> Agregação</h2>
 <p>Uma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.</p>
-<p>Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de intersse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.</p>
+<p>Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de interesse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="ot">&lt;-</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(</span>
@@ -453,8 +456,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6 2000 2366.893 864.823930 1534.4957 22858.39</code></pre>
 </div>
 </div>
-<section id="valores-faltantes---na" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="valores-faltantes---na"><span class="header-section-number">14.1</span> Valores Faltantes - NA</h2>
+</section>
+<section id="valores-faltantes---na" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="valores-faltantes---na"><span class="header-section-number">14.2</span> Valores Faltantes - NA</h2>
 <p>A função <code>aggregate</code> possui como padrão o argumento <code>na.action = na.omit</code>, assim os valores <code>NA</code> são omitidos. Caso seja necessáiro considerar os valores faltantes deve ser informada uma função “alternativa”, que trata estes registros. No exemplo abaixo foi informado <code>NULL</code>, ou seja, “nenhuma” função a ser aplicada sobre os valores faltantes. Assim eles serão considerados no cálculo.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte_na <span class="ot">&lt;-</span> df_aprovacoes_porte</span>
@@ -505,7 +509,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <hr>
-<p>Última atualização: 28/08/2023 - 21:33:22</p>
+<p>Última atualização: 13/09/2023 - 21:46:36</p>
 
 
 </section>

@@ -109,7 +109,7 @@ df_iris[1:3, ]$SEPAL_WIDTH
 Assim como nas **listas,** variáveis de um **data frame** podem ser acessadas com o mínimo de caracteres que as identifiquem dentro do **data frame**. Por exemplo, `df_iris$SP` retornará a variável **SPECIES.**
 :::
 
-### Filtrando Dados
+## Filtrando Dados
 
 Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do **data frame**, deve ser informada condição lógica na forma abaixo:
 
@@ -145,7 +145,7 @@ Equivalente ao comando abaixo:
 df_iris2[c(4, 6), 'SEPAL_WIDTH']
 ```
 
-#### Classes de retorno
+### Classes de retorno
 
 Os filtros em **data frames** usados com `$` ou `[ ]` (com apenas 1 variável) retornam vetores e não **data frames**. Desta forma se perde a classe e a estrutura tabular característica do **data frame** original.
 
@@ -162,11 +162,11 @@ class(df_iris[1:3, c("SEPAL_LENGTH", "SEPAL_WIDTH")])
 class(df_iris[1:3, 1:2])
 ```
 
-#### Função Subset
+## Função Subset
 
-A função `subset` permite efetuar filtro em um **data frame** e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um **data frame**, mesmo com a seleção de apenas 1 variável.
+A função `subset` permite efetuar filtro em um **data frame** e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condições. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um **data frame**, mesmo com a seleção de apenas 1 variável.
 
-Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o **data frame** seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
+Esta função também permite seleção de colunas a serem mantidas. Note que a função `subset` não demanda que o **data frame** seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.
 
 ```{r}
 class(subset(df_iris, select = SEPAL_WIDTH))
@@ -190,6 +190,14 @@ df_mtcars_filtrado <- subset(df_mtcars, # dados
        c(MPG, CYL, HP)) # colunas
 
 df_mtcars_filtrado
+```
+
+Nos exemplos anteriores foram declaradas de forma explícita as variáveis a serem mantidas. Para declarar as variáveis a serem excluídas basta utiliza o sinal de subtração `-`, de forma análoga a seleção por índices em componentes de vetores.
+
+```{r}
+df_mtcars |> 
+  subset(select = -c(DISP, DRAT, VS, AM)) |> 
+  head()
 ```
 
 ## Junção de Dados

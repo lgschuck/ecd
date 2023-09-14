@@ -380,9 +380,13 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#índices" id="toc-índices" class="nav-link" data-scroll-target="#índices"><span class="toc-section-number">8.4.1</span>  Índices</a></li>
   <li><a href="#usando-nomes-das-colunas" id="toc-usando-nomes-das-colunas" class="nav-link" data-scroll-target="#usando-nomes-das-colunas"><span class="toc-section-number">8.4.2</span>  Usando Nomes das Colunas</a></li>
-  <li><a href="#filtrando-dados" id="toc-filtrando-dados" class="nav-link" data-scroll-target="#filtrando-dados"><span class="toc-section-number">8.4.3</span>  Filtrando Dados</a></li>
   </ul></li>
-  <li><a href="#junção-de-dados" id="toc-junção-de-dados" class="nav-link" data-scroll-target="#junção-de-dados"><span class="toc-section-number">8.5</span>  Junção de Dados</a></li>
+  <li><a href="#filtrando-dados" id="toc-filtrando-dados" class="nav-link" data-scroll-target="#filtrando-dados"><span class="toc-section-number">8.5</span>  Filtrando Dados</a>
+  <ul class="collapse">
+  <li><a href="#classes-de-retorno" id="toc-classes-de-retorno" class="nav-link" data-scroll-target="#classes-de-retorno"><span class="toc-section-number">8.5.1</span>  Classes de retorno</a></li>
+  </ul></li>
+  <li><a href="#função-subset" id="toc-função-subset" class="nav-link" data-scroll-target="#função-subset"><span class="toc-section-number">8.6</span>  Função Subset</a></li>
+  <li><a href="#junção-de-dados" id="toc-junção-de-dados" class="nav-link" data-scroll-target="#junção-de-dados"><span class="toc-section-number">8.7</span>  Junção de Dados</a></li>
   </ul>
 </nav>
     </div>
@@ -585,8 +589,9 @@ Nome Abreviado
 </div>
 </div>
 </section>
-<section id="filtrando-dados" class="level3" data-number="8.4.3">
-<h3 data-number="8.4.3" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">8.4.3</span> Filtrando Dados</h3>
+</section>
+<section id="filtrando-dados" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">8.5</span> Filtrando Dados</h2>
 <p>Digamos que se deseje acessar apenas dados que cumpram determinada condição. Para isto, na seleção das linhas do <strong>data frame</strong>, deve ser informada condição lógica na forma abaixo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna valores de Speal.Width onde Petal.Length for maior do que 6</span></span>
@@ -634,8 +639,8 @@ Nome Abreviado
 <pre><code>[1] 3.1 3.9</code></pre>
 </div>
 </div>
-<section id="classes-de-retorno" class="level4" data-number="8.4.3.1">
-<h4 data-number="8.4.3.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">8.4.3.1</span> Classes de retorno</h4>
+<section id="classes-de-retorno" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="classes-de-retorno"><span class="header-section-number">8.5.1</span> Classes de retorno</h3>
 <p>Os filtros em <strong>data frames</strong> usados com <code>$</code> ou <code>[ ]</code> (com apenas 1 variável) retornam vetores e não <strong>data frames</strong>. Desta forma se perde a classe e a estrutura tabular característica do <strong>data frame</strong> original.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df_iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -659,10 +664,11 @@ Nome Abreviado
 </div>
 </div>
 </section>
-<section id="função-subset" class="level4" data-number="8.4.3.2">
-<h4 data-number="8.4.3.2" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">8.4.3.2</span> Função Subset</h4>
-<p>A função <code>subset</code> permite efetuar filtro em um <strong>data frame</strong> e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condiões. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um <strong>data frame</strong>, mesmo com a seleção de apenas 1 variável.</p>
-<p>Esta função também permite seleção de colunas a serem mantidas. Note que a função subset não demanda que o <strong>data frame</strong> seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
+</section>
+<section id="função-subset" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="função-subset"><span class="header-section-number">8.6</span> Função Subset</h2>
+<p>A função <code>subset</code> permite efetuar filtro em um <strong>data frame</strong> e muitas vezes oferece uma forma mais organizada visualmente, principalmente quando em filtros com muitas condições. Uma outra vantagem é que a função subset retorna faz a seleção em um data.frame e retorna um <strong>data frame</strong>, mesmo com a seleção de apenas 1 variável.</p>
+<p>Esta função também permite seleção de colunas a serem mantidas. Note que a função <code>subset</code> não demanda que o <strong>data frame</strong> seja referenciado antes das variáveis e também aceita os nomes das variáveis sem aspas. Isto torna o código mais legível.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">subset</span>(df_iris, <span class="at">select =</span> SEPAL_WIDTH))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -700,33 +706,46 @@ Porsche 914-2 26.0   4  91
 Lotus Europa  30.4   4 113</code></pre>
 </div>
 </div>
+<p>Nos exemplos anteriores foram declaradas de forma explícita as variáveis a serem mantidas. Para declarar as variáveis a serem excluídas basta utiliza o sinal de subtração <code>-</code>, de forma análoga a seleção por índices em componentes de vetores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>df_mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(DISP, DRAT, VS, AM)) <span class="sc">|&gt;</span> </span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   MPG CYL  HP    WT  QSEC GEAR CARB
+Mazda RX4         21.0   6 110 2.620 16.46    4    4
+Mazda RX4 Wag     21.0   6 110 2.875 17.02    4    4
+Datsun 710        22.8   4  93 2.320 18.61    4    1
+Hornet 4 Drive    21.4   6 110 3.215 19.44    3    1
+Hornet Sportabout 18.7   8 175 3.440 17.02    3    2
+Valiant           18.1   6 105 3.460 20.22    3    1</code></pre>
+</div>
+</div>
 </section>
-</section>
-</section>
-<section id="junção-de-dados" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="junção-de-dados"><span class="header-section-number">8.5</span> Junção de Dados</h2>
+<section id="junção-de-dados" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="junção-de-dados"><span class="header-section-number">8.7</span> Junção de Dados</h2>
 <p>Uma grande necessidade ao se trablahar com dados tabulados é a junção de dados. A junção nada mais é do que usar bases de dados diferentes e carregar dados entre elas a partir de uma chave de identificação. Vamos usar duas bases de dados, uma com código e nome do município e outra com o código do município e sua população. Estes dados foram buscados em <span class="citation" data-cites="ibge_cidades">IBGE (<a href="referencias.html#ref-ibge_cidades" role="doc-biblioref">s.d.</a>)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">NOME =</span> <span class="fu">c</span>(<span class="st">'Porto Alegre'</span>, <span class="st">'São Paulo'</span>, <span class="st">'Rio de Janeiro'</span>)</span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>                        </span>
-<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span></span>
-<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
-<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">POPULACAO =</span> <span class="fu">c</span>(<span class="dv">1332570</span>, <span class="dv">11451245</span>, <span class="dv">6211423</span>)</span>
-<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_cidades)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">NOME =</span> <span class="fu">c</span>(<span class="st">'Porto Alegre'</span>, <span class="st">'São Paulo'</span>, <span class="st">'Rio de Janeiro'</span>)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>                        </span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">COD_MUNICIPIO =</span> <span class="fu">c</span>(<span class="st">'4314902'</span>, <span class="st">'3550308'</span>, <span class="st">'3304557'</span>),</span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">POPULACAO =</span> <span class="fu">c</span>(<span class="dv">1332570</span>, <span class="dv">11451245</span>, <span class="dv">6211423</span>)</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_cidades)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME
 1       4314902   Porto Alegre
 2       3550308      São Paulo
 3       3304557 Rio de Janeiro</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_populacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_populacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO POPULACAO
 1       4314902   1332570
@@ -736,10 +755,10 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 <p>Para juntar estes dados, usaremos como chave de identificação presente nas duas tabelas o campo <strong>COD_MUNICIPIO</strong>. A função usada, <code>merge</code> exige dois argumentos <strong>x</strong> e <strong>y</strong>, que são as bases de dados que usaremos para a junção.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME POPULACAO
 1       3304557 Rio de Janeiro   6211423
@@ -749,14 +768,14 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 <p>Este exemplo é o mais básico, onde os dados presentes em ambas tabelas são das mesmas ciades e também são ligadas por apenas uma chave de identificação. Vejamos um exemplo um pouco mais realista, onde alguns dados não estão presentes em ambas tabelas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rbind faz a inclusao de linha nas as bases criadas</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_cidades, <span class="fu">c</span>(<span class="st">'3106200'</span>, <span class="st">'Belo Horizonte'</span>))</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_populacao, <span class="fu">c</span>(<span class="st">'4106902'</span>, <span class="dv">1773733</span>))</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rbind faz a inclusao de linha nas as bases criadas</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>df_cidades <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_cidades, <span class="fu">c</span>(<span class="st">'3106200'</span>, <span class="st">'Belo Horizonte'</span>))</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>df_populacao <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_populacao, <span class="fu">c</span>(<span class="st">'4106902'</span>, <span class="dv">1773733</span>))</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>)</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME POPULACAO
 1       3304557 Rio de Janeiro   6211423
@@ -767,10 +786,10 @@ Lotus Europa  30.4   4 113</code></pre>
 <p>Veja que os dados de Belo Horizonte e do Município de código 4106902 (Curitiba) não foram inseridos no data frame resultante. Por padrão a função <code>merge</code> faz a junção pelos dados presentes nos dois data frames. Caso desejemos especificar, usamos os parâmetros <code>all.x</code> e <code>all.y</code>.</p>
 <p>Usando <code>all.x</code> informamos ao R que desejamos que todas as linhas presentes na base passada como argumento x sejam mantidas. Onde não existirem dados para estas linhas na tabela y serão preenchidos com <code>NA</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>df_completo_x <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.x =</span> T)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>df_completo_x <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.x =</span> T)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME POPULACAO
 1       3106200 Belo Horizonte      &lt;NA&gt;
@@ -781,10 +800,10 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 <p>De forma análoga, usar <code>all.y</code> informa para que as linhas da base y sejam mantidas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>df_completo_y <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.y =</span> T)</span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>df_completo_y <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all.y =</span> T)</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo_y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME POPULACAO
 1       3304557 Rio de Janeiro   6211423
@@ -795,10 +814,10 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 <p>Para cruzamento de todas as linhas das duas tabelas usamos o argumento <code>all</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all =</span> T)</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>df_completo <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> df_cidades, <span class="at">y =</span> df_populacao,</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">by =</span> <span class="st">"COD_MUNICIPIO"</span>, <span class="at">all =</span> T)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_completo)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  COD_MUNICIPIO           NOME POPULACAO
 1       3106200 Belo Horizonte      &lt;NA&gt;
@@ -809,7 +828,7 @@ Lotus Europa  30.4   4 113</code></pre>
 </div>
 </div>
 <hr>
-<p>Última atualização: 29/08/2023 - 20:29:07</p>
+<p>Última atualização: 13/09/2023 - 21:54:53</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

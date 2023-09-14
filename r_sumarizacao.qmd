@@ -2,9 +2,11 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
+## Agregação
+
 Uma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.
 
-Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de intersse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.
+Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de interesse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.
 
 ```{r}
 df_aprovacoes_porte <-
