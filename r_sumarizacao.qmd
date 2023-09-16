@@ -2,6 +2,37 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
+## Funções Básicas
+
+Nesta seção são detalhadas algumas das funções mais básicas para sumarização de dados.
+
+### Soma
+
+A função `sum` retorna a soma dos elementos informados como argumentos.
+
+```{r}
+sum(1:10)
+```
+
+### Média
+
+```{r}
+mean(1:20)
+```
+
+### Mediana
+
+```{r}
+median(1:11)
+```
+
+### Máximo e mínimo
+
+```{r}
+max(99:15)
+min(15:99)
+```
+
 ## Agregação
 
 Uma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.

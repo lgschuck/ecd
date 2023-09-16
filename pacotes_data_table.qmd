@@ -1,0 +1,23 @@
+# Pacote Data.table
+
+[Status](convencoes.html#status-do-material) 🟦🟨🟨
+
+O pacote **data.table** oferece estrutura para manipulação de bases de dados de forma mais rápida que a base do R. As estruturas de dados são chamadas de **data tables** e funcionam de forma similar a um **data frame**.
+
+```{r}
+library(data.table)
+
+df_mtcars <- mtcars
+df_mtcars <- setDT(df_mtcars)
+class(df_mtcars)
+```
+
+As operações realizadas com **data tables** possuem sintaxe específica e bastante sucinta.
+
+```{r}
+df_mtcars[, teste := 1]
+```
+
+------------------------------------------------------------------------
+
+Última atualização: `r format(file.info('pacotes_data_table.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

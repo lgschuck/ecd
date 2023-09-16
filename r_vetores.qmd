@@ -62,7 +62,8 @@ Podemos testar se um objeto é um vetor com a função `is.vector`.
 
 ```{r}
 is.vector(vetor_1)
-
+is.vector(1)
+is.vector('A')
 ```
 
 ------------------------------------------------------------------------

@@ -20,12 +20,11 @@ pacotes <- as.data.frame(installed.packages())
 t(pacotes[pacotes$Package == 'base',])
 # pacote MASS
 t(pacotes[pacotes$Package == 'MASS',])
-# pacote data.table
-t(pacotes[pacotes$Package == 'data.table',])
-
+# pacote bit64
+t(pacotes[pacotes$Package == 'bit64',])
 ```
 
-Pode ser visto no campo *Priority* que para o pacote base o conteúdo é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote "normal", não possui informação no campo *Priority*.
+Pode ser visto no campo *Priority* que para o pacote base o conteúdo é "base", isto significa que este faz parte da instalação do R. Já o pacote [MASS](https://cran.r-project.org/web/packages/MASS/index.html), por exemplo, é um pacote recomendado. O pacote bit64, que é um pacote "normal", não possui informação no campo *Priority*.
 
 Também podemos visualizar dados do pacote (arquivo *DESCRIPTION* do próprio pacote) com o comando `packageDescription`:
 
@@ -48,7 +47,7 @@ list.files(.libPaths()[2])[1:10]
 
 ## Pacotes Disponíveis
 
-A função `available.packages` procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption("repos").
+A função `available.packages` procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de `getOption("repos")`.
 
 ```{r}
 # Definir repositório

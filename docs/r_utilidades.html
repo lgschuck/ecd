@@ -132,6 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <body class="nav-sidebar floating">
 
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -274,6 +275,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pacotes_data_table.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pacote Data.table</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,12 +292,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
+  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
   </div>
 </li>
       </ul>
@@ -306,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./est_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./est_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introdução</span></a>
   </div>
 </li>
       </ul>
@@ -321,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -351,7 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#listar-arquivos" id="toc-listar-arquivos" class="nav-link active" data-scroll-target="#listar-arquivos"><span class="toc-section-number">15.1</span>  Listar Arquivos</a></li>
-  <li><a href="#informações-de-arquivos" id="toc-informações-de-arquivos" class="nav-link" data-scroll-target="#informações-de-arquivos"><span class="toc-section-number">15.2</span>  Informações de arquivos</a></li>
+  <li><a href="#listar-diretórios" id="toc-listar-diretórios" class="nav-link" data-scroll-target="#listar-diretórios"><span class="toc-section-number">15.2</span>  Listar diretórios</a></li>
+  <li><a href="#informações-de-arquivos" id="toc-informações-de-arquivos" class="nav-link" data-scroll-target="#informações-de-arquivos"><span class="toc-section-number">15.3</span>  Informações de arquivos</a></li>
   </ul>
 </nav>
     </div>
@@ -403,11 +410,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="informações-de-arquivos" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="informações-de-arquivos"><span class="header-section-number">15.2</span> Informações de arquivos</h2>
+<section id="listar-diretórios" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="listar-diretórios"><span class="header-section-number">15.2</span> Listar diretórios</h2>
+<p>De forma análoga à função <code>list.files</code>, a função <code>list.dir</code> exibe os diretórios de um caminho informado. Porém esta função possui <code>TRUE</code> como valores padrão dos argumentos <code>full.names</code> e <code>recursive</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.dirs</span>(<span class="st">"C:/Arquivos de Programas/R/"</span>, <span class="at">recursive =</span> F)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Arquivos de Programas/R/R-4.3.0"</code></pre>
+</div>
+</div>
+</section>
+<section id="informações-de-arquivos" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="informações-de-arquivos"><span class="header-section-number">15.3</span> Informações de arquivos</h2>
 <p>A função <code>file.info</code> retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      ./data/csv_serie-sgs-4390.csv
 size  "9482"                       
@@ -415,12 +432,12 @@ isdir "FALSE"
 mode  "444"                        
 mtime "2023-08-28 20:15:06"        
 ctime "2023-08-28 20:15:06"        
-atime "2023-09-14 17:37:19"        
+atime "2023-09-16 14:55:12"        
 exe   "no"                         </code></pre>
 </div>
 </div>
 <hr>
-<p>Última atualização: 14/09/2023 - 17:35:07</p>
+<p>Última atualização: 16/09/2023 - 14:41:10</p>
 
 
 </section>

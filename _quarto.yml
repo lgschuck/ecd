@@ -43,6 +43,7 @@ book:
     - part: sobre_pacotes.qmd
       chapters:
         - pacotes_intro.qmd
+        - pacotes_data_table.qmd
     - part: sobre_rstudio.qmd
       chapters:
         - rstudio_intro.qmd

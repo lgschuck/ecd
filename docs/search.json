@@ -11,7 +11,7 @@
     "href": "index.html#versões",
     "title": "eRando em Ciênc1a de D4do$",
     "section": "Versões",
-    "text": "Versões\nA versão deste material é: 0.1.0.14-09-2023.\nA versão do R utilizada é: 4.3.0, Already Tomorrow.\nA versão do RStudio é: 2023.06.1+524, Mountain Hydrangea.\nA versão do Quarto é: 1.2.475.\n\nÚltima atualização: 20/08/2023 - 22:47:23"
+    "text": "Versões\nA versão deste material é: 0.1.0.16-09-2023.\nA versão do R utilizada é: 4.3.0, Already Tomorrow.\nA versão do RStudio é: 2023.06.1+524, Mountain Hydrangea.\nA versão do Quarto é: 1.2.475.\n\nÚltima atualização: 20/08/2023 - 22:47:23"
   },
   {
     "objectID": "autor.html",
@@ -144,7 +144,7 @@
     "href": "r_vetores.html#testando",
     "title": "3  Vetores",
     "section": "3.4 Testando",
-    "text": "3.4 Testando\nPodemos testar se um objeto é um vetor com a função is.vector.\n\nis.vector(vetor_1)\n\n[1] TRUE\n\n\n\nR Core Team (2023)\nÚltima atualização: 30/08/2023 - 20:05:14\n\n\n\n\nR Core Team. 2023. An Introduction to R. R Foundation for Statistical Computing. https://cran.r-project.org/doc/manuals/r-release/R-intro.html."
+    "text": "3.4 Testando\nPodemos testar se um objeto é um vetor com a função is.vector.\n\nis.vector(vetor_1)\n\n[1] TRUE\n\nis.vector(1)\n\n[1] TRUE\n\nis.vector('A')\n\n[1] TRUE\n\n\n\nR Core Team (2023)\nÚltima atualização: 16/09/2023 - 14:26:54\n\n\n\n\nR Core Team. 2023. An Introduction to R. R Foundation for Statistical Computing. https://cran.r-project.org/doc/manuals/r-release/R-intro.html."
   },
   {
     "objectID": "r_tipos_dados.html#lógico-logical",
@@ -200,7 +200,7 @@
     "href": "r_ambientes.html#criando-ambientes",
     "title": "5  Ambientes",
     "section": "5.4 Criando Ambientes",
-    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x0000014a3f070270>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador $ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nGrolemund (2014)\nDowle e Srinivasan (2023)\nMastropietro (2019)\nÚltima atualização: 27/08/2023 - 23:43:16\n\n\n\n\nDowle, Matt, e Arun Srinivasan. 2023. data.table: Extension of ‘data.frame‘.\n\n\nGrolemund, Garrett. 2014. Hands-On Programming with R. O’Reilly. https://rstudio-education.github.io/hopr/.\n\n\nMastropietro, Daniel. 2019. \"Getting an environment’s name in R: the envnames package\". 2019. https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package."
+    "text": "5.4 Criando Ambientes\nEm R é possível que se faça a criação de novos ambientes.\n\namb1 <- new.env()\n\namb1\n\n<environment: 0x00000214358168b8>\n\nparent.env(amb1)\n\n<environment: R_GlobalEnv>\n\n\nObjetos criados dentro de um ambiente podem ser acessados através do operador $ após o nome do ambiente. Também é possível utilizar a função ls com o nome do ambiente desejado para que sejam listados seus objetos.\n\n# Objeto x do amb1\namb1$x <- 10\namb1$y <- 99\n\n# Objeto x do GlobalEnv\nx <- 15\n\nx\n\n[1] 15\n\namb1$x\n\n[1] 10\n\nls(amb1)\n\n[1] \"x\" \"y\"\n\namb1$x * amb1$y\n\n[1] 990\n\n\n\nGrolemund (2014)\nDowle e Srinivasan (2023)\nMastropietro (2019)\nÚltima atualização: 27/08/2023 - 23:43:16\n\n\n\n\nDowle, Matt, e Arun Srinivasan. 2023. data.table: Extension of ‘data.frame‘.\n\n\nGrolemund, Garrett. 2014. Hands-On Programming with R. O’Reilly. https://rstudio-education.github.io/hopr/.\n\n\nMastropietro, Daniel. 2019. \"Getting an environment’s name in R: the envnames package\". 2019. https://www.r-bloggers.com/2019/05/getting-an-environments-name-in-r-the-envnames-package."
   },
   {
     "objectID": "r_operacoes_logicas.html#operadores-relacionais",
@@ -340,7 +340,7 @@
     "href": "r_funcoes.html#função-x-ambiente",
     "title": "10  Funções",
     "section": "10.2 Função x Ambiente",
-    "text": "10.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfnExibirEnvs <- function() {\n  print('Ambiente atual:')\n  print(environment())\n  \n  print(paste(\n    'Ambiente Pai:', \n    environmentName(parent.env(environment()\n                               ))))\n}\n\nfnExibirEnvs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x00000235717ebec8>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\n\n10.2.1 Objetos no Ambiente da Função\nObjetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.\n\nfnTeste <- function(){\n  y <- 15\n  x <- 80\n  ls()\n}\n\nfnTeste()\n\n[1] \"x\" \"y\"\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\n\nObjetos que existam no ambiente corrente não são alterados caso por estarem dentro do ambiente de fuma função. A variável x é inicializada com valor 10 no ambiente corrente. Ela pode ser acessada pela função mesmo não sendo informada em algum argumento.\n\nx <- 10\n\nfnTeste2 <- function(){\n  y <- 15\n  x + y\n}\n\nfnTeste2()\n\n[1] 25\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\nx\n\n[1] 10\n\n\nEntretando, caso a variável x seja alterada no ambiente da função ela não é alterada no ambiente corrente.\n\nx <- 10\n\nfnTeste3 <- function(){\n  y <- 15\n  x <- 80\n  x + y\n}\n\nfnTeste3()\n\n[1] 95\n\nx\n\n[1] 10\n\n\n\n10.2.1.1 Operador de Super Atribuição (<<-)\nUsando o operador de super atribuição <<- é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no ambiente que está acima do ambiente da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada em ambos ambientes.\n\nls(envir = globalenv())\n\n[1] \"fnExibirEnvs\" \"fnSomar\"      \"fnTeste\"      \"fnTeste2\"     \"fnTeste3\"    \n[6] \"x\"           \n\nx\n\n[1] 10\n\nfnTeste4 <- function(){\n  y <- 15\n  x <<- 80\n  x + y\n}\n\nfnTeste4()\n\n[1] 95\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\nx\n\n[1] 80\n\n\nApesar de, neste caso, produzirem o mesmo retorno, as funções fnTeste3 e fnTeste4 impactam de formas distintas o ambiente do R."
+    "text": "10.2 Função x Ambiente\nAs funções possuem seus próprios ambientes. Abaixo uma função criada para exibir seu ambiente e seu ambiente ‘pai’.\n\nfnExibirEnvs <- function() {\n  print('Ambiente atual:')\n  print(environment())\n  \n  print(paste(\n    'Ambiente Pai:', \n    environmentName(parent.env(environment()\n                               ))))\n}\n\nfnExibirEnvs()\n\n[1] \"Ambiente atual:\"\n<environment: 0x00000196045ea308>\n[1] \"Ambiente Pai: R_GlobalEnv\"\n\n\n\n10.2.1 Objetos no Ambiente da Função\nObjetos que são criados dentro de uma função existem apenas dentro do ambiente desta função. Abaixo um exemplo de variável criada dentro do ambiente da função e que não é acessível no GlobalEnv.\n\nfnTeste <- function(){\n  y <- 15\n  x <- 80\n  ls()\n}\n\nfnTeste()\n\n[1] \"x\" \"y\"\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\n\nObjetos que existam no ambiente corrente não são alterados caso por estarem dentro do ambiente de fuma função. A variável x é inicializada com valor 10 no ambiente corrente. Ela pode ser acessada pela função mesmo não sendo informada em algum argumento.\n\nx <- 10\n\nfnTeste2 <- function(){\n  y <- 15\n  x + y\n}\n\nfnTeste2()\n\n[1] 25\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\nx\n\n[1] 10\n\n\nEntretando, caso a variável x seja alterada no ambiente da função ela não é alterada no ambiente corrente.\n\nx <- 10\n\nfnTeste3 <- function(){\n  y <- 15\n  x <- 80\n  x + y\n}\n\nfnTeste3()\n\n[1] 95\n\nx\n\n[1] 10\n\n\n\n10.2.1.1 Operador de Super Atribuição (<<-)\nUsando o operador de super atribuição <<- é possível alterar objetos que estejam fora do ambiente de uma função. Neste caso a variável x é atualizada no ambiente que está acima do ambiente da função. A variável y continua não existindo fora da função, porém agora a variável x é atualizada em ambos ambientes.\n\nls(envir = globalenv())\n\n[1] \"fnExibirEnvs\" \"fnSomar\"      \"fnTeste\"      \"fnTeste2\"     \"fnTeste3\"    \n[6] \"x\"           \n\nx\n\n[1] 10\n\nfnTeste4 <- function(){\n  y <- 15\n  x <<- 80\n  x + y\n}\n\nfnTeste4()\n\n[1] 95\n\ny\n\nError in eval(expr, envir, enclos): objeto 'y' não encontrado\n\nx\n\n[1] 80\n\n\nApesar de, neste caso, produzirem o mesmo retorno, as funções fnTeste3 e fnTeste4 impactam de formas distintas o ambiente do R."
   },
   {
     "objectID": "r_funcoes.html#retorno",
@@ -448,18 +448,25 @@
     "text": "13.2 Histograma\nAbaixo um exemplo de um histograma:\n\nhist(df_mtcars$HP, col ='cyan4', \n     main = 'Histograma', xlab = 'HP',\n     ylab = 'Qtde')\n\n\n\n\n\nKassambara (s.d.)\nSchmuller (2019)\nÚltima atualização: 28/08/2023 - 22:06:17\n\n\n\n\nKassambara, Alboukadel. s.d. \"Statistical tools for high-throughput data analysis\". http://www.sthda.com/english/.\n\n\nSchmuller, Joseph. 2019. Análise Estatística com R. Alta Books."
   },
   {
+    "objectID": "r_sumarizacao.html#funções-básicas",
+    "href": "r_sumarizacao.html#funções-básicas",
+    "title": "14  Sumarização de Dados",
+    "section": "14.1 Funções Básicas",
+    "text": "14.1 Funções Básicas\nNesta seção são detalhadas algumas das funções mais básicas para sumarização de dados.\n\n14.1.1 Soma\nA função sum retorna a soma dos elementos informados como argumentos.\n\nsum(1:10)\n\n[1] 55\n\n\n\n\n14.1.2 Média\n\nmean(1:20)\n\n[1] 10.5\n\n\n\n\n14.1.3 Mediana\n\nmedian(1:11)\n\n[1] 6\n\n\n\n\n14.1.4 Máximo e mínimo\n\nmax(99:15)\n\n[1] 99\n\nmin(15:99)\n\n[1] 15"
+  },
+  {
     "objectID": "r_sumarizacao.html#agregação",
     "href": "r_sumarizacao.html#agregação",
     "title": "14  Sumarização de Dados",
-    "section": "14.1 Agregação",
-    "text": "14.1 Agregação\nUma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.\nVejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de interesse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.\n\ndf_aprovacoes_porte <-\n  read.csv(\n    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',\n    header = T,\n    sep = ';',\n    dec = ',',\n    quote = \"\\\"\"\n  )\n\n# ajustar nomes\nnames(df_aprovacoes_porte) <- toupper(names(df_aprovacoes_porte))\n\nhead(df_aprovacoes_porte)\n\n   ANO MES    MICRO PEQUENA    MEDIA   GRANDE\n1 1995   1 128.4699       0 10.18922 380.2330\n2 1995   2 106.3283       0 16.21161 495.5282\n3 1995   3 234.5488       0 13.69085 715.9591\n4 1995   4 125.2196       0 16.44511 403.9919\n5 1995   5 209.4168       0 20.88794 477.2529\n6 1995   6 122.5179       0 23.86818 473.2194\n\n\nPodemos então fazer a agregação usando a variável ANO como variável chave na função aggregate. Esta função exige (dentre outros argumentos opcionais) um objeto sobre os quais a função informada será aplicada, uma lista de elementos para definir o agrupamento e a função a ser aplicada. No exemplo, usaremos a função sum, que retorna a soma dos valores.\n\nsomatorio <-\n  aggregate(subset(df_aprovacoes_porte, select = c(-ANO, -MES)),\n            by = list(df_aprovacoes_porte$ANO),\n            sum)\n\nhead(somatorio)\n\n  Group.1    MICRO    PEQUENA     MEDIA   GRANDE\n1    1995 1711.645   0.000000  216.8279  7048.91\n2    1996 1431.916   0.000000  271.6768 11362.08\n3    1997 2179.985   1.053206  137.0893 16672.74\n4    1998 1375.066  34.909957 1454.6207 20161.79\n5    1999 1394.739 426.779631 1083.7491 16634.18\n6    2000 2366.893 864.823930 1534.4957 22858.39\n\n\nVeja que a função subset foi usada pois as somas de ANO e MES não são de interesse aqui. Sem removê-las a função aggregate faria a soma de seus valores.\nA mesma operação pode ser feita usando o pipe:\n\ndf_aprovacoes_porte |>\n  subset(select = c(-ANO, -MES)) |> \n  aggregate(by = list(df_aprovacoes_porte$ANO),\n            sum) |> \n  head()\n\n  Group.1    MICRO    PEQUENA     MEDIA   GRANDE\n1    1995 1711.645   0.000000  216.8279  7048.91\n2    1996 1431.916   0.000000  271.6768 11362.08\n3    1997 2179.985   1.053206  137.0893 16672.74\n4    1998 1375.066  34.909957 1454.6207 20161.79\n5    1999 1394.739 426.779631 1083.7491 16634.18\n6    2000 2366.893 864.823930 1534.4957 22858.39\n\n\nUma forma equivalente e ainda mais sucinta é possível com a utilização do . (indicando todas as variáveis) e do ~ (indicando que as variáveis “dependem” ou são “explicadas” pela variável ANO). Como aqui a variável ANO será indicada como “explicativa” das demais ela não deve ser descartada no comando subset, como feito no exemplo anterior.\n\ndf_aprovacoes_porte |>\n  subset(select = -MES) |> \n  aggregate(by = . ~ ANO, sum) |> \n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995 1711.645   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39"
+    "section": "14.2 Agregação",
+    "text": "14.2 Agregação\nUma tarefa muito rotineira em análise de dados é a sumarização de valores por grupos de interesse.\nVejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa (BNDES). Uma informação de interesse, por exemplo, pode ser o valor total de Aprovações por ano para cada porte das empresas. Como a base de dados originalmente traz os valores abertos para cada mês, será necessária operação de agregação.\n\ndf_aprovacoes_porte <-\n  read.csv(\n    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',\n    header = T,\n    sep = ';',\n    dec = ',',\n    quote = \"\\\"\"\n  )\n\n# ajustar nomes\nnames(df_aprovacoes_porte) <- toupper(names(df_aprovacoes_porte))\n\nhead(df_aprovacoes_porte)\n\n   ANO MES    MICRO PEQUENA    MEDIA   GRANDE\n1 1995   1 128.4699       0 10.18922 380.2330\n2 1995   2 106.3283       0 16.21161 495.5282\n3 1995   3 234.5488       0 13.69085 715.9591\n4 1995   4 125.2196       0 16.44511 403.9919\n5 1995   5 209.4168       0 20.88794 477.2529\n6 1995   6 122.5179       0 23.86818 473.2194\n\n\nPodemos então fazer a agregação usando a variável ANO como variável chave na função aggregate. Esta função exige (dentre outros argumentos opcionais) um objeto sobre os quais a função informada será aplicada, uma lista de elementos para definir o agrupamento e a função a ser aplicada. No exemplo, usaremos a função sum, que retorna a soma dos valores.\n\nsomatorio <-\n  aggregate(subset(df_aprovacoes_porte, select = c(-ANO, -MES)),\n            by = list(df_aprovacoes_porte$ANO),\n            sum)\n\nhead(somatorio)\n\n  Group.1    MICRO    PEQUENA     MEDIA   GRANDE\n1    1995 1711.645   0.000000  216.8279  7048.91\n2    1996 1431.916   0.000000  271.6768 11362.08\n3    1997 2179.985   1.053206  137.0893 16672.74\n4    1998 1375.066  34.909957 1454.6207 20161.79\n5    1999 1394.739 426.779631 1083.7491 16634.18\n6    2000 2366.893 864.823930 1534.4957 22858.39\n\n\nVeja que a função subset foi usada pois as somas de ANO e MES não são de interesse aqui. Sem removê-las a função aggregate faria a soma de seus valores.\nA mesma operação pode ser feita usando o pipe:\n\ndf_aprovacoes_porte |>\n  subset(select = c(-ANO, -MES)) |> \n  aggregate(by = list(df_aprovacoes_porte$ANO),\n            sum) |> \n  head()\n\n  Group.1    MICRO    PEQUENA     MEDIA   GRANDE\n1    1995 1711.645   0.000000  216.8279  7048.91\n2    1996 1431.916   0.000000  271.6768 11362.08\n3    1997 2179.985   1.053206  137.0893 16672.74\n4    1998 1375.066  34.909957 1454.6207 20161.79\n5    1999 1394.739 426.779631 1083.7491 16634.18\n6    2000 2366.893 864.823930 1534.4957 22858.39\n\n\nUma forma equivalente e ainda mais sucinta é possível com a utilização do . (indicando todas as variáveis) e do ~ (indicando que as variáveis “dependem” ou são “explicadas” pela variável ANO). Como aqui a variável ANO será indicada como “explicativa” das demais ela não deve ser descartada no comando subset, como feito no exemplo anterior.\n\ndf_aprovacoes_porte |>\n  subset(select = -MES) |> \n  aggregate(by = . ~ ANO, sum) |> \n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995 1711.645   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39"
   },
   {
     "objectID": "r_sumarizacao.html#valores-faltantes---na",
     "href": "r_sumarizacao.html#valores-faltantes---na",
     "title": "14  Sumarização de Dados",
-    "section": "14.2 Valores Faltantes - NA",
-    "text": "14.2 Valores Faltantes - NA\nA função aggregate possui como padrão o argumento na.action = na.omit, assim os valores NA são omitidos. Caso seja necessáiro considerar os valores faltantes deve ser informada uma função “alternativa”, que trata estes registros. No exemplo abaixo foi informado NULL, ou seja, “nenhuma” função a ser aplicada sobre os valores faltantes. Assim eles serão considerados no cálculo.\n\ndf_aprovacoes_porte_na <- df_aprovacoes_porte\n\ndf_aprovacoes_porte_na[1,]$MICRO <- NA\n\nhead(df_aprovacoes_porte_na)\n\n   ANO MES    MICRO PEQUENA    MEDIA   GRANDE\n1 1995   1       NA       0 10.18922 380.2330\n2 1995   2 106.3283       0 16.21161 495.5282\n3 1995   3 234.5488       0 13.69085 715.9591\n4 1995   4 125.2196       0 16.44511 403.9919\n5 1995   5 209.4168       0 20.88794 477.2529\n6 1995   6 122.5179       0 23.86818 473.2194\n\ndf_aprovacoes_porte_na |>\n  subset(select = -MES) |>\n  aggregate(by = . ~ ANO, sum, \n            na.action = NULL) |>\n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995       NA   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39\n\n\nVeja que agora a soma para o ano de 1995 para o porte MICRO é NA.\nCaso seja for inserido na.rm = T como argumento da função sum, os valores faltantes são desconsiderados novamente, mesmo na.action sendo nulo.\n\ndf_aprovacoes_porte_na |>\n  subset(select = -MES) |>\n  aggregate(by = . ~ ANO, sum, na.rm = T,\n            na.action = NULL) |>\n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995 1583.175   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39\n\n\n\nÚltima atualização: 13/09/2023 - 21:46:36"
+    "section": "14.3 Valores Faltantes - NA",
+    "text": "14.3 Valores Faltantes - NA\nA função aggregate possui como padrão o argumento na.action = na.omit, assim os valores NA são omitidos. Caso seja necessáiro considerar os valores faltantes deve ser informada uma função “alternativa”, que trata estes registros. No exemplo abaixo foi informado NULL, ou seja, “nenhuma” função a ser aplicada sobre os valores faltantes. Assim eles serão considerados no cálculo.\n\ndf_aprovacoes_porte_na <- df_aprovacoes_porte\n\ndf_aprovacoes_porte_na[1,]$MICRO <- NA\n\nhead(df_aprovacoes_porte_na)\n\n   ANO MES    MICRO PEQUENA    MEDIA   GRANDE\n1 1995   1       NA       0 10.18922 380.2330\n2 1995   2 106.3283       0 16.21161 495.5282\n3 1995   3 234.5488       0 13.69085 715.9591\n4 1995   4 125.2196       0 16.44511 403.9919\n5 1995   5 209.4168       0 20.88794 477.2529\n6 1995   6 122.5179       0 23.86818 473.2194\n\ndf_aprovacoes_porte_na |>\n  subset(select = -MES) |>\n  aggregate(by = . ~ ANO, sum, \n            na.action = NULL) |>\n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995       NA   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39\n\n\nVeja que agora a soma para o ano de 1995 para o porte MICRO é NA.\nCaso seja for inserido na.rm = T como argumento da função sum, os valores faltantes são desconsiderados novamente, mesmo na.action sendo nulo.\n\ndf_aprovacoes_porte_na |>\n  subset(select = -MES) |>\n  aggregate(by = . ~ ANO, sum, na.rm = T,\n            na.action = NULL) |>\n  head()\n\n   ANO    MICRO    PEQUENA     MEDIA   GRANDE\n1 1995 1583.175   0.000000  216.8279  7048.91\n2 1996 1431.916   0.000000  271.6768 11362.08\n3 1997 2179.985   1.053206  137.0893 16672.74\n4 1998 1375.066  34.909957 1454.6207 20161.79\n5 1999 1394.739 426.779631 1083.7491 16634.18\n6 2000 2366.893 864.823930 1534.4957 22858.39\n\n\n\nÚltima atualização: 16/09/2023 - 14:37:17"
   },
   {
     "objectID": "r_utilidades.html#listar-arquivos",
@@ -469,25 +476,32 @@
     "text": "15.1 Listar Arquivos\nA função list.files exibe arquivos em um diretório informado no argumento path.\n\nlist.files('./data/')\n\n[1] \"aprovacoes-por-porte-de-empresa-aprovacoes.csv\"\n[2] \"csv_serie-sgs-4390.csv\"                        \n\n\nPodem ser retornados os caminos completos dos arquivos com o parâmetro full.names.\n\nlist.files('./data/', full.names = T)\n\n[1] \"./data/aprovacoes-por-porte-de-empresa-aprovacoes.csv\"\n[2] \"./data/csv_serie-sgs-4390.csv\"                        \n\n\nEsta função também oferece a opção de buscar arquivos com algum padrão em seu nome através do parâmetros pattern.\n\nlist.files('.', pattern = '.yml')\n\n[1] \"_quarto.yml\""
   },
   {
+    "objectID": "r_utilidades.html#listar-diretórios",
+    "href": "r_utilidades.html#listar-diretórios",
+    "title": "15  Utilidades",
+    "section": "15.2 Listar diretórios",
+    "text": "15.2 Listar diretórios\nDe forma análoga à função list.files, a função list.dir exibe os diretórios de um caminho informado. Porém esta função possui TRUE como valores padrão dos argumentos full.names e recursive.\n\nlist.dirs(\"C:/Arquivos de Programas/R/\", recursive = F)\n\n[1] \"C:/Arquivos de Programas/R/R-4.3.0\""
+  },
+  {
     "objectID": "r_utilidades.html#informações-de-arquivos",
     "href": "r_utilidades.html#informações-de-arquivos",
     "title": "15  Utilidades",
-    "section": "15.2 Informações de arquivos",
-    "text": "15.2 Informações de arquivos\nA função file.info retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.\n\nt(file.info('./data/csv_serie-sgs-4390.csv'))\n\n      ./data/csv_serie-sgs-4390.csv\nsize  \"9482\"                       \nisdir \"FALSE\"                      \nmode  \"444\"                        \nmtime \"2023-08-28 20:15:06\"        \nctime \"2023-08-28 20:15:06\"        \natime \"2023-09-14 17:37:19\"        \nexe   \"no\"                         \n\n\n\nÚltima atualização: 14/09/2023 - 17:35:07"
+    "section": "15.3 Informações de arquivos",
+    "text": "15.3 Informações de arquivos\nA função file.info retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.\n\nt(file.info('./data/csv_serie-sgs-4390.csv'))\n\n      ./data/csv_serie-sgs-4390.csv\nsize  \"9482\"                       \nisdir \"FALSE\"                      \nmode  \"444\"                        \nmtime \"2023-08-28 20:15:06\"        \nctime \"2023-08-28 20:15:06\"        \natime \"2023-09-16 14:55:12\"        \nexe   \"no\"                         \n\n\n\nÚltima atualização: 16/09/2023 - 14:41:10"
   },
   {
     "objectID": "sobre_pacotes.html#o-que-são-pacotes",
     "href": "sobre_pacotes.html#o-que-são-pacotes",
     "title": "Pacotes",
     "section": "O que são pacotes?",
-    "text": "O que são pacotes?\nUm pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que “expandem” o poder da linguagem. A principal opção para instalação de pacotes é através do CRAN. O CRAN é um repositório que contém milhares de pacotes (19864 em 14/09/2023). Nele também podem ser encontrados pacotes em suas versões “antigas”. Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo (muitos distribuem através do Github).\nExistem alguns pacotes “especiais” em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são “classificados” com prioridade “base”. Assim quando se faz a instalação da linguagem R, muitos pacotes também são instalados.\n\nR Core Team (2023)\nÚltima atualização: 12/08/2023 - 20:39:38\n\n\n\n\nR Core Team. 2023. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/."
+    "text": "O que são pacotes?\nUm pacote em R é basicamente um conjunto de funções e/ou funcionalidades criadas por terceiros que “expandem” o poder da linguagem. A principal opção para instalação de pacotes é através do CRAN. O CRAN é um repositório que contém milhares de pacotes (19868 em 16/09/2023). Nele também podem ser encontrados pacotes em suas versões “antigas”. Caso algum pacote não esteja hospedado no CRAN, ele também pode ser instalado, diretamente do arquivo fornecido pelo desenvolvedor do pacote por exemplo (muitos distribuem através do Github).\nExistem alguns pacotes “especiais” em R que compõem a própria linguagem. Estes pacotes possuem suas versões idênticas à da linguagem e são “classificados” com prioridade “base”. Assim quando se faz a instalação da linguagem R, muitos pacotes também são instalados.\n\nR Core Team (2023)\nÚltima atualização: 12/08/2023 - 20:39:38\n\n\n\n\nR Core Team. 2023. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/."
   },
   {
     "objectID": "pacotes_intro.html#pacotes-instalados",
     "href": "pacotes_intro.html#pacotes-instalados",
     "title": "16  Introdução a Pacotes",
     "section": "16.1 Pacotes Instalados",
-    "text": "16.1 Pacotes Instalados\nPodemos ver os pacotes instalados com o comando installed.packages:\n\n# Exibindo 5 primeiros\nas.data.frame(installed.packages())$Package[1:5]\n\n[1] \"abind\"     \"askpass\"   \"backports\" \"base64enc\" \"bit\"      \n\n\nA função installed.packages retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.\n\npacotes <- as.data.frame(installed.packages())\n# pacote base\nt(pacotes[pacotes$Package == 'base',])\n\n                      base                                \nPackage               \"base\"                              \nLibPath               \"C:/Program Files/R/R-4.3.0/library\"\nVersion               \"4.3.0\"                             \nPriority              \"base\"                              \nDepends               NA                                  \nImports               NA                                  \nLinkingTo             NA                                  \nSuggests              \"methods\"                           \nEnhances              NA                                  \nLicense               \"Part of R 4.3.0\"                   \nLicense_is_FOSS       NA                                  \nLicense_restricts_use NA                                  \nOS_type               NA                                  \nMD5sum                NA                                  \nNeedsCompilation      NA                                  \nBuilt                 \"4.3.0\"                             \n\n# pacote MASS\nt(pacotes[pacotes$Package == 'MASS',])\n\n                      MASS                                             \nPackage               \"MASS\"                                           \nLibPath               \"C:/Program Files/R/R-4.3.0/library\"             \nVersion               \"7.3-58.4\"                                       \nPriority              \"recommended\"                                    \nDepends               \"R (>= 4.3.0), grDevices, graphics, stats, utils\"\nImports               \"methods\"                                        \nLinkingTo             NA                                               \nSuggests              \"lattice, nlme, nnet, survival\"                  \nEnhances              NA                                               \nLicense               \"GPL-2 | GPL-3\"                                  \nLicense_is_FOSS       NA                                               \nLicense_restricts_use NA                                               \nOS_type               NA                                               \nMD5sum                NA                                               \nNeedsCompilation      \"yes\"                                            \nBuilt                 \"4.3.0\"                                          \n\n# pacote data.table\nt(pacotes[pacotes$Package == 'data.table',])\n\n                      data.table                                                                                               \nPackage               \"data.table\"                                                                                             \nLibPath               \"C:/Users/luisg/AppData/Local/R/win-library/4.3\"                                                         \nVersion               \"1.14.8\"                                                                                                 \nPriority              NA                                                                                                       \nDepends               \"R (>= 3.1.0)\"                                                                                           \nImports               \"methods\"                                                                                                \nLinkingTo             NA                                                                                                       \nSuggests              \"bit64 (>= 4.0.0), bit (>= 4.0.4), curl, R.utils, xts,\\nnanotime, zoo (>= 1.8-1), yaml, knitr, rmarkdown\"\nEnhances              NA                                                                                                       \nLicense               \"MPL-2.0 | file LICENSE\"                                                                                 \nLicense_is_FOSS       NA                                                                                                       \nLicense_restricts_use NA                                                                                                       \nOS_type               NA                                                                                                       \nMD5sum                NA                                                                                                       \nNeedsCompilation      \"yes\"                                                                                                    \nBuilt                 \"4.3.0\"                                                                                                  \n\n\nPode ser visto no campo Priority que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote MASS, por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote “normal”, não possui informação no campo Priority.\nTambém podemos visualizar dados do pacote (arquivo DESCRIPTION do próprio pacote) com o comando packageDescription:\n\npackageDescription('base')\n\nPackage: base\nVersion: 4.3.0\nPriority: base\nTitle: The R Base Package\nAuthor: R Core Team and contributors worldwide\nMaintainer: R Core Team <do-use-Contact-address@r-project.org>\nContact: R-help mailing list <r-help@r-project.org>\nDescription: Base R functions.\nLicense: Part of R 4.3.0\nSuggests: methods\nBuilt: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows\n\n-- File: C:/PROGRA~1/R/R-43~1.0/library/base/Meta/package.rds"
+    "text": "16.1 Pacotes Instalados\nPodemos ver os pacotes instalados com o comando installed.packages:\n\n# Exibindo 5 primeiros\nas.data.frame(installed.packages())$Package[1:5]\n\n[1] \"abind\"     \"askpass\"   \"backports\" \"base64enc\" \"bit\"      \n\n\nA função installed.packages retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função t, que transpõe o data.frame de colunas para linhas.\n\npacotes <- as.data.frame(installed.packages())\n# pacote base\nt(pacotes[pacotes$Package == 'base',])\n\n                      base                                \nPackage               \"base\"                              \nLibPath               \"C:/Program Files/R/R-4.3.0/library\"\nVersion               \"4.3.0\"                             \nPriority              \"base\"                              \nDepends               NA                                  \nImports               NA                                  \nLinkingTo             NA                                  \nSuggests              \"methods\"                           \nEnhances              NA                                  \nLicense               \"Part of R 4.3.0\"                   \nLicense_is_FOSS       NA                                  \nLicense_restricts_use NA                                  \nOS_type               NA                                  \nMD5sum                NA                                  \nNeedsCompilation      NA                                  \nBuilt                 \"4.3.0\"                             \n\n# pacote MASS\nt(pacotes[pacotes$Package == 'MASS',])\n\n                      MASS                                             \nPackage               \"MASS\"                                           \nLibPath               \"C:/Program Files/R/R-4.3.0/library\"             \nVersion               \"7.3-58.4\"                                       \nPriority              \"recommended\"                                    \nDepends               \"R (>= 4.3.0), grDevices, graphics, stats, utils\"\nImports               \"methods\"                                        \nLinkingTo             NA                                               \nSuggests              \"lattice, nlme, nnet, survival\"                  \nEnhances              NA                                               \nLicense               \"GPL-2 | GPL-3\"                                  \nLicense_is_FOSS       NA                                               \nLicense_restricts_use NA                                               \nOS_type               NA                                               \nMD5sum                NA                                               \nNeedsCompilation      \"yes\"                                            \nBuilt                 \"4.3.0\"                                          \n\n# pacote bit64\nt(pacotes[pacotes$Package == 'bit64',])\n\n                      bit64                                                \nPackage               \"bit64\"                                              \nLibPath               \"C:/Users/luisg/AppData/Local/R/win-library/4.3\"     \nVersion               \"4.0.5\"                                              \nPriority              NA                                                   \nDepends               \"R (>= 3.0.1), bit (>= 4.0.0), utils, methods, stats\"\nImports               NA                                                   \nLinkingTo             NA                                                   \nSuggests              NA                                                   \nEnhances              NA                                                   \nLicense               \"GPL-2 | GPL-3\"                                      \nLicense_is_FOSS       NA                                                   \nLicense_restricts_use NA                                                   \nOS_type               NA                                                   \nMD5sum                NA                                                   \nNeedsCompilation      \"yes\"                                                \nBuilt                 \"4.3.1\"                                              \n\n\nPode ser visto no campo Priority que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote MASS, por exemplo, é um pacote recomendado. O pacote bit64, que é um pacote “normal”, não possui informação no campo Priority.\nTambém podemos visualizar dados do pacote (arquivo DESCRIPTION do próprio pacote) com o comando packageDescription:\n\npackageDescription('base')\n\nPackage: base\nVersion: 4.3.0\nPriority: base\nTitle: The R Base Package\nAuthor: R Core Team and contributors worldwide\nMaintainer: R Core Team <do-use-Contact-address@r-project.org>\nContact: R-help mailing list <r-help@r-project.org>\nDescription: Base R functions.\nLicense: Part of R 4.3.0\nSuggests: methods\nBuilt: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows\n\n-- File: C:/PROGRA~1/R/R-43~1.0/library/base/Meta/package.rds"
   },
   {
     "objectID": "pacotes_intro.html#pasta-de-instalação",
@@ -501,7 +515,7 @@
     "href": "pacotes_intro.html#pacotes-disponíveis",
     "title": "16  Introdução a Pacotes",
     "section": "16.3 Pacotes Disponíveis",
-    "text": "16.3 Pacotes Disponíveis\nA função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).\n\n# Definir repositório\noptions(repos = 'https://cran.rstudio.com/')\n\n# Exibindo 5 primeiros\navailable.packages()[1:5]\n\n[1] \"A3\"            \"AalenJohansen\" \"AATtools\"      \"ABACUS\"       \n[5] \"abasequence\""
+    "text": "16.3 Pacotes Disponíveis\nA função available.packages procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(\"repos\").\n\n# Definir repositório\noptions(repos = 'https://cran.rstudio.com/')\n\n# Exibindo 5 primeiros\navailable.packages()[1:5]\n\n[1] \"A3\"            \"AalenJohansen\" \"AATtools\"      \"ABACUS\"       \n[5] \"abasequence\""
   },
   {
     "objectID": "pacotes_intro.html#dependências-de-pacotes",
@@ -515,7 +529,14 @@
     "href": "pacotes_intro.html#instalação-de-pacotes",
     "title": "16  Introdução a Pacotes",
     "section": "16.5 Instalação de Pacotes",
-    "text": "16.5 Instalação de Pacotes\nPara efetuar a instalação de pacotes usa-se a função install.packages. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.\n\nÚltima atualização: 12/08/2023 - 20:42:38"
+    "text": "16.5 Instalação de Pacotes\nPara efetuar a instalação de pacotes usa-se a função install.packages. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.\n\nÚltima atualização: 16/09/2023 - 14:46:10"
+  },
+  {
+    "objectID": "pacotes_data_table.html",
+    "href": "pacotes_data_table.html",
+    "title": "17  Pacote Data.table",
+    "section": "",
+    "text": "Status 🟦🟨🟨\nO pacote data.table oferece estrutura para manipulação de bases de dados de forma mais rápida que a base do R. As estruturas de dados são chamadas de data tables e funcionam de forma similar a um data frame.\n\nlibrary(data.table)\n\ndf_mtcars <- mtcars\ndf_mtcars <- setDT(df_mtcars)\nclass(df_mtcars)\n\n[1] \"data.table\" \"data.frame\"\n\n\nAs operações realizadas com data tables possuem sintaxe específica e bastante sucinta.\n\ndf_mtcars[, teste := 1]\n\n\nÚltima atualização: 16/09/2023 - 14:53:54"
   },
   {
     "objectID": "sobre_rstudio.html#o-que-é-o-rstudio",
@@ -527,79 +548,79 @@
   {
     "objectID": "rstudio_intro.html#layout",
     "href": "rstudio_intro.html#layout",
-    "title": "17  Introdução ao RStudio",
-    "section": "17.1 Layout",
-    "text": "17.1 Layout\nStatus 🟨🟨🟨\nO RStudio possui basicamente 4 painéis dimensionáveis e cada um deles painéis pode trazer uma série de abas. Você pode configurar a localização de cada painel conforme sua preferência nos menus: View > Panes > Pane Layout ou em Tools > Global Options > Pane Layout.\n\n\n\n\n\nFigura 17.1: Pane Layout\n\n\n\n\nDentro dos painéis Environment e Files podem ser adicionadas ou removidas diversas abas (basta marcar/desmarcar checkbox). Muitas delas ficam ocultas e são “chamadas” pelo RStudio apenas quando necessárias."
+    "title": "18  Introdução ao RStudio",
+    "section": "18.1 Layout",
+    "text": "18.1 Layout\nStatus 🟨🟨🟨\nO RStudio possui basicamente 4 painéis dimensionáveis e cada um deles painéis pode trazer uma série de abas. Você pode configurar a localização de cada painel conforme sua preferência nos menus: View > Panes > Pane Layout ou em Tools > Global Options > Pane Layout.\n\n\n\n\n\nFigura 18.1: Pane Layout\n\n\n\n\nDentro dos painéis Environment e Files podem ser adicionadas ou removidas diversas abas (basta marcar/desmarcar checkbox). Muitas delas ficam ocultas e são “chamadas” pelo RStudio apenas quando necessárias."
   },
   {
     "objectID": "rstudio_intro.html#console",
     "href": "rstudio_intro.html#console",
-    "title": "17  Introdução ao RStudio",
-    "section": "17.2 Console",
-    "text": "17.2 Console\nNeste painel está embutido o R propriamente dito.\n\n\n\n\n\nFigura 17.2: Console"
+    "title": "18  Introdução ao RStudio",
+    "section": "18.2 Console",
+    "text": "18.2 Console\nNeste painel está embutido o R propriamente dito.\n\n\n\n\n\nFigura 18.2: Console"
   },
   {
     "objectID": "rstudio_intro.html#output",
     "href": "rstudio_intro.html#output",
-    "title": "17  Introdução ao RStudio",
-    "section": "17.3 Output",
-    "text": "17.3 Output\nPainel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.\n\n\n\n\n\nFigura 17.3: Files"
+    "title": "18  Introdução ao RStudio",
+    "section": "18.3 Output",
+    "text": "18.3 Output\nPainel com diversas saídas fornecidas. Gráficos (Plots), Estrutura de Pastas(Files), Ajuda (Help), Pacotes(Packages), etc aparecem neste painel. Este é um painel muito útil para navegação nos arquivos do projeto e visualização/exportação de gráficos.\n\n\n\n\n\nFigura 18.3: Files"
   },
   {
     "objectID": "rstudio_intro.html#environment",
     "href": "rstudio_intro.html#environment",
-    "title": "17  Introdução ao RStudio",
-    "section": "17.4 Environment",
-    "text": "17.4 Environment\nApresenta os objetos criados no ambiente do R.\n\n\n\n\n\nFigura 17.4: Environment"
+    "title": "18  Introdução ao RStudio",
+    "section": "18.4 Environment",
+    "text": "18.4 Environment\nApresenta os objetos criados no ambiente do R.\n\n\n\n\n\nFigura 18.4: Environment"
   },
   {
     "objectID": "rstudio_intro.html#source",
     "href": "rstudio_intro.html#source",
-    "title": "17  Introdução ao RStudio",
-    "section": "17.5 Source",
-    "text": "17.5 Source\nAqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\nFigura 17.5: Source\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 16/08/2023 - 20:02:32"
+    "title": "18  Introdução ao RStudio",
+    "section": "18.5 Source",
+    "text": "18.5 Source\nAqui são abertos os arquivos de códigos (scripts, Rmarkdown, Quarto, SQL, etc).\n\n\n\n\n\nFigura 18.5: Source\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 16/08/2023 - 20:02:32"
   },
   {
     "objectID": "rstudio_tools.html#install-packages",
     "href": "rstudio_tools.html#install-packages",
-    "title": "18  Menu Tools",
-    "section": "18.1 Install Packages",
-    "text": "18.1 Install Packages\nNesta opção é aberta a janela para instalação de pacotes.\n\n\n\n\n\nFigura 18.2: Install Packages\n\n\n\n\n\nInstall From: local de busca dos pacotes a serem instalados\n\nRepository: repositório configurado\n\nPackages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula\n\nPackage Archive File: opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote\n\nPackage archive: arquivo do pacote a ser instalado\n\n\n\n\n\n\n\n\nFigura 18.3: Install From\n\n\n\n\n\n\n\n\n\nFigura 18.4: Package Archive File\n\n\n\n\n\nInstall to Library: pasta de instalação dos pacotes\nInstall Dependencies: marcação para que seja feita instalação de dependências dos pacotes selecionados."
+    "title": "19  Menu Tools",
+    "section": "19.1 Install Packages",
+    "text": "19.1 Install Packages\nNesta opção é aberta a janela para instalação de pacotes.\n\n\n\n\n\nFigura 19.2: Install Packages\n\n\n\n\n\nInstall From: local de busca dos pacotes a serem instalados\n\nRepository: repositório configurado\n\nPackages: nome dos pacotes a serem instalados. Podem ser escolhidos múltiplos pacotes, devendo ser separados por espaço ou vírgula\n\nPackage Archive File: opção para busca de arquivo a partir da máquina do usuário. Esta opção habilita botão para busca do pacote\n\nPackage archive: arquivo do pacote a ser instalado\n\n\n\n\n\n\n\n\nFigura 19.3: Install From\n\n\n\n\n\n\n\n\n\nFigura 19.4: Package Archive File\n\n\n\n\n\nInstall to Library: pasta de instalação dos pacotes\nInstall Dependencies: marcação para que seja feita instalação de dependências dos pacotes selecionados."
   },
   {
     "objectID": "rstudio_tools.html#check-for-package-updates",
     "href": "rstudio_tools.html#check-for-package-updates",
-    "title": "18  Menu Tools",
-    "section": "18.2 Check for Package Updates",
-    "text": "18.2 Check for Package Updates\nEste opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.\n\n\n\n\n\nFigura 18.5: Check for Package Updates"
+    "title": "19  Menu Tools",
+    "section": "19.2 Check for Package Updates",
+    "text": "19.2 Check for Package Updates\nEste opção abre a janela Update Packages, permitindo visualizar quais pacotes possuem versões mais recentes. A coluna NEWS possibilita visualizar o arquivo com dados de atuializações feitas no pacote.\n\n\n\n\n\nFigura 19.5: Check for Package Updates"
   },
   {
     "objectID": "rstudio_tools.html#version-control",
     "href": "rstudio_tools.html#version-control",
-    "title": "18  Menu Tools",
-    "section": "18.3 Version Control",
-    "text": "18.3 Version Control\nOferece opção de controle de versões de código através do Git ou SVN."
+    "title": "19  Menu Tools",
+    "section": "19.3 Version Control",
+    "text": "19.3 Version Control\nOferece opção de controle de versões de código através do Git ou SVN."
   },
   {
     "objectID": "rstudio_tools.html#terminal",
     "href": "rstudio_tools.html#terminal",
-    "title": "18  Menu Tools",
-    "section": "18.4 Terminal",
-    "text": "18.4 Terminal\nPermite acesso ao terminal do sistema operacional a partir do RStudio.\n\n\n\n\n\nFigura 18.6: Terminal"
+    "title": "19  Menu Tools",
+    "section": "19.4 Terminal",
+    "text": "19.4 Terminal\nPermite acesso ao terminal do sistema operacional a partir do RStudio.\n\n\n\n\n\nFigura 19.6: Terminal"
   },
   {
     "objectID": "rstudio_tools.html#background-jobs",
     "href": "rstudio_tools.html#background-jobs",
-    "title": "18  Menu Tools",
-    "section": "18.5 Background Jobs",
-    "text": "18.5 Background Jobs\nFornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.\n\n\n\n\n\nFigura 18.7: Background Jobs"
+    "title": "19  Menu Tools",
+    "section": "19.5 Background Jobs",
+    "text": "19.5 Background Jobs\nFornece opções para execução de ‘Jobs’, basicamente scripts em R, em outra instância do R. Desta forma a sessão aberta no RStudio não fica ocupada e permite que o usuário continue seu trabalho. Esta opção é muito útil para processamentos mais demorados.\n\n\n\n\n\nFigura 19.7: Background Jobs"
   },
   {
     "objectID": "rstudio_tools.html#global-options",
     "href": "rstudio_tools.html#global-options",
-    "title": "18  Menu Tools",
-    "section": "18.6 Global Options",
-    "text": "18.6 Global Options\nEsta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.\n\n\n\n\n\nFigura 18.8: Global Options\n\n\n\n\n\n18.6.1 Geral > Basic\nNesta tela incial Geral > Basic podemos definir muitas características do RStudio, algumas das principais:\n\nR Sessions\n\nR Version: versão a ser usada do R dentro do RStudio. Esta versão pode ser alterada caso exista uma outra isntalação no computador.\nRestore most recently opened project at startup: define se o projeto mais recente será carregado ao inicializar.\nRestore previously open source documents at startup: define se arquivos de código (sources) recentemente usados serão carregados al inicializar.\n\nWorkspace\n\nRestore .RData into workspace at startup: define se ao ser inicializado o RStudio carregará o arquivo .RData do projeto. Esta opção pode ser muito útil, pois resgata a sessão anterior onde ela foi fechada. Entretando caso sejam usados arquivos muito grandes o inicialização pode demorar.\nSave workspace to .RData on exit: o “inverso” do anterior, define se os dados da sessão serão salvas ao fechar o RStudio. As opções são: Always, Never e Ask.\n\nHistory\n\nAlways saves History: os comandos passados para o R serão ou não armazenados para consulta posterior?\nRemove duplicate entries: elimina as repetições, muitas vezes quando se efetuam testes os mesmos comandos são executados diversas vezes.\n\nOther\n\nAutomatically notify me of RStudio updates: verificar e avisar o usuário se existirem atualizações do RStudio.\n\n\n\n\n18.6.2 Appearance\nAqui são disponibilizadas diversas configurações visuais para o RStudio, inclusive permitindo a inclusão de um tema externo.\n\n\n\n\n\nFigura 18.9: Global Options - Appearance\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 14/09/2023 - 17:31:28"
+    "title": "19  Menu Tools",
+    "section": "19.6 Global Options",
+    "text": "19.6 Global Options\nEsta opção abre a janela Options do RStudio onde podem ser feitas as principais configurações de comportamento da ferramenta.\n\n\n\n\n\nFigura 19.8: Global Options\n\n\n\n\n\n19.6.1 Geral > Basic\nNesta tela incial Geral > Basic podemos definir muitas características do RStudio, algumas das principais:\n\nR Sessions\n\nR Version: versão a ser usada do R dentro do RStudio. Esta versão pode ser alterada caso exista uma outra isntalação no computador.\nRestore most recently opened project at startup: define se o projeto mais recente será carregado ao inicializar.\nRestore previously open source documents at startup: define se arquivos de código (sources) recentemente usados serão carregados al inicializar.\n\nWorkspace\n\nRestore .RData into workspace at startup: define se ao ser inicializado o RStudio carregará o arquivo .RData do projeto. Esta opção pode ser muito útil, pois resgata a sessão anterior onde ela foi fechada. Entretando caso sejam usados arquivos muito grandes o inicialização pode demorar.\nSave workspace to .RData on exit: o “inverso” do anterior, define se os dados da sessão serão salvas ao fechar o RStudio. As opções são: Always, Never e Ask.\n\nHistory\n\nAlways saves History: os comandos passados para o R serão ou não armazenados para consulta posterior?\nRemove duplicate entries: elimina as repetições, muitas vezes quando se efetuam testes os mesmos comandos são executados diversas vezes.\n\nOther\n\nAutomatically notify me of RStudio updates: verificar e avisar o usuário se existirem atualizações do RStudio.\n\n\n\n\n19.6.2 Appearance\nAqui são disponibilizadas diversas configurações visuais para o RStudio, inclusive permitindo a inclusão de um tema externo.\n\n\n\n\n\nFigura 19.9: Global Options - Appearance\n\n\n\n\n\nRStudio - User Guide\nIDE\nÚltima atualização: 14/09/2023 - 17:31:28"
   },
   {
     "objectID": "sobre_estatistica.html#o-que-é-estatística",
@@ -611,23 +632,23 @@
   {
     "objectID": "est_intro.html#população",
     "href": "est_intro.html#população",
-    "title": "19  Introdução",
-    "section": "19.1 População",
-    "text": "19.1 População\nO termo população é usado em estatística no sentido de todo um conjunto de dados de interesse."
+    "title": "20  Introdução",
+    "section": "20.1 População",
+    "text": "20.1 População\nO termo população é usado em estatística no sentido de todo um conjunto de dados de interesse."
   },
   {
     "objectID": "est_intro.html#amostra",
     "href": "est_intro.html#amostra",
-    "title": "19  Introdução",
-    "section": "19.2 Amostra",
-    "text": "19.2 Amostra\nAmostra é a definição usada para frações de uma população."
+    "title": "20  Introdução",
+    "section": "20.2 Amostra",
+    "text": "20.2 Amostra\nAmostra é a definição usada para frações de uma população."
   },
   {
     "objectID": "est_intro.html#tipos-de-dados",
     "href": "est_intro.html#tipos-de-dados",
-    "title": "19  Introdução",
-    "section": "19.3 Tipos de Dados",
-    "text": "19.3 Tipos de Dados\n\n19.3.1 Nominal\n\n\n19.3.2 Ordinal\n\n\n19.3.3 Intervalar\n\n\n19.3.4 Razão\n\nÚltima atualização: 26/08/2023 - 15:39:08"
+    "title": "20  Introdução",
+    "section": "20.3 Tipos de Dados",
+    "text": "20.3 Tipos de Dados\n\n20.3.1 Nominal\n\n\n20.3.2 Ordinal\n\n\n20.3.3 Intervalar\n\n\n20.3.4 Razão\n\nÚltima atualização: 26/08/2023 - 15:39:08"
   },
   {
     "objectID": "sobre_cd.html#definições",
@@ -639,7 +660,7 @@
   {
     "objectID": "cd_vies_var.html",
     "href": "cd_vies_var.html",
-    "title": "20  Trade-Off Viés x Variância",
+    "title": "21  Trade-Off Viés x Variância",
     "section": "",
     "text": "Status: ⬛⬛⬛\n\nÚltima atualização: 12/08/2023 - 20:23:23"
   },

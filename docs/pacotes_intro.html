@@ -93,7 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sobre_rstudio.html" rel="next">
+<link href="./pacotes_data_table.html" rel="next">
 <link href="./sobre_pacotes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -131,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 
 <body class="nav-sidebar floating">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -274,6 +275,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./pacotes_intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introdução a Pacotes</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pacotes_data_table.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pacote Data.table</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,12 +292,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
+  <a href="./rstudio_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
+  <a href="./rstudio_tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Menu Tools</span></a>
   </div>
 </li>
       </ul>
@@ -306,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./est_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./est_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introdução</span></a>
   </div>
 </li>
       </ul>
@@ -321,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
+  <a href="./cd_vies_var.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Trade-Off Viés x Variância</span></a>
   </div>
 </li>
       </ul>
@@ -434,29 +440,29 @@ MD5sum                NA
 NeedsCompilation      "yes"                                            
 Built                 "4.3.0"                                          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote data.table</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span> <span class="st">'data.table'</span>,])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote bit64</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span> <span class="st">'bit64'</span>,])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                      data.table                                                                                               
-Package               "data.table"                                                                                             
-LibPath               "C:/Users/luisg/AppData/Local/R/win-library/4.3"                                                         
-Version               "1.14.8"                                                                                                 
-Priority              NA                                                                                                       
-Depends               "R (&gt;= 3.1.0)"                                                                                           
-Imports               "methods"                                                                                                
-LinkingTo             NA                                                                                                       
-Suggests              "bit64 (&gt;= 4.0.0), bit (&gt;= 4.0.4), curl, R.utils, xts,\nnanotime, zoo (&gt;= 1.8-1), yaml, knitr, rmarkdown"
-Enhances              NA                                                                                                       
-License               "MPL-2.0 | file LICENSE"                                                                                 
-License_is_FOSS       NA                                                                                                       
-License_restricts_use NA                                                                                                       
-OS_type               NA                                                                                                       
-MD5sum                NA                                                                                                       
-NeedsCompilation      "yes"                                                                                                    
-Built                 "4.3.0"                                                                                                  </code></pre>
+<pre><code>                      bit64                                                
+Package               "bit64"                                              
+LibPath               "C:/Users/luisg/AppData/Local/R/win-library/4.3"     
+Version               "4.0.5"                                              
+Priority              NA                                                   
+Depends               "R (&gt;= 3.0.1), bit (&gt;= 4.0.0), utils, methods, stats"
+Imports               NA                                                   
+LinkingTo             NA                                                   
+Suggests              NA                                                   
+Enhances              NA                                                   
+License               "GPL-2 | GPL-3"                                      
+License_is_FOSS       NA                                                   
+License_restricts_use NA                                                   
+OS_type               NA                                                   
+MD5sum                NA                                                   
+NeedsCompilation      "yes"                                                
+Built                 "4.3.1"                                              </code></pre>
 </div>
 </div>
-<p>Pode ser visto no campo <em>Priority</em> que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote data.table, que é um pacote “normal”, não possui informação no campo <em>Priority</em>.</p>
+<p>Pode ser visto no campo <em>Priority</em> que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote bit64, que é um pacote “normal”, não possui informação no campo <em>Priority</em>.</p>
 <p>Também podemos visualizar dados do pacote (arquivo <em>DESCRIPTION</em> do próprio pacote) com o comando <code>packageDescription</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageDescription</span>(<span class="st">'base'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -502,7 +508,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 </section>
 <section id="pacotes-disponíveis" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="pacotes-disponíveis"><span class="header-section-number">16.3</span> Pacotes Disponíveis</h2>
-<p>A função <code>available.packages</code> procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de getOption(“repos”).</p>
+<p>A função <code>available.packages</code> procura pacotes disponíveis no valor informado no argumento repos. Por padrão é buscado de <code>getOption("repos")</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir repositório</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="st">'https://cran.rstudio.com/'</span>)</span>
@@ -541,7 +547,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 <h2 data-number="16.5" class="anchored" data-anchor-id="instalação-de-pacotes"><span class="header-section-number">16.5</span> Instalação de Pacotes</h2>
 <p>Para efetuar a instalação de pacotes usa-se a função <code>install.packages</code>. Os pacotes podem ser instalados diretamente de repositórios na Internet (como o CRAN) ou de arquivos locais.</p>
 <hr>
-<p>Última atualização: 12/08/2023 - 20:42:38</p>
+<p>Última atualização: 16/09/2023 - 14:46:10</p>
 
 
 </section>
@@ -795,6 +801,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./sobre_pacotes.html" class="pagination-link">
@@ -802,8 +809,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sobre_rstudio.html" class="pagination-link">
-        <span class="nav-page-text">RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./pacotes_data_table.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pacote Data.table</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

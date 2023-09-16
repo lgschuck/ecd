@@ -24,6 +24,14 @@ Esta função também oferece a opção de buscar arquivos com algum padrão em 
 list.files('.', pattern = '.yml')
 ```
 
+## Listar diretórios
+
+De forma análoga à função `list.files`, a função `list.dir` exibe os diretórios de um caminho informado. Porém esta função possui `TRUE` como valores padrão dos argumentos `full.names` e `recursive`. 
+
+```{r}
+list.dirs("C:/Arquivos de Programas/R/", recursive = F)
+```
+
 ## Informações de arquivos
 
 A função `file.info` retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.
