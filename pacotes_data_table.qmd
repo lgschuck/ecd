@@ -7,15 +7,50 @@ O pacote **data.table** oferece estrutura para manipulação de bases de dados d
 ```{r}
 library(data.table)
 
-df_mtcars <- mtcars
-df_mtcars <- setDT(df_mtcars)
-class(df_mtcars)
+df_aprovacoes_porte <-
+  readRDS('./data/aprovacoes-por-porte-de-empresa-aprovacoes.RDS')
+
+df_aprovacoes_porte <- setDT(df_aprovacoes_porte)
+class(df_aprovacoes_porte)
 ```
 
-As operações realizadas com **data tables** possuem sintaxe específica e bastante sucinta.
+As operações realizadas com **data tables** possuem sintaxe específica e bastante sucinta. As operações são feitas sobre a base de dados na seguinte forma:
+
+*base[ linhas, colunas, agregação ]*
+
+## Filtrando Dados
+
+De forma análogo a um **data frame** padrão, os filtros nas linhas ocorrem antes da vírgula e podem usar operadores lógicos e relacionais.
 
 ```{r}
-df_mtcars[, teste := 1]
+df_aprovacoes_porte[ANO == 2022 & MES > 6, ]
+```
+
+## Criando Variáveis
+
+A criação de variável pode ser feita com o operador `:=`. Neste formato o código fica bastante limpo e reduzido, facilitando a leitura.
+
+```{r}
+df_aprovacoes_porte[, RAZAO_GRANDE_MICRO := GRANDE / MICRO]
+head(df_aprovacoes_porte$RAZAO_MICRO_GRANDE)
+```
+
+## Agrupando
+
+Exemplo com criação da média de valores aprovados para o porte **MICRO** por ano, sendo que o ano deve ser a partir de 2020.
+
+```{r}
+df_aprovacoes_porte[ANO > 2019, list(MEAN_MICRO = mean(MICRO)), by = c('ANO')]
+```
+
+## Ordenando Dados
+
+A função `setorder` permite ordenação da base de dados sem exigir atribuição como usado com R base (base <- base[order(base$var1),]).
+
+```{r}
+head(df_aprovacoes_porte)
+setorder(df_aprovacoes_porte, -ANO, MES)
+head(df_aprovacoes_porte, n = 8)
 ```
 
 ------------------------------------------------------------------------
