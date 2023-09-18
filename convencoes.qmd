@@ -19,7 +19,7 @@ Abaixo convenções a serem usadas neste material.
 | Tipo Objeto                      | Convenção                                                                | Exemplo                   |
 |----------------------------------|--------------------------------------------------------------------------|---------------------------|
 | Data.frame, tibble ou data.table | snake_case iniciado por df (**d**ata **f**rame)                          | df_clientes               |
-| Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                     | df_clientes\$NOME_CLIENTE |
+| Variáveis de datasets            | SCREAMING_SNAKE_CASE                                                     | NOME_CLIENTE |
 | Funções                          | camelCase iniciado por **fn**, sendo a primeira palavra após fn um verbo | fnBuscarClientes          |
 | Demais (vetores, listas, etc.)   | snake_case                                                               | nomes_cidades             |
 
@@ -27,7 +27,7 @@ Abaixo convenções a serem usadas neste material.
 
 ## Status do Material
 
-Para indicação de status do material apresentado serão usados os símbolos baixo no topo de cada capítulo:
+Para indicação de status do material apresentado serão usados os símbolos abaixo no topo de cada capítulo:
 
 | Indicador | Estrutura    | Conteúdo      | Status Geral  |
 |-----------|--------------|---------------|---------------|

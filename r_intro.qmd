@@ -1,6 +1,6 @@
 # Introdução
 
-[Status](convencoes.html#status-do-material) 🟨🟨🟨
+[Status](convencoes.html#status-do-material) 🟨🟦🟨
 
 Este capítulo tem como objetivo fornecer uma visão inicial mínima para que o usuário possa dar os primeiros passos na linguagem.
 
@@ -26,7 +26,7 @@ Podemos digitar `q()`, por exemplo, que é a função que efetua o encerramento 
 knitr::include_graphics('images/r/intro/tela_inicial_quit.png')
 ```
 
-Agora considere um cenário diferente, onde executamos o comando `license()` seguido do comando `citation()` (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos forem sendo passados, o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando "cheia" os dados exibidos no topo vão "sumindo" para dar lugar aos mais recentes, na parte inferior.
+Agora considere um cenário diferente, onde executamos o comando `license()` seguido do comando `citation()` (que mostra como deve ser feita a citação da Linguagem R). Conforme os comandos são processados, o console vai sendo preenchido com estes comandos e suas respectivas saídas. A medida que a tela vai ficando "cheia" os dados exibidos no topo vão "sumindo" para dar lugar aos mais recentes, na parte inferior.
 
 ```{r, label = 'fig-r-intro-tela-inicial-atualizacao-console', fig.cap = "Tela Inicial - Atualização do Console", echo = FALSE}
 knitr::include_graphics('images/r/intro/tela_inicial_atualizacao_console.png')
@@ -79,10 +79,11 @@ Para criação de objetos no R são usados os operadores de atribuição, `<-` e
 objeto1 <- 10
 ```
 
-Para criação de variáveis do tipo texto, devem ser usadas aspas, simples ou duplas. Aqui o **objeto2** foi criado com uso de aspas ao início e ao final de **texto** para que o R trate o valor como *character*. Caso Não sejam colocadas as aspas, o R entenderá que texto é o nome de um objeto.
+Para criação de variáveis do tipo texto, devem ser usadas aspas, simples ou duplas. Aqui o **objeto2** foi criado com uso de aspas ao início e ao final de **texto** para que o R trate o valor como *character*. Caso não sejam colocadas as aspas, o R entenderá o texto informado como o nome de um objeto.
 
-```{r}
+```{r, error = T}
 objeto2 = 'texto' 
+objeto3 <- texto
 ```
 
 Você pode ver o conteúdo de um objeto informando seu nome no console seguido de **ENTER**.
@@ -103,9 +104,9 @@ objeto3 <- objeto3 + 10
 objeto3
 ```
 
-O vetor objeto3 foi criado com 5 posições, armazenando inicialmente os valores de 1 a 5. Após o vetor recebeu atualização dos valores para 11, 12, 13,14 e 15.
+O vetor objeto3 foi criado com 5 posições, armazenando inicialmente os valores de 1 a 5. Após o vetor recebeu atualização dos valores para 11, 12, 13,14 e 15. NOte que a adição foi efetuada em todo o vetor.
 
-Os valores dos vetores podem ser acessados através de seu índice em combinação com o operador de extração **\[**. Em R os índices iniciam em 1 (em muitas linguagens de programação o primeiro índice é 0).
+Os valores dos componentes dos vetores podem ser acessados através de seu índice em combinação com o operador de extração **\[**. Em R os índices iniciam em 1 (em muitas linguagens de programação o primeiro índice é 0).
 
 Assim para receber como retorno o valor da posição 4 do objeto3 usamos:
 
@@ -119,7 +120,7 @@ Podemos também operar sobre este valor, por exemplo, adicionando 10 ao valor da
 objeto3[4] + 10
 ```
 
-Note que sem o operador de atribuição o valor da posição 4 do objeto3 não é atualizada, apenas exibida no console. Para atualizar seu valor usamos devemos usar a atribuição.
+Note que sem o operador de atribuição o valor da posição 4 do objeto3 não é atualizada dentro do objeto, apenas é exibida no console. Para atualizar seu valor devemos usar a atribuição.
 
 ```{r}
 objeto3
@@ -135,7 +136,7 @@ A busca por índices pode ser feita de forma mais elaborada. Por exemplo, para b
 objeto3[1:3]
 ```
 
-Já se for necessário buscar dados de  índices separados podemos usar a função `c` (combinação), que combina valores para formar um vetor.
+Já se for necessário buscar dados de índices separados podemos usar a função `c` (combinação), que combina valores para formar um vetor.
 
 ```{r}
 objeto3[c(1,3,5)]
@@ -150,7 +151,7 @@ objeto3[c(-2, -4)] # de forma combinada
 
 ### Coerção
 
-Quando vetores recebem dados de um tipo diferente o R tenta fazer uma operação de **coerção**, transformando os valores a fim de "atender" a todos. Nem sempre esta operação é possível e ela muitas vezes altera o vetor original. No exemplo abaixo o valor da posição 1 do vetor será atualizado para receber a letra **A**. Como o vetor originalmente era do tipo **integer**, o R fará a conversão dos valores para tipo **character**. Desta forma operações matemáticas não serão mais possíveis sobre este vetor.
+Quando vetores recebem dados de um tipo diferente o R tenta fazer uma operação de **coerção**, transformando os valores a fim de "atender" a todos. Nem sempre esta operação é possível e ela muitas vezes altera o vetor original. No exemplo abaixo o valor da posição 1 do vetor será atualizado para receber a letra **A**. Como o vetor originalmente era do tipo `integer`, o R fará a conversão dos valores para tipo `character`. Desta forma operações matemáticas não serão mais possíveis sobre este vetor.
 
 ```{r, error = T}
 objeto3[1] <- 'A'
@@ -168,7 +169,7 @@ Por exemplo, a função `typeof` exige a informação de um argumento (um objeto
 typeof(objeto1)
 ```
 
-A função `is.vector`, por sua vez, testa se um objeto é um vetor e retorna um valor lógico como resposta do teste, `TRUE` ou `FALSE`.
+A função `is.vector`, por sua vez, testa se um objeto é um vetor e retorna um valor lógico como resposta do teste, `TRUE` (verdadeiro) ou `FALSE` (falso).
 
 ```{r}
 is.vector(5)
@@ -182,7 +183,7 @@ print(objeto1)
 
 ### Argumentos de Funções
 
-As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código. 
+As funções em R podem ter diversos argumentos e muitas vezes estes argumentos possuem valores definidos por padrão. Assim caso o usuário não informe nenhum valor para os argumentos da função esta usará os valores previamente definidos em seu código.
 
 Importante notar que os argumento possuem nomes e estes nomes podem ser omitidos na chamada da função. Voltemos a função `typeof`, ela possui apenas um argumento de nome **x**. Inserindo o argumento na função de forma explícita se obtém mesmo resultado anterior.
 
@@ -218,7 +219,7 @@ tipo_objeto1 <- typeof(objeto1)
 print(tipo_objeto1)
 ```
 
-Agora o objeto **tipo_objeto1** armazena o valor "*double*" que foi retornado pelo função `typeof`. Veja que a função `is.double` que testa se o objeto é *double* retorna `FALSE`, pois o objeto **tipo_objeto1** recebeu um valor em formato texto. Dentro deste texto está contida a palavra *double*, mas isto não significa que o tipo do vetor **tipo_objeto1** passou a ser *double*. Cuidado para não confundir o tipo do objeto com seu conteúdo.
+Agora o objeto **tipo_objeto1** armazena o valor "*double*" que foi retornado pelo função `typeof`. Veja que a função `is.double` que testa se o objeto é `double` retorna `FALSE`, pois o objeto **tipo_objeto1** recebeu um valor em formato texto. Dentro deste texto está contida a palavra *double*, mas isto não significa que o tipo do vetor **tipo_objeto1** passou a ser `double`. Cuidado para não confundir o tipo do objeto com seu conteúdo.
 
 ```{r}
 is.double(tipo_objeto1)
