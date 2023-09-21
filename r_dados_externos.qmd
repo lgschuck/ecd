@@ -2,7 +2,7 @@
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
 
-## Arquivo Csv
+## Formato Csv
 
 ### Importar Arquivos csv
 
@@ -13,15 +13,14 @@ Neste exemplo vamos importar a base **Estatísticas de Aprovações - Por Porte 
 ```{r}
 df_aprovacoes_porte <-
   read.csv(
-    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',
+    './data/aprovacoes_por_porte_de_empresa_aprovacoes.csv',
     header = T,
     sep = ';',
     dec = ',',
     quote = "\""
   )
 
-head(df_aprovacoes_porte)
-
+df_aprovacoes_porte |> head()
 ```
 
 ### Exportar Arquivos csv
@@ -29,11 +28,11 @@ head(df_aprovacoes_porte)
 Para salvar um arquivo em csv deve ser informado como parâmetro da função `write.csv` o nome do objeto e o arquivo no qual ele será salvo.
 
 ```{r}
-write.csv(df_aprovacoes_porte,
-          paste0(tempdir(), '/df_aprovacoes_porte.csv'))
+df_aprovacoes_porte |> 
+  write.csv(paste0(tempdir(), '/df_aprovacoes_porte.csv'))
 ```
 
-## Arquivos RDS
+## Formato RDS
 
 O formato RDS é específico do R e possui diversas vantagens em relação ao uso do formato csv, entre elas:
 
@@ -45,7 +44,16 @@ O formato RDS é específico do R e possui diversas vantagens em relação ao us
 
 ### Importar Arquivos RDS
 
-### Exprotar Arquivos RDS
+```{r}
+df_aprovacoes_porte <- readRDS('data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
+```
+
+### Exportar Arquivos RDS
+
+```{r}
+df_aprovacoes_porte |> 
+  saveRDS(paste0(tempdir(), '/df_aprovacoes_porte.RDS'))
+```
 
 ------------------------------------------------------------------------
 

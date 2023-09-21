@@ -18,7 +18,7 @@ Taxa de juros que representa a taxa média ajustada das operações compromissad
 
 [Dicionário de dados.](https://dadosabertos.bndes.gov.br/dataset/bce5a865-e766-4a7a-b537-9499c81275b6/resource/e51f2c52-be63-40fa-931d-36cf37bcdff2/download/dicionario-de-dados-aprovacoes-no-sistema-bndes.pdf)
 
-**Descrição:** Estatísticas de aprovações de financiamentos considerando porte do cliente, setor, distribuição regional, grupo de produtos e outros.
+**Descrição:** Estatísticas de aprovações de financiamentos considerando porte do cliente, setor, distribuição regional, grupo de produtos e outros.
 
 ------------------------------------------------------------------------
 

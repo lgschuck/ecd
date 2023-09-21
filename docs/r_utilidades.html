@@ -390,18 +390,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">'./data/'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "aprovacoes-por-porte-de-empresa-aprovacoes.csv"
-[2] "aprovacoes-por-porte-de-empresa-aprovacoes.RDS"
-[3] "csv_serie-sgs-4390.csv"                        </code></pre>
+<pre><code>[1] "aprovacoes_por_porte_de_empresa_aprovacoes.csv"
+[2] "aprovacoes_por_porte_de_empresa_aprovacoes.RDS"
+[3] "csv_serie_sgs_4390.csv"                        </code></pre>
 </div>
 </div>
 <p>Podem ser retornados os caminos completos dos arquivos com o parâmetro <code>full.names</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">'./data/'</span>, <span class="at">full.names =</span> T)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "./data/aprovacoes-por-porte-de-empresa-aprovacoes.csv"
-[2] "./data/aprovacoes-por-porte-de-empresa-aprovacoes.RDS"
-[3] "./data/csv_serie-sgs-4390.csv"                        </code></pre>
+<pre><code>[1] "./data/aprovacoes_por_porte_de_empresa_aprovacoes.csv"
+[2] "./data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS"
+[3] "./data/csv_serie_sgs_4390.csv"                        </code></pre>
 </div>
 </div>
 <p>Esta função também oferece a opção de buscar arquivos com algum padrão em seu nome através do parâmetros <code>pattern</code>.</p>
@@ -429,13 +429,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      ./data/csv_serie-sgs-4390.csv
-size  "9482"                       
-isdir "FALSE"                      
-mode  "444"                        
-mtime "2023-08-28 20:15:06"        
-ctime "2023-08-28 20:15:06"        
-atime "2023-09-18 19:56:29"        
-exe   "no"                         </code></pre>
+size  NA                           
+isdir NA                           
+mode  NA                           
+mtime NA                           
+ctime NA                           
+atime NA                           
+exe   NA                           </code></pre>
 </div>
 </div>
 <hr>

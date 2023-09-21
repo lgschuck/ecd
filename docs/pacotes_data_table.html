@@ -388,11 +388,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="ot">&lt;-</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readRDS</span>(<span class="st">'./data/aprovacoes-por-porte-de-empresa-aprovacoes.RDS'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="ot">&lt;-</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readRDS</span>(<span class="st">'./data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS'</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte <span class="ot">&lt;-</span> <span class="fu">setDT</span>(df_aprovacoes_porte)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df_aprovacoes_porte)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="ot">&lt;-</span> <span class="fu">setDT</span>(df_aprovacoes)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="sc">|&gt;</span> <span class="fu">class</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.table" "data.frame"</code></pre>
 </div>
@@ -403,7 +403,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="17.1" class="anchored" data-anchor-id="filtrando-dados"><span class="header-section-number">17.1</span> Filtrando Dados</h2>
 <p>De forma análogo a um <strong>data frame</strong> padrão, os filtros nas linhas ocorrem antes da vírgula e podem usar operadores lógicos e relacionais.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte[ANO <span class="sc">==</span> <span class="dv">2022</span> <span class="sc">&amp;</span> MES <span class="sc">&gt;</span> <span class="dv">6</span>, ]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[ANO <span class="sc">==</span> <span class="dv">2022</span> <span class="sc">&amp;</span> MES <span class="sc">&gt;</span> <span class="dv">6</span>, ]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    ANO MES     MICRO   PEQUENA    MEDIA    GRANDE
 1: 2022   7 1763.7773 3843.3850 3286.456  1873.511
@@ -419,10 +419,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="17.2" class="anchored" data-anchor-id="criando-variáveis"><span class="header-section-number">17.2</span> Criando Variáveis</h2>
 <p>A criação de variável pode ser feita com o operador <code>:=</code>. Neste formato o código fica bastante limpo e reduzido, facilitando a leitura.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte[, RAZAO_GRANDE_MICRO <span class="sc">:</span><span class="er">=</span> GRANDE <span class="sc">/</span> MICRO]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_aprovacoes_porte<span class="sc">$</span>RAZAO_MICRO_GRANDE)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[, RAZAO_GRANDE_MICRO <span class="sc">:</span><span class="er">=</span> GRANDE <span class="sc">/</span> MICRO]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[, RAZAO_GRANDE_MICRO] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>[1] 2.959705 4.660361 3.052496 3.226267 2.278962 3.862450</code></pre>
 </div>
 </div>
 </section>
@@ -430,7 +430,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="17.3" class="anchored" data-anchor-id="agrupando"><span class="header-section-number">17.3</span> Agrupando</h2>
 <p>Exemplo com criação da média de valores aprovados para o porte <strong>MICRO</strong> por ano, sendo que o ano deve ser a partir de 2020.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes_porte[ANO <span class="sc">&gt;</span> <span class="dv">2019</span>, <span class="fu">list</span>(<span class="at">MEAN_MICRO =</span> <span class="fu">mean</span>(MICRO)), by <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'ANO'</span>)]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[ANO <span class="sc">&gt;</span> <span class="dv">2019</span>, <span class="fu">list</span>(<span class="at">MEAN_MICRO =</span> <span class="fu">mean</span>(MICRO)), by <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'ANO'</span>)]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    ANO MEAN_MICRO
 1: 2020   536.0065
@@ -444,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="17.4" class="anchored" data-anchor-id="ordenando-dados"><span class="header-section-number">17.4</span> Ordenando Dados</h2>
 <p>A função <code>setorder</code> permite ordenação da base de dados sem exigir atribuição como usado com R base (base &lt;- base[order(base$var1),]).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_aprovacoes_porte)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    ANO MES    MICRO PEQUENA    MEDIA   GRANDE RAZAO_GRANDE_MICRO
 1: 1995   1 128.4699       0 10.18922 380.2330           2.959705
@@ -454,8 +454,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 5: 1995   5 209.4168       0 20.88794 477.2529           2.278962
 6: 1995   6 122.5179       0 23.86818 473.2194           3.862450</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(df_aprovacoes_porte, <span class="sc">-</span>ANO, MES)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_aprovacoes_porte, <span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(df_aprovacoes, <span class="sc">-</span>ANO, MES)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    ANO MES    MICRO   PEQUENA     MEDIA   GRANDE RAZAO_GRANDE_MICRO
 1: 2023   1 235.2636  654.6506 1048.4110 1337.163           5.683680
@@ -469,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <hr>
-<p>Última atualização: 17/09/2023 - 13:21:02</p>
+<p>Última atualização: 21/09/2023 - 20:25:47</p>
 
 
 </section>

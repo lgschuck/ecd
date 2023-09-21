@@ -41,18 +41,10 @@ Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa 
 
 ```{r}
 df_aprovacoes_porte <-
-  read.csv(
-    './data/aprovacoes-por-porte-de-empresa-aprovacoes.csv',
-    header = T,
-    sep = ';',
-    dec = ',',
-    quote = "\""
-  )
+  readRDS(
+    './data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
 
-# ajustar nomes
-names(df_aprovacoes_porte) <- toupper(names(df_aprovacoes_porte))
-
-head(df_aprovacoes_porte)
+df_aprovacoes_porte |> head()
 ```
 
 Podemos então fazer a agregação usando a variável **ANO** como variável chave na função `aggregate`. Esta função exige (dentre outros argumentos opcionais) um objeto sobre os quais a função informada será aplicada, uma lista de elementos para definir o agrupamento e a função a ser aplicada. No exemplo, usaremos a função `sum`, que retorna a soma dos valores.
