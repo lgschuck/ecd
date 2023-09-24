@@ -20,6 +20,88 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -293,14 +375,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#população" id="toc-população" class="nav-link active" data-scroll-target="#população"><span class="toc-section-number">20.1</span>  População</a></li>
-  <li><a href="#amostra" id="toc-amostra" class="nav-link" data-scroll-target="#amostra"><span class="toc-section-number">20.2</span>  Amostra</a></li>
-  <li><a href="#tipos-de-dados" id="toc-tipos-de-dados" class="nav-link" data-scroll-target="#tipos-de-dados"><span class="toc-section-number">20.3</span>  Tipos de Dados</a>
+  <li><a href="#dados-qualitativos" id="toc-dados-qualitativos" class="nav-link active" data-scroll-target="#dados-qualitativos"><span class="toc-section-number">20.1</span>  Dados Qualitativos</a></li>
+  <li><a href="#dados-quantitativos" id="toc-dados-quantitativos" class="nav-link" data-scroll-target="#dados-quantitativos"><span class="toc-section-number">20.2</span>  Dados Quantitativos</a></li>
+  <li><a href="#parâmetros" id="toc-parâmetros" class="nav-link" data-scroll-target="#parâmetros"><span class="toc-section-number">20.3</span>  Parâmetros</a></li>
+  <li><a href="#estatísticas" id="toc-estatísticas" class="nav-link" data-scroll-target="#estatísticas"><span class="toc-section-number">20.4</span>  Estatísticas</a></li>
+  <li><a href="#população" id="toc-população" class="nav-link" data-scroll-target="#população"><span class="toc-section-number">20.5</span>  População</a></li>
+  <li><a href="#amostra" id="toc-amostra" class="nav-link" data-scroll-target="#amostra"><span class="toc-section-number">20.6</span>  Amostra</a></li>
+  <li><a href="#tipos-de-dados" id="toc-tipos-de-dados" class="nav-link" data-scroll-target="#tipos-de-dados"><span class="toc-section-number">20.7</span>  Tipos de Dados</a>
   <ul class="collapse">
-  <li><a href="#nominal" id="toc-nominal" class="nav-link" data-scroll-target="#nominal"><span class="toc-section-number">20.3.1</span>  Nominal</a></li>
-  <li><a href="#ordinal" id="toc-ordinal" class="nav-link" data-scroll-target="#ordinal"><span class="toc-section-number">20.3.2</span>  Ordinal</a></li>
-  <li><a href="#intervalar" id="toc-intervalar" class="nav-link" data-scroll-target="#intervalar"><span class="toc-section-number">20.3.3</span>  Intervalar</a></li>
-  <li><a href="#razão" id="toc-razão" class="nav-link" data-scroll-target="#razão"><span class="toc-section-number">20.3.4</span>  Razão</a></li>
+  <li><a href="#nominal" id="toc-nominal" class="nav-link" data-scroll-target="#nominal"><span class="toc-section-number">20.7.1</span>  Nominal</a></li>
+  <li><a href="#ordinal" id="toc-ordinal" class="nav-link" data-scroll-target="#ordinal"><span class="toc-section-number">20.7.2</span>  Ordinal</a></li>
+  <li><a href="#intervalar" id="toc-intervalar" class="nav-link" data-scroll-target="#intervalar"><span class="toc-section-number">20.7.3</span>  Intervalar</a></li>
+  <li><a href="#razão" id="toc-razão" class="nav-link" data-scroll-target="#razão"><span class="toc-section-number">20.7.4</span>  Razão</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -327,31 +413,90 @@ ul.task-list li input[type="checkbox"] {
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
 <p>Neste capítulo serão discutidos alguns dos principais conceitos de Estatística e que serão base para a continuação.</p>
-<section id="população" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="população"><span class="header-section-number">20.1</span> População</h2>
+<section id="dados-qualitativos" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="dados-qualitativos"><span class="header-section-number">20.1</span> Dados Qualitativos</h2>
+</section>
+<section id="dados-quantitativos" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="dados-quantitativos"><span class="header-section-number">20.2</span> Dados Quantitativos</h2>
+</section>
+<section id="parâmetros" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="parâmetros"><span class="header-section-number">20.3</span> Parâmetros</h2>
+</section>
+<section id="estatísticas" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="estatísticas"><span class="header-section-number">20.4</span> Estatísticas</h2>
+</section>
+<section id="população" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="população"><span class="header-section-number">20.5</span> População</h2>
 <p>O termo população é usado em estatística no sentido de todo um conjunto de dados de interesse.</p>
 </section>
-<section id="amostra" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="amostra"><span class="header-section-number">20.2</span> Amostra</h2>
+<section id="amostra" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="amostra"><span class="header-section-number">20.6</span> Amostra</h2>
 <p>Amostra é a definição usada para frações de uma população.</p>
 </section>
-<section id="tipos-de-dados" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="tipos-de-dados"><span class="header-section-number">20.3</span> Tipos de Dados</h2>
-<section id="nominal" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="nominal"><span class="header-section-number">20.3.1</span> Nominal</h3>
+<section id="tipos-de-dados" class="level2" data-number="20.7">
+<h2 data-number="20.7" class="anchored" data-anchor-id="tipos-de-dados"><span class="header-section-number">20.7</span> Tipos de Dados</h2>
+<section id="nominal" class="level3" data-number="20.7.1">
+<h3 data-number="20.7.1" class="anchored" data-anchor-id="nominal"><span class="header-section-number">20.7.1</span> Nominal</h3>
+<p>Dados do tipo <strong>nominal</strong> são qualitativos, usados para nomeação (rótulos) de grupos, classes, categorias, etc. Nenhum cálculo matemático pode ser feito sobre estes dados.</p>
+<p>Um exemplo bastante comum de dado nominal é o <strong>sexo</strong>, geralmente descritos pelos valores F e M. Em R os dados nominais são criados com a função <code>factor</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sexos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'F'</span>, <span class="st">'M'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(sexos)  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.factor</span>(sexos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sexos <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">'F'</span>, <span class="st">'M'</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.factor</span>(sexos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(sexos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sexos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+<p>Note que números podem ser usados como dados nominais e ainda assim não podem ser feitas operações matemáticas sobre eles.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sexos <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">'1'</span>, <span class="st">'2'</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sexos <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in Ops.factor(sexos, 2): '+' not meaningful for factors</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA NA</code></pre>
+</div>
+</div>
 </section>
-<section id="ordinal" class="level3" data-number="20.3.2">
-<h3 data-number="20.3.2" class="anchored" data-anchor-id="ordinal"><span class="header-section-number">20.3.2</span> Ordinal</h3>
+<section id="ordinal" class="level3" data-number="20.7.2">
+<h3 data-number="20.7.2" class="anchored" data-anchor-id="ordinal"><span class="header-section-number">20.7.2</span> Ordinal</h3>
 </section>
-<section id="intervalar" class="level3" data-number="20.3.3">
-<h3 data-number="20.3.3" class="anchored" data-anchor-id="intervalar"><span class="header-section-number">20.3.3</span> Intervalar</h3>
+<section id="intervalar" class="level3" data-number="20.7.3">
+<h3 data-number="20.7.3" class="anchored" data-anchor-id="intervalar"><span class="header-section-number">20.7.3</span> Intervalar</h3>
 </section>
-<section id="razão" class="level3" data-number="20.3.4">
-<h3 data-number="20.3.4" class="anchored" data-anchor-id="razão"><span class="header-section-number">20.3.4</span> Razão</h3>
+<section id="razão" class="level3" data-number="20.7.4">
+<h3 data-number="20.7.4" class="anchored" data-anchor-id="razão"><span class="header-section-number">20.7.4</span> Razão</h3>
 <hr>
-<p>Última atualização: 26/08/2023 - 15:39:08</p>
+<p><span class="citation" data-cites="larson_farber_2007">Larson e Farber (<a href="referencias.html#ref-larson_farber_2007" role="doc-biblioref">2007</a>)</span></p>
+<p><span class="citation" data-cites="r">R Core Team (<a href="referencias.html#ref-r" role="doc-biblioref">2023</a>)</span></p>
+<p>Última atualização: 24/09/2023 - 18:59:28</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-larson_farber_2007" class="csl-entry" role="doc-biblioentry">
+Larson, Ron, e Betsy Farber. 2007. <em>Estatística Aplicada</em>. Prentice Hall.
+</div>
+<div id="ref-r" class="csl-entry" role="doc-biblioentry">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+</div>
 </section>
 </section>
 

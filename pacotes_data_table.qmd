@@ -8,7 +8,7 @@ O pacote **data.table** oferece estrutura para manipulação de bases de dados d
 library(data.table)
 
 df_aprovacoes <-
-  readRDS('./data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
+  readRDS('./data/aprovacoes_por_porte_de_empresa.RDS')
 
 df_aprovacoes <- setDT(df_aprovacoes)
 df_aprovacoes |> class()

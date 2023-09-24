@@ -4,6 +4,14 @@
 
 Neste capítulo serão discutidos alguns dos principais conceitos de Estatística e que serão base para a continuação.
 
+## Dados Qualitativos
+
+## Dados Quantitativos
+
+## Parâmetros
+
+## Estatísticas
+
 ## População
 
 O termo população é usado em estatística no sentido de todo um conjunto de dados de interesse.
@@ -16,6 +24,28 @@ Amostra é a definição usada para frações de uma população.
 
 ### Nominal
 
+Dados do tipo **nominal** são qualitativos, usados para nomeação (rótulos) de grupos, classes, categorias, etc. Nenhum cálculo matemático pode ser feito sobre estes dados.
+
+Um exemplo bastante comum de dado nominal é o **sexo**, geralmente descritos pelos valores F e M. Em R os dados nominais são criados com a função `factor`.
+
+```{r}
+sexos <- c('F', 'M')
+typeof(sexos)  
+is.factor(sexos)
+
+sexos <- factor(c('F', 'M'))
+is.factor(sexos)
+typeof(sexos)
+class(sexos)
+```
+
+Note que números podem ser usados como dados nominais e ainda assim não podem ser feitas operações matemáticas sobre eles.
+
+```{r, error = T}
+sexos <- factor(c('1', '2'))
+sexos + 2
+```
+
 ### Ordinal
 
 ### Intervalar
@@ -23,5 +53,9 @@ Amostra é a definição usada para frações de uma população.
 ### Razão
 
 ------------------------------------------------------------------------
+
+@larson_farber_2007
+
+@r
 
 Última atualização: `r format(file.info('est_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

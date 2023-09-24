@@ -9,7 +9,7 @@ R oferece uma série de funções nativas para criação de gráficos. Estas fun
 Abaixo um exemplo de um gráfico de criado com a função `plot` do pacote **graphics**. Os argumentos `x` e `y` são usados nas coordenadas e já são suficientes para a geração de um gráfico.
 
 ```{r}
-df_aprovacoes <- readRDS('data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
+df_aprovacoes <- readRDS('data/aprovacoes_por_porte_de_empresa.RDS')
 
 plot(x = df_aprovacoes$ANO, y = df_aprovacoes$GRANDE)
 ```

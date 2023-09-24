@@ -13,7 +13,7 @@ Neste exemplo vamos importar a base **Estatísticas de Aprovações - Por Porte 
 ```{r}
 df_aprovacoes_porte <-
   read.csv(
-    './data/aprovacoes_por_porte_de_empresa_aprovacoes.csv',
+    './data/aprovacoes_por_porte_de_empresa.csv',
     header = T,
     sep = ';',
     dec = ',',
@@ -45,7 +45,7 @@ O formato RDS é específico do R e possui diversas vantagens em relação ao us
 ### Importar Arquivos RDS
 
 ```{r}
-df_aprovacoes_porte <- readRDS('data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
+df_aprovacoes_porte <- readRDS('data/aprovacoes_por_porte_de_empresa.RDS')
 ```
 
 ### Exportar Arquivos RDS

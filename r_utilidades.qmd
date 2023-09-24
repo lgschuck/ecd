@@ -37,7 +37,7 @@ list.dirs("C:/Arquivos de Programas/R/", recursive = F)
 A função `file.info` retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.
 
 ```{r}
-t(file.info('./data/csv_serie-sgs-4390.csv'))
+t(file.info('./data/aprovacoes_por_porte_de_empresa.csv'))
 ```
 
 ------------------------------------------------------------------------

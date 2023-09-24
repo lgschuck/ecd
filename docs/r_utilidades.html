@@ -390,18 +390,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">'./data/'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "aprovacoes_por_porte_de_empresa_aprovacoes.csv"
-[2] "aprovacoes_por_porte_de_empresa_aprovacoes.RDS"
-[3] "csv_serie_sgs_4390.csv"                        </code></pre>
+<pre><code>[1] "aprovacoes_por_porte_de_empresa.csv" "aprovacoes_por_porte_de_empresa.RDS"
+[3] "csv_serie_sgs_4390.csv"             </code></pre>
 </div>
 </div>
 <p>Podem ser retornados os caminos completos dos arquivos com o parâmetro <code>full.names</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">'./data/'</span>, <span class="at">full.names =</span> T)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "./data/aprovacoes_por_porte_de_empresa_aprovacoes.csv"
-[2] "./data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS"
-[3] "./data/csv_serie_sgs_4390.csv"                        </code></pre>
+<pre><code>[1] "./data/aprovacoes_por_porte_de_empresa.csv"
+[2] "./data/aprovacoes_por_porte_de_empresa.RDS"
+[3] "./data/csv_serie_sgs_4390.csv"             </code></pre>
 </div>
 </div>
 <p>Esta função também oferece a opção de buscar arquivos com algum padrão em seu nome através do parâmetros <code>pattern</code>.</p>
@@ -426,20 +425,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="15.3" class="anchored" data-anchor-id="informações-de-arquivos"><span class="header-section-number">15.3</span> Informações de arquivos</h2>
 <p>A função <code>file.info</code> retorna uma série de informações sobre o arquivo como tamanho, modo, horário de modificação, etc.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/csv_serie-sgs-4390.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(<span class="fu">file.info</span>(<span class="st">'./data/aprovacoes_por_porte_de_empresa.csv'</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      ./data/csv_serie-sgs-4390.csv
-size  NA                           
-isdir NA                           
-mode  NA                           
-mtime NA                           
-ctime NA                           
-atime NA                           
-exe   NA                           </code></pre>
+<pre><code>      ./data/aprovacoes_por_porte_de_empresa.csv
+size  "24212"                                   
+isdir "FALSE"                                   
+mode  "444"                                     
+mtime "2023-08-22 20:20:27"                     
+ctime "2023-08-22 21:22:18"                     
+atime "2023-09-24 19:04:30"                     
+exe   "no"                                      </code></pre>
 </div>
 </div>
 <hr>
-<p>Última atualização: 16/09/2023 - 14:41:10</p>
+<p>Última atualização: 24/09/2023 - 18:44:16</p>
 
 
 </section>

@@ -42,7 +42,7 @@ Vejamos um exemplo na base Estatísticas de Aprovações - Por Porte de Empresa 
 ```{r}
 df_aprovacoes_porte <-
   readRDS(
-    './data/aprovacoes_por_porte_de_empresa_aprovacoes.RDS')
+    './data/aprovacoes_por_porte_de_empresa.RDS')
 
 df_aprovacoes_porte |> head()
 ```
