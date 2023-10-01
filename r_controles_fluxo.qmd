@@ -12,7 +12,7 @@ Controles de fluxo são declarações usadas na linguagem, mas **não são funç
 
 ## If
 
-O controle **if** é a estrutura de controle mais básica que tomada de decisão e "direcionamento" de código. Em caso negativo do teste lógico nenhuma operação é executada.
+O controle `if` é a estrutura de controle mais básica que tomada de decisão e "direcionamento" de código. Em caso negativo do teste lógico nenhuma operação é executada.
 
 ```{r, erro = T}
 x <- 5
@@ -39,7 +39,7 @@ if (x > 4) print('x é maior do que quatro')
 
 ## Ifelse
 
-R possui a **função** `ifelse`, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao **if** e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.
+R possui a **função** `ifelse`, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao `if` e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.
 
 O retorno de `ifelse` possui o mesmo formato da estrutura informada no argumento **test**. Esta função pode ser usada para atribuição em data frames de forma mais sucinta.
 
@@ -72,7 +72,7 @@ df_mtcars6
 
 ## If Else
 
-O **if else** pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo **if**.
+O `if else` pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo `if`.
 
 ```{r}
 x <- 3
@@ -83,7 +83,7 @@ if(x > 4) {
 }
 ```
 
-Veja que podem ser usadas muitas declaração **else** em sequência.
+Veja que podem ser usadas muitas declaração `else` em sequência.
 
 ```{r}
 x <- 3
@@ -98,7 +98,7 @@ if(x > 3) {
 
 ## Laço For
 
-Um laço **for** é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: `for(x in seq)`, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em `seq` e ecerrando no último. Um exemplo:
+Um laço `for` é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: `for(x in seq)`, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em `seq` e ecerrando no último. Um exemplo:
 
 ```{r}
 for(x in 1:5){
@@ -114,7 +114,7 @@ for(x in seq(2, 1, -0.25)) {
 }
 ```
 
-No eemplo acima, x é inicializado com valor 1 e vvai sendo incrementado em 1 unidade ao início do próximo passo. Um laço **for** também pode fazer iterações sobre vetores com texto, por exemplo.
+No exemplo acima, x é inicializada com valor 1 e vai sendo incrementada em 1 unidade ao início do próximo passo. Um laço `for` também pode fazer iterações sobre vetores com texto, por exemplo.
 
 ```{r}
 for(i in c('São Paulo', 'Rio de Janeiro', 'Porto Alegre')){
@@ -122,7 +122,7 @@ for(i in c('São Paulo', 'Rio de Janeiro', 'Porto Alegre')){
 }
 ```
 
-No laço **for** a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.
+No laço `for` a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.
 
 ```{r}
 x <- 3
@@ -137,10 +137,10 @@ for(i in 1:x) {
 ::: callout-note
 ### For x While
 
-Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use **while**.
+Um laço `for` é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use `while`.
 :::
 
-A estrutura **while** possui a seguinte configuração: `while(condição)`. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:
+A estrutura `while` possui a seguinte configuração: `while(condição)`. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:
 
 ```{r}
 condicao <- 5
@@ -150,9 +150,9 @@ while(condicao < 7){
 }
 ```
 
-A variável `condicao` é iniciada com valor 5 e atende a condição **se \< 7**. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de **se \< 7**. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o **while** é encerrado.
+A variável **condicao** é iniciada com valor 5 e atende a condição **se \< 7**. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de **se \< 7**. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o `while` é encerrado.
 
-A estrutura **while** pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando **ESC** no teclado.
+A estrutura `while` pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando **ESC** no teclado.
 
 ```{r, eval = F}
 while(TRUE){
@@ -161,11 +161,9 @@ while(TRUE){
 }
 ```
 
-## Break e Next
-
 ## Repeat
 
-E estrutura repeat funciona de forma análoga ao while, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.
+E estrutura `repeat` funciona de forma análoga ao `while`, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.
 
 ```{r}
 x <- 1
@@ -178,8 +176,45 @@ repeat{
 }
 ```
 
+## Break e Next
+
+O `break` encerra as estruturas `for`, `while` e `repeat`. `Next`, por sua vez, interrompe a execução da iteração atual e inicia a próxima.
+
+Abaixo um exemplo com uso de `break` em um laço `for`. Note que apenas a primeira iteração é executada.
+
+```{r}
+for (i in 1:3){
+  print(i)
+  break
+}
+```
+
+Abaixo um exemplo de uso do `next`. Repare que o comando `print('Teste')` nunca é executado, pois o `next` interrompe a execução da iteração atual, assim tudo que for colocado após esta linha (dentro do laço) não é executado.
+
+```{r}
+for (i in 1:3){
+  print(i)
+  next
+  print('Teste')
+}
+```
+
+Em caso de laços embutidos, `break` e `next` impactam apenas o mais "interno".
+
+```{r}
+for (i in 1:3){
+  for (j in 1:3){
+    break
+    print(paste('Valor de j é:', j))
+  }
+  print(paste('Valor de i é:', i))
+}
+```
+
 ------------------------------------------------------------------------
 
 @datamentor_repeat_loop
+
+@r
 
 Última atualização: `r format(file.info('r_controles_fluxo.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

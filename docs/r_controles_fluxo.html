@@ -198,7 +198,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Introdução à Linguagem R</a>
+            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Linguagem R</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -381,8 +381,8 @@ div.csl-indent {
   <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else"><span class="toc-section-number">12.4</span>  If Else</a></li>
   <li><a href="#laço-for" id="toc-laço-for" class="nav-link" data-scroll-target="#laço-for"><span class="toc-section-number">12.5</span>  Laço For</a></li>
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="toc-section-number">12.6</span>  While</a></li>
-  <li><a href="#break-e-next" id="toc-break-e-next" class="nav-link" data-scroll-target="#break-e-next"><span class="toc-section-number">12.7</span>  Break e Next</a></li>
-  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="toc-section-number">12.8</span>  Repeat</a></li>
+  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="toc-section-number">12.7</span>  Repeat</a></li>
+  <li><a href="#break-e-next" id="toc-break-e-next" class="nav-link" data-scroll-target="#break-e-next"><span class="toc-section-number">12.8</span>  Break e Next</a></li>
   </ul>
 </nav>
     </div>
@@ -426,7 +426,7 @@ Nota
 </section>
 <section id="if" class="level2" data-number="12.2">
 <h2 data-number="12.2" class="anchored" data-anchor-id="if"><span class="header-section-number">12.2</span> If</h2>
-<p>O controle <strong>if</strong> é a estrutura de controle mais básica que tomada de decisão e “direcionamento” de código. Em caso negativo do teste lógico nenhuma operação é executada.</p>
+<p>O controle <code>if</code> é a estrutura de controle mais básica que tomada de decisão e “direcionamento” de código. Em caso negativo do teste lógico nenhuma operação é executada.</p>
 <div class="cell" data-erro="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -468,7 +468,7 @@ Nota
 </section>
 <section id="ifelse" class="level2" data-number="12.3">
 <h2 data-number="12.3" class="anchored" data-anchor-id="ifelse"><span class="header-section-number">12.3</span> Ifelse</h2>
-<p>R possui a <strong>função</strong> <code>ifelse</code>, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao <strong>if</strong> e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.</p>
+<p>R possui a <strong>função</strong> <code>ifelse</code>, que apesar de não ser para controle de fluxo, possui lógica de uso muito semelhante ao <code>if</code> e por este motivo será tratada neste capítulo. Esta função efetua teste em valor de entrada e define um valor a ser retornado caso verdadeiro e outro caso falso.</p>
 <p>O retorno de <code>ifelse</code> possui o mesmo formato da estrutura informada no argumento <strong>test</strong>. Esta função pode ser usada para atribuição em data frames de forma mais sucinta.</p>
 <p>Vejamos um exemplo:</p>
 <div class="cell" data-erro="true">
@@ -523,7 +523,7 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 </section>
 <section id="if-else" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="if-else"><span class="header-section-number">12.4</span> If Else</h2>
-<p>O <strong>if else</strong> pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo <strong>if</strong>.</p>
+<p>O <code>if else</code> pode ser usado para inserir uma ação após o retorno negativo do teste feito pelo <code>if</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">4</span>) {</span>
@@ -535,7 +535,7 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 <pre><code>[1] "x não é maior do que quatro"</code></pre>
 </div>
 </div>
-<p>Veja que podem ser usadas muitas declaração <strong>else</strong> em sequência.</p>
+<p>Veja que podem ser usadas muitas declaração <code>else</code> em sequência.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
@@ -552,7 +552,7 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 </section>
 <section id="laço-for" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="laço-for"><span class="header-section-number">12.5</span> Laço For</h2>
-<p>Um laço <strong>for</strong> é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: <code>for(x in seq)</code>, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em <code>seq</code> e ecerrando no último. Um exemplo:</p>
+<p>Um laço <code>for</code> é uma estrutura que efetua uma determinada quantidade de passos de acordo com a sequência informada. a declaração deve ser feita no formato: <code>for(x in seq)</code>, sendo x a variável que será atualizada a cada iteração iniciando no ´rimeiro valor informado em <code>seq</code> e ecerrando no último. Um exemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Iteração:'</span>, x))</span>
@@ -578,7 +578,7 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 [1] "Valor de x: 1"</code></pre>
 </div>
 </div>
-<p>No eemplo acima, x é inicializado com valor 1 e vvai sendo incrementado em 1 unidade ao início do próximo passo. Um laço <strong>for</strong> também pode fazer iterações sobre vetores com texto, por exemplo.</p>
+<p>No exemplo acima, x é inicializada com valor 1 e vai sendo incrementada em 1 unidade ao início do próximo passo. Um laço <code>for</code> também pode fazer iterações sobre vetores com texto, por exemplo.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">'São Paulo'</span>, <span class="st">'Rio de Janeiro'</span>, <span class="st">'Porto Alegre'</span>)){</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Cidade atual:'</span>, i))</span>
@@ -589,7 +589,7 @@ Valiant           105 18.1   6      18.1       18.1</code></pre>
 [1] "Cidade atual: Porto Alegre"</code></pre>
 </div>
 </div>
-<p>No laço <strong>for</strong> a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.</p>
+<p>No laço <code>for</code> a sequência no qual será feita a iteração é considerada antes de se iniciar o laço, assim mesmo se houver alguma alteração nesta sequência em um dos passos esta alteração não impactará na execução.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>x) {</span>
@@ -615,10 +615,10 @@ For x While
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Um laço for é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use <strong>while</strong>.</p>
+<p>Um laço <code>for</code> é utilizado quando se tem uma sequência definida de passos. Caso se deseje executar alguma operação até o atendimeto de uma condição, use <code>while</code>.</p>
 </div>
 </div>
-<p>A estrutura <strong>while</strong> possui a seguinte configuração: <code>while(condição)</code>. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:</p>
+<p>A estrutura <code>while</code> possui a seguinte configuração: <code>while(condição)</code>. Assim, a repetição do código dentro de um bloco while ocorre até que a condição não seja mais satisfeita. Exemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>condicao <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(condicao <span class="sc">&lt;</span> <span class="dv">7</span>){</span>
@@ -630,8 +630,8 @@ For x While
 [1] 6</code></pre>
 </div>
 </div>
-<p>A variável <code>condicao</code> é iniciada com valor 5 e atende a condição <strong>se &lt; 7</strong>. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de <strong>se &lt; 7</strong>. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o <strong>while</strong> é encerrado.</p>
-<p>A estrutura <strong>while</strong> pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando <strong>ESC</strong> no teclado.</p>
+<p>A variável <strong>condicao</strong> é iniciada com valor 5 e atende a condição <strong>se &lt; 7</strong>. O código então é executado, imprimindo no console o valor da variavél e após esta recebe seu próprio valor mais 1. Na iteração seguinte seu valor é 6 e ainda atende a condição de <strong>se &lt; 7</strong>. Na terceira iteração seu valor, novamente atualizado, será 7 e não cumprindo a condição o <code>while</code> é encerrado.</p>
+<p>A estrutura <code>while</code> pode ficar operando indefinidamente se por algum motivo a condição seja sempre atendida. Teste o código abaixo e veja que ele rodará indefinidamente. Você pode pará-lo teclando <strong>ESC</strong> no teclado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(<span class="cn">TRUE</span>){</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(condicao)</span>
@@ -639,12 +639,9 @@ For x While
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="break-e-next" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="break-e-next"><span class="header-section-number">12.7</span> Break e Next</h2>
-</section>
-<section id="repeat" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="repeat"><span class="header-section-number">12.8</span> Repeat</h2>
-<p>E estrutura repeat funciona de forma análoga ao while, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.</p>
+<section id="repeat" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="repeat"><span class="header-section-number">12.7</span> Repeat</h2>
+<p>E estrutura <code>repeat</code> funciona de forma análoga ao <code>while</code>, entretanto esta não testa condição de parada. Para efetuar a parada o usuário deve fazer de forma explícita.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -663,14 +660,60 @@ For x While
 [1] 13</code></pre>
 </div>
 </div>
+</section>
+<section id="break-e-next" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="break-e-next"><span class="header-section-number">12.8</span> Break e Next</h2>
+<p>O <code>break</code> encerra as estruturas <code>for</code>, <code>while</code> e <code>repeat</code>. <code>Next</code>, por sua vez, interrompe a execução da iteração atual e inicia a próxima.</p>
+<p>Abaixo um exemplo com uso de <code>break</code> em um laço <code>for</code>. Note que apenas a primeira iteração é executada.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">break</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Abaixo um exemplo de uso do <code>next</code>. Repare que o comando <code>print('Teste')</code> nunca é executado, pois o <code>next</code> interrompe a execução da iteração atual, assim tudo que for colocado após esta linha (dentro do laço) não é executado.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">next</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'Teste'</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3</code></pre>
+</div>
+</div>
+<p>Em caso de laços embutidos, <code>break</code> e <code>next</code> impactam apenas o mais “interno”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Valor de j é:'</span>, j))</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">'Valor de i é:'</span>, i))</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Valor de i é: 1"
+[1] "Valor de i é: 2"
+[1] "Valor de i é: 3"</code></pre>
+</div>
+</div>
 <hr>
 <p><span class="citation" data-cites="datamentor_repeat_loop">DataMentor (<a href="referencias.html#ref-datamentor_repeat_loop" role="doc-biblioref">s.d.</a>)</span></p>
-<p>Última atualização: 21/08/2023 - 23:39:21</p>
+<p><span class="citation" data-cites="r">R Core Team (<a href="referencias.html#ref-r" role="doc-biblioref">2023</a>)</span></p>
+<p>Última atualização: 30/09/2023 - 21:38:39</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-datamentor_repeat_loop" class="csl-entry" role="doc-biblioentry">
 DataMentor. s.d. <span>"R repeat loop"</span>. <a href="https://www.datamentor.io/r-programming/repeat-loop">https://www.datamentor.io/r-programming/repeat-loop</a>.
+</div>
+<div id="ref-r" class="csl-entry" role="doc-biblioentry">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 </div>
 </section>

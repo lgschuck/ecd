@@ -4,9 +4,13 @@
 
 ## Introdução
 
-R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apreesentações dos gráficos.
+R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apresentações dos gráficos.
 
-Abaixo um exemplo de um gráfico de criado com a função `plot` do pacote **graphics**. Os argumentos `x` e `y` são usados nas coordenadas e já são suficientes para a geração de um gráfico.
+## Função Plot
+
+A função `plot`, do pacote **graphics,** é uma função que gera gráficos de dispersão e oferece uma gama de opções para customização. Mas vejamos primeiro um exemplo mínimo.
+
+Os argumentos `x` e `y` são usados nas coordenadas e já são suficientes para a geração do. Por padrão o gráfico gerado é de pontos (argumento `type = "p"`).
 
 ```{r}
 df_aprovacoes <- readRDS('data/aprovacoes_por_porte_de_empresa.RDS')
@@ -14,7 +18,7 @@ df_aprovacoes <- readRDS('data/aprovacoes_por_porte_de_empresa.RDS')
 plot(x = df_aprovacoes$ANO, y = df_aprovacoes$GRANDE)
 ```
 
-Podemos customizar com diversos parâmetros. Por exemplo `main` é o argumento que define o título do gráfico, enquanto que `xlab` e `ylab` são os *labels* dos eixos. O argumento `col` define a cor. Note que o R possui muitas cores que podem ser identificadas como *strings*. Você pode ver as disponíveis com a função `colors`.
+Podemos incluir diversos elementos no gráfico, por exemplo, `main` é o argumento que define o título, enquanto que `xlab` e `ylab` são os *labels* dos eixos e `col` define a cor. Note que o R possui muitas cores que podem ser identificadas como *strings*. Você pode ver as disponíveis com a função `colors`.
 
 ```{r}
 plot(df_aprovacoes$ANO, df_aprovacoes$GRANDE, 
@@ -32,7 +36,7 @@ Veja que o gráfico foi exibido com pontos para os valores. O parâmetro `type` 
 
 -   `c`: pontos 'vazios' ligados por linhas
 
-Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido.
+Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido, pois elas farão a ligação entre os pontos.
 
 ```{r}
 plot(df_aprovacoes$ANO, df_aprovacoes$GRANDE, 
@@ -40,10 +44,9 @@ plot(df_aprovacoes$ANO, df_aprovacoes$GRANDE,
      col ='brown3', 
      main = 'Gráfico - Aprovações - Porte: Grande', 
      xlab = 'Ano', ylab = 'Valor Aprovado')
-
 ```
 
-Podemos criar um gráfico de linhas com a base de dados da [Taxa Selic Acumulado no Mês](bases_dados.html#taxa-de-juros---selic-acumulada-no-m%C3%AAs) divulgada pelo Banco Central do Brasil. Vamos utilizar os parâmetros `lty` (de *line type*) para determinar o tipo de linha e `lwd` (de *line width*) para determinar a largura da linha.
+Vamos criar gráfico de linhas com a base de dados da [Taxa Selic Acumulado no Mês](bases_dados.html#taxa-de-juros---selic-acumulada-no-m%C3%AAs) divulgada pelo Banco Central do Brasil. Vamos utilizar os parâmetros `lty` (de *line type*) para determinar o tipo de linha e `lwd` (de *line width*) para determinar a largura da linha.
 
 ```{r}
 df_taxa_selic <- read.csv2('./data/csv_serie_sgs_4390.csv',
@@ -63,12 +66,11 @@ plot(df_taxa_selic$DATA, df_taxa_selic$SELIC,
      xlab = 'Data', ylab = 'Selic Acumulada (% a.m.)')
 ```
 
-## Histograma
+## Função Hist
 
 Abaixo um exemplo de um histograma:
 
 ```{r}
-
 hist(df_taxa_selic$SELIC, col ='cyan4', 
      main = 'Selic', 
      xlab = 'Taxa Selic',
@@ -78,7 +80,16 @@ hist(df_aprovacoes$PEQUENA, col = 'cyan3',
    main = 'Aprovações - Porte: Pequena', 
    xlab = 'Valor - Aprovações',
    ylab = 'Qtde')
+```
 
+Com o argumento *breaks* podemos controlar quantas divisões serão exibidas no histograma.
+
+```{r}
+hist(df_aprovacoes$PEQUENA, col = 'cyan3', 
+   main = 'Aprovações - Porte: Pequena', 
+   xlab = 'Valor - Aprovações',
+   ylab = 'Qtde',
+   breaks = 20)
 ```
 
 ------------------------------------------------------------------------

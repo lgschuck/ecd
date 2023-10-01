@@ -198,7 +198,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Introdução à Linguagem R</a>
+            <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">Linguagem R</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -376,7 +376,8 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="toc-section-number">13.1</span>  Introdução</a></li>
-  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma"><span class="toc-section-number">13.2</span>  Histograma</a></li>
+  <li><a href="#função-plot" id="toc-função-plot" class="nav-link" data-scroll-target="#função-plot"><span class="toc-section-number">13.2</span>  Função Plot</a></li>
+  <li><a href="#função-hist" id="toc-função-hist" class="nav-link" data-scroll-target="#função-hist"><span class="toc-section-number">13.3</span>  Função Hist</a></li>
   </ul>
 </nav>
     </div>
@@ -403,8 +404,12 @@ div.csl-indent {
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
 <section id="introdução" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">13.1</span> Introdução</h2>
-<p>R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apreesentações dos gráficos.</p>
-<p>Abaixo um exemplo de um gráfico de criado com a função <code>plot</code> do pacote <strong>graphics</strong>. Os argumentos <code>x</code> e <code>y</code> são usados nas coordenadas e já são suficientes para a geração de um gráfico.</p>
+<p>R oferece uma série de funções nativas para criação de gráficos. Estas funções possuem muitos parâmetros que permitem melhorar visualamente as apresentações dos gráficos.</p>
+</section>
+<section id="função-plot" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="função-plot"><span class="header-section-number">13.2</span> Função Plot</h2>
+<p>A função <code>plot</code>, do pacote <strong>graphics,</strong> é uma função que gera gráficos de dispersão e oferece uma gama de opções para customização. Mas vejamos primeiro um exemplo mínimo.</p>
+<p>Os argumentos <code>x</code> e <code>y</code> são usados nas coordenadas e já são suficientes para a geração do. Por padrão o gráfico gerado é de pontos (argumento <code>type = "p"</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/aprovacoes_por_porte_de_empresa.RDS'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -413,7 +418,7 @@ div.csl-indent {
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Podemos customizar com diversos parâmetros. Por exemplo <code>main</code> é o argumento que define o título do gráfico, enquanto que <code>xlab</code> e <code>ylab</code> são os <em>labels</em> dos eixos. O argumento <code>col</code> define a cor. Note que o R possui muitas cores que podem ser identificadas como <em>strings</em>. Você pode ver as disponíveis com a função <code>colors</code>.</p>
+<p>Podemos incluir diversos elementos no gráfico, por exemplo, <code>main</code> é o argumento que define o título, enquanto que <code>xlab</code> e <code>ylab</code> são os <em>labels</em> dos eixos e <code>col</code> define a cor. Note que o R possui muitas cores que podem ser identificadas como <em>strings</em>. Você pode ver as disponíveis com a função <code>colors</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_aprovacoes<span class="sc">$</span>ANO, df_aprovacoes<span class="sc">$</span>GRANDE, </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span><span class="st">'brown3'</span>, <span class="at">main =</span> <span class="st">'Gráfico - Aprovações - Porte: Grande'</span>, </span>
@@ -429,7 +434,7 @@ div.csl-indent {
 <li><p><code>b</code>: pontos e linhas</p></li>
 <li><p><code>c</code>: pontos ‘vazios’ ligados por linhas</p></li>
 </ul>
-<p>Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido.</p>
+<p>Obviamente, nem todos os tipos de gráficos se enquadram para todos os tipos de dados. Se usarmos um gráfico de pontos e linhas nos dados do exemplo acima, as linhas não farão muito sentido, pois elas farão a ligação entre os pontos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_aprovacoes<span class="sc">$</span>ANO, df_aprovacoes<span class="sc">$</span>GRANDE, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">'b'</span>,</span>
@@ -440,7 +445,7 @@ div.csl-indent {
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Podemos criar um gráfico de linhas com a base de dados da <a href="bases_dados.html#taxa-de-juros---selic-acumulada-no-mês">Taxa Selic Acumulado no Mês</a> divulgada pelo Banco Central do Brasil. Vamos utilizar os parâmetros <code>lty</code> (de <em>line type</em>) para determinar o tipo de linha e <code>lwd</code> (de <em>line width</em>) para determinar a largura da linha.</p>
+<p>Vamos criar gráfico de linhas com a base de dados da <a href="bases_dados.html#taxa-de-juros---selic-acumulada-no-mês">Taxa Selic Acumulado no Mês</a> divulgada pelo Banco Central do Brasil. Vamos utilizar os parâmetros <code>lty</code> (de <em>line type</em>) para determinar o tipo de linha e <code>lwd</code> (de <em>line width</em>) para determinar a largura da linha.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_taxa_selic <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">'./data/csv_serie_sgs_4390.csv'</span>,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">dec =</span> <span class="st">','</span>, <span class="at">quote =</span> <span class="st">'</span><span class="sc">\"</span><span class="st">'</span>,</span>
@@ -462,8 +467,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="histograma" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="histograma"><span class="header-section-number">13.2</span> Histograma</h2>
+<section id="função-hist" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="função-hist"><span class="header-section-number">13.3</span> Função Hist</h2>
 <p>Abaixo um exemplo de um histograma:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_taxa_selic<span class="sc">$</span>SELIC, <span class="at">col =</span><span class="st">'cyan4'</span>, </span>
@@ -481,10 +486,21 @@ div.csl-indent {
 <p><img src="r_graficos_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Com o argumento <em>breaks</em> podemos controlar quantas divisões serão exibidas no histograma.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_aprovacoes<span class="sc">$</span>PEQUENA, <span class="at">col =</span> <span class="st">'cyan3'</span>, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">main =</span> <span class="st">'Aprovações - Porte: Pequena'</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="at">xlab =</span> <span class="st">'Valor - Aprovações'</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">ylab =</span> <span class="st">'Qtde'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">breaks =</span> <span class="dv">20</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="r_graficos_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <hr>
 <p><span class="citation" data-cites="sthda">Kassambara (<a href="referencias.html#ref-sthda" role="doc-biblioref">s.d.</a>)</span></p>
 <p><span class="citation" data-cites="schmuller_2019">Schmuller (<a href="referencias.html#ref-schmuller_2019" role="doc-biblioref">2019</a>)</span></p>
-<p>Última atualização: 24/09/2023 - 18:43:36</p>
+<p>Última atualização: 30/09/2023 - 22:01:48</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
