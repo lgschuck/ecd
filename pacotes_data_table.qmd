@@ -1,4 +1,4 @@
-# Pacote Data.table
+# Pacote data.table
 
 [Status](convencoes.html#status-do-material) 🟦🟨🟨
 
@@ -9,9 +9,31 @@ library(data.table)
 
 df_aprovacoes <-
   readRDS('./data/aprovacoes_por_porte_de_empresa.RDS')
+```
+
+## Criando um Data Table
+
+### Função data.table
+
+A criação de um **data table** se dá de forma análoga a um **data frame** através da função `data.table`.
+
+```{r}
+df_exemplo <- data.table(x = 1:10)
+df_exemplo |> class()
+```
+
+### Função setDT
+
+Também podemos criar um **data table** a partir de um **data frame** com o comando `setDT` ou com a função `as.data.table`.
+
+```{r}
+df_aprovacoes_as <- as.data.table(df_aprovacoes)
+df_aprovacoes_as |> class()
 
 df_aprovacoes <- setDT(df_aprovacoes)
 df_aprovacoes |> class()
+
+identical(df_aprovacoes_as, df_aprovacoes)
 ```
 
 As operações realizadas com **data tables** possuem sintaxe específica e bastante sucinta. As operações são feitas sobre a base de dados na seguinte forma:
@@ -20,32 +42,82 @@ As operações realizadas com **data tables** possuem sintaxe específica e bast
 
 ## Filtrando Dados
 
-De forma análogo a um **data frame** padrão, os filtros nas linhas ocorrem antes da vírgula e podem usar operadores lógicos e relacionais.
+De forma análogo a um **data frame** padrão, os filtros nas linhas ocorrem antes da vírgula e podem usar operadores lógicos e relacionais. Uma grande vantagem é que as colunas podem ser referenciadas apenas pelo seu nome, sem incluir o nome do objeto.
 
 ```{r}
 df_aprovacoes[ANO == 2022 & MES > 6, ]
 ```
 
-## Criando Variáveis
+## Selecionando Colunas
 
-A criação de variável pode ser feita com o operador `:=`. Neste formato o código fica bastante limpo e reduzido, facilitando a leitura.
+Para seleção de colunas, podemos colocar o nome da coluna diretamente após a vírgula, porém o reotrno é dado em forma de vetor e não mantém a estrutura do **data table**.
+
+```{r}
+df_aprovacoes[, GRANDE] |> 
+  is.vector()
+
+df_aprovacoes[, GRANDE] |> 
+  is.data.table()
+```
+
+Para seleção mais robusta devem ser informadas as colunas dentro de uma lista, que pode ser abreviada por um ponto.
+
+```{r}
+df_aprovacoes[, list(GRANDE)] |> 
+  is.data.table()
+
+# selecioanndo mais de uma coluna
+df_aprovacoes[, list(GRANDE, PEQUENA)] |> 
+  head(3)
+
+# usando ponto
+df_aprovacoes[, .(GRANDE, PEQUENA)] |> 
+  head(3)
+```
+
+## Alterando Variáveis
+
+A criação/alteração de variáveis pode ser feita basicamente de duas formas: forma **funcional** ou **LHS := RHS**. Em ambas as formas as operações são feitas diretamente no próprio objeto, não exigindo o operador de atribuição `<-`.
+
+### Forma Funcional
+
+Na forma funcional se faz o uso do operador `:=` (*assignment by reference*), que deixa o código bastante limpo e reduzido, facilitando a leitura.
 
 ```{r}
 df_aprovacoes[, RAZAO_GRANDE_MICRO := GRANDE / MICRO]
 df_aprovacoes[, RAZAO_GRANDE_MICRO] |> head()
 ```
 
-## Agrupando
-
-Exemplo com criação da média de valores aprovados para o porte **MICRO** por ano, sendo que o ano deve ser a partir de 2020.
+É possível efetuar a atualização/criação de várias variáveis simultaneamente.
 
 ```{r}
-df_aprovacoes[ANO > 2019, list(MEAN_MICRO = mean(MICRO)), by = c('ANO')]
+df_aprovacoes[, `:=`(RAZAO_GRANDE_PEQUENA = GRANDE / PEQUENA,
+                     RAZAO_GRANDE_MEDIA = GRANDE/MEDIA)]
+```
+
+### Forma LHS := RHS
+
+Uma forma alternativa pode ser usada com dois "vetores", um com as variáveis a serem criadas e outro com os valores a serem atribuídos.
+
+```{r}
+df_aprovacoes2 <- copy(df_aprovacoes)
+df_aprovacoes[, c('RAZAO_GRANDE_PEQUENA', 'RAZAO_GRANDE_MEDIA') :=
+                     list(GRANDE / PEQUENA, GRANDE/MEDIA)]
+
+identical(df_aprovacoes, df_aprovacoes2)
+```
+
+## Agrupando
+
+O agrupamento/agregação ocorre com o operador `by`. Exemplo com criação da média de valores aprovados para o porte **MICRO** por ano, sendo que o ano deve ser a partir de 2020.
+
+```{r}
+df_aprovacoes[ANO > 2019, list(MEAN_MICRO = mean(MICRO)), by = ANO]
 ```
 
 ## Ordenando Dados
 
-A função `setorder` permite ordenação da base de dados sem exigir atribuição como usado com R base (base <- base[order(base$var1),]).
+A função `setorder` permite ordenação da base de dados sem exigir atribuição como usado com R base (`df <- df[order(df$var),]`).
 
 ```{r}
 df_aprovacoes |> head()
@@ -53,6 +125,35 @@ setorder(df_aprovacoes, -ANO, MES)
 df_aprovacoes |> head(n = 8)
 ```
 
+## Encadeamento
+
+Existe a possibilidade de operações encadeadas. Esta operações são úteis quando se deseja transforma uma variável recém criada, por exemplo.
+
+```{r, error = T}
+df_aprovacoes3 <- copy(df_aprovacoes)
+df_aprovacoes3[, `:=`(DATA_ATUAL = Sys.Date(),
+                     ANO_ATUAL = format(DATA_ATUAL, '%y'))]
+```
+
+Sem o encadeamento não é possível extrair o ano da variável **DATA_ATUAL** pois ela ainda não foi criada.
+
+```{r}
+df_aprovacoes4 <- copy(df_aprovacoes)
+df_aprovacoes4[, DATA_ATUAL := Sys.Date()][,
+   ANO_ATUAL := format(DATA_ATUAL, '%y')]
+```
+
+O encadeamento é equivalente ao uso do *pipe* e o *placeholder* indicando o data table.
+
+```{r}
+df_aprovacoes5 <- copy(df_aprovacoes)
+df_aprovacoes5[, DATA_ATUAL := Sys.Date()] |> 
+  _[, ANO_ATUAL := format(DATA_ATUAL, '%y')]
+
+identical(df_aprovacoes4, df_aprovacoes5)
+```
+
 ------------------------------------------------------------------------
+@data.table
 
 Última atualização: `r format(file.info('pacotes_data_table.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
