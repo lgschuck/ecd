@@ -54,6 +54,21 @@ Funções também são influenciadas pela presença dos dados faltantes. A funç
 max(vetor_1)
 ```
 
+#### Tratando Dados Faltantes
+
+R oferece algumas funções para tratameto de dados faltantes. Abaixo exemplo de uso da função `na.omit`, que devolve os elementos não `NA`. Caso o objeto não contenha valores faltantes, ele será "devolvido" de forma integral.
+
+```{r}
+c(1, NA, 3) |> na.omit()
+```
+
+Muitas funções oferecem o argumento `na.rm` para remoção dos valores faltantes, exemplos: `sum`, `max`, `min`, `prod`.
+
+```{r}
+sum(c(1, 2, NA), na.rm = T)
+prod(c(1, 2, NA), na.rm = T)
+```
+
 ## Inteiros (*Integer*)
 
 Números inteiros são do tipo `integer` e devem ser criados com a letra **L** ao seu lado. Sem este indicador, por padrão, o R entende o número como do tipo `double`.

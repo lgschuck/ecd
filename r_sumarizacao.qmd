@@ -12,18 +12,24 @@ A função `sum` retorna a soma dos elementos informados como argumentos.
 
 ```{r}
 sum(1:10)
+sum(NA)
+sum(NA, na.rm = T)
 ```
 
 ### Média
 
 ```{r}
 mean(1:20)
+mean(c(NA, 1, 2, 3))
+mean(NA, na.rm = T)
 ```
 
 ### Mediana
 
 ```{r}
 median(1:11)
+median(c(NA, 1, 2, 3))
+median(NA, na.rm = T)
 ```
 
 ### Máximo e mínimo
@@ -31,6 +37,13 @@ median(1:11)
 ```{r}
 max(99:15)
 min(15:99)
+```
+
+Estas funções também oferecem o argumento `na.rm`. Veja que vetores vazios recebem retornos `Inf` e `-Inf`.
+
+```{r}
+max(c(NA, NA), na.rm = T)
+min(c(NA, NA), na.rm = T)
 ```
 
 ## Agregação
@@ -99,7 +112,7 @@ df_aprovacoes_porte_na |>
 
 Veja que agora a soma para o ano de 1995 para o porte MICRO é `NA`.
 
-Caso seja for inserido `na.rm = T` como argumento da função `sum`, os valores faltantes são desconsiderados novamente, mesmo `na.action` sendo nulo.
+Caso seja inserido `na.rm = T` como argumento da função `sum`, os valores faltantes são desconsiderados novamente, mesmo `na.action` sendo nulo.
 
 ```{r}
 df_aprovacoes_porte_na |>
