@@ -64,7 +64,7 @@ xor(5 > 6, 6 > 5)
 
 ```
 
-## Precedência
+## Precedência de Operadores Lógicos e Relacionais
 
 Na utilização de testes lógicos é importante observar a ordem (precedência) de aplicação dos operadores. O uso de parênteses altera a o escopo de aplicação dos operadores.
 
@@ -107,6 +107,39 @@ Abaixo alguns testes.
 !(5 > 6 | 4 > 5)
 
 ```
+
+## Funções isTRUE e isFALSE
+
+Estas duas funções oferecem retorno lógico a partir de uma entrada. Exemplo:
+
+```{r}
+isTRUE(5 > 6)
+isFALSE(5 > 6)
+```
+
+Estas funções oferecem vantagens em testes que possam possuir `NAs`. Exemplo:
+
+```{r}
+isTRUE(NA > 5)
+isFALSE(5 > NA)
+NA > 5
+```
+
+## Funções is.
+
+R também oferece uma gama enorme de funções que testam objetos, abaixo alguns exemplos:
+
+```{r}
+is.character('A')
+is.numeric(5)
+is.double(5)
+is.na(NA)
+is.na(NaN)
+is.nan(NA)
+is.nan(NaN)
+```
+
+Note que `NaN` é considerado *Not Avalibale*, ao passo que `NA` não é considerado *Not a Number*.
 
 ## All e any
 
@@ -184,6 +217,16 @@ Equivalente a:
 vetor_logico <- c(T, F, F)
 all(vetor_logico, na.rm = T)
 any(vetor_logico, na.rm = T)
+```
+
+### Any.NA
+
+Esta função teste se pelo menos um elemento é `NA`.
+
+```{r}
+anyNA(c(10, NA))
+anyNA(c(NA, NA))
+anyNA(c(2, 1))
 ```
 
 ## Operador %in%

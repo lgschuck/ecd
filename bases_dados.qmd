@@ -1,6 +1,6 @@
 # Bases de Dados {.unnumbered}
 
-Neste materrial são usadas diversas bases de dados abertas. Abaixo as fontes e as descrições.
+Neste material são usadas diversas bases de dados abertas. Abaixo as fontes e as descrições.
 
 ## [Banco Central do Brasil](https://dadosabertos.bcb.gov.br/)
 
