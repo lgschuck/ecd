@@ -359,6 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#listar-arquivos" id="toc-listar-arquivos" class="nav-link active" data-scroll-target="#listar-arquivos"><span class="toc-section-number">15.1</span>  Listar Arquivos</a></li>
   <li><a href="#listar-diretórios" id="toc-listar-diretórios" class="nav-link" data-scroll-target="#listar-diretórios"><span class="toc-section-number">15.2</span>  Listar diretórios</a></li>
   <li><a href="#informações-de-arquivos" id="toc-informações-de-arquivos" class="nav-link" data-scroll-target="#informações-de-arquivos"><span class="toc-section-number">15.3</span>  Informações de arquivos</a></li>
+  <li><a href="#variáveis-de-ambiente" id="toc-variáveis-de-ambiente" class="nav-link" data-scroll-target="#variáveis-de-ambiente"><span class="toc-section-number">15.4</span>  Variáveis de Ambiente</a></li>
   </ul>
 </nav>
     </div>
@@ -433,12 +434,22 @@ isdir "FALSE"
 mode  "444"                                     
 mtime "2023-08-22 20:20:27"                     
 ctime "2023-08-22 21:22:18"                     
-atime "2023-10-18 19:44:04"                     
+atime "2024-03-09 15:40:32"                     
 exe   "no"                                      </code></pre>
 </div>
 </div>
+</section>
+<section id="variáveis-de-ambiente" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="variáveis-de-ambiente"><span class="header-section-number">15.4</span> Variáveis de Ambiente</h2>
+<p>Existem muitas variáveis de ambiente em R e você também pode fazer uso destas para armazenar valores fora de objetos. Por exemplo, para buscar o nome do usuário que está utilizando a máquina no momento você pode usar o comando abaixo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">'USERNAME'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "luisg"</code></pre>
+</div>
+</div>
 <hr>
-<p>Última atualização: 24/09/2023 - 18:44:16</p>
+<p>Última atualização: 09/03/2024 - 15:35:01</p>
 
 
 </section>

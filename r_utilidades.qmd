@@ -40,6 +40,14 @@ A função `file.info` retorna uma série de informações sobre o arquivo como 
 t(file.info('./data/aprovacoes_por_porte_de_empresa.csv'))
 ```
 
+## Variáveis de Ambiente
+
+Existem muitas variáveis de ambiente em R e você também pode fazer uso destas para armazenar valores fora de objetos. Por exemplo, para buscar o nome do usuário que está utilizando a máquina no momento você pode usar o comando abaixo.
+
+```{r}
+Sys.getenv('USERNAME')
+```
+
 ------------------------------------------------------------------------
 
 Última atualização: `r format(file.info('r_utilidades.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

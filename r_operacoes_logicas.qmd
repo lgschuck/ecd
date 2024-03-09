@@ -219,7 +219,7 @@ all(vetor_logico, na.rm = T)
 any(vetor_logico, na.rm = T)
 ```
 
-### Any.NA
+### AnyNA
 
 Esta função teste se pelo menos um elemento é `NA`.
 
@@ -242,6 +242,16 @@ y %in% x
 ```
 
 Veja que o retorno é dado pelo tamanho do objeto da esquerda. Assim `x %in% y` é uma operação completamente diferente de `y %in% x.`
+
+Em casos de itens repetidos o retorno segue a mesma lógica, avaliando o obeto da esquerda dentro do da direita:
+
+```{r}
+x <- c(1, 2, 2)
+y <- 2
+x %in% y
+
+y %in% x
+```
 
 ------------------------------------------------------------------------
 

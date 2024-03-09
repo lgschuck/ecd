@@ -385,7 +385,7 @@ div.csl-indent {
   <li><a href="#funções-is." id="toc-funções-is." class="nav-link" data-scroll-target="#funções-is."><span class="toc-section-number">6.5</span>  Funções is.</a></li>
   <li><a href="#all-e-any" id="toc-all-e-any" class="nav-link" data-scroll-target="#all-e-any"><span class="toc-section-number">6.6</span>  All e any</a>
   <ul class="collapse">
-  <li><a href="#any.na" id="toc-any.na" class="nav-link" data-scroll-target="#any.na"><span class="toc-section-number">6.6.1</span>  Any.NA</a></li>
+  <li><a href="#anyna" id="toc-anyna" class="nav-link" data-scroll-target="#anyna"><span class="toc-section-number">6.6.1</span>  AnyNA</a></li>
   </ul></li>
   <li><a href="#operador-in" id="toc-operador-in" class="nav-link" data-scroll-target="#operador-in"><span class="toc-section-number">6.7</span>  Operador %in%</a></li>
   </ul>
@@ -810,8 +810,8 @@ div.csl-indent {
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<section id="any.na" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="any.na"><span class="header-section-number">6.6.1</span> Any.NA</h3>
+<section id="anyna" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="anyna"><span class="header-section-number">6.6.1</span> AnyNA</h3>
 <p>Esta função teste se pelo menos um elemento é <code>NA</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anyNA</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -846,9 +846,22 @@ div.csl-indent {
 </div>
 </div>
 <p>Veja que o retorno é dado pelo tamanho do objeto da esquerda. Assim <code>x %in% y</code> é uma operação completamente diferente de <code>y %in% x.</code></p>
+<p>Em casos de itens repetidos o retorno segue a mesma lógica, avaliando o obeto da esquerda dentro do da direita:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%in%</span> y</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE  TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">%in%</span> x</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
 <hr>
 <p><span class="citation" data-cites="r">R Core Team (<a href="referencias.html#ref-r" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 18/10/2023 - 19:42:38</p>
+<p>Última atualização: 09/03/2024 - 15:11:39</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

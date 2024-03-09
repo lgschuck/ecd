@@ -389,6 +389,7 @@ div.csl-indent {
   <li><a href="#buscar-ambiente-pai-recursivamente" id="toc-buscar-ambiente-pai-recursivamente" class="nav-link" data-scroll-target="#buscar-ambiente-pai-recursivamente"><span class="toc-section-number">10.4.1</span>  Buscar Ambiente Pai (Recursivamente)</a></li>
   </ul></li>
   <li><a href="#funções-genéricas" id="toc-funções-genéricas" class="nav-link" data-scroll-target="#funções-genéricas"><span class="toc-section-number">10.5</span>  Funções Genéricas</a></li>
+  <li><a href="#operadores-unários" id="toc-operadores-unários" class="nav-link" data-scroll-target="#operadores-unários"><span class="toc-section-number">10.6</span>  Operadores Unários</a></li>
   </ul>
 </nav>
     </div>
@@ -456,7 +457,7 @@ div.csl-indent {
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fnExibirEnvs</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ambiente atual:"
-&lt;environment: 0x0000020027bb82b8&gt;
+&lt;environment: 0x000002a0a7a64ac8&gt;
 [1] "Ambiente Pai: R_GlobalEnv"</code></pre>
 </div>
 </div>
@@ -637,9 +638,70 @@ div.csl-indent {
 </section>
 <section id="funções-genéricas" class="level2" data-number="10.5">
 <h2 data-number="10.5" class="anchored" data-anchor-id="funções-genéricas"><span class="header-section-number">10.5</span> Funções Genéricas</h2>
+<p>Funções genéricas são funções que contém métodos associados. Os métodos são chamados de acordo com a classe do objeto informado.</p>
+<p>Por exemplo a função print possui diversos métodos associados. Quando um <strong>data.frame</strong> é informado como argumento o R chama a função <code>print.data.frame</code>, ao passo que se o argumento da função for uma data o método invocado é <code>print.Date</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="sc">|&gt;</span> <span class="fu">print.data.frame</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              mpg cyl disp  hp drat
+Mazda RX4      21   6  160 110  3.9
+Mazda RX4 Wag  21   6  160 110  3.9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.Date</span>() <span class="sc">|&gt;</span> <span class="fu">print.Date</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2024-03-09"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># o mesmo que</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="sc">|&gt;</span> <span class="fu">print</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              mpg cyl disp  hp drat
+Mazda RX4      21   6  160 110  3.9
+Mazda RX4 Wag  21   6  160 110  3.9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.Date</span>() <span class="sc">|&gt;</span> <span class="fu">print</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2024-03-09"</code></pre>
+</div>
+</div>
+</section>
+<section id="operadores-unários" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="operadores-unários"><span class="header-section-number">10.6</span> Operadores Unários</h2>
+<p>A operador de soma <code>+</code> é na verdade uma função e é em geral utilizado na forma de operador unário, ou seja, recebe os valores da direita e da esquerda como seus argumentos. Veja o código que é reotrnado quando a função é chamada sem informação de argumentos e parênteses:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">+</span><span class="st">`</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (e1, e2)  .Primitive("+")</code></pre>
+</div>
+</div>
+<p>Você poderia usar a função de somar de outra formacom a função <code>do.call</code> ou mesmo chamando esta com uso de cráses. Obviamente não é a forma mais sucinta, mas serve para demosntrar que <code>+</code> não passa de uma função como as demais.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">do.call</span>(<span class="st">`</span><span class="at">+</span><span class="st">`</span>, <span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">+</span><span class="st">`</span>(<span class="dv">8</span>,<span class="dv">7</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<p>O mais interessante é que você também pode criar funções para serem usadas na forma de operador unário. Para isto basta criá-la com <strong>%</strong> ao início e ao fim do nome da função. Abaixo as duas formas de uso desta função:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%fnSomar2%</span><span class="st">`</span><span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> y</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">%fnSomar2%</span> <span class="dv">15</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%fnSomar2%</span><span class="st">`</span>(<span class="dv">2</span>,<span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
 <hr>
 <p><span class="citation" data-cites="grolemund2014">Grolemund (<a href="referencias.html#ref-grolemund2014" role="doc-biblioref">2014</a>)</span></p>
-<p>Última atualização: 27/08/2023 - 23:27:47</p>
+<p>Última atualização: 09/03/2024 - 15:31:32</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())<span class="sc">$</span>Package[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "abind"      "askpass"    "assertthat" "backports"  "base64enc" </code></pre>
+<pre><code>[1] "abind"      "anytime"    "askpass"    "assertthat" "backports" </code></pre>
 </div>
 </div>
 <p>A função <code>installed.packages</code> retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função <code>t</code>, que transpõe o data.frame de colunas para linhas.</p>
@@ -495,8 +495,8 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da primeira pasta</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "abind"      "askpass"    "assertthat" "backports"  "base64enc" 
- [6] "bit"        "bit64"      "bizdays"    "blob"       "brio"      </code></pre>
+<pre><code> [1] "abind"      "anytime"    "askpass"    "assertthat" "backports" 
+ [6] "base64enc"  "BH"         "bit"        "bit64"      "bizdays"   </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da segunda pasta</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -539,7 +539,7 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
  [1] "cli"        "generics"   "glue"       "lifecycle"  "magrittr"  
  [6] "methods"    "pillar"     "R6"         "rlang"      "tibble"    
 [11] "tidyselect" "utils"      "vctrs"      "fansi"      "utf8"      
-[16] "pkgconfig"  "withr"      "grDevices"  "graphics"   "stats"     </code></pre>
+[16] "pkgconfig"  "withr"      "grDevices"  "graphics"  </code></pre>
 </div>
 </div>
 </section>
