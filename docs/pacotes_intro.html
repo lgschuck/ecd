@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo 5 primeiros</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">installed.packages</span>())<span class="sc">$</span>Package[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "abind"      "anytime"    "askpass"    "assertthat" "backports" </code></pre>
+<pre><code>[1] "askpass"   "backports" "base64enc" "bit"       "bit64"    </code></pre>
 </div>
 </div>
 <p>A função <code>installed.packages</code> retorna uma série de informações a respeito dos pacotes. Abaixo alguns exemplos de pacotes bastante utilizados. Para simplificar a visualização foi usada função <code>t</code>, que transpõe o data.frame de colunas para linhas.</p>
@@ -403,31 +403,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stdout">
 <pre><code>                      base                                
 Package               "base"                              
-LibPath               "C:/Program Files/R/R-4.3.0/library"
-Version               "4.3.0"                             
+LibPath               "C:/Program Files/R/R-4.4.1/library"
+Version               "4.4.1"                             
 Priority              "base"                              
 Depends               NA                                  
 Imports               NA                                  
 LinkingTo             NA                                  
 Suggests              "methods"                           
-Enhances              NA                                  
-License               "Part of R 4.3.0"                   
+Enhances              "chron, date, round"                
+License               "Part of R 4.4.1"                   
 License_is_FOSS       NA                                  
 License_restricts_use NA                                  
 OS_type               NA                                  
 MD5sum                NA                                  
 NeedsCompilation      NA                                  
-Built                 "4.3.0"                             </code></pre>
+Built                 "4.4.1"                             </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote MASS</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span> <span class="st">'MASS'</span>,])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                      MASS                                             
 Package               "MASS"                                           
-LibPath               "C:/Program Files/R/R-4.3.0/library"             
-Version               "7.3-58.4"                                       
+LibPath               "C:/Program Files/R/R-4.4.1/library"             
+Version               "7.3-60.2"                                       
 Priority              "recommended"                                    
-Depends               "R (&gt;= 4.3.0), grDevices, graphics, stats, utils"
+Depends               "R (&gt;= 4.4.0), grDevices, graphics, stats, utils"
 Imports               "methods"                                        
 LinkingTo             NA                                               
 Suggests              "lattice, nlme, nnet, survival"                  
@@ -438,28 +438,28 @@ License_restricts_use NA
 OS_type               NA                                               
 MD5sum                NA                                               
 NeedsCompilation      "yes"                                            
-Built                 "4.3.0"                                          </code></pre>
+Built                 "4.4.1"                                          </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacote bit64</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(pacotes[pacotes<span class="sc">$</span>Package <span class="sc">==</span> <span class="st">'bit64'</span>,])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                      bit64                                                
-Package               "bit64"                                              
-LibPath               "C:/Users/luisg/AppData/Local/R/win-library/4.3"     
-Version               "4.0.5"                                              
-Priority              NA                                                   
-Depends               "R (&gt;= 3.0.1), bit (&gt;= 4.0.0), utils, methods, stats"
-Imports               NA                                                   
-LinkingTo             NA                                                   
-Suggests              NA                                                   
-Enhances              NA                                                   
-License               "GPL-2 | GPL-3"                                      
-License_is_FOSS       NA                                                   
-License_restricts_use NA                                                   
-OS_type               NA                                                   
-MD5sum                NA                                                   
-NeedsCompilation      "yes"                                                
-Built                 "4.3.1"                                              </code></pre>
+<pre><code>                      bit64                                                     
+Package               "bit64"                                                   
+LibPath               "C:/Users/luisg/OneDrive/Área de Trabalho/r/ecd/.packages"
+Version               "4.0.5"                                                   
+Priority              NA                                                        
+Depends               "R (&gt;= 3.0.1), bit (&gt;= 4.0.0), utils, methods, stats"     
+Imports               NA                                                        
+LinkingTo             NA                                                        
+Suggests              NA                                                        
+Enhances              NA                                                        
+License               "GPL-2 | GPL-3"                                           
+License_is_FOSS       NA                                                        
+License_restricts_use NA                                                        
+OS_type               NA                                                        
+MD5sum                NA                                                        
+NeedsCompilation      "yes"                                                     
+Built                 "4.4.0"                                                   </code></pre>
 </div>
 </div>
 <p>Pode ser visto no campo <em>Priority</em> que para o pacote base o conteúdo é “base”, isto significa que este faz parte da instalação do R. Já o pacote <a href="https://cran.r-project.org/web/packages/MASS/index.html">MASS</a>, por exemplo, é um pacote recomendado. O pacote bit64, que é um pacote “normal”, não possui informação no campo <em>Priority</em>.</p>
@@ -468,18 +468,19 @@ Built                 "4.3.1"                                              </cod
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageDescription</span>(<span class="st">'base'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Package: base
-Version: 4.3.0
+Version: 4.4.1
 Priority: base
 Title: The R Base Package
 Author: R Core Team and contributors worldwide
 Maintainer: R Core Team &lt;do-use-Contact-address@r-project.org&gt;
 Contact: R-help mailing list &lt;r-help@r-project.org&gt;
 Description: Base R functions.
-License: Part of R 4.3.0
+License: Part of R 4.4.1
 Suggests: methods
-Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
+Enhances: chron, date, round
+Built: R 4.4.1; ; 2024-06-14 08:24:09 UTC; windows
 
--- File: C:/PROGRA~1/R/R-43~1.0/library/base/Meta/package.rds </code></pre>
+-- File: C:/PROGRA~1/R/R-44~1.1/library/base/Meta/package.rds </code></pre>
 </div>
 </div>
 </section>
@@ -489,14 +490,14 @@ Built: R 4.3.0; ; 2023-04-21 09:22:06 UTC; windows
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3"
-[2] "C:/Program Files/R/R-4.3.0/library"            </code></pre>
+<pre><code>[1] "C:/Users/luisg/OneDrive/Área de Trabalho/r/ecd/.packages"
+[2] "C:/Program Files/R/R-4.4.1/library"                      </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da primeira pasta</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "abind"      "anytime"    "askpass"    "assertthat" "backports" 
- [6] "base64enc"  "BH"         "bit"        "bit64"      "bizdays"   </code></pre>
+<pre><code> [1] "askpass"   "backports" "base64enc" "bit"       "bit64"     "blob"     
+ [7] "broom"     "bslib"     "cachem"    "callr"    </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir 10 primeiros da segunda pasta</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">.libPaths</span>()[<span class="dv">2</span>])[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>

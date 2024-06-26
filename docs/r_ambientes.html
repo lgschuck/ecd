@@ -421,11 +421,11 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>variavel <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">globalenv</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "variavel"</code></pre>
+<pre><code>[1] "repo"     "variavel"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "variavel"</code></pre>
+<pre><code>[1] "repo"     "variavel"</code></pre>
 </div>
 </div>
 </section>
@@ -440,13 +440,12 @@ div.csl-indent {
 attr(,"name")
 [1] "package:data.table"
 attr(,"path")
-[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3/data.table"</code></pre>
+[1] "C:/Users/luisg/OneDrive/Área de Trabalho/r/ecd/.packages/data.table"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">as.environment</span>(<span class="st">'package:data.table'</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "%between%"     "%chin%"        "%flike%"       "%ilike%"      
- [5] "%inrange%"     "%like%"        ":="            "address"      
- [9] "alloc.col"     "as.data.table"</code></pre>
+<pre><code> [1] "%between%"    "%chin%"       "%flike%"      "%ilike%"      "%inrange%"   
+ [6] "%like%"       "%notin%"      "%plike%"      ":="           "[.data.table"</code></pre>
 </div>
 </div>
 </section>
@@ -461,7 +460,7 @@ attr(,"path")
 attr(,"name")
 [1] "package:data.table"
 attr(,"path")
-[1] "C:/Users/luisg/AppData/Local/R/win-library/4.3/data.table"</code></pre>
+[1] "C:/Users/luisg/OneDrive/Área de Trabalho/r/ecd/.packages/data.table"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ambiente superior ao do apcote stats e base</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:stats"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -470,7 +469,7 @@ attr(,"path")
 attr(,"name")
 [1] "package:graphics"
 attr(,"path")
-[1] "C:/Program Files/R/R-4.3.0/library/graphics"</code></pre>
+[1] "C:/Program Files/R/R-4.4.1/library/graphics"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(<span class="fu">as.environment</span>(<span class="st">"package:base"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -486,7 +485,7 @@ attr(,"path")
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>amb1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;environment: 0x0000021ef01c8978&gt;</code></pre>
+<pre><code>&lt;environment: 0x000001f526d7ff98&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(amb1)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

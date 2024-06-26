@@ -463,13 +463,14 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[ANO <span class="sc">==</span> <span class="dv">2022</span> <span class="sc">&amp;</span> MES <span class="sc">&gt;</span> <span class="dv">6</span>, ]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    ANO MES     MICRO   PEQUENA    MEDIA    GRANDE
-1: 2022   7 1763.7773 3843.3850 3286.456  1873.511
-2: 2022   8 2378.3861 4640.6140 3965.469  3147.633
-3: 2022   9  874.7404 1198.8596 2163.194  4625.476
-4: 2022  10  419.9439  932.4995 1970.361  9020.808
-5: 2022  11  323.8321  828.8072 2259.412  7908.244
-6: 2022  12  413.4742 1087.6930 3795.945 37107.079</code></pre>
+<pre><code>     ANO   MES     MICRO   PEQUENA    MEDIA    GRANDE
+   &lt;int&gt; &lt;int&gt;     &lt;num&gt;     &lt;num&gt;    &lt;num&gt;     &lt;num&gt;
+1:  2022     7 1763.7773 3843.3850 3286.456  1873.511
+2:  2022     8 2378.3861 4640.6140 3965.469  3147.633
+3:  2022     9  874.7404 1198.8596 2163.194  4625.476
+4:  2022    10  419.9439  932.4995 1970.361  9020.808
+5:  2022    11  323.8321  828.8072 2259.412  7908.244
+6:  2022    12  413.4742 1087.6930 3795.945 37107.079</code></pre>
 </div>
 </div>
 </section>
@@ -500,6 +501,7 @@ div.csl-indent {
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     GRANDE PEQUENA
+      &lt;num&gt;   &lt;num&gt;
 1: 380.2330       0
 2: 495.5282       0
 3: 715.9591       0</code></pre>
@@ -509,6 +511,7 @@ div.csl-indent {
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     GRANDE PEQUENA
+      &lt;num&gt;   &lt;num&gt;
 1: 380.2330       0
 2: 495.5282       0
 3: 715.9591       0</code></pre>
@@ -555,11 +558,12 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes[ANO <span class="sc">&gt;</span> <span class="dv">2019</span>, <span class="fu">list</span>(<span class="at">MEAN_MICRO =</span> <span class="fu">mean</span>(MICRO)), by <span class="ot">=</span> ANO]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    ANO MEAN_MICRO
-1: 2020   536.0065
-2: 2021   536.2352
-3: 2022   662.1226
-4: 2023   312.2800</code></pre>
+<pre><code>     ANO MEAN_MICRO
+   &lt;int&gt;      &lt;num&gt;
+1:  2020   536.0065
+2:  2021   536.2352
+3:  2022   662.1226
+4:  2023   312.2800</code></pre>
 </div>
 </div>
 </section>
@@ -569,14 +573,16 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    ANO MES    MICRO PEQUENA    MEDIA   GRANDE RAZAO_GRANDE_MICRO
-1: 1995   1 128.4699       0 10.18922 380.2330           2.959705
-2: 1995   2 106.3283       0 16.21161 495.5282           4.660361
-3: 1995   3 234.5488       0 13.69085 715.9591           3.052496
-4: 1995   4 125.2196       0 16.44511 403.9919           3.226267
-5: 1995   5 209.4168       0 20.88794 477.2529           2.278962
-6: 1995   6 122.5179       0 23.86818 473.2194           3.862450
+<pre><code>     ANO   MES    MICRO PEQUENA    MEDIA   GRANDE RAZAO_GRANDE_MICRO
+   &lt;int&gt; &lt;int&gt;    &lt;num&gt;   &lt;num&gt;    &lt;num&gt;    &lt;num&gt;              &lt;num&gt;
+1:  1995     1 128.4699       0 10.18922 380.2330           2.959705
+2:  1995     2 106.3283       0 16.21161 495.5282           4.660361
+3:  1995     3 234.5488       0 13.69085 715.9591           3.052496
+4:  1995     4 125.2196       0 16.44511 403.9919           3.226267
+5:  1995     5 209.4168       0 20.88794 477.2529           2.278962
+6:  1995     6 122.5179       0 23.86818 473.2194           3.862450
    RAZAO_GRANDE_PEQUENA RAZAO_GRANDE_MEDIA
+                  &lt;num&gt;              &lt;num&gt;
 1:                  Inf           37.31717
 2:                  Inf           30.56625
 3:                  Inf           52.29471
@@ -587,16 +593,18 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(df_aprovacoes, <span class="sc">-</span>ANO, MES)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>df_aprovacoes <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    ANO MES    MICRO   PEQUENA     MEDIA   GRANDE RAZAO_GRANDE_MICRO
-1: 2023   1 235.2636  654.6506 1048.4110 1337.163           5.683680
-2: 2023   2 528.9812 1639.7768 2111.9314 1088.138           2.057045
-3: 2023   3 260.0790  647.7431 1546.9274 1843.952           7.089969
-4: 2023   4 157.7072  501.0023 1190.8649 3445.090          21.844841
-5: 2023   5 119.9866  519.2932 1797.9574 2222.737          18.524876
-6: 2023   6 571.6626 1985.3709 3554.8101 6506.082          11.380983
-7: 2022   1 293.7928  412.8598  826.2161 1182.581           4.025222
-8: 2022   2 195.4029  571.3932  910.6876 1460.593           7.474776
+<pre><code>     ANO   MES    MICRO   PEQUENA     MEDIA   GRANDE RAZAO_GRANDE_MICRO
+   &lt;int&gt; &lt;int&gt;    &lt;num&gt;     &lt;num&gt;     &lt;num&gt;    &lt;num&gt;              &lt;num&gt;
+1:  2023     1 235.2636  654.6506 1048.4110 1337.163           5.683680
+2:  2023     2 528.9812 1639.7768 2111.9314 1088.138           2.057045
+3:  2023     3 260.0790  647.7431 1546.9274 1843.952           7.089969
+4:  2023     4 157.7072  501.0023 1190.8649 3445.090          21.844841
+5:  2023     5 119.9866  519.2932 1797.9574 2222.737          18.524876
+6:  2023     6 571.6626 1985.3709 3554.8101 6506.082          11.380983
+7:  2022     1 293.7928  412.8598  826.2161 1182.581           4.025222
+8:  2022     2 195.4029  571.3932  910.6876 1460.593           7.474776
    RAZAO_GRANDE_PEQUENA RAZAO_GRANDE_MEDIA
+                  &lt;num&gt;              &lt;num&gt;
 1:            2.0425595          1.2754186
 2:            0.6635891          0.5152336
 3:            2.8467333          1.1920093
