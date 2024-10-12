@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Tipos de Dados
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Listas – eRando em Ciênc1a de D4do$</title>
+<title>21&nbsp; Teorema de Bayes – eRando em Ciênc1a de D4do$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r_data_frames.html" rel="next">
-<link href="./r_operacoes_logicas.html" rel="prev">
+<link href="./sobre_cd.html" rel="next">
+<link href="./est_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -166,7 +166,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sobre_r.html">Linguagem R</a></li><li class="breadcrumb-item"><a href="./r_listas.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Listas</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sobre_estatistica.html">Estatística</a></li><li class="breadcrumb-item"><a href="./est_bayes.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -214,11 +214,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./sobre_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linguagem R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r_intro.html" class="sidebar-item-text sidebar-link">
@@ -257,7 +257,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_listas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./r_listas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Listas</span></span></a>
   </div>
 </li>
@@ -361,11 +361,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./sobre_estatistica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Estatística</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./est_intro.html" class="sidebar-item-text sidebar-link">
@@ -374,7 +374,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./est_bayes.html" class="sidebar-item-text sidebar-link">
+  <a href="./est_bayes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></span></a>
   </div>
 </li>
@@ -425,22 +425,16 @@ window.Quarto = {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">7.1</span> Introdução</a></li>
-  <li><a href="#criando-listas" id="toc-criando-listas" class="nav-link" data-scroll-target="#criando-listas"><span class="header-section-number">7.2</span> Criando Listas</a></li>
-  <li><a href="#acessando-componentes" id="toc-acessando-componentes" class="nav-link" data-scroll-target="#acessando-componentes"><span class="header-section-number">7.3</span> Acessando Componentes</a></li>
-  <li><a href="#nomeando-componentes" id="toc-nomeando-componentes" class="nav-link" data-scroll-target="#nomeando-componentes"><span class="header-section-number">7.4</span> Nomeando Componentes</a>
-  <ul class="collapse">
-  <li><a href="#nomes-abreviados" id="toc-nomes-abreviados" class="nav-link" data-scroll-target="#nomes-abreviados"><span class="header-section-number">7.4.1</span> Nomes Abreviados</a></li>
-  </ul></li>
+  <li><a href="#fórmula" id="toc-fórmula" class="nav-link active" data-scroll-target="#fórmula"><span class="header-section-number">21.1</span> Fórmula</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sobre_r.html">Linguagem R</a></li><li class="breadcrumb-item"><a href="./r_listas.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Listas</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sobre_estatistica.html">Estatística</a></li><li class="breadcrumb-item"><a href="./est_bayes.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Listas</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Teorema de Bayes</span></h1>
 </div>
 
 
@@ -458,105 +452,92 @@ window.Quarto = {
 
 
 <p><a href="convencoes.html#status-do-material">Status</a> 🟨🟨🟨</p>
-<section id="introdução" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">7.1</span> Introdução</h2>
-<p><strong>Listas</strong> são objetos que armazenam outros objetos, podendo ser de variados tipos.</p>
-</section>
-<section id="criando-listas" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="criando-listas"><span class="header-section-number">7.2</span> Criando Listas</h2>
-<p>Abaixo um exemplo de criação de <strong>lista</strong> através da função <code>list</code>. Os seus componentes serão um data frame, um vetor de números de 1 até 10 e um vetor com as letras do alfabeto.</p>
+<section id="fórmula" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="fórmula"><span class="header-section-number">21.1</span> Fórmula</h2>
+<p><span class="math display">\[
+P(B_{i} | A) = \frac{P(B_{i} \cap A)}{P(A)}
+\]</span></p>
+<p>Exemplo:</p>
+<p>Sendo tirada 1 bola vermelha, qual a probabilidade de esta bola ter sido retirada da caixa 1?</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Caixa</th>
+<th>Vermelhas</th>
+<th>Azuis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>As probabilidades “básicas” são:</p>
+<p><span class="math display">\[
+P(B_{1}) = P(Caixa 1) = 1/2
+\]</span> <span class="math display">\[
+P(B_{2}) = P(Caixa 2) = 1/2
+\]</span> <span class="math display">\[
+P(A|B_{1}) = P(Vermelha | Caixa 1) = 4/8
+\]</span> <span class="math display">\[
+P(A|B_{2}) = P(Vermelha | Caixa 2) = 2/8
+\]</span></p>
+<p>A probabilidade de que uma bola vermelha tenha sido retirada da caixa 1 é dada por:</p>
+<p><span class="math display">\[
+P(Caixa 1 | Vermelha) = \frac{P(B_{1}) . P(A|B_{1})}{P(A)}
+\]</span></p>
+<p>O numerador da equação é:</p>
+<p><span class="math display">\[
+P(B_{1}) . P(A|B_{1}) = P(Caixa_{1}) . P(Vermelha | Caixa_{1})
+\]</span></p>
+<p><span class="math display">\[
+P(Caixa_{1}) . P(Vermelha | Caixa_{1}) = \frac{1}{2} . \frac{4}{8}
+\]</span></p>
+<p>O denominador da equação é:</p>
+<p><span class="math display">\[
+P(A) = P(Vermelha) =  P(Caixa 2) . P(Vermelha | Caixa 1) + P(Caixa 2) . P(Vermelha | Caixa 2)
+\]</span></p>
+<p><span class="math display">\[
+P(Vermelha) = \frac{1}{2} . \frac{4}{8} + \frac{1}{2} . \frac{2}{8} = \frac{2}{8} + \frac{1}{8} =  \frac{3}{8} = 0.375
+\]</span></p>
+<p><span class="math display">\[
+P(Caixa 1 | Vermelha) = \frac{\frac{1}{2} . \frac{4}{8}}{\frac{1}{2} . \frac{4}{8} + \frac{1}{2} . \frac{2}{8}}
+\]</span> Portanto, a probabilidade é de:</p>
+<p><span class="math display">\[
+P(Caixa 1 | Vermelha) = \frac{\frac{1}{4}}{\frac{1}{4} + \frac{1}{8}} = \frac{\frac{1}{4}}{\frac{3}{8}} = \frac{1}{4}.\frac{8}{3} = \frac{8}{12} = 0.66666...
+\]</span></p>
+<p>Abaixo exemplo do mesmo cálculo executado em R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lista_1 <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, letters)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="acessando-componentes" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="acessando-componentes"><span class="header-section-number">7.3</span> Acessando Componentes</h2>
-<p>Para acessar os elementos das listas pode-se usar o operador <code>[[…]]</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista_1[[<span class="dv">1</span>]])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>p_cx1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p_cx2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>p_vermelha_cx1 <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">/</span><span class="dv">8</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>p_vermelha_cx2 <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">8</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p_vermelha <span class="ot">&lt;-</span> p_cx1 <span class="sc">*</span> p_vermelha_cx1 <span class="sc">+</span> p_cx2 <span class="sc">*</span> p_vermelha_cx2  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>(p_cx1 <span class="sc">*</span> p_vermelha_cx1)<span class="sc">/</span>p_vermelha</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "data.frame"</code></pre>
-</div>
-</div>
-<p>Deve-se tomar cuidado ao usar o operador <code>[]</code>, pois este operador é genérico e não retorna o componente 1 da lista em sua “forma” original e sim de uma lista contendo o objeto da lista original. Desta forma, não é possível fazer extração de objetos do vetor retornado.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista_1[<span class="dv">1</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "list"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lista_1[<span class="dv">2</span>][<span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-NULL</code></pre>
-</div>
-</div>
-<p>Usando <code>[[...]]</code> o objeto retornado mantém sua forma original e a extração ocorre normalmente.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista_1[[<span class="dv">2</span>]])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lista_1[[<span class="dv">2</span>]][<span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-</section>
-<section id="nomeando-componentes" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="nomeando-componentes"><span class="header-section-number">7.4</span> Nomeando Componentes</h2>
-<p>Os componentes das listas podem ser nomeados com a função <code>names</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lista_1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'df_mtcars'</span>, <span class="st">'vetor'</span>, <span class="st">'letras'</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>lista_1<span class="sc">$</span>letras</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
-[20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(lista_1<span class="sc">$</span>letras, lista_1[[<span class="dv">3</span>]])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(lista_1<span class="sc">$</span>letras, lista_1[[<span class="st">'letras'</span>]])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<section id="nomes-abreviados" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="nomes-abreviados"><span class="header-section-number">7.4.1</span> Nomes Abreviados</h3>
-<p>Para acessar componentes de listas nomeadas é possível informar seus nomes de forma abreviada.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lista_1<span class="sc">$</span>le</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
-[20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#equivalente a </span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>lista_1<span class="sc">$</span>letras</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
-[20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
-</div>
-</div>
-<p>Veja que a abreviação deve identificar de forma exclusiva os componentes, caso contrário o valor retornado é <code>NULL</code>. A <strong>lista_3</strong> possui dois componentes que começam com ‘le’ e assim não é possível fazer a seleção.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lista_3 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">letras =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="at">letras_maiusculas =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>lista_3<span class="sc">$</span>le</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>[1] 0.6666667</code></pre>
 </div>
 </div>
 <hr>
-<p><span class="citation" data-cites="introduction_r">R Core Team (<a href="referencias.html#ref-introduction_r" role="doc-biblioref">2023</a>)</span></p>
-<p>Última atualização: 11/10/2024 - 21:51:19</p>
+<p><span class="citation" data-cites="favero_2017">Luiz Paulo Fávero (<a href="referencias.html#ref-favero_2017" role="doc-biblioref">2017</a>)</span></p>
+<p>Última atualização: 11/10/2024 - 21:47:30</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-introduction_r" class="csl-entry" role="listitem">
-R Core Team. 2023. <em>An Introduction to R</em>. R Foundation for Statistical Computing. <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html">https://cran.r-project.org/doc/manuals/r-release/R-intro.html</a>.
+<div id="ref-favero_2017" class="csl-entry" role="listitem">
+Luiz Paulo Fávero, Patrícia Belfiore. 2017. <em>Manual de Análise de Dados</em>. Elsevier.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1126,13 +1107,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_operacoes_logicas.html" class="pagination-link" aria-label="Operações Lógicas">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Operações Lógicas</span></span>
+      <a href="./est_intro.html" class="pagination-link" aria-label="Introdução">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introdução</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r_data_frames.html" class="pagination-link" aria-label="Data Frames">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frames</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sobre_cd.html" class="pagination-link" aria-label="Ciência de Dados">
+        <span class="nav-page-text">Ciência de Dados</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Introdução
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨
@@ -6,11 +10,11 @@ Neste capítulo serão discutidos alguns dos principais conceitos de Estatístic
 
 ## Dados Qualitativos
 
+São dados não numéricos, podem ser nominais ou ordinais. Opeações amtemáticas, como somas, diferenças, etc não fazem sentido apra este tipo de dado.
+
 ## Dados Quantitativos
 
-## Parâmetros
-
-## Estatísticas
+São dados numéricos como contagens, medidas, etc. Podem ser contínuos (assumem valores do conjunto do números Reais) ou discretos (assumem um conjunto finito de valores).
 
 ## População
 
@@ -19,6 +23,14 @@ O termo população é usado em estatística no sentido de todo um conjunto de d
 ## Amostra
 
 Amostra é a definição usada para frações de uma população.
+
+## Parâmetros
+
+Parâmetros são valores numéricos de uma população.
+
+## Estatísticas
+
+Semelhante ao parâmetro, uma estatística trata de valores referentes a um grupo. Mas neste caso o grupo é uma parte da população, ou seja, uma amostra.
 
 ## Tipos de Dados
 
@@ -56,6 +68,9 @@ sexos + 2
 
 @larson_farber_2007
 
+@freund_simon_2000
+
+@favero_2017
 @r
 
 Última atualização: `r format(file.info('est_intro.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`

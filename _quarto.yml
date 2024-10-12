@@ -51,6 +51,7 @@ book:
     - part: sobre_estatistica.qmd
       chapters:
         - est_intro.qmd
+        - est_bayes.qmd
     - part: sobre_cd.qmd
       chapters:
         - cd_vies_var.qmd

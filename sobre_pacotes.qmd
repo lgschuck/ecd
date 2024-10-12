@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Pacotes
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨

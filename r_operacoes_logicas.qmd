@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Operações Lógicas
 
 [Status](convencoes.html#status-do-material) 🟦🟨🟨

@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Introdução ao RStudio
 
 ## Layout

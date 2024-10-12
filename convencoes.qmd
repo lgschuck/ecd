@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Convenções {.unnumbered}
 
 [Status](convencoes.html#status-do-material) 🟨🟨🟨

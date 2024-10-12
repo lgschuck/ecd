@@ -1,0 +1,88 @@
+---
+engine: knitr
+---
+
+# Teorema de Bayes
+
+[Status](convencoes.html#status-do-material) 🟨🟨🟨
+
+## Fórmula
+
+$$ 
+P(B_{i} | A) = \frac{P(B_{i} \cap A)}{P(A)} 
+$$
+
+Exemplo:
+
+Sendo tirada 1 bola vermelha, qual a probabilidade de esta bola ter sido retirada da caixa 1?
+
+| Caixa | Vermelhas | Azuis |
+|-------|-----------|-------|
+| 1     | 4         | 4     |
+| 2     | 2         | 6     |
+
+As probabilidades "básicas" são:
+
+$$
+P(B_{1}) = P(Caixa 1) = 1/2
+$$ $$
+P(B_{2}) = P(Caixa 2) = 1/2
+$$ $$
+P(A|B_{1}) = P(Vermelha | Caixa 1) = 4/8
+$$ $$
+P(A|B_{2}) = P(Vermelha | Caixa 2) = 2/8
+$$
+
+A probabilidade de que uma bola vermelha tenha sido retirada da caixa 1 é dada por:
+
+$$
+P(Caixa 1 | Vermelha) = \frac{P(B_{1}) . P(A|B_{1})}{P(A)}
+$$
+
+O numerador da equação é:
+
+$$
+P(B_{1}) . P(A|B_{1}) = P(Caixa_{1}) . P(Vermelha | Caixa_{1})
+$$
+
+$$
+P(Caixa_{1}) . P(Vermelha | Caixa_{1}) = \frac{1}{2} . \frac{4}{8}
+$$
+
+O denominador da equação é:
+
+$$
+P(A) = P(Vermelha) =  P(Caixa 2) . P(Vermelha | Caixa 1) + P(Caixa 2) . P(Vermelha | Caixa 2)
+$$
+
+$$
+P(Vermelha) = \frac{1}{2} . \frac{4}{8} + \frac{1}{2} . \frac{2}{8} = \frac{2}{8} + \frac{1}{8} =  \frac{3}{8} = 0.375
+$$
+
+$$
+P(Caixa 1 | Vermelha) = \frac{\frac{1}{2} . \frac{4}{8}}{\frac{1}{2} . \frac{4}{8} + \frac{1}{2} . \frac{2}{8}}
+$$ Portanto, a probabilidade é de:
+
+$$
+P(Caixa 1 | Vermelha) = \frac{\frac{1}{4}}{\frac{1}{4} + \frac{1}{8}} = \frac{\frac{1}{4}}{\frac{3}{8}} = \frac{1}{4}.\frac{8}{3} = \frac{8}{12} = 0.66666...
+$$
+
+Abaixo exemplo do mesmo cálculo executado em R.
+
+```{r}
+
+p_cx1 <- 1/2
+p_cx2 <- 1/2
+p_vermelha_cx1 <- 4/8
+p_vermelha_cx2 <- 2/8
+
+p_vermelha <- p_cx1 * p_vermelha_cx1 + p_cx2 * p_vermelha_cx2  
+
+(p_cx1 * p_vermelha_cx1)/p_vermelha
+```
+
+------------------------------------------------------------------------
+
+@favero_2017
+
+Última atualização: `r format(file.info('est_bayes.qmd')$mtime, '%d/%m/%Y - %H:%M:%S')`
