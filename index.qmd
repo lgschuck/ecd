@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Bem Vindo {.unnumbered}
 
 Este é um livro sobre a utilização da linguagem R em Ciência de Dados.
